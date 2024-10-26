@@ -1,0 +1,14 @@
+#SwitchScenes {
+    font-size: 24px;
+    color: white;
+}
+
+#Exit {
+    font-size: 24px;
+    color: white;
+}
+
+#Back {
+    font-size: 24px;
+    color: white;
+}

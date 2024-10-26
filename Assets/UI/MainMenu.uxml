@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=1c3b61a81c943554d96a6032ac33ec2a&amp;type=3#StyleSheet" />
+    <ui:VisualElement style="flex-grow: 1; width: 100%; height: 100%; flex-basis: auto;">
+        <ui:Button text="View 3D-Model" name="SwitchScenes" style="top: 45%; width: auto; height: auto;" />
+        <ui:Button text="Exit" name="Exit" style="top: 55%;" />
+    </ui:VisualElement>
+</ui:UXML>
