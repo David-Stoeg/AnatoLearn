@@ -1,7 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=1c3b61a81c943554d96a6032ac33ec2a&amp;type=3#StyleSheet" />
-    <ui:VisualElement style="flex-grow: 1; width: 100%; height: 100%; flex-basis: auto;">
-        <ui:Button text="View 3D-Model" name="SwitchScenes" style="top: 45%; width: auto; height: auto;" />
-        <ui:Button text="Exit" name="Exit" style="top: 55%;" />
+    <Style src="project://database/Assets/MainMenueStyle.uss?fileID=7433441132597879392&amp;guid=da8af9ddff74c4dacb352f73d9640f57&amp;type=3#MainMenueStyle" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgb(0, 146, 143);">
+        <ui:Label text="Welcome &#10;Back!&#10;" name="Header" class="header" style="margin-top: 0; padding-top: 333px; padding-bottom: 0; margin-bottom: 71px;" />
+        <ui:VisualElement name="Container2" style="flex-grow: 1; background-color: rgb(255, 255, 255); width: 1080px; height: 200px; margin-top: 0; margin-bottom: 0; padding-bottom: 0; border-top-left-radius: 150px; border-top-right-radius: 150px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; padding-top: 242px; padding-left: 0;">
+            <ui:TextField placeholder-text="filler text" class="searchBar" style="-unity-font-definition: url(&quot;project://database/Assets/UI/Fonts/Lato-Regular.ttf?fileID=12800000&amp;guid=4cde97c241b0446b489d6cdb83352ad1&amp;type=3#Lato-Regular&quot;); top: -77px; width: 680px; justify-content: center; align-self: center; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-image: none;" />
+            <ui:VisualElement name="container3" style="flex-grow: 1; flex-direction: row; margin-left: 0; align-self: auto; width: 1080px; padding-bottom: 0; margin-bottom: 0; align-items: center; justify-content: center; padding-top: 0; min-height: 0; min-width: 0; height: 482px;">
+                <ui:Button text="Human &#10;Explore" name="HumanExplore" class="button button_klein button_small" style="flex-direction: row; flex-wrap: nowrap; margin-left: 0; padding-left: 40px; margin-right: 20px; margin-bottom: 40px; padding-top: 145px; padding-bottom: 0; padding-right: 0;" />
+                <ui:Button text="Animations" name="Animations" class="button button_klein button_small" style="padding-bottom: 0; white-space: pre; flex-direction: column; margin-left: 20px; padding-left: 40px; padding-top: 145px; padding-right: 0; margin-right: 0;" />
+            </ui:VisualElement>
+            <ui:Button text="3D Viewer" name="3DViewer" data-source="project://database/Assets/UI/3D-View.uxml?fileID=9197481963319205126&amp;guid=9f0921ea2779fc94d8ed6b60cabaf3ea&amp;type=3#3D-View" class="button button_big" style="margin-top: 0; -unity-text-outline-color: rgba(0, 0, 0, 0); padding-left: 40px; margin-bottom: 563px; width: 970px; margin-right: 0; margin-left: 0;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
