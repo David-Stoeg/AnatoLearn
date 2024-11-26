@@ -75,17 +75,23 @@ public class UserInput : MonoBehaviour
 
     private void MouseInput()
     {
-        children.Rotate(new Vector3(0,-1 * Input.GetAxis("Mouse X"), 0) * Time.deltaTime * speed, Space.World);
-        if (ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
+        // Rotate only when the left mouse button is held down
+        if (Input.GetMouseButton(0)) // Left mouse button
         {
-            children.Rotate(new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * speed, Space.World);
+            children.Rotate(new Vector3(0, -1 * Input.GetAxis("Mouse X"), 0) * Time.deltaTime * speed, Space.World);
+
+            // Allow vertical rotation only if the current model supports underside viewing
+            if (ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
+            {
+                children.Rotate(new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * speed, Space.World);
+            }
         }
+
+        // Handle zoom functionality
         zoomAmount += Input.GetAxis("Mouse ScrollWheel");
         zoomAmount = Mathf.Clamp(zoomAmount, -maxClamp, maxClamp);
-        float translate = Mathf.Min(Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")),
-            maxClamp - Mathf.Abs(zoomAmount));
-        camera.transform.Translate(0, 0, translate * scrollSpeed * Mathf.Sign(
-            Input.GetAxis("Mouse ScrollWheel")));
+        float translate = Mathf.Min(Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")), maxClamp - Mathf.Abs(zoomAmount));
+        camera.transform.Translate(0, 0, translate * scrollSpeed * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")));
     }
 
     private void CheckKeyInput()
