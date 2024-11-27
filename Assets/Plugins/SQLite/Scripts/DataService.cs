@@ -65,50 +65,68 @@ public class DataService  {
 	}
 
 	public void CreateDB(){
-		_connection.DropTable<Person> ();
-		_connection.CreateTable<Person> ();
+		_connection.DropTable<AnatomicalStructures> ();
+		_connection.DropTable<Descriptions> ();
+		_connection.DropTable<Relations> ();
+		_connection.DropTable<Models_3D> ();
+		_connection.CreateTable<AnatomicalStructures> ();
+		_connection.CreateTable<Descriptions> ();
+		_connection.CreateTable<Relations> ();
+		_connection.CreateTable<Models_3D> ();
 
-		_connection.InsertAll (new[]{
-			new Person{
-				Id = 1,
-				Name = "Tom",
-				Surname = "Perez",
-				Age = 56
-			},
-			new Person{
-				Id = 2,
-				Name = "Fred",
-				Surname = "Arthurson",
-				Age = 16
-			},
-			new Person{
-				Id = 3,
-				Name = "John",
-				Surname = "Doe",
-				Age = 25
-			},
-			new Person{
-				Id = 4,
-				Name = "Roberto",
-				Surname = "Huertas",
-				Age = 37
-			}
+		_connection.Insert(new AnatomicalStructures{
+    		id = 1,
+    		german_name = "Eckzahn",
+    		latin_name = "latinEckzahn",
+    		category = "Mund"
 		});
+
+		_connection.Insert(new Descriptions{
+    		id = 1,
+    		text = "Ein schöner Zahn",
+    		structure_id = 1
+		});
+
+		_connection.Insert(new Relations{
+    		id = 1,
+    		structure1_id = 1,
+    		structure2_id = 1,
+    		relation_type = "neben dem Zahn"
+		});
+
+		_connection.Insert(new Models_3D{
+    		id = 1,
+    		model_path = "diesdasannanas",
+    		structure_id = 1,
+    		highlight_color = "white"
+		});
+
+		
+	} 
+	
+
+	public IEnumerable<AnatomicalStructures> GetAnatomicalStructures(){
+		return _connection.Table<AnatomicalStructures>();
+	}
+	public IEnumerable<Models_3D> GetModels_3D(){
+		return _connection.Table<Models_3D>();
+	}
+	public IEnumerable<Descriptions> GetDescriptions(){
+		return _connection.Table<Descriptions>();
+	}
+	public IEnumerable<Relations> GetRelations(){
+		return _connection.Table<Relations>();
 	}
 
-	public IEnumerable<Person> GetPersons(){
-		return _connection.Table<Person>();
-	}
+	//public IEnumerable<Person> GetPersonsNamedRoberto(){
+	// 	return _connection.Table<Person>().Where(x => x.Name == "Roberto");
+	//}
 
-	public IEnumerable<Person> GetPersonsNamedRoberto(){
-		return _connection.Table<Person>().Where(x => x.Name == "Roberto");
-	}
+	//public Person GetJohnny(){
+	//	return _connection.Table<Person>().Where(x => x.Name == "Johnny").FirstOrDefault();
+	//}
 
-	public Person GetJohnny(){
-		return _connection.Table<Person>().Where(x => x.Name == "Johnny").FirstOrDefault();
-	}
-
-	public Person CreatePerson(){
+	/* public Person CreatePerson(){
 		var p = new Person{
 				Name = "Johnny",
 				Surname = "Mnemonic",
@@ -116,5 +134,5 @@ public class DataService  {
 		};
 		_connection.Insert (p);
 		return p;
-	}
+	} */
 }
