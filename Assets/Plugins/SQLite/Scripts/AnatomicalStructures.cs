@@ -6,7 +6,7 @@ public class AnatomicalStructures  {
 	public int id { get; set; }
 	public string german_name { get; set; }
 	public string latin_name { get; set; }
-	public int category { get; set; }
+	public string category { get; set; }
 
 	public override string ToString ()
 	{

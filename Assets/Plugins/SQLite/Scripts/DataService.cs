@@ -74,33 +74,34 @@ public class DataService  {
 		_connection.CreateTable<Relations> ();
 		_connection.CreateTable<Models_3D> ();
 
-	/*	_connection.InsertAll (new[]{
-			new Person{
-				Id = 1,
-				Name = "Tom",
-				Surname = "Perez",
-				Age = 56
-			},
-			new Person{
-				Id = 2,
-				Name = "Fred",
-				Surname = "Arthurson",
-				Age = 16
-			},
-			new Person{
-				Id = 3,
-				Name = "John",
-				Surname = "Doe",
-				Age = 25
-			},
-			new Person{
-				Id = 4,
-				Name = "Roberto",
-				Surname = "Huertas",
-				Age = 37
-			}
+		_connection.Insert(new AnatomicalStructures{
+    		id = 1,
+    		german_name = "Eckzahn",
+    		latin_name = "latinEckzahn",
+    		category = "Mund"
 		});
-		*/
+
+		_connection.Insert(new Descriptions{
+    		id = 1,
+    		text = "Ein schöner Zahn",
+    		structure_id = 1
+		});
+
+		_connection.Insert(new Relations{
+    		id = 1,
+    		structure1_id = 1,
+    		structure2_id = 1,
+    		relation_type = "neben dem Zahn"
+		});
+
+		_connection.Insert(new Models_3D{
+    		id = 1,
+    		model_path = "diesdasannanas",
+    		structure_id = 1,
+    		highlight_color = "white"
+		});
+
+		
 	} 
 	
 
