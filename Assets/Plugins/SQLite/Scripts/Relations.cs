@@ -10,6 +10,6 @@ public class Relations {
 
 	public override string ToString ()
 	{
-		return string.Format ("[Relations: id={0}, relation_type={1}, structure1_id{2}, structure2_id{3}]", id, relation_type, structure1_id, structure2_id);
+		return string.Format ("[Relations: id={0}, relation_type={1}, structure1_id={2}, structure2_id={3}]", id, relation_type, structure1_id, structure2_id);
 	}
 }
