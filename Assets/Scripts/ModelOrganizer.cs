@@ -9,51 +9,54 @@ public class ModelOrganizer : MonoBehaviour
     [HideInInspector]
     public static int listPtr;
 
-	void Start ()
+    private ButtonScipts buttonScripts;
+
+    void Start()
     {
         models = new List<GameObject>();
         int i = 0;
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             models.Add(child.gameObject);
-            if(i != 0)
+            if (i != 0)
             {
                 models[i].SetActive(false);
             }
             i++;
         }
         listPtr = 0;
-	}
+
+        // Get reference to ButtonScripts component
+        buttonScripts = FindObjectOfType<ButtonScipts>();
+        if (buttonScripts != null && models.Count > 0)
+        {
+            buttonScripts.SetCurrentModel(models[listPtr]);
+        }
+    }
 
     public void BackOneModel()
     {
-        if (listPtr > 0)
+        models[listPtr].SetActive(false);
+        listPtr = (listPtr - 1 + models.Count) % models.Count;
+        models[listPtr].SetActive(true);
+
+        // Update the current model in ButtonScripts
+        if (buttonScripts != null)
         {
-            models[listPtr].SetActive(false);
-            listPtr--;
-            models[listPtr].SetActive(true);
-        }
-        else
-        {
-            models[listPtr].SetActive(false);
-            listPtr = models.Count - 1;
-            models[listPtr].SetActive(true);
+            buttonScripts.SetCurrentModel(models[listPtr]);
         }
     }
 
     public void ForwardOneModel()
     {
-        if (listPtr < (models.Count-1))
+        models[listPtr].SetActive(false);
+        listPtr = (listPtr + 1) % models.Count;
+        models[listPtr].SetActive(true);
+
+        // Update the current model in ButtonScripts
+        if (buttonScripts != null)
         {
-            models[listPtr].SetActive(false);
-            listPtr++;
-            models[listPtr].SetActive(true);
-        }
-        else
-        {
-            models[listPtr].SetActive(false);
-            listPtr = 0;
-            models[listPtr].SetActive(true);
+            buttonScripts.SetCurrentModel(models[listPtr]);
         }
     }
 }
