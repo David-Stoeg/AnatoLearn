@@ -9,6 +9,6 @@ public class Descriptions  {
 
 	public override string ToString ()
 	{
-		return string.Format ("[Descriptions: id={0}, text={1}, structure_id{2}]", id, text, structure_id);
+		return string.Format ("[Descriptions: id={0}, text={1}, structure_id={2}]", id, text, structure_id);
 	}
 }

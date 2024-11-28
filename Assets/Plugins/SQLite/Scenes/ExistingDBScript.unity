@@ -253,7 +253,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Persons...
+  m_Text: "AnatoDb Eintr\xE4ge:"
 --- !u!222 &1275835955
 CanvasRenderer:
   m_ObjectHideFlags: 0
