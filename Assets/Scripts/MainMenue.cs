@@ -2,84 +2,61 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-
-//3D-VIEWER BUTTON
-public class SceneLoader : MonoBehaviour
-{
-    private void Start()
-    {
-        
-        var root = GetComponent<UIDocument>().rootVisualElement;
-
-        
-        var button = root.Q<Button>("3DViewer"); 
-
-        button.clicked += () =>
-        {
-            SceneManager.LoadScene("3D-View"); 
-        };
-    }
-}
-
-//SLIDER
 public class SlideBarController : MonoBehaviour
 {
-    private VisualElement slideBar;  
-    private VisualElement sliderHandle;                  
-    private VisualElement homeButton;          
-    private VisualElement profileButton;       
-    private VisualElement settingsButton;      
+    private VisualElement sliderHandle;        // Der bewegliche Kreis
+    private VisualElement slideBar;            // Die Bar, auf der der Slider sich bewegt
+    private VisualElement homeButton;          // Option 1: "Home"
+    private VisualElement profileButton;       // Option 2: "Profile"
+    private VisualElement settingsButton;      // Option 3: "Settings"
 
-    private int currentOption = 0;             // Startoption: 0 = "Home", 1 = "Profile", 2 = "Settings"
+    private int currentOption = 0;             // Startoption: 0 = "Home"
     private string[] sceneNames = { "MainMenu", "Profile", "Preferences" }; // Szenennamen
-
-    private float[] buttonPositions;           // Positionen der Buttons auf der SlideBar
+    private float[] buttonPositions;           // Relativpositionen der Buttons auf der SlideBar
 
     private void Start()
     {
         // Zugriff auf die UI
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        // SlideBar und Handle finden
+        // Referenzen holen
         slideBar = root.Q<VisualElement>("slideBar");
         sliderHandle = root.Q<VisualElement>("sliderHandle");
-
-        // Buttons finden (homeButton, profileButton, settingsButton)
         homeButton = root.Q<VisualElement>("homeButton");
         profileButton = root.Q<VisualElement>("profileButton");
         settingsButton = root.Q<VisualElement>("settingsButton");
 
-        // Berechne die Positionen der Buttons relativ zur SlideBar
+        // Relativpositionen der Buttons berechnen
         buttonPositions = new float[3];
         buttonPositions[0] = homeButton.resolvedStyle.left / slideBar.resolvedStyle.width;
         buttonPositions[1] = profileButton.resolvedStyle.left / slideBar.resolvedStyle.width;
         buttonPositions[2] = settingsButton.resolvedStyle.left / slideBar.resolvedStyle.width;
 
-        // Setze den Handle an die Position der aktuellen Option (initial "Home")
+        // Setze den Handle auf die Startoption
         UpdateHandlePosition();
 
-        // Registriere Callback für das Ziehen des Sliders
+        // Ereignisse registrieren
         slideBar.RegisterCallback<PointerMoveEvent>(OnPointerMove);
         slideBar.RegisterCallback<PointerUpEvent>(OnPointerUp);
     }
 
     private void OnPointerMove(PointerMoveEvent evt)
     {
-        // Berechne die neue Position des Handles basierend auf der Mausbewegung
+        // Mausposition relativ zur SlideBar
         Vector2 localPosition = evt.localPosition;
         float relativePosition = Mathf.Clamp(localPosition.x / slideBar.resolvedStyle.width, 0, 1);
 
-        // Bewege den Handle visuell entlang der Slide Bar
+        // Slider-Handle nur innerhalb der SlideBar bewegen
         sliderHandle.style.left = new Length(relativePosition * 100, LengthUnit.Percent);
     }
 
     private void OnPointerUp(PointerUpEvent evt)
     {
-        // Berechne die relative Position, wo der Handle nach oben gezogen wurde
+        // Mausposition relativ zur SlideBar
         Vector2 localPosition = evt.localPosition;
         float relativePosition = Mathf.Clamp(localPosition.x / slideBar.resolvedStyle.width, 0, 1);
 
-        // Bestimme, welche Option am nächsten ist
+        // Nächstgelegene Option bestimmen
         float closestDistance = float.MaxValue;
         int closestOption = currentOption;
 
@@ -93,17 +70,17 @@ public class SlideBarController : MonoBehaviour
             }
         }
 
-        // Setze die aktuelle Option und aktualisiere die Handle-Position
+        // Setze die neue Option und aktualisiere den Slider
         currentOption = closestOption;
         UpdateHandlePosition();
 
-        // Lade die Szene basierend auf der aktuellen Option
+        // Szene wechseln
         ChangeScene();
     }
 
     private void UpdateHandlePosition()
     {
-        // Setze den Handle an die Position des aktuellen Buttons
+        // Handle-Position exakt an die aktuelle Option setzen
         sliderHandle.style.left = new Length(buttonPositions[currentOption] * 100, LengthUnit.Percent);
     }
 
