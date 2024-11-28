@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems; // Import EventSystem namespace
 
 public class UserInput : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class UserInput : MonoBehaviour
     private Transform children;
     private float zoomAmount = 0f;
     private bool hasStarted = false;
+    private bool isInteractingWithUI = false;
 
     private void Start()
     {
@@ -75,6 +77,23 @@ public class UserInput : MonoBehaviour
 
     private void MouseInput()
     {
+        // Detect the beginning of a mouse interaction
+        if (Input.GetMouseButtonDown(0)) // Left mouse button pressed
+        {
+            isInteractingWithUI = EventSystem.current.IsPointerOverGameObject();
+        }
+
+        // Stop processing input if the interaction started on a UI element
+        if (isInteractingWithUI)
+        {
+            // Reset the flag if the left mouse button is released
+            if (Input.GetMouseButtonUp(0))
+            {
+                isInteractingWithUI = false;
+            }
+            return;
+        }
+
         // Rotate only when the left mouse button is held down
         if (Input.GetMouseButton(0)) // Left mouse button
         {
@@ -93,6 +112,36 @@ public class UserInput : MonoBehaviour
         float translate = Mathf.Min(Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")), maxClamp - Mathf.Abs(zoomAmount));
         camera.transform.Translate(0, 0, translate * scrollSpeed * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")));
     }
+    
+    //old method
+    /*
+     private void MouseInput()
+    {
+        // Check if the pointer is over a UI element
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return; // Skip processing if the pointer is over a UI element
+        }
+
+        // Rotate only when the left mouse button is held down
+        if (Input.GetMouseButton(0)) // Left mouse button
+        {
+            children.Rotate(new Vector3(0, -1 * Input.GetAxis("Mouse X"), 0) * Time.deltaTime * speed, Space.World);
+
+            // Allow vertical rotation only if the current model supports underside viewing
+            if (ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
+            {
+                children.Rotate(new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * speed, Space.World);
+            }
+        }
+
+        // Handle zoom functionality
+        zoomAmount += Input.GetAxis("Mouse ScrollWheel");
+        zoomAmount = Mathf.Clamp(zoomAmount, -maxClamp, maxClamp);
+        float translate = Mathf.Min(Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")), maxClamp - Mathf.Abs(zoomAmount));
+        camera.transform.Translate(0, 0, translate * scrollSpeed * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")));
+    }
+    */
 
     private void CheckKeyInput()
     {
@@ -149,6 +198,14 @@ public class UserInput : MonoBehaviour
 
     private void AutoRotate()
     {
+        // Continuously rotate the model around the Y-axis
+        children.Rotate(Vector3.up * (speed / autoRotateFractionAmount) * Time.deltaTime);
+    }
+    
+    //old method
+    /*
+    private void AutoRotate()
+    {
         if(!hasStarted && children.eulerAngles.y > 1)
         {
             hasStarted = true;
@@ -161,4 +218,5 @@ public class UserInput : MonoBehaviour
             hasStarted = false;
         }
     }
+    */
 }
