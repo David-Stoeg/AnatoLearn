@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
 
         // Find buttons by name
         Button exitButton = root.Q<Button>("Exit");
-        Button switchSceneButton = root.Q<Button>("SwitchScenes"); // Button for switching scenes
+        Button switchSceneButton = root.Q<Button>("3DViewer"); // Button for switching scenes
 
         // Assign the click events to the buttons
         if (exitButton != null)
