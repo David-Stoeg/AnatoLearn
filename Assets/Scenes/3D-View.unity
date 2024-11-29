@@ -899,7 +899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d3034630b1ec4479a01721d546924d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: MainMenu
 --- !u!4 &1011661012
 Transform:
   m_ObjectHideFlags: 0
@@ -2361,7 +2360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraUserBaseLoc: {fileID: 557338636}
-  cameraAutoBaseLoc: {fileID: 1991421651}
+  cameraAutoBaseLoc: {fileID: 557338636}
   camera: {fileID: 1977097059}
   speed: 150
   maxClamp: 2.5
