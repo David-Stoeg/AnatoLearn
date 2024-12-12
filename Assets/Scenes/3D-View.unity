@@ -389,7 +389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 148486540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 148486542}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &148486540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,8 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f02a1dce3a14623bc551c23f59cb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeSprite: {fileID: 21300000, guid: a6d5f1512dee44971b405b4bb1cf125e, type: 3}
-  inactiveSprite: {fileID: 21300000, guid: 9be9ad6f27e5447408b7ff9c7dbb837a, type: 3}
+  activeSprite: {fileID: 21300000, guid: 9be9ad6f27e5447408b7ff9c7dbb837a, type: 3}
+  inactiveSprite: {fileID: 21300000, guid: a6d5f1512dee44971b405b4bb1cf125e, type: 3}
 --- !u!1 &277322989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,7 +1803,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 288.2}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 200, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237023987
 MonoBehaviour:
@@ -2089,6 +2101,7 @@ GameObject:
   - component: {fileID: 1440449527}
   - component: {fileID: 1440449526}
   - component: {fileID: 1440449525}
+  - component: {fileID: 1440449528}
   m_Layer: 5
   m_Name: muscels
   m_TagString: Untagged
@@ -2158,7 +2171,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1440449526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1440449528}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1440449526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2197,6 +2222,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440449523}
   m_CullTransparentMesh: 1
+--- !u!114 &1440449528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440449523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f02a1dce3a14623bc551c23f59cb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSprite: {fileID: 21300000, guid: 871fe305a816249bca5cb9ce9665282d, type: 3}
+  inactiveSprite: {fileID: 21300000, guid: 9e43e4aa4c2b241f0996f9486d4123a2, type: 3}
 --- !u!1 &1518652838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3175,7 @@ GameObject:
   - component: {fileID: 1873727124}
   - component: {fileID: 1873727123}
   - component: {fileID: 1873727122}
+  - component: {fileID: 1873727125}
   m_Layer: 5
   m_Name: organs
   m_TagString: Untagged
@@ -3205,7 +3245,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1873727123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1873727125}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1873727123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3244,6 +3296,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873727120}
   m_CullTransparentMesh: 1
+--- !u!114 &1873727125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873727120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f02a1dce3a14623bc551c23f59cb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSprite: {fileID: 21300000, guid: 1ff50a3a314404e02ba50926087e727a, type: 3}
+  inactiveSprite: {fileID: 21300000, guid: 81806a55348fc49aba65f67ec470c243, type: 3}
 --- !u!1 &1889829611
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,6 +3434,7 @@ GameObject:
   - component: {fileID: 1916367192}
   - component: {fileID: 1916367191}
   - component: {fileID: 1916367190}
+  - component: {fileID: 1916367193}
   m_Layer: 5
   m_Name: skin
   m_TagString: Untagged
@@ -3437,7 +3504,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1916367191}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1916367193}
+        m_TargetAssemblyTypeName: ToggleButton, Assembly-CSharp
+        m_MethodName: ToggleState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1916367191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3476,6 +3555,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916367188}
   m_CullTransparentMesh: 1
+--- !u!114 &1916367193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916367188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f02a1dce3a14623bc551c23f59cb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSprite: {fileID: 21300000, guid: 9977b25438775467b84fac4b43df8144, type: 3}
+  inactiveSprite: {fileID: 21300000, guid: 2ac7e8637594145cb9ae3c4425c4ce18, type: 3}
 --- !u!1 &1917020165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4549,7 +4642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
