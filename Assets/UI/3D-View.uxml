@@ -1,4 +1,3 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/StyleSheet.uss?fileID=7433441132597879392&amp;guid=1c3b61a81c943554d96a6032ac33ec2a&amp;type=3#StyleSheet" />
-    <engine:Button text="Back" name="SwitchScenes" style="width: 25%;" />
 </engine:UXML>
