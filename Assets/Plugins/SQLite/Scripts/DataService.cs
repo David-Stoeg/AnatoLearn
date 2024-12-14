@@ -93,7 +93,7 @@ public class DataService  {
 
 		_connection.Insert(new Models_3D{
     		id = 1,
-    		model_path = "diesdasannanas",
+    		model_path = "AnatoModels/Test4MuscleSim",
     		structure_id = 1,
     		highlight_color = "white"
 		});
