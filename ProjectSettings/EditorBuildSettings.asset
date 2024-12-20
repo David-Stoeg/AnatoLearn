@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: dc24e153a430b4ca2999791358982f02
+  - enabled: 1
+    path: Assets/Scenes/HumanExplorer.unity
+    guid: b0d60e331651c487599704cd0da17003
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
