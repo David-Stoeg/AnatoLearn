@@ -1,222 +1,159 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems; // Import EventSystem namespace
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UserInput : MonoBehaviour
+public class ModelInspector : MonoBehaviour
 {
-    public static bool isOnAuto = false;
-    public delegate void ClickAction();
-    public static event ClickAction AutoRotateClicked;
+    public Transform children; // The object to rotate
+    public Camera camera; // The main camera
+    public float speed = 10f; // Rotation and movement speed
+    public float scrollSpeed = 2f; // Zoom speed
+    public float climbSpeed = 5f; // Speed for vertical movement
+    private float zoomAmount = 0f; // Current zoom level
+    private bool isInteractingWithUI = false; // Prevent interaction if over UI
 
-    [Tooltip("Place object named 'UserCameraBase' here. \nBaseForRotation > UserCameraBase")]
-    public Transform cameraUserBaseLoc;
-    [Tooltip("Place object named 'AutoCameraBase' here. \nBaseForRotation > AutoCameraBase")]
-    public Transform cameraAutoBaseLoc;
-    [Tooltip("Place object named 'Main Camera' here. \nBaseForRotation > Main Camera")]
-    public new Transform camera;
-    [Tooltip("Helps determine how fast an object rotates.\nThe higher the number, the faster it rotates")]
-    public float speed = 150f;
-    [Tooltip("Helps determine how much you can zoom in and out with the scrollwheel")]
-    public float maxClamp = 2.5f;
-    [Tooltip("How quickly the camera ascends and descends.\nThe higher the number, the faster you go up and down.")]
-    public float climbSpeed = 4;
-    [Tooltip("How quickly the camera zooms in with the scrollwheel")]
-    public float scrollSpeed = 2.5f;
-    [Tooltip("Helps determine how fast an object auto rotates.\nThe lower the number, the slower it rotates")]
-    public float autoRotateFractionAmount = 5f;
-
-    private ModelOrganizer organizer;
-    private Transform children;
-    private float zoomAmount = 0f;
-    private bool hasStarted = false;
-    private bool isInteractingWithUI = false;
+    // Store default values for position, rotation, and zoom
+    private Vector3 defaultPosition;
+    private Quaternion defaultRotation;
+    private float defaultZoomAmount;
 
     private void Start()
     {
-        if (this.transform.childCount >= 2)
-        {
-            children = this.transform.GetChild(0);
-            organizer = children.GetComponent<ModelOrganizer>();
-        }
+        // Store the default values when the scene starts
+        defaultPosition = camera.transform.position;
+        defaultRotation = children.rotation;
+        defaultZoomAmount = zoomAmount;
     }
 
-    void Update ()
+    private void Update()
     {
-        if (!isOnAuto)
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            MouseInput();
-            CheckKeyInput();
+            HandleTouchInput();
         }
         else
         {
-            AutoRotate();
+            HandlePCInput();
         }
-	}
 
-    public void ChangeAuto()
-    {
-        if(isOnAuto)
+        // Reset to default position, rotation, and zoom when the "R" key is pressed
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            isOnAuto = false;
-            hasStarted = false;
-            camera.transform.position = cameraUserBaseLoc.transform.position;
-            camera.transform.rotation = cameraUserBaseLoc.transform.rotation;
-            children.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            ResetToDefault();
         }
-        else
-        {
-            isOnAuto = true;
-            hasStarted = false;
-            camera.transform.position = cameraAutoBaseLoc.transform.position;
-            camera.transform.rotation = cameraAutoBaseLoc.transform.rotation;
-            children.rotation = new Quaternion(0f, 0f, 0f, 0f);
-        }
-        AutoRotateClicked();
     }
 
-    private void MouseInput()
+    private void HandlePCInput()
     {
-        // Detect the beginning of a mouse interaction
-        if (Input.GetMouseButtonDown(0)) // Left mouse button pressed
-        {
-            isInteractingWithUI = EventSystem.current.IsPointerOverGameObject();
-        }
+        // Skip interaction if over UI
+        if (Input.GetMouseButtonDown(0)) isInteractingWithUI = EventSystem.current.IsPointerOverGameObject();
+        if (isInteractingWithUI && Input.GetMouseButtonUp(0)) isInteractingWithUI = false;
+        if (isInteractingWithUI) return;
 
-        // Stop processing input if the interaction started on a UI element
-        if (isInteractingWithUI)
+        // Rotation (Left Mouse Button)
+        if (Input.GetMouseButton(0))
         {
-            // Reset the flag if the left mouse button is released
-            if (Input.GetMouseButtonUp(0))
-            {
-                isInteractingWithUI = false;
-            }
-            return;
-        }
+            float rotX = -Input.GetAxis("Mouse X") * Time.deltaTime * speed;
+            float rotY = Input.GetAxis("Mouse Y") * Time.deltaTime * speed;
 
-        // Rotate only when the left mouse button is held down
-        if (Input.GetMouseButton(0)) // Left mouse button
-        {
-            children.Rotate(new Vector3(0, -1 * Input.GetAxis("Mouse X"), 0) * Time.deltaTime * speed, Space.World);
-
-            // Allow vertical rotation only if the current model supports underside viewing
+            children.Rotate(Vector3.up * rotX, Space.World);
             if (ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
+                children.Rotate(Vector3.right * rotY, Space.World);
+        }
+
+        // Movement (Right Mouse Button) - scaled with zoom
+        if (Input.GetMouseButton(1))
+        {
+            // Apply zoom-based scaling to the movement
+            float zoomFactor = Mathf.Lerp(1f, 0.1f, Mathf.InverseLerp(-10f, 1f, zoomAmount));
+            float moveX = Input.GetAxis("Mouse X") * Time.deltaTime * speed * 0.1f * zoomFactor;
+            float moveY = Input.GetAxis("Mouse Y") * Time.deltaTime * speed * 0.1f * zoomFactor;
+
+            // Apply the movement with the zoom factor
+            camera.transform.Translate(-moveX, -moveY, 0, Space.Self);
+        }
+
+        // Zoom (Mouse Scroll Wheel)
+        zoomAmount += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+        camera.transform.Translate(0, 0, Input.GetAxis("Mouse ScrollWheel") * scrollSpeed, Space.Self);
+
+        // Movement keys
+        if (Input.GetKeyDown(KeyCode.W)) ResetZoom();
+        if (Input.GetKeyDown(KeyCode.S)) children.rotation = Quaternion.identity;
+
+        if (Input.GetKey(KeyCode.Q)) camera.transform.position += camera.transform.up * climbSpeed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.E)) camera.transform.position -= camera.transform.up * climbSpeed * Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+    }
+
+    private void HandleTouchInput()
+    {
+        // Debugging touch count
+        Debug.Log("Touch count: " + Input.touchCount);
+
+        // Single touch: Rotation gesture
+        if (Input.touchCount == 1)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
             {
-                children.Rotate(new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * speed, Space.World);
+                float rotX = -touch.deltaPosition.x * speed * Time.deltaTime;
+                float rotY = touch.deltaPosition.y * speed * Time.deltaTime;
+
+                // Rotate the object
+                children.Rotate(Vector3.up * rotX, Space.World);
+                if (ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
+                    children.Rotate(Vector3.right * rotY, Space.World);
+
+                // Debugging touch move
+                Debug.Log("Touch Moved: " + touch.deltaPosition);
             }
         }
 
-        // Handle zoom functionality
-        zoomAmount += Input.GetAxis("Mouse ScrollWheel");
-        zoomAmount = Mathf.Clamp(zoomAmount, -maxClamp, maxClamp);
-        float translate = Mathf.Min(Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")), maxClamp - Mathf.Abs(zoomAmount));
-        camera.transform.Translate(0, 0, translate * scrollSpeed * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")));
+        // Two touches: Pinch to zoom and two-finger drag
+        if (Input.touchCount == 2)
+        {
+            Touch touch0 = Input.GetTouch(0);
+            Touch touch1 = Input.GetTouch(1);
+
+            // Detect Pinch Zoom
+            Vector2 touch0PrevPos = touch0.position - touch0.deltaPosition;
+            Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
+
+            float prevTouchDeltaMag = (touch0PrevPos - touch1PrevPos).magnitude;
+            float touchDeltaMag = (touch0.position - touch1.position).magnitude;
+
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+            zoomAmount += deltaMagnitudeDiff * 0.01f; // Adjust sensitivity
+            zoomAmount = Mathf.Clamp(zoomAmount, -10f, 1f); // Adjust zoom limits
+
+            // Apply zoom to camera
+            camera.transform.Translate(0, 0, -deltaMagnitudeDiff * scrollSpeed * 0.1f, Space.Self);
+
+            // Detect Two-Finger Drag for camera movement
+            Vector2 averageDelta = (touch0.deltaPosition + touch1.deltaPosition) * 0.5f;
+            camera.transform.Translate(-averageDelta.x * 0.01f, -averageDelta.y * 0.01f, 0, Space.Self);
+
+            // Debugging pinch zoom
+            Debug.Log("Pinch Zoom: " + deltaMagnitudeDiff);
+        }
+
+        // Reset zoom on double tap
+        if (Input.touchCount == 1 && Input.GetTouch(0).tapCount == 2) ResetZoom();
     }
-    
-    //old method
-    /*
-     private void MouseInput()
+
+    private void ResetZoom()
     {
-        // Check if the pointer is over a UI element
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return; // Skip processing if the pointer is over a UI element
-        }
-
-        // Rotate only when the left mouse button is held down
-        if (Input.GetMouseButton(0)) // Left mouse button
-        {
-            children.Rotate(new Vector3(0, -1 * Input.GetAxis("Mouse X"), 0) * Time.deltaTime * speed, Space.World);
-
-            // Allow vertical rotation only if the current model supports underside viewing
-            if (ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
-            {
-                children.Rotate(new Vector3(Input.GetAxis("Mouse Y"), 0, 0) * Time.deltaTime * speed, Space.World);
-            }
-        }
-
-        // Handle zoom functionality
-        zoomAmount += Input.GetAxis("Mouse ScrollWheel");
-        zoomAmount = Mathf.Clamp(zoomAmount, -maxClamp, maxClamp);
-        float translate = Mathf.Min(Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")), maxClamp - Mathf.Abs(zoomAmount));
-        camera.transform.Translate(0, 0, translate * scrollSpeed * Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")));
+        zoomAmount = 0f;
+        camera.transform.localPosition = Vector3.zero;
     }
-    */
 
-    private void CheckKeyInput()
+    private void ResetToDefault()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            organizer.BackOneModel();
-            children.rotation = new Quaternion(0f, 0f, 0f, 0f);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            organizer.ForwardOneModel();
-            children.rotation = new Quaternion(0f, 0f, 0f, 0f);
-        }
-
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            camera.transform.position = cameraUserBaseLoc.transform.position;
-            zoomAmount = 0;
-        }
-
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            children.rotation = new Quaternion(0f, 0f, 0f, 0f);
-        }
-
-        if(Input.GetKey(KeyCode.Q))
-        {
-            camera.transform.position += camera.transform.up * climbSpeed * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            if (!ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside
-                && camera.transform.position.y > 0)
-            {
-                camera.transform.position -= camera.transform.up * climbSpeed * Time.deltaTime;
-                if(camera.transform.position.y < 0)
-                {
-                    camera.transform.position = cameraUserBaseLoc.transform.position;
-                }
-            }
-            else if(ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
-            {
-                camera.transform.position -= camera.transform.up * climbSpeed * Time.deltaTime;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        // Reset position, rotation, and zoom to their default values
+        camera.transform.position = defaultPosition;
+        children.rotation = defaultRotation;
+        zoomAmount = defaultZoomAmount;
+        camera.transform.localPosition = Vector3.zero; // Ensure camera position is reset if needed
     }
-
-    private void AutoRotate()
-    {
-        // Continuously rotate the model around the Y-axis
-        children.Rotate(Vector3.up * (speed / autoRotateFractionAmount) * Time.deltaTime);
-    }
-    
-    //old method
-    /*
-    private void AutoRotate()
-    {
-        if(!hasStarted && children.eulerAngles.y > 1)
-        {
-            hasStarted = true;
-        }
-        children.Rotate(Vector3.up * (speed/autoRotateFractionAmount) * Time.deltaTime);
-        if(children.eulerAngles.y >= 0 && children.eulerAngles.y < 1 && hasStarted)
-        {
-            organizer.ForwardOneModel();
-            children.rotation = new Quaternion(0f, 0f, 0f, 0f);
-            hasStarted = false;
-        }
-    }
-    */
 }

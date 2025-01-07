@@ -2952,14 +2952,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad63494bb1001634295587e556b4207d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraUserBaseLoc: {fileID: 557338636}
-  cameraAutoBaseLoc: {fileID: 557338636}
-  camera: {fileID: 1977097059}
+  children: {fileID: 518270477}
+  camera: {fileID: 1977097061}
   speed: 150
-  maxClamp: 2.5
-  climbSpeed: 4
-  scrollSpeed: 2.5
-  autoRotateFractionAmount: 5
+  scrollSpeed: 2
+  climbSpeed: 5
 --- !u!4 &1820213052
 Transform:
   m_ObjectHideFlags: 0
