@@ -1,24 +1,20 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FloatingMenu : MonoBehaviour
 {
-    public Button ActionButton; // Hauptbutton
-    public Button InfoButton; // Info-Button
-    public Button AnimationButton; // Animation-Button
-    public Button SearchButton; // Such-Button
+    public Button ActionButton;
+    public Button InfoButton;
+    public Button AnimationButton;
+    public Button SearchButton;
 
-    public GameObject AnimationSlider; // Das UI-Element für den Animation-Slider
-
-    public float animationDuration = 0.3f; // Dauer der Animation in Sekunden
-
-    private bool isMenuOpen = false; // Status des Menüs
-    private bool isAnimationMenuActive = false; // Status des Animation-Dialogs
+    public GameObject AnimationSlider; // Der externe AnimationSlider
 
     private CanvasGroup infoCanvasGroup;
     private CanvasGroup animationCanvasGroup;
     private CanvasGroup searchCanvasGroup;
+
+    private bool isMenuOpen = false; // Status des Menüs
 
     void Start()
     {
@@ -27,19 +23,15 @@ public class FloatingMenu : MonoBehaviour
         animationCanvasGroup = AnimationButton.GetComponent<CanvasGroup>();
         searchCanvasGroup = SearchButton.GetComponent<CanvasGroup>();
 
-        // Sub-Buttons und AnimationSlider standardmäßig unsichtbar machen
-        SetButtonState(infoCanvasGroup, false);
-        SetButtonState(animationCanvasGroup, false);
-        SetButtonState(searchCanvasGroup, false);
-        AnimationSlider.SetActive(false); // AnimationSlider ist zu Beginn unsichtbar
+        // Anfangszustand setzen (nur ActionButton sichtbar, AnimationSlider aus)
+        CloseMenu();
+        AnimationSlider.SetActive(false); // Der AnimationSlider ist am Anfang unsichtbar
 
-        // ActionButton Listener hinzufügen
+        // Button Listener setzen
         ActionButton.onClick.AddListener(ToggleMenu);
-
-        // Listener für die anderen Buttons
-        InfoButton.onClick.AddListener(CloseMenu);
+        InfoButton.onClick.AddListener(CloseMenuAndHideSlider);
         AnimationButton.onClick.AddListener(OpenAnimationSlider);
-        SearchButton.onClick.AddListener(CloseMenu);
+        SearchButton.onClick.AddListener(CloseMenuAndHideSlider);
     }
 
     // Öffnet oder schließt das Menü
@@ -49,73 +41,45 @@ public class FloatingMenu : MonoBehaviour
 
         if (isMenuOpen)
         {
-            StartCoroutine(AnimateButtons(true)); // Menü anzeigen
+            ShowButtons();
         }
         else
         {
-            StartCoroutine(AnimateButtons(false)); // Menü verstecken
+            CloseMenu();
         }
     }
 
-    // Zeigt/Versteckt die Sub-Buttons
-    IEnumerator AnimateButtons(bool open)
+    // Zeigt die zusätzlichen Buttons
+    private void ShowButtons()
     {
-        // Sub-Buttons aktivieren, wenn Menü geöffnet wird
-        if (open)
-        {
-            SetButtonState(infoCanvasGroup, true);
-            SetButtonState(animationCanvasGroup, true);
-            SetButtonState(searchCanvasGroup, true);
-        }
-
-        // Starte Animation
-        float elapsedTime = 0f;
-        while (elapsedTime < animationDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float t = Mathf.SmoothStep(0f, 1f, elapsedTime / animationDuration); // Smooth Animation
-
-            infoCanvasGroup.alpha = open ? t : 1 - t;
-            animationCanvasGroup.alpha = open ? t : 1 - t;
-            searchCanvasGroup.alpha = open ? t : 1 - t;
-
-            yield return null;
-        }
-
-        // Sub-Buttons deaktivieren, wenn Menü geschlossen wird
-        if (!open)
-        {
-            SetButtonState(infoCanvasGroup, false);
-            SetButtonState(animationCanvasGroup, false);
-            SetButtonState(searchCanvasGroup, false);
-        }
+        SetButtonState(infoCanvasGroup, true);
+        SetButtonState(animationCanvasGroup, true);
+        SetButtonState(searchCanvasGroup, true);
     }
 
-    // Zeigt den AnimationSlider an, wenn der AnimationButton geklickt wird
-    private void OpenAnimationSlider()
-    {
-        if (!isAnimationMenuActive)
-        {
-            AnimationSlider.SetActive(true); // AnimationSlider sichtbar machen
-            isAnimationMenuActive = true;
-        }
-        else
-        {
-            AnimationSlider.SetActive(false); // AnimationSlider ausblenden
-            isAnimationMenuActive = false;
-        }
-    }
-
-    // Schließt das Menü bei Klick auf Info oder Search Button
+    // Blendet alle Buttons außer ActionButton aus
     private void CloseMenu()
     {
-        if (isMenuOpen)
-        {
-            isMenuOpen = false;
-            StartCoroutine(AnimateButtons(false)); // Sub-Buttons ausblenden
-        }
+        SetButtonState(infoCanvasGroup, false);
+        SetButtonState(animationCanvasGroup, false);
+        SetButtonState(searchCanvasGroup, false);
     }
 
+    // Blendet den AnimationSlider ein und schließt das Menü, wenn AnimationButton geklickt wird
+    private void OpenAnimationSlider()
+    {
+        CloseMenu(); // Schließt das Menü (versteckt die drei Buttons)
+        AnimationSlider.SetActive(true); // Zeigt den AnimationSlider an
+    }
+
+    // Menü schließen + AnimationSlider verstecken (wenn Info oder Search geklickt wird)
+    private void CloseMenuAndHideSlider()
+    {
+        CloseMenu();
+        AnimationSlider.SetActive(false);
+    }
+
+    // Helferfunktion zum Setzen der Sichtbarkeit
     private void SetButtonState(CanvasGroup canvasGroup, bool state)
     {
         canvasGroup.alpha = state ? 1f : 0f;
