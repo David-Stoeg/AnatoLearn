@@ -3,7 +3,7 @@
     color: rgb(255, 255, 255);
     padding-top: 0;
     padding-left: 59px;
-    -unity-font-definition: url("project://database/Assets/UI/Fonts/Lato-Black.ttf?fileID=12800000&guid=4baeba46effff4b708e6d1b9e2897996&type=3#Lato-Black");
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Resources/Fonts%20&%20Materials/Lato-Black.ttf?fileID=12800000&guid=4baeba46effff4b708e6d1b9e2897996&type=3#Lato-Black");
     margin-top: 34px;
 }
 
@@ -20,7 +20,7 @@
     border-bottom-right-radius: 60px;
     border-bottom-left-radius: 60px;
     background-color: rgb(225, 233, 236);
-    -unity-font-definition: url("project://database/Assets/UI/Fonts/Lato-Bold.ttf?fileID=12800000&guid=ed257a039e5204e67948c2d48688c195&type=3#Lato-Bold");
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Resources/Fonts%20&%20Materials/Lato-Bold.ttf?fileID=12800000&guid=ed257a039e5204e67948c2d48688c195&type=3#Lato-Bold");
     background-position-y: center 0;
     -unity-text-align: middle-left;
     padding-top: 189px;
@@ -49,8 +49,8 @@
     border-top-right-radius: 60px;
     border-bottom-right-radius: 60px;
     border-bottom-left-radius: 60px;
-    background-color: rgb(225, 233, 236);
-    -unity-font-definition: url("project://database/Assets/UI/Fonts/Lato-Bold.ttf?fileID=12800000&guid=ed257a039e5204e67948c2d48688c195&type=3#Lato-Bold");
+    background-color: rgb(236, 183, 89);
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Resources/Fonts%20&%20Materials/Lato-Bold.ttf?fileID=12800000&guid=ed257a039e5204e67948c2d48688c195&type=3#Lato-Bold");
     background-position-y: center 0;
     -unity-text-align: middle-left;
     padding-top: 230px;
