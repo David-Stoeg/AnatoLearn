@@ -1,3 +1,5 @@
+/*
+
 using UnityEngine;
 
 public class ModelViewer : MonoBehaviour
@@ -112,3 +114,5 @@ public class ModelViewer : MonoBehaviour
         Camera.main.transform.position = initialPosition - Camera.main.transform.forward * zoomDistance; // Reset camera position
     }
 }
+
+*/

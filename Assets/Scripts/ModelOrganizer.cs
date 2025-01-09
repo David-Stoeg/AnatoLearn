@@ -9,7 +9,7 @@ public class ModelOrganizer : MonoBehaviour
     [HideInInspector]
     public static int listPtr;
 
-    private ButtonScipts buttonScripts;
+    private ButtonScripts buttonScripts;
 
     void Start()
     {
@@ -27,13 +27,14 @@ public class ModelOrganizer : MonoBehaviour
         listPtr = 0;
 
         // Get reference to ButtonScripts component
-        buttonScripts = FindObjectOfType<ButtonScipts>();
+        buttonScripts = FindObjectOfType<ButtonScripts>();
         if (buttonScripts != null && models.Count > 0)
         {
             buttonScripts.SetCurrentModel(models[listPtr]);
         }
     }
 
+    /*
     public void BackOneModel()
     {
         models[listPtr].SetActive(false);
@@ -59,4 +60,5 @@ public class ModelOrganizer : MonoBehaviour
             buttonScripts.SetCurrentModel(models[listPtr]);
         }
     }
+    */
 }
