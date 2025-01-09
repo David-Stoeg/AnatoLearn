@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonScipts : MonoBehaviour
+public class ButtonScripts : MonoBehaviour
 {
     [Tooltip("Place object named 'ConstantPanel' here. \nBaseForRotation > Main Camera > Canvas > ConstantPanel")]
     public GameObject ConstantTextPanel;

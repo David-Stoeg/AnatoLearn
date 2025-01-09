@@ -1,64 +1,27 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ModelInspector : MonoBehaviour
 {
-    public Transform children; // Das Objekt zum Rotieren
-    public Camera camera; // Die Hauptkamera
-    public float speed = 10f; // Rotations- und Bewegungs-Geschwindigkeit
-    public float scrollSpeed = 2f; // Zoom-Geschwindigkeit
-    public float climbSpeed = 5f; // Vertikale Bewegungsgeschwindigkeit
-    private float zoomAmount = 0f; // Aktuelles Zoom-Level
-    private bool isInteractingWithUI = false; // UI-Interaktion verhindern
+    public Transform children; // The object to rotate
+    public Camera camera; // The main camera
+    public float speed = 10f; // Rotation and movement speed
+    public float scrollSpeed = 2f; // Zoom speed
+    public float climbSpeed = 5f; // Speed for vertical movement
+    private float zoomAmount = 0f; // Current zoom level
+    private bool isInteractingWithUI = false; // Prevent interaction if over UI
 
-    // UI-Referenzen
-    public Button animationButton;
-    public Button infoButton;
-    public Button searchButton;
-    public CanvasGroup animationSliderCanvasGroup; // Der AnimationSlider
-    public GameObject floatingMenu; // Das Menü mit den Buttons
-
-    // Standardwerte für Position, Rotation und Zoom speichern
+    // Store default values for position, rotation, and zoom
     private Vector3 defaultPosition;
     private Quaternion defaultRotation;
     private float defaultZoomAmount;
 
     private void Start()
     {
-        // Standardwerte speichern
+        // Store the default values when the scene starts
         defaultPosition = camera.transform.position;
         defaultRotation = children.rotation;
         defaultZoomAmount = zoomAmount;
-
-        // AnimationSlider am Anfang ausblenden
-        ShowAnimationSlider(false);
-
-        // Button-Events hinzufügen
-        animationButton.onClick.AddListener(ToggleAnimationSlider);
-        infoButton.onClick.AddListener(HideAnimationSlider);
-        searchButton.onClick.AddListener(HideAnimationSlider);
-    }
-
-    private void ToggleAnimationSlider()
-    {
-        bool isCurrentlyVisible = animationSliderCanvasGroup.alpha > 0;
-        ShowAnimationSlider(!isCurrentlyVisible);
-    }
-
-    private void ShowAnimationSlider(bool show)
-    {
-        animationSliderCanvasGroup.alpha = show ? 1 : 0;
-        animationSliderCanvasGroup.interactable = show;
-        animationSliderCanvasGroup.blocksRaycasts = show;
-
-        // FloatingMenu ausblenden, wenn der AnimationSlider sichtbar ist
-        floatingMenu.SetActive(!show);
-    }
-
-    private void HideAnimationSlider()
-    {
-        ShowAnimationSlider(false);
     }
 
     private void Update()
@@ -72,7 +35,7 @@ public class ModelInspector : MonoBehaviour
             HandlePCInput();
         }
 
-        // Zurücksetzen mit "R"-Taste
+        // Reset to default position, rotation, and zoom when the "R" key is pressed
         if (Input.GetKeyDown(KeyCode.R))
         {
             ResetToDefault();
@@ -81,11 +44,12 @@ public class ModelInspector : MonoBehaviour
 
     private void HandlePCInput()
     {
+        // Skip interaction if over UI
         if (Input.GetMouseButtonDown(0)) isInteractingWithUI = EventSystem.current.IsPointerOverGameObject();
         if (isInteractingWithUI && Input.GetMouseButtonUp(0)) isInteractingWithUI = false;
         if (isInteractingWithUI) return;
 
-        // Rotation (Linke Maustaste)
+        // Rotation (Left Mouse Button)
         if (Input.GetMouseButton(0))
         {
             float rotX = -Input.GetAxis("Mouse X") * Time.deltaTime * speed;
@@ -96,21 +60,23 @@ public class ModelInspector : MonoBehaviour
                 children.Rotate(Vector3.right * rotY, Space.World);
         }
 
-        // Bewegung (Rechte Maustaste) - Skaliert mit Zoom
+        // Movement (Right Mouse Button) - scaled with zoom
         if (Input.GetMouseButton(1))
         {
+            // Apply zoom-based scaling to the movement
             float zoomFactor = Mathf.Lerp(1f, 0.1f, Mathf.InverseLerp(-10f, 1f, zoomAmount));
             float moveX = Input.GetAxis("Mouse X") * Time.deltaTime * speed * 0.1f * zoomFactor;
             float moveY = Input.GetAxis("Mouse Y") * Time.deltaTime * speed * 0.1f * zoomFactor;
 
+            // Apply the movement with the zoom factor
             camera.transform.Translate(-moveX, -moveY, 0, Space.Self);
         }
 
-        // Zoom (Mausrad)
+        // Zoom (Mouse Scroll Wheel)
         zoomAmount += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
         camera.transform.Translate(0, 0, Input.GetAxis("Mouse ScrollWheel") * scrollSpeed, Space.Self);
 
-        // Bewegungstasten
+        // Movement keys
         if (Input.GetKeyDown(KeyCode.W)) ResetZoom();
         if (Input.GetKeyDown(KeyCode.S)) children.rotation = Quaternion.identity;
 
@@ -122,8 +88,10 @@ public class ModelInspector : MonoBehaviour
 
     private void HandleTouchInput()
     {
+        // Debugging touch count
         Debug.Log("Touch count: " + Input.touchCount);
 
+        // Single touch: Rotation gesture
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
@@ -132,19 +100,23 @@ public class ModelInspector : MonoBehaviour
                 float rotX = -touch.deltaPosition.x * speed * Time.deltaTime;
                 float rotY = touch.deltaPosition.y * speed * Time.deltaTime;
 
+                // Rotate the object
                 children.Rotate(Vector3.up * rotX, Space.World);
                 if (ModelOrganizer.models[ModelOrganizer.listPtr].GetComponent<ModelInfo>().shouldSeeUnderside)
                     children.Rotate(Vector3.right * rotY, Space.World);
 
+                // Debugging touch move
                 Debug.Log("Touch Moved: " + touch.deltaPosition);
             }
         }
 
+        // Two touches: Pinch to zoom and two-finger drag
         if (Input.touchCount == 2)
         {
             Touch touch0 = Input.GetTouch(0);
             Touch touch1 = Input.GetTouch(1);
 
+            // Detect Pinch Zoom
             Vector2 touch0PrevPos = touch0.position - touch0.deltaPosition;
             Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
 
@@ -152,17 +124,21 @@ public class ModelInspector : MonoBehaviour
             float touchDeltaMag = (touch0.position - touch1.position).magnitude;
 
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-            zoomAmount += deltaMagnitudeDiff * 0.01f;
-            zoomAmount = Mathf.Clamp(zoomAmount, -10f, 1f);
+            zoomAmount += deltaMagnitudeDiff * 0.01f; // Adjust sensitivity
+            zoomAmount = Mathf.Clamp(zoomAmount, -10f, 1f); // Adjust zoom limits
 
+            // Apply zoom to camera
             camera.transform.Translate(0, 0, -deltaMagnitudeDiff * scrollSpeed * 0.1f, Space.Self);
 
+            // Detect Two-Finger Drag for camera movement
             Vector2 averageDelta = (touch0.deltaPosition + touch1.deltaPosition) * 0.5f;
             camera.transform.Translate(-averageDelta.x * 0.01f, -averageDelta.y * 0.01f, 0, Space.Self);
 
+            // Debugging pinch zoom
             Debug.Log("Pinch Zoom: " + deltaMagnitudeDiff);
         }
 
+        // Reset zoom on double tap
         if (Input.touchCount == 1 && Input.GetTouch(0).tapCount == 2) ResetZoom();
     }
 
@@ -174,9 +150,10 @@ public class ModelInspector : MonoBehaviour
 
     private void ResetToDefault()
     {
+        // Reset position, rotation, and zoom to their default values
         camera.transform.position = defaultPosition;
         children.rotation = defaultRotation;
         zoomAmount = defaultZoomAmount;
-        camera.transform.localPosition = Vector3.zero;
+        camera.transform.localPosition = Vector3.zero; // Ensure camera position is reset if needed
     }
 }
