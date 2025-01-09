@@ -119,115 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &69751272
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 518270477}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 398165455795827268, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_DirtyAABB
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 398165455795827268, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 0.0017226855
-      objectReference: {fileID: 0}
-    - target: {fileID: 398165455795827268, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 0.00047399758
-      objectReference: {fileID: 0}
-    - target: {fileID: 398165455795827268, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.00047399758
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_Name
-      value: Test4MuscleSim
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447608141939184597, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_DirtyAABB
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447608141939184597, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Center.x
-      value: 0.000020375475
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447608141939184597, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Center.y
-      value: 0.00015454266
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447608141939184597, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: 0.0002487302
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447608141939184597, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 0.0016760756
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447608141939184597, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 0.0005334814
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447608141939184597, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.0009951409
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 566441360}
-  m_SourcePrefab: {fileID: 100100000, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
---- !u!4 &69751273 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-  m_PrefabInstance: {fileID: 69751272}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &124276085
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +637,7 @@ MonoBehaviour:
   playPauseImage: {fileID: 1917020168}
   playSprite: {fileID: 21300000, guid: e5072484561f34b7091b2b8829324090, type: 3}
   pauseSprite: {fileID: 21300000, guid: 0ef38a666b30e437fa01d94ce21cdea8, type: 3}
-  animator: {fileID: 566441360}
+  animator: {fileID: 0}
   animationName: TestAni
 --- !u!1 &518270476
 GameObject:
@@ -758,6 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518270477}
   - component: {fileID: 518270478}
+  - component: {fileID: 518270479}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -777,8 +669,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 69751273}
+  m_Children: []
   m_Father: {fileID: 1304190741}
   m_LocalEulerAnglesHint: {x: 0, y: 172.08, z: 0}
 --- !u!114 &518270478
@@ -797,8 +688,21 @@ MonoBehaviour:
   projectName: AnatoLearn
   modelName: Human Skeleton
   description: The human skeleton is...
-  model: {fileID: 566441359}
+  model: {fileID: 0}
   shouldSeeUnderside: 1
+--- !u!114 &518270479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518270476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67f112f65878f244ac9288f16df7f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnatoModelPath: AnatoModels/Test4Muscle
 --- !u!1 &557338635
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,33 +734,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1820213052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &566441359 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d2744b9412071c4a91b48075541e94a, type: 3}
-  m_PrefabInstance: {fileID: 69751272}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &566441360
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566441359}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 772e14c339f1b3d4180b626a20004eaf, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &582655985
 GameObject:
   m_ObjectHideFlags: 0
