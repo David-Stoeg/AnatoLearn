@@ -9,6 +9,8 @@ public class FloatingMenu : MonoBehaviour
     public Button SearchButton;
 
     public GameObject AnimationSlider; // Der externe AnimationSlider
+    public GameObject SearchBarCanvas; // Der externe SearchBar-Canvas
+
 
     private CanvasGroup infoCanvasGroup;
     private CanvasGroup animationCanvasGroup;
@@ -26,12 +28,16 @@ public class FloatingMenu : MonoBehaviour
         // Anfangszustand setzen (nur ActionButton sichtbar, AnimationSlider aus)
         CloseMenu();
         AnimationSlider.SetActive(false); // Der AnimationSlider ist am Anfang unsichtbar
+        SearchBarCanvas.SetActive(false);
+
 
         // Button Listener setzen
         ActionButton.onClick.AddListener(ToggleMenu);
         InfoButton.onClick.AddListener(CloseMenuAndHideSlider);
         AnimationButton.onClick.AddListener(OpenAnimationSlider);
         SearchButton.onClick.AddListener(CloseMenuAndHideSlider);
+        SearchButton.onClick.AddListener(OpenSearchBar);
+
     }
 
     // Öffnet oder schließt das Menü
@@ -70,14 +76,26 @@ public class FloatingMenu : MonoBehaviour
     {
         CloseMenu(); // Schließt das Menü (versteckt die drei Buttons)
         AnimationSlider.SetActive(true); // Zeigt den AnimationSlider an
+        SearchBarCanvas.SetActive(false);
     }
+
+    private void OpenSearchBar()
+    {
+    CloseMenu(); // Menü schließen
+    SearchBarCanvas.SetActive(true); // SearchBar anzeigen
+    AnimationSlider.SetActive(false); // AnimationSlider sicherheitshalber ausblenden
+    }
+
 
     // Menü schließen + AnimationSlider verstecken (wenn Info oder Search geklickt wird)
     private void CloseMenuAndHideSlider()
     {
         CloseMenu();
         AnimationSlider.SetActive(false);
+        SearchBarCanvas.SetActive(false);
     }
+
+
 
     // Helferfunktion zum Setzen der Sichtbarkeit
     private void SetButtonState(CanvasGroup canvasGroup, bool state)
