@@ -2323,7 +2323,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2076074620}
-  - {fileID: 1975227208}
   - {fileID: 1167258570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2662,6 +2661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  searchField: 
 --- !u!1 &1440449523
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,6 +5214,7 @@ GameObject:
   - component: {fileID: 2011041657}
   - component: {fileID: 2011041656}
   - component: {fileID: 2011041655}
+  - component: {fileID: 2011041658}
   m_Layer: 0
   m_Name: SearchBar
   m_TagString: Untagged
@@ -5306,6 +5307,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2011041658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011041653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchField: Eckzahn
 --- !u!1 &2025646313
 GameObject:
   m_ObjectHideFlags: 0
@@ -6006,3 +6020,4 @@ SceneRoots:
   - {fileID: 2124702379}
   - {fileID: 1095797551}
   - {fileID: 1701154167}
+  - {fileID: 1180937005}

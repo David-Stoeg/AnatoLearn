@@ -118,11 +118,30 @@ public class DataService  {
             return new List<AnatomicalStructures>();
         }
 
-        return _connection.Table<AnatomicalStructures>()
-            .Where(x => x.german_name != null && x.german_name.Contains(searchText))
-            .OrderBy(x => !x.german_name.StartsWith(searchText))
-            .ThenBy(x => x.german_name);
+        string query = @"
+        SELECT DISTINCT id, german_name, latin_name, category, parentId
+        FROM AnatomicalStructures
+        WHERE (german_name IS NOT NULL AND german_name LIKE ?) 
+           OR (latin_name IS NOT NULL AND latin_name LIKE ?)
+        ORDER BY 
+            CASE WHEN german_name LIKE ? THEN 1 ELSE 2 END,
+            CASE WHEN latin_name LIKE ? THEN 1 ELSE 2 END,
+            german_name,
+            latin_name";
+
+        string searchPattern = $"%{searchText}%";
+        string startsWithPattern = $"{searchText}%";
+
+        var results = _connection.Query<AnatomicalStructures>(query, searchPattern, searchPattern, startsWithPattern, startsWithPattern);
+
+        return results;
     }
+
+
+
+
+
+
 
 
     public IEnumerable<Models_3D> GetModels_3D(){
