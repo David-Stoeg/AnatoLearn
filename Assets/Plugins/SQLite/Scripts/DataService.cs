@@ -1886,6 +1886,9 @@ public class DataService  {
         return _connection.Table<AnatomicalStructures>().Where(x => x.german_name == searchText);
 
     }
+    public IEnumerable<Descriptions> GetDescription(int id) { 
+        return _connection.Table<Descriptions>().Where(x => x.structure_id == id);
+    }
 
     public IEnumerable<AnatomicalStructures> GetLiveSearchedModel(string searchText)
     {
@@ -1905,12 +1908,6 @@ public class DataService  {
         string startsWithPattern = $"{searchText}%";
 
         var results = _connection.Query<AnatomicalStructures>(query, searchPattern, searchPattern, startsWithPattern, startsWithPattern);
-
-        Debug.Log(query);
-        Debug.Log(searchPattern);
-        Debug.Log(searchPattern);
-        Debug.Log(startsWithPattern);
-        Debug.Log(startsWithPattern);
 
         return results;
     }
