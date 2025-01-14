@@ -17,6 +17,8 @@ public class DynamicModelLoader : MonoBehaviour
 
         var models3D = ds.GetModels_3D();
 
+        
+
         if (models3D == null)
         {
             Debug.LogError("models3D ist NULL! Prüfe die Datenbankverbindung oder die Abfrage.");
