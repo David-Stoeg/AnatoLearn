@@ -105,9 +105,30 @@ public class DataService  {
 	public IEnumerable<AnatomicalStructures> GetAnatomicalStructures(){
 		return _connection.Table<AnatomicalStructures>();
 	}
-	public IEnumerable<Models_3D> GetModels_3D(){
+    public IEnumerable<AnatomicalStructures> GetSearchedModel(string searchText)
+    {
+        return _connection.Table<AnatomicalStructures>().Where(x => x.german_name == searchText);
+
+    }
+
+    public IEnumerable<AnatomicalStructures> GetLiveSearchedModel(string searchText)
+    {
+        if (string.IsNullOrEmpty(searchText))
+        {
+            return new List<AnatomicalStructures>();
+        }
+
+        return _connection.Table<AnatomicalStructures>()
+            .Where(x => x.german_name != null && x.german_name.Contains(searchText))
+            .OrderBy(x => !x.german_name.StartsWith(searchText))
+            .ThenBy(x => x.german_name);
+    }
+
+
+    public IEnumerable<Models_3D> GetModels_3D(){
 		return _connection.Table<Models_3D>();
 	}
+
 	public IEnumerable<Descriptions> GetDescriptions(){
 		return _connection.Table<Descriptions>();
 	}
