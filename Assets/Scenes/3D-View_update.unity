@@ -5319,7 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchField: Eckzahn
+  searchField: le
 --- !u!1 &2025646313
 GameObject:
   m_ObjectHideFlags: 0

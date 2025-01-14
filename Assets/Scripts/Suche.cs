@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Suche : MonoBehaviour
 {
-    public string searchField = "la"; 
+    public string searchField = "le"; 
     private DataService ds;
     private string previousSearchText = "";
 
