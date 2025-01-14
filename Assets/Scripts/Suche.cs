@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Suche : MonoBehaviour
 {
-    public InputField searchField; 
+    public string searchField = "la"; 
     private DataService ds;
     private string previousSearchText = "";
 
@@ -14,8 +14,8 @@ public class Suche : MonoBehaviour
         ds = new DataService("AnatoDb.db");
         ds.CreateDB();
 
-        
-        searchField.onValueChanged.AddListener(OnSearchFieldChanged);
+        OnSearchFieldChanged(searchField);
+        //searchField.onValueChanged.AddListener(OnSearchFieldChanged);
     }
 
     void OnSearchFieldChanged(string searchText)
@@ -40,10 +40,10 @@ public class Suche : MonoBehaviour
             return;
         }
 
-        
-        foreach (var structure in anatomicalStructures)
+
+        foreach (var result in anatomicalStructures)
         {
-            Debug.Log(structure.ToString());
+            Debug.Log($"ID: {result.id}, German: {result.german_name}, Latin: {result.latin_name}");
         }
 
 
