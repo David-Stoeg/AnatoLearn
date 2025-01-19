@@ -10,8 +10,7 @@ public class Suche : MonoBehaviour
 
     void Start()
     {
-        ds = new DataService("AnatoDb.db");
-        ds.CreateDB();
+        ds = DataServiceManager.Instance.DataService;
 
         // Event Listener hinzufügen
         searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
