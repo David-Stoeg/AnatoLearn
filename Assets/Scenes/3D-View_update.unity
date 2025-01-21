@@ -2926,6 +2926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchInputField: {fileID: 0}
+  suggestionPrefab: {fileID: 0}
+  suggestionsParent: {fileID: 0}
 --- !u!1 &1323756433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,6 +5839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchInputField: {fileID: 390213607}
+  suggestionPrefab: {fileID: 5620927400867747316, guid: ffcd36069e0994501b07f6cd7a84459c, type: 3}
+  suggestionsParent: {fileID: 1323756434}
 --- !u!1 &2025646313
 GameObject:
   m_ObjectHideFlags: 0
