@@ -1,18 +1,21 @@
 using UnityEngine;
-using TMPro;  // TextMeshPro Namespace
+using TMPro;
+using UnityEngine.UI; 
 using System.Collections.Generic;
 
 public class Suche : MonoBehaviour
 {
-    public TMP_InputField searchInputField;  // Input Field Referenz
-    private DataService ds;
+    public TMP_InputField searchInputField; 
+    public GameObject suggestionPrefab;   
+    public Transform suggestionsParent;  
+
+    private DataService ds;              
     private string previousSearchText = "";
 
     void Start()
     {
         ds = DataServiceManager.Instance.DataService;
 
-        // Event Listener hinzufügen
         searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
     }
 
@@ -29,6 +32,11 @@ public class Suche : MonoBehaviour
     {
         var anatomicalStructures = ds.GetLiveSearchedModel(searchText);
 
+        foreach (Transform child in suggestionsParent)
+        {
+            Destroy(child.gameObject);
+        }
+
         if (anatomicalStructures == null || !anatomicalStructures.GetEnumerator().MoveNext())
         {
             Debug.Log("Keine Ergebnisse gefunden!");
@@ -38,15 +46,27 @@ public class Suche : MonoBehaviour
         foreach (var result in anatomicalStructures)
         {
             Debug.Log($"ID: {result.id}, German: {result.german_name}, Latin: {result.latin_name}");
-            var descriptions = ds.GetDescription(result.id);
-            foreach (var desc in descriptions)
+
+            GameObject suggestion = Instantiate(suggestionPrefab, suggestionsParent);
+
+            TMP_Text suggestionText = suggestion.GetComponentInChildren<TMP_Text>();
+            if (suggestionText != null)
             {
-                Debug.Log($"ID: {desc.id - 1}, Text: {desc.text}"); //Alle Descriptions
+                suggestionText.text = $"{result.german_name}, {result.latin_name}";
             }
-            
 
-
+            Button suggestionButton = suggestion.GetComponent<Button>();
+            if (suggestionButton != null)
+            {
+                suggestionButton.onClick.AddListener(() => OnSuggestionClicked(result));
+            }
         }
-        
+    }
+
+    // Event beim Klicken eines Vorschlags
+    void OnSuggestionClicked(AnatomicalStructures result)
+    {
+        Debug.Log($"Ausgewählt: {result.german_name} ({result.latin_name})");
+
     }
 }
