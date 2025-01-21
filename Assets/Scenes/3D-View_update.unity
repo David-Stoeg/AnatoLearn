@@ -2718,6 +2718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fbxRoot: {fileID: 0}
   searchInputField: {fileID: 0}
   suggestionPrefab: {fileID: 0}
   suggestionsParent: {fileID: 0}
@@ -5595,6 +5596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fbxRoot: {fileID: 566441359}
   searchInputField: {fileID: 390213607}
   suggestionPrefab: {fileID: 5620927400867747316, guid: ffcd36069e0994501b07f6cd7a84459c, type: 3}
   suggestionsParent: {fileID: 1323756434}
