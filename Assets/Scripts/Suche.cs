@@ -1,15 +1,16 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Suche : MonoBehaviour
 {
-    public TMP_InputField searchInputField; 
-    public GameObject suggestionPrefab;   
-    public Transform suggestionsParent;  
+    public TMP_InputField searchInputField;
+    public GameObject suggestionPrefab;
+    public Transform suggestionsParent;
+    public GameObject scrollView;
 
-    private DataService ds;              
+    private DataService ds;
     private string previousSearchText = "";
 
     void Start()
@@ -17,6 +18,8 @@ public class Suche : MonoBehaviour
         ds = DataServiceManager.Instance.DataService;
 
         searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
+
+        scrollView.SetActive(false);
     }
 
     void OnSearchFieldChanged(string searchText)
@@ -25,6 +28,15 @@ public class Suche : MonoBehaviour
         {
             Search(searchText);
             previousSearchText = searchText;
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                scrollView.SetActive(false);
+            }
+            else
+            {
+                scrollView.SetActive(true);
+            }
         }
     }
 
@@ -39,14 +51,14 @@ public class Suche : MonoBehaviour
 
         if (anatomicalStructures == null || !anatomicalStructures.GetEnumerator().MoveNext())
         {
-            Debug.Log("Keine Ergebnisse gefunden!");
+            GameObject noresult = Instantiate(suggestionPrefab, suggestionsParent);
+            TMP_Text noresultText = noresult.GetComponentInChildren<TMP_Text>();
+            noresultText.text = "Keine Ergebnisse gefunden.";
             return;
         }
 
         foreach (var result in anatomicalStructures)
         {
-            Debug.Log($"ID: {result.id}, German: {result.german_name}, Latin: {result.latin_name}");
-
             GameObject suggestion = Instantiate(suggestionPrefab, suggestionsParent);
 
             TMP_Text suggestionText = suggestion.GetComponentInChildren<TMP_Text>();
@@ -63,10 +75,15 @@ public class Suche : MonoBehaviour
         }
     }
 
-    // Event beim Klicken eines Vorschlags
     void OnSuggestionClicked(AnatomicalStructures result)
     {
-        Debug.Log($"Ausgewählt: {result.german_name} ({result.latin_name})");
 
+        Debug.Log($"Ausgewählt: {result.german_name} ({result.latin_name})");
+        string displayText = result.german_name.Length > 30
+            ? result.german_name.Substring(0, 27) + "..."
+            : result.german_name;
+
+        searchInputField.text = displayText;
+        scrollView.SetActive(false);
     }
 }
