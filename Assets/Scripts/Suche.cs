@@ -9,7 +9,11 @@ public class Suche : MonoBehaviour
     public GameObject suggestionPrefab;
     public Transform suggestionsParent;
     public GameObject scrollView;
-    public GameObject fbxRoot; // Ziehe das Root-Objekt des FBX-Modells hierhin
+    public GameObject fbxRoot;
+    public Button skeletonButton;
+    public Button muscleButton;
+    public bool skeletonOn = true;
+    public bool muscleOn = true;
 
     private DataService ds;
     private string previousSearchText = "";
@@ -19,9 +23,40 @@ public class Suche : MonoBehaviour
         ds = DataServiceManager.Instance.DataService;
 
         searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
+        skeletonButton.onClick.AddListener(OnButtonSkeletonClick);
+        muscleButton.onClick.AddListener(OnButtonMuscleClick);
 
         scrollView.SetActive(false);
-        GetRenderableModels();
+
+        var anatomicalStructures = ds.GetAnatomicalStructures();
+        List<Renderer> renderableModels = GetRenderableModels();
+
+        foreach (var render in renderableModels)
+        {
+            Debug.Log(render);
+        }
+
+        foreach (var result in anatomicalStructures)
+        {
+            bool modelFound = false;
+            string targetName = result.latin_name.ToLower();
+
+            foreach (var renderer in renderableModels)
+            {
+                string rendererName = renderer.gameObject.name.ToLower();
+
+                if (rendererName.Contains(targetName))
+                {
+                    modelFound = true;
+                    break;
+                }
+            }
+
+            if (!modelFound)
+            {
+                Debug.LogWarning($"Modell nicht gefunden: {result.latin_name}");
+            }
+        }
     }
 
     void OnSearchFieldChanged(string searchText)
@@ -34,6 +69,11 @@ public class Suche : MonoBehaviour
             if (string.IsNullOrEmpty(searchText))
             {
                 scrollView.SetActive(false);
+                List<Renderer> renderableModels = GetRenderableModels();
+                foreach (var renderer in renderableModels)
+                {
+                    SetMaterialTransparency(renderer, 1.0f);
+                }
             }
             else
             {
@@ -58,6 +98,7 @@ public class Suche : MonoBehaviour
             noresultText.text = "Keine Ergebnisse gefunden.";
             return;
         }
+
 
         foreach (var result in anatomicalStructures)
         {
@@ -87,7 +128,6 @@ public class Suche : MonoBehaviour
         searchInputField.text = displayText;
         scrollView.SetActive(false);
 
-        // Suche im FBX-Modell und passe Transparenz an
         ApplyTransparencyToFBX(result.latin_name);
     }
 
@@ -103,38 +143,28 @@ public class Suche : MonoBehaviour
 
         bool modelFound = false;
 
-        string hardcodeModell = "XMSL_Muscle.003.L";
+        List<Renderer> renderableModels = GetRenderableModels();
 
-        // Iteriere durch alle Kinder von fbxRoot
-        foreach (Transform child in fbxRoot.GetComponentsInChildren<Transform>(true))
+        foreach (var renderer in renderableModels)
         {
-            Renderer renderer = child.GetComponent<Renderer>();
-            if (renderer != null)
+            if (renderer.gameObject.name.Contains(targetModelName, System.StringComparison.OrdinalIgnoreCase))
             {
-                // Logge, welche Renderer gefunden wurden
-                Debug.Log($"Renderer gefunden für: {child.name}");
 
-                // Überprüfe, ob der aktuelle Name dem gesuchten Modell entspricht
-                if (child.name == hardcodeModell)
-                {
-                    Debug.Log($"Modell gefunden: {child.name}");
-                    SetMaterialTransparency(renderer, 1.0f); // Voll sichtbar
-                    modelFound = true;
-                }
-                else
-                {
-                    SetMaterialTransparency(renderer, 0.2f); // Halb transparent
-                }
+                SetMaterialTransparency(renderer, 1.0f);
+                modelFound = true;
+            }
+            else
+            {
+                SetMaterialTransparency(renderer, 0.1f);
             }
         }
 
         if (!modelFound)
         {
-            Debug.LogWarning($"Modell {targetModelName} wurde nicht gefunden.");
+            Debug.LogWarning($"Modell mit lateinischem Namen {targetModelName} wurde nicht gefunden.");
         }
     }
 
-    // Setzt die Transparenz eines Renderers
     void SetMaterialTransparency(Renderer renderer, float alpha)
     {
         foreach (Material mat in renderer.materials)
@@ -142,9 +172,7 @@ public class Suche : MonoBehaviour
             Color color = mat.color;
             color.a = alpha;
             mat.color = color;
-
-            // Stelle sicher, dass der Shader Transparenz unterstützt
-            mat.SetFloat("_Mode", 2); // Transparent-Modus
+            mat.SetFloat("_Mode", 2);
             mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
             mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
             mat.SetInt("_ZWrite", 0);
@@ -165,17 +193,87 @@ public class Suche : MonoBehaviour
             return renderableModels;
         }
 
-        // Iteriere durch alle Kinder von fbxRoot
         foreach (Transform child in fbxRoot.GetComponentsInChildren<Transform>(true))
         {
             Renderer renderer = child.GetComponent<Renderer>();
             if (renderer != null)
             {
                 renderableModels.Add(renderer);
-                Debug.Log($"Renderbares Modell gefunden: {child.name}");
             }
         }
 
         return renderableModels;
     }
+    void OnButtonSkeletonClick()
+    {
+        List<Renderer> renderableModels = GetRenderableModels();
+        foreach (var renderer in renderableModels)
+        {
+            if (renderer.gameObject.name.Contains("Skeleton_m_V7", System.StringComparison.OrdinalIgnoreCase))
+            {
+                Debug.Log($"Modell gefunden: {renderer.gameObject.name}");
+
+                if (skeletonOn == true)
+                {
+                    SetMaterialTransparency(renderer, 0.0f);
+                    skeletonOn = false;
+                }
+                else
+                {
+                    SetMaterialTransparency(renderer, 1.0f);
+                    skeletonOn = true;
+                }
+                Debug.Log(skeletonOn);
+            }
+        }
+    }
+    void OnButtonMuscleClick()
+    {
+        List<Renderer> renderableModels = GetRenderableModels();
+
+        bool anyMuscleModelFound = false;
+
+        string[] muscleKeywords = new string[] { "muscul", "extensor", "flexor", "abductor", "diaphragma" };
+
+        foreach (var renderer in renderableModels)
+        {
+            bool isMuscleModel = false;
+
+            foreach (string keyword in muscleKeywords)
+            {
+                if (renderer.gameObject.name.Contains(keyword, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    isMuscleModel = true;
+                    break;
+                }
+            }
+
+            if (isMuscleModel)
+            {
+                anyMuscleModelFound = true;
+
+                if (muscleOn)
+                {
+                    SetMaterialTransparency(renderer, 0.0f);
+                }
+                else
+                {
+                    SetMaterialTransparency(renderer, 1.0f);
+                }
+            }
+        }
+
+        if (anyMuscleModelFound)
+        {
+            muscleOn = !muscleOn;
+        }
+        else
+        {
+            Debug.LogWarning("Keine passenden Muskelmodelle gefunden.");
+        }
+
+        Debug.Log($"Muskel-Transparenzmodus: {muscleOn}");
+    }
+
+
 }
