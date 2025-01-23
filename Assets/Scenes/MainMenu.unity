@@ -1268,7 +1268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d3034630b1ec4479a01721d546924d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 3D-View_update
+  backButtonScene: MainMenu
+  viewerButtonScene: 3D-View_update
 --- !u!4 &1412139152
 Transform:
   m_ObjectHideFlags: 0
