@@ -2722,6 +2722,11 @@ MonoBehaviour:
   suggestionPrefab: {fileID: 0}
   suggestionsParent: {fileID: 0}
   scrollView: {fileID: 0}
+  fbxRoot: {fileID: 0}
+  skeletonButton: {fileID: 0}
+  muscleButton: {fileID: 0}
+  skeletonOn: 1
+  muscleOn: 1
 --- !u!1 &1323756433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3453,7 +3458,7 @@ GameObject:
   - component: {fileID: 1668644487}
   - component: {fileID: 1668644490}
   m_Layer: 0
-  m_Name: Back
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3522,7 +3527,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 5765846f683d4bb47be9729361b975a3, type: 3}
+      - m_Target: {fileID: 11500000, guid: 8f182e6e81aa742e8a1430dab526f7a1, type: 3}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -5599,6 +5604,11 @@ MonoBehaviour:
   suggestionPrefab: {fileID: 5620927400867747316, guid: ffcd36069e0994501b07f6cd7a84459c, type: 3}
   suggestionsParent: {fileID: 1323756434}
   scrollView: {fileID: 1791010539}
+  fbxRoot: {fileID: 0}
+  skeletonButton: {fileID: 0}
+  muscleButton: {fileID: 0}
+  skeletonOn: 1
+  muscleOn: 1
 --- !u!1 &2025646313
 GameObject:
   m_ObjectHideFlags: 0
