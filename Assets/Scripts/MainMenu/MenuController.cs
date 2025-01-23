@@ -5,7 +5,10 @@ using UnityEngine.UIElements;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] 
-    private string sceneToLoad = ""; // Field to specify scene name in Inspector
+    private string backButtonScene = ""; // Scene to load with the Back button
+
+    [SerializeField] 
+    private string viewerButtonScene = ""; // Scene to load with the 3DViewer button
 
     private void OnEnable()
     {
@@ -14,7 +17,8 @@ public class MenuController : MonoBehaviour
 
         // Find buttons by name
         Button exitButton = root.Q<Button>("Exit");
-        Button switchSceneButton = root.Q<Button>("3DViewer"); // Button for switching scenes
+        Button switchSceneButton = root.Q<Button>("3DViewer"); // Button for switching to viewer scene
+        Button backButton = root.Q<Button>("Back"); // Button for loading back scene
 
         // Assign the click events to the buttons
         if (exitButton != null)
@@ -24,20 +28,38 @@ public class MenuController : MonoBehaviour
 
         if (switchSceneButton != null)
         {
-            switchSceneButton.clicked += LoadScene;
+            switchSceneButton.clicked += LoadViewerScene;
+        }
+
+        if (backButton != null)
+        {
+            backButton.clicked += LoadBackScene;
         }
     }
 
-    // Function to load the specified scene
-    private void LoadScene()
+    // Function to load the scene for the 3DViewer button
+    private void LoadViewerScene()
     {
-        if (!string.IsNullOrEmpty(sceneToLoad)) // Ensure sceneToLoad is set
+        if (!string.IsNullOrEmpty(viewerButtonScene)) // Ensure scene name is set
         {
-            SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(viewerButtonScene);
         }
         else
         {
-            Debug.LogWarning("Scene name is empty! Please assign a scene in the Inspector.");
+            Debug.LogWarning("Viewer scene name is empty! Please assign a scene in the Inspector.");
+        }
+    }
+
+    // Function to load the scene for the Back button
+    private void LoadBackScene()
+    {
+        if (!string.IsNullOrEmpty(backButtonScene)) // Ensure scene name is set
+        {
+            SceneManager.LoadScene(backButtonScene);
+        }
+        else
+        {
+            Debug.LogWarning("Back scene name is empty! Please assign a scene in the Inspector.");
         }
     }
 
