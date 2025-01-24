@@ -1334,16 +1334,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582655985}
   m_CullTransparentMesh: 1
---- !u!1 &588236556 stripped
+--- !u!1 &588236556
 GameObject:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
   m_PrefabInstance: {fileID: 1531227711}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &588236557 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 588236557}
+  m_Layer: 0
+  m_Name: 'FemaleSkeleton_MAIN-new - Kopie (2) (Missing Prefab with guid: 9661125e470b8cb45ac0e933cabc444b)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &588236557
 Transform:
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
   m_PrefabInstance: {fileID: 1531227711}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588236556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.114, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814756457}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647821253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButtonScene: MainMenu
-  viewerButtonScene: 3D-View_update
+  viewerButtonScene: 3D-View_updated
 --- !u!4 &1011661012
 Transform:
   m_ObjectHideFlags: 0
@@ -2559,7 +2580,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1304190741}
   - component: {fileID: 1304190742}
-  - component: {fileID: 1304190743}
   m_Layer: 0
   m_Name: HostOfAllModels
   m_TagString: Untagged
@@ -2595,27 +2615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d9d9194f30b9b44b7bd1ceccc5f87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1304190743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304190740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  searchInputField: {fileID: 0}
-  suggestionPrefab: {fileID: 0}
-  suggestionsParent: {fileID: 0}
-  scrollView: {fileID: 0}
-  fbxRoot: {fileID: 0}
-  skeletonButton: {fileID: 0}
-  muscleButton: {fileID: 0}
-  skeletonOn: 1
-  muscleOn: 1
 --- !u!1 &1323756433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4024,10 +4023,11 @@ Transform:
   m_GameObject: {fileID: 1814756456}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99761254, z: -0, w: 0.06906008}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0.036, y: 0.466, z: -1.453}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 588236557}
   - {fileID: 2144449274}
   m_Father: {fileID: 1304190741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4047,7 +4047,7 @@ MonoBehaviour:
   projectName: 
   modelName: 
   description: The human skeleton is...
-  model: {fileID: 0}
+  model: {fileID: 2144449275}
   shouldSeeUnderside: 1
 --- !u!1 &1820213050
 GameObject:
@@ -6149,31 +6149,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.023447495
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3
+      value: -1.066
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.013098881
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.997859
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.065403156
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6181,7 +6181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
