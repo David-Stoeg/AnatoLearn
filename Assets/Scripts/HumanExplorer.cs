@@ -29,13 +29,33 @@ public class HumanExplore : MonoBehaviour
     void Start()
     {
         ds = DataServiceManager.Instance.DataService;
+        renderableModels = GetRenderableModels();
+
+        if (!string.IsNullOrEmpty(SceneData.RendererName))
+        {
+            Debug.Log($"Empfangener Renderer-Name: {SceneData.RendererName}");
+
+            for (int i = 0; i < renderableModels.Count; i++)
+            {
+                if (renderableModels[i].gameObject.name.Contains(SceneData.RendererName, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    currentModelIndex = i;
+                    ShowModelByIndex(currentModelIndex);
+                    break;
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Kein Renderer-Name verfügbar.");
+        }
+
         searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
 
         nextButton.onClick.AddListener(ShowNextModel);
         previousButton.onClick.AddListener(ShowPreviousModel);
         exploreButton.onClick.AddListener(showExplore);
 
-        renderableModels = GetRenderableModels();
 
         if (renderableModels.Count > 0)
         {
@@ -46,6 +66,7 @@ public class HumanExplore : MonoBehaviour
             Debug.LogError("Keine renderbaren Modelle gefunden!");
         }
     }
+
 
     void OnSearchFieldChanged(string searchText)
     {
@@ -143,14 +164,30 @@ public class HumanExplore : MonoBehaviour
         var previousButtonImage = previousButton.GetComponent<Image>();
         if (previousButtonImage != null)
         {
-            previousButtonImage.color = previousButton.interactable ? Color.white : Color.gray;
+            if (previousButton.interactable)
+            {
+                previousButtonImage.color = Color.white;
+            }
+            else
+            {
+                previousButtonImage.color = Color.gray;
+                leftText.text = "";
+            }
         }
 
         nextButton.interactable = currentModelIndex < renderableModels.Count - 1;
         var nextButtonImage = nextButton.GetComponent<Image>();
         if (nextButtonImage != null)
         {
-            nextButtonImage.color = nextButton.interactable ? Color.white : Color.gray;
+            if (nextButton.interactable)
+            {
+                nextButtonImage.color = Color.white;
+            }
+            else
+            {
+                nextButtonImage.color = Color.gray;
+                rightText.text = "";
+            }
         }
     }
 

@@ -1631,6 +1631,7 @@ GameObject:
   - component: {fileID: 1012757441}
   - component: {fileID: 1012757440}
   - component: {fileID: 1012757439}
+  - component: {fileID: 1012757445}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1773,6 +1774,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1012757445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012757437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchInputField: {fileID: 390213607}
+  suggestionPrefab: {fileID: 5620927400867747316, guid: ffcd36069e0994501b07f6cd7a84459c, type: 3}
+  suggestionsParent: {fileID: 1323756434}
+  scrollView: {fileID: 1791010539}
+  fbxRoot: {fileID: 2144449275}
+  skeletonButton: {fileID: 148486539}
+  muscleButton: {fileID: 1440449525}
+  skeletonOn: 1
+  muscleOn: 1
 --- !u!1 &1028787714
 GameObject:
   m_ObjectHideFlags: 0
@@ -5367,7 +5389,6 @@ GameObject:
   - component: {fileID: 2011041657}
   - component: {fileID: 2011041656}
   - component: {fileID: 2011041655}
-  - component: {fileID: 2011041658}
   m_Layer: 0
   m_Name: SearchBar3DViewer
   m_TagString: Untagged
@@ -5460,27 +5481,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2011041658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011041653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  searchInputField: {fileID: 390213607}
-  suggestionPrefab: {fileID: 5620927400867747316, guid: ffcd36069e0994501b07f6cd7a84459c, type: 3}
-  suggestionsParent: {fileID: 1323756434}
-  scrollView: {fileID: 1791010539}
-  fbxRoot: {fileID: 2144449275}
-  skeletonButton: {fileID: 148486539}
-  muscleButton: {fileID: 1440449525}
-  skeletonOn: 1
-  muscleOn: 1
 --- !u!1 &2025646313
 GameObject:
   m_ObjectHideFlags: 0
