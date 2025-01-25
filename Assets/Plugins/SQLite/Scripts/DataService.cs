@@ -1886,6 +1886,11 @@ public class DataService  {
         return _connection.Table<AnatomicalStructures>().Where(x => x.german_name == searchText);
 
     }
+    public IEnumerable<AnatomicalStructures> GetGermanForLatin(string latinName)
+    {
+        return _connection.Table<AnatomicalStructures>().Where(x => x.latin_name == latinName);
+
+    }
     public IEnumerable<Descriptions> GetDescription(int id) { 
         return _connection.Table<Descriptions>().Where(x => x.structure_id == id);
     }
@@ -1926,7 +1931,7 @@ public class DataService  {
 	public IEnumerable<Descriptions> GetDescriptions(){
 		return _connection.Table<Descriptions>();
 	}
-	public IEnumerable<Relations> GetRelations(){
+    public IEnumerable<Relations> GetRelations(){
 		return _connection.Table<Relations>();
 	}
 
