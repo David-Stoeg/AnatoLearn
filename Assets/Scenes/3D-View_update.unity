@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 390213608}
   - component: {fileID: 390213607}
   m_Layer: 0
-  m_Name: 'SearchBar '
+  m_Name: SearchBar 3DViewer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,37 +1334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582655985}
   m_CullTransparentMesh: 1
---- !u!1 &588236556
-GameObject:
-  m_ObjectHideFlags: 8
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-  m_PrefabInstance: {fileID: 1531227711}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 588236557}
-  m_Layer: 0
-  m_Name: 'FemaleSkeleton_MAIN-new - Kopie (2) (Missing Prefab with guid: 9661125e470b8cb45ac0e933cabc444b)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &588236557
-Transform:
-  m_ObjectHideFlags: 8
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-  m_PrefabInstance: {fileID: 1531227711}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588236556}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.114, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1814756457}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647821253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,6 +1587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backButtonScene: MainMenu
   viewerButtonScene: 3D-View_updated
+  humanExplorerScene: 
 --- !u!4 &1011661012
 Transform:
   m_ObjectHideFlags: 0
@@ -1661,6 +1631,7 @@ GameObject:
   - component: {fileID: 1012757441}
   - component: {fileID: 1012757440}
   - component: {fileID: 1012757439}
+  - component: {fileID: 1012757445}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1803,6 +1774,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1012757445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012757437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchInputField: {fileID: 390213607}
+  suggestionPrefab: {fileID: 5620927400867747316, guid: ffcd36069e0994501b07f6cd7a84459c, type: 3}
+  suggestionsParent: {fileID: 1323756434}
+  scrollView: {fileID: 1791010539}
+  fbxRoot: {fileID: 2144449275}
+  skeletonButton: {fileID: 148486539}
+  muscleButton: {fileID: 1440449525}
+  skeletonOn: 1
+  muscleOn: 1
 --- !u!1 &1028787714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,7 +2621,7 @@ GameObject:
   - component: {fileID: 1323756436}
   - component: {fileID: 1323756435}
   m_Layer: 0
-  m_Name: Content
+  m_Name: Content3DViewer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3091,63 +3083,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518652838}
   m_CullTransparentMesh: 0
---- !u!1001 &1531227711
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1814756457}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.114
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
-      propertyPath: m_Name
-      value: FemaleSkeleton_MAIN-new - Kopie (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9661125e470b8cb45ac0e933cabc444b, type: 3}
 --- !u!1 &1538984521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,7 +3682,7 @@ GameObject:
   - component: {fileID: 1791010542}
   - component: {fileID: 1791010541}
   m_Layer: 0
-  m_Name: Scroll View
+  m_Name: Scroll View 3DViewer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4027,7 +3962,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 588236557}
   - {fileID: 2144449274}
   m_Father: {fileID: 1304190741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5455,9 +5389,8 @@ GameObject:
   - component: {fileID: 2011041657}
   - component: {fileID: 2011041656}
   - component: {fileID: 2011041655}
-  - component: {fileID: 2011041658}
   m_Layer: 0
-  m_Name: SearchBar
+  m_Name: SearchBar3DViewer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5548,27 +5481,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2011041658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011041653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78e17e19e01e3d547a56ad71db422f6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  searchInputField: {fileID: 390213607}
-  suggestionPrefab: {fileID: 5620927400867747316, guid: ffcd36069e0994501b07f6cd7a84459c, type: 3}
-  suggestionsParent: {fileID: 1323756434}
-  scrollView: {fileID: 1791010539}
-  fbxRoot: {fileID: 2144449275}
-  skeletonButton: {fileID: 148486539}
-  muscleButton: {fileID: 1440449525}
-  skeletonOn: 1
-  muscleOn: 1
 --- !u!1 &2025646313
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,7 +6101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
       propertyPath: m_Name
-      value: FemaleSkeleton_MAIN-new - Kopie (2)
+      value: AnatoModel3DViewer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

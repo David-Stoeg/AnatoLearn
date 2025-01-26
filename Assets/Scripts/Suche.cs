@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+
 
 public class Suche : MonoBehaviour
 {
@@ -58,6 +60,50 @@ public class Suche : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                Renderer clickedRenderer = hit.transform.GetComponent<Renderer>();
+
+                if (clickedRenderer != null && IsRendererFullyVisible(clickedRenderer))
+                {
+                    Debug.Log($"Geklickt: {clickedRenderer.gameObject.name}");
+                    switchToHumanExplore(clickedRenderer);
+                }
+            }
+        }
+    }
+
+    void switchToHumanExplore(Renderer renderer)
+    {
+        if (renderer.gameObject.name == "Plane")
+        {
+            Debug.Log("dreck");
+        }
+        else
+        {
+            Debug.Log($"Klick-Event ausgelöst für: {renderer.gameObject.name}");
+
+            string targetSceneName = "HumanExplorer";
+            if (!string.IsNullOrEmpty(targetSceneName))
+            {
+                Debug.Log($"Wechsel zu Szene: {targetSceneName}");
+                SceneData.RendererName = renderer.gameObject.name;
+                SceneManager.LoadScene(targetSceneName);
+            }
+            else
+            {
+                Debug.LogWarning("Szenenname für den Wechsel ist leer. Bitte Szene zuweisen!");
+            }
+        }
+    }
+
+
 
     void OnSearchFieldChanged(string searchText)
     {
@@ -158,6 +204,7 @@ public class Suche : MonoBehaviour
                 SetMaterialTransparency(renderer, 0.1f);
             }
         }
+        UpdateCollidersBasedOnTransparency();
 
         if (!modelFound)
         {
@@ -273,6 +320,38 @@ public class Suche : MonoBehaviour
         }
 
         Debug.Log($"Muskel-Transparenzmodus: {muscleOn}");
+    }
+
+    void UpdateCollidersBasedOnTransparency()
+    {
+        List<Renderer> renderableModels = GetRenderableModels();
+
+        foreach (var renderer in renderableModels)
+        {
+            bool isFullyVisible = IsRendererFullyVisible(renderer);
+
+            if (renderer.transform.IsChildOf(fbxRoot.transform))
+            {
+                Collider collider = renderer.gameObject.GetComponent<Collider>();
+                if (collider == null)
+                {
+                    collider = renderer.gameObject.AddComponent<BoxCollider>();
+                }
+                collider.enabled = isFullyVisible;
+            }
+        }
+    }
+
+    bool IsRendererFullyVisible(Renderer renderer)
+    {
+        foreach (Material mat in renderer.materials)
+        {
+            if (mat.color.a < 1.0f) 
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 
