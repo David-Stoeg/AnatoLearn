@@ -47,7 +47,7 @@ public class HumanExplore : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Kein Renderer-Name verfügbar.");
+            Debug.LogWarning("Kein Renderer-Name verfï¿½gbar.");
         }
 
         searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
@@ -119,7 +119,7 @@ public class HumanExplore : MonoBehaviour
 
     void OnSuggestionClicked(AnatomicalStructures result)
     {
-        Debug.Log($"Ausgewählt: {result.german_name} ({result.latin_name})");
+        Debug.Log($"Ausgewï¿½hlt: {result.german_name} ({result.latin_name})");
 
         string displayText = result.german_name.Length > 30
         ? result.german_name.Substring(0, 27) + "..."
