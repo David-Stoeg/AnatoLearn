@@ -219,8 +219,15 @@ public class HumanExplore : MonoBehaviour
             return renderableModels;
         }
 
+        //  fbxRoot.transform.localPosition = Vector3.zero;
+        //  fbxRoot.transform.localRotation = Quaternion.identity;
+        //  fbxRoot.transform.localScale = Vector3.one;
+
         foreach (Transform child in fbxRoot.GetComponentsInChildren<Transform>(true))
         {
+            // child.position = Vector3.zero;
+            Debug.Log($"Child Name: {child.name}, LocalPosition: {child.localPosition}, LocalRotation: {child.localRotation}, LocalScale: {child.localScale}");
+
             Renderer renderer = child.GetComponent<Renderer>();
             if (renderer != null)
             {
@@ -259,10 +266,10 @@ public class HumanExplore : MonoBehaviour
     }
     void setDescription(int id)
     {
-        
+
         var descriptions = ds.GetDescription(id);
-        foreach (var description in descriptions) 
-        { 
+        foreach (var description in descriptions)
+        {
             descriptionText.text = description.text;
         }
 
@@ -270,9 +277,22 @@ public class HumanExplore : MonoBehaviour
 
     void ShowModelByIndex(int index)
     {
-        string latinName = GetLatinNameForModel(renderableModels[index].gameObject.name);
-        int modelId = GetAnatomicalStructureIdByLatinName(latinName);
+        if (index < 0 || index >= renderableModels.Count)
+        {
+            Debug.LogError("Ungültiger Modellindex!");
+            return;
+        }
 
+        Renderer targetRenderer = renderableModels[index];
+
+        Vector3 targetLocalPosition = targetRenderer.transform.localPosition;
+
+        targetLocalPosition.y += 0.35f;
+
+        fbxRoot.transform.localPosition = -targetLocalPosition;
+
+
+        // Setze die Transparenz für alle Modelle
         for (int i = 0; i < renderableModels.Count; i++)
         {
             if (i == index)
@@ -285,12 +305,14 @@ public class HumanExplore : MonoBehaviour
             }
         }
 
+        // Aktualisiere die Texte, Beschreibung und Buttons
+        string latinName = GetLatinNameForModel(renderableModels[index].gameObject.name);
+        int modelId = GetAnatomicalStructureIdByLatinName(latinName);
         UpdateDisplayedText();
-        Debug.Log($"Angezeigtes Modell: {renderableModels[index].gameObject.name}");
-
         setDescription(modelId);
-
         UpdateButtonStates();
+
+        Debug.Log($"Angezeigtes Modell: {renderableModels[index].gameObject.name}");
     }
 
     int GetAnatomicalStructureIdByLatinName(string latinName)
