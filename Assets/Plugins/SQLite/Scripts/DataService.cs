@@ -60,15 +60,16 @@ public class DataService  {
 
 	}
 
-	public void CreateDB(){
-		_connection.DropTable<AnatomicalStructures> ();
-		_connection.DropTable<Descriptions> ();
-		_connection.DropTable<Relations> ();
-		_connection.DropTable<Models_3D> ();
-		_connection.CreateTable<AnatomicalStructures> ();
-		_connection.CreateTable<Descriptions> ();
-		_connection.CreateTable<Relations> ();
-		_connection.CreateTable<Models_3D> ();
+    public void CreateDB()
+    {
+        _connection.DropTable<AnatomicalStructures>();
+        _connection.DropTable<Descriptions>();
+        _connection.DropTable<Relations>();
+        _connection.DropTable<Models_3D>();
+        _connection.CreateTable<AnatomicalStructures>();
+        _connection.CreateTable<Descriptions>();
+        _connection.CreateTable<Relations>();
+        _connection.CreateTable<Models_3D>();
 
         //Beckenmuskeln
 
@@ -200,18 +201,9 @@ public class DataService  {
 
         _connection.Insert(new AnatomicalStructures
         {
-            id = 15,
-            german_name = "Zwerchfell (re.)",
-            latin_name = "Diaphragma thoracicum (dex.)",
-            category = "Beckenmuskeln",
-            parentId = 0
-        });
-
-        _connection.Insert(new AnatomicalStructures
-        {
             id = 16,
-            german_name = "Zwerchfell (li.)",
-            latin_name = "Diaphragma thoracicum (sin.)",
+            german_name = "Zwerchfell",
+            latin_name = "Diaphragma thoracicum",
             category = "Beckenmuskeln",
             parentId = 0
         });
@@ -268,167 +260,6 @@ public class DataService  {
             latin_name = "Musculus rectus abdominis (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 1,
-            text = "Ursprung: Sitzbeinast und Unterer Ast des Schambeins (Innenflächen) Ansatz: Dammkörper",
-            structure_id = 1
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 2,
-            text = "Ursprung: Sitzbeinast und Unterer Ast des Schambeins (Innenflächen) Ansatz: Dammkörper",
-            structure_id = 2
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 3,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes (Innenfläche) Ansatz: Dammkörper",
-            structure_id = 3
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 4,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes (Innenfläche) Ansatz: Dammkörper",
-            structure_id = 4
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 5,
-            text = "Ursprung: Becken - Sitzbeinast (Innenfläche) Ansatz: Bindegewebshülle",
-            structure_id = 5
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 6,
-            text = "Ursprung: Becken - Sitzbeinast (Innenfläche) Ansatz: Bindegewebshülle",
-            structure_id = 6
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 7,
-            text = "Ursprung: Dammkörper Ansatz: Bindegewebshülle des Harnröhrenschwellkörpers",
-            structure_id = 6
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 8,
-            text = "Ursprung: Becken - Sitzbein-Schambein-Ast (Ramus ischiopubicus) (Innenfläche) Ansatz: After-Steissbein-Band (Ligamentum anococcygeum)",
-            structure_id = 7
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 9,
-            text = "Ursprung: Becken - Sitzbein-Schambein-Ast (Ramus ischiopubicus) (Innenfläche) Ansatz: After-Steissbein-Band (Ligamentum anococcygeum)",
-            structure_id = 8
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 10,
-            text = "Ursprung: Becken - Sitzbeinstachel (Innenfläche) Ansatz: Wirbelsäule- Apex ossis coccygis, After-Steissbein-Band (Ligamentum anococcygeum)",
-            structure_id = 9
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 11,
-            text = "Ursprung: Becken - Sitzbeinstachel (Innenfläche) Ansatz: Wirbelsäule- Apex ossis coccygis, After-Steissbein-Band (Ligamentum anococcygeum)",
-            structure_id = 10
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 12,
-            text = "Ursprung: Wirbelsäule - Apex ossis sacri, Steissbein, Kreuzbein-Sitzbeinstachel-Band Ansatz: Becken - Sitzbeinstachel (Innenfläche)",
-            structure_id = 11
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 13,
-            text = "Ursprung: Wirbelsäule - Apex ossis sacri, Steissbein, Kreuzbein-Sitzbeinstachel-Band Ansatz: Becken - Sitzbeinstachel (Innenfläche)",
-            structure_id = 12
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 14,
-            text = "Ursprung: Darmbein-Lenden-Band (Lgamentum iliolumbale), Becken - Innere Lippe des Darmbeinkamms Ansatz: Brustkorb-Rippenkörper XII (anteroinferiorer Teil)",
-            structure_id = 13
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 15,
-            text = "Ursprung: Darmbein-Lenden-Band (Lgamentum iliolumbale), Becken - Innere Lippe des Darmbeinkamms Ansatz: Brustkorb-Rippenkörper XII (anteroinferiorer Teil)",
-            structure_id = 14
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 16,
-            text = "Ursprung: Brustkorb - Processus xiphoideus sterni, untere Rippenbogenränder, Rippenkörper VII-XII (Innenflächen), Ligamentum arcuatum medianum und laterale, Wirbelsäule - Wirbelkörper L1-L3, Bandscheiben, Ligamentum longitudinale anterius Ansatz: Centrum tendineum",
-            structure_id = 15
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 17,
-            text = "Ursprung: Brustkorb - Processus xiphoideus sterni, untere Rippenbogenränder, Rippenkörper VII-XII (Innenflächen), Ligamentum arcuatum medianum und laterale, Wirbelsäule - Wirbelkörper L1-L3, Bandscheiben, Ligamentum longitudinale anterius Ansatz: Centrum tendineum",
-            structure_id = 16
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 18,
-            text = "Ursprung: Becken - obere Ränder des Schambeinkörpers Ansatz: Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln)",
-            structure_id = 17
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 19,
-            text = "Ursprung: Becken - obere Ränder des Schambeinkörpers Ansatz: Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln)",
-            structure_id = 18
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 20,
-            text = "Ursprung: Brustkorb - Rippenkörper VII-XII (Innenflächen), Fascia thoracolumbalis und Fascia iliolumbalis, Becken - Innere Lippe des Darmbeinkamms und oberer vorderer Darmbeinstachel Ansatz: Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln), Becken - Schambeinleiste (Crista pubica)",
-            structure_id = 19
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 21,
-            text = "Ursprung: Brustkorb - Rippenkörper VII-XII (Innenflächen), Fascia thoracolumbalis und Fascia iliolumbalis, Becken - Innere Lippe des Darmbeinkamms und oberer vorderer Darmbeinstachel Ansatz: Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln), Becken - Schambeinleiste (Crista pubica)",
-            structure_id = 20
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 22,
-            text = "Ursprung: Becken - zwischen dem Schambeinhocker und der Facies symphysialis des Os pubis Ansatz: Brustkorb - Processus xiphoideus sterni, Rippenknorpel V-VII",
-            structure_id = 21
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 23,
-            text = "Ursprung: Becken - zwischen dem Schambeinhocker und der Facies symphysialis des Os pubis Ansatz: Brustkorb - Processus xiphoideus sterni, Rippenknorpel V-VII",
-            structure_id = 22
         });
 
         //Beinmuskeln
@@ -592,132 +423,6 @@ public class DataService  {
             latin_name = "Musculus gemellus inferior (dex.)",
             category = "Beinmuskeln",
             parentId = 0
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 23,
-            text = "Ursprung: Becken unterer Ast des Schambeins Ansatz: Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse)",
-            structure_id = 23
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 24,
-            text = "Ursprung: Becken unterer Ast des Schambeins Ansatz: Schienbein- Schienbeinhöcker (medialer Teil)",
-            structure_id = 24
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 25,
-            text = "Ursprung: Becken - Schambeinkamm am Ramus superior des Schambeins Ansatz: Oberschenkelknochen – Kammlinie (Diaphyse)",
-            structure_id = 25
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 26,
-            text = "Ursprung: Oberschenkelknochen - Zwischenrollhügellinie (proximale Epiphyse), innere Leiste der rauen Linie (Diaphyse) Ansatz: Schienbein- Schienbeinhocker (über das innere Halteband der Kniescheibe)",
-            structure_id = 26
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 27,
-            text = "Ursprung: Oberschenkelknochen- Corpus (anteriore Fläche) Ansatz: Schienbein- Schienbeinhöcker (mittels Kniescheibenband)",
-            structure_id = 27
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 28,
-            text = "Ursprung: Oberschenkelknochen ⁃ großer Rollhügel (proximale Epiphyse), äußere Leiste der rauen Linie (Diaphyse) Ansatz: Schienbein ⁃ Schienbeinhöcker (über das äußere Halteband der Kniescheibe)",
-            structure_id = 28
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 29,
-            text = "Ursprung: Oberschenkelknochen - Corpus (distaler Teil der anterioren Fläche) Ansatz: Kapsel des Kniegelenks (Bursa suprapatellaris)",
-            structure_id = 29
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 30,
-            text = "Ursprung: Becken- oberer Ast des Schambeins Ansatz: Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse)",
-            structure_id = 30
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 31,
-            text = "Ursprung: Becken - unterer Ast des Schambeins, Tuber ischiadicum des Sitzbeinastes Ansatz: Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse), Tuberculum adductorium des inneren Gelenkknorrens (distale Epiphyse)",
-            structure_id = 31
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 32,
-            text = "Ursprung: Wirbelsäule -Querfortsätze der Wirbel L1-L5, Wirbelkörper T12-L4 und Bandscheiben (laterale Seiten) Becken- Darmbeingrube Ansatz: Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
-            structure_id = 32
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 33,
-            text = "Ursprung: Becken- Darmbeingrube Ansatz: Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
-            structure_id = 33
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 34,
-            text = "Ursprung: Wirbelsäule - Querfortsätze der Wirbel L1-L5, Wirbelkörper T12-L4 und Bandscheiben (laterale Seiten) Ansatz: Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
-            structure_id = 34
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 35,
-            text = "Ursprung: Wirbelsäule-Wirbelkörper T12-L1 und Bandscheibe (laterale Seiten) Ansatz: Becken - Schambeinkamm und Darmbein Schambein-Höcker des oberen Schambeinastes",
-            structure_id = 35
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 36,
-            text = "Ursprung: Beckenm- Tuber ischiadicum des Sitzbeinastes Ansatz: Schienbein - Condylus medialis (proximale Epiphyse). Schräges Kniekehlenband",
-            structure_id = 36
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 37,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes, Kreuzbein- Sitzbeinhöcker-Band (Caput longum) Oberschenkelknochen - äußere Leiste der rauen Linie (mittleres 1/3 der Diaphyse - Caput breve) Ansatz: Wadenbein- Spitze des Caput (proximale Epiphyse)",
-            structure_id = 37
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 38,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes, Kreuzbein – Sitzbeinhöcker - Band Ansatz: Schienbein – Schienbeinhöcker (medialer Teil)",
-            structure_id = 38
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 39,
-            text = "Ursprung: Becken – Sitzbeinstachel Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
-            structure_id = 39
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 40,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
-            structure_id = 40
         });
 
         _connection.Insert(new AnatomicalStructures
@@ -972,201 +677,6 @@ public class DataService  {
             parentId = 0
         });
 
-        _connection.Insert(new Descriptions
-        {
-            id = 41,
-            text = "Ursprung: Becken - Ränder des Hüftbeinlochs, Membrana obturatoria (äußere Fläche). Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse).",
-            structure_id = 41
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 42,
-            text = "Ursprung: Wirbelsäulen- Beckenflache des Kreuzbeins. Ansatz: Oberschenkelknochen = großer Rollhügel (proximale Epiphyse).",
-            structure_id = 42
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 43,
-            text = "Ursprung: Becken- Gesäßfläche des Darmbeins (zwischen der anterioren und der posterioren Linea glutealis). Ansatz: Oberschenkelknochen - großer Rollhügel (proximale Epiphyse).",
-            structure_id = 43
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 44,
-            text = "Ursprung: Becken - Ränder des Hüftbeinlochs, Membrana obturatoria (Innenfläche). Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse).",
-            structure_id = 44
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 45,
-            text = "Ursprung: Becken- Gesäßfläche des Darmbeins (unterhalb des Darmbeinkamms zwischen der anterioren und der posterioren Linea glutealis). Ansatz: Oberschenkelknochen - großer Rollhügel (proximale Epiphyse).",
-            structure_id = 45
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 46,
-            text = "Ursprung: Becken- vorderer unterer Darmbeinstachel, Oberrand der Hüftgelenkspfanne (Acetabulum). Ansatz: Schienbein - Schienbeinhöcker (mittels Kniescheibenband).",
-            structure_id = 46
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 47,
-            text = "Ursprung: Becken - oberer vorderer Darmbeinstachel. Ansatz: Schienbein - Schienbeinhöcker (medialer Teil).",
-            structure_id = 47
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 48,
-            text = "Ursprung: Wirbelsäule - dorsale Kreuzbeinoberfläche, Fascia thoracolumbalis. Becken- Gesäßfläche des Darmbeins, Kreuzbein- Sitzbeinhöcker-Band. Ansatz: Darmbein-schienbein-Band Oberschenkelknochen - Gesäßmuskelrauigkeit (Diaphyse).",
-            structure_id = 48
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 49,
-            text = "Ursprung: Becken - oberer vorderer Darmbeinstachel. Ansatz: Darmbein-Schienbein-Band.",
-            structure_id = 49
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 50,
-            text = "Ursprung: Becken- Tuber ischiadicum des Sitzbeinastes (laterale Kante). Ansatz: Oberschenkelknochen - quadratischer Höcker der Zwischenrollhügelleiste (proximale Epiphyse).",
-            structure_id = 50
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 51,
-            text = "Ursprung: Oberschenkelknochen - Sulcus popliteus des äußeren Gelenkknorrens (distale Epiphyse). Ansatz: Schienbein- Hinterfläche (proximaler Teil der Diaphyse).",
-            structure_id = 51
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 52,
-            text = "Ursprung: Oberschenkelknochen - Epicondylus lateralis des äußeren Gelenkknorrens (distale Epiphyse). Schräges Kniekehlenband. Ansatz: Fuß - Fersenbeinhöcker.",
-            structure_id = 52
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 53,
-            text = "Ursprung: Schienbein- Hinterfläche (proximale 2/3 der Diaphyse). Zwischenknochenmembran des Unterschenkels. Wadenbein - Hinterfläche (proximale 2/3 der Diaphyse). Ansatz: Fuß - Tuberositas des Kahnbeins, inneres, mittleres und äußeres Keilbein, Basen der Mittelfußknochen II-IV (Unterseiten).",
-            structure_id = 53
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 54,
-            text = "Ursprung: Wadenbein mediale Fläche (distale 2/3 der Diaphyse). Zwischenknochenmembran des Unterschenkels. Ansatz: Dorsalaponeurose der Zehen.",
-            structure_id = 54
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 55,
-            text = "Ursprung: Wadenbein- laterale Fläche (distale 2/3 der Diaphyse). Zwischenmuskelscheidewände des Unterschenkels (Septum intermusculare cruris). Ansatz: Fuß - Tuberositas der Basis des 5. Mittelfußknochens (laterale Fläche).",
-            structure_id = 55
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 56,
-            text = "Ursprung: Wadenbein - vordere Kante (distales 1/3 der Diaphyse). Ansatz: Fuß - Basis des 5. Mittelfußknochens (Rückfläche).",
-            structure_id = 56
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 57,
-            text = "Ursprung: Wadenbein- Hinterfläche (distale 2/3 der Diaphyse). Zwischenknochenmembran des Unterschenkels. Ansatz: Fuß - Basis des Endglieds der Großzehe (Unterseite).",
-            structure_id = 57
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 58,
-            text = "Ursprung: Schienbein- Hinterfläche (mittleres 1/3 der Diaphyse). Ansatz: Fuß - Basen der Endphalangen der Zehen II-V (Unterseiten).",
-            structure_id = 58
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 59,
-            text = "Ursprung: Schienbein - laterale Fläche (proximale 2/3 der Diaphyse). Zwischenknochenmembran des Unterschenkels. Ansatz: Fuß - inneres Keilbein, Basis des 1. Mittelfußknochens (mediale und untere Seite).",
-            structure_id = 59
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 60,
-            text = "Ursprung: Schienbein- lateraler Kondylus (proximale Epiphyse). Wadenbein- Caput (proximale Epiphyse), mediale Fläche (Diaphyse), Zwischenknochenmembran des Unterschenkels. Ansatz: Dorsalaponeurose der Zehen.",
-            structure_id = 60
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 61,
-            text = "Ursprung: Wadenbein - Caput (proximale Epiphyse). laterale Fläche und vordere Kante (Diaphyse). Zwischenmuskelscheidewände des Unterschenkels (Septum Intermusculare cruris). Ansatz: Fuß - mittleres Keilbein, Tuberositas der Basis des 1. Mittelfußknochens (Unterseiten).",
-            structure_id = 61
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 62,
-            text = "Ursprung: Wadenbein- Caput (proximale Epiphyse), Dorsalfläche und dorsale Kante (proximales 1/4 der Diaphyse). Schienbein - Linea musculi solei auf der Dorsalseite und mediale Kante (Diaphyse). Ansatz: Fuß - Fersenbeinhöcker.",
-            structure_id = 62
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 63,
-            text = "Ursprung: Oberschenkelknochen Epicondylus lateralis des äußeren Gelenkknorrens, Epicondylus medialis des inneren Gelenkknorrens (distale Epiphyse). Ansatz: Fuß - Fersenbeinhöcker.",
-            structure_id = 63
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 64,
-            text = "Ursprung: Kurzer Wadenbelnmuskel (distale Sehne) und langes Fußsohlenband. Ansatz: Fuß - Basis des 5.Mittelfußknochens (untere Fläche).",
-            structure_id = 64
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 65,
-            text = "Ursprung: Fuß - medialer und lateraler Fortsatz des Fersenbeinhöckers, Plantaraponeurose. Ansatz: Fuß - Tuberositas der Basis des 5. Mittelfußknochens und Basis des Kleinzehengrundglieds (untere Seiten).",
-            structure_id = 65
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 66,
-            text = "Ursprung: Fuß - Basis des 5. Mittelfußknochens (untere Fläche), Langes Fußsohlenband. Ansatz: Fuß - Basis der proximalen Phalanx der Kleinzehe (Unterseite).",
-            structure_id = 66
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 67,
-            text = "Ursprung: Becken - unterer Ast des Schambeins. Ansatz: Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse).",
-            structure_id = 67
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 68,
-            text = "Ursprung: Becken - unterer Ast des Schambeins. Ansatz: Schienbein - Schienbeinhöcker (medialer Teil).",
-            structure_id = 68
-        });
 
         _connection.Insert(new AnatomicalStructures
         {
@@ -1429,209 +939,6 @@ public class DataService  {
             parentId = 0
         });
 
-        _connection.Insert(new Descriptions
-        {
-            id = 69,
-            text = "Ursprung: Becken - Schambeinkamm am Ramus superior des Schambeins. Ansatz: Oberschenkelknochen – Kammlinie (Diaphyse).",
-            structure_id = 69
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 70,
-            text = "Ursprung: Oberschenkelknochen - Zwischenrollhügellinie (proximale Epiphyse), innere Leiste der rauen Linie (Diaphyse). Ansatz: Schienbein - Schienbeinhöcker (über das innere Halteband der Kniescheibe).",
-            structure_id = 70
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 71,
-            text = "Ursprung: Oberschenkelknochen - Corpus (anteriore Fläche). Ansatz: Schienbein - Schienbeinhöcker (mittels Kniescheibenband).",
-            structure_id = 71
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 72,
-            text = "Ursprung: Oberschenkelknochen - großer Rollhügel (proximale Epiphyse), äußere Leiste der rauen Linie (Diaphyse). Ansatz: Schienbein - Schienbeinhöcker (über das äußere Halteband der Kniescheibe).",
-            structure_id = 72
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 73,
-            text = "Ursprung: Oberschenkelknochen - Corpus (distaler Teil der anterioren Fläche). Ansatz: Kapsel des Kniegelenks (Bursa suprapatellaris).",
-            structure_id = 73
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 74,
-            text = "Ursprung: Becken - oberer Ast des Schambeins. Ansatz: Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse).",
-            structure_id = 74
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 75,
-            text = "Ursprung: Becken - unterer Ast des Schambeins, Tuber ischiadicum des Sitzbeinastes. Ansatz: Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse), Tuberculum adductorium des inneren Gelenkknorrens (distale Epiphyse).",
-            structure_id = 75
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 76,
-            text = "Ursprung: Wirbelsäule - Querfortsätze der Wirbel L1-L5, Wirbelkörper T12-L4 und Bandscheiben (laterale Seiten), Becken - Darmbeingrube. Ansatz: Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse).",
-            structure_id = 76
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 77,
-            text = "Ursprung: Becken - Darmbeingrube. Ansatz: Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse).",
-            structure_id = 77
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 78,
-            text = "Ursprung: Wirbelsäule - Querfortsätze der Wirbel L1-L5, Wirbelkörper T12-L4 und Bandscheiben (laterale Seiten). Ansatz: Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse).",
-            structure_id = 78
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 79,
-            text = "Ursprung: Wirbelsäule - Wirbelkörper T12-L1 und Bandscheibe (laterale Seiten). Ansatz: Becken - Schambeinkamm und Darmbein, Schambein-Höcker des oberen Schambeinastes, Arcus iliopectineus.",
-            structure_id = 79
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 80,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes. Ansatz: Schienbein - Condylus medialis (proximale Epiphyse), Schräges Kniekehlenband.",
-            structure_id = 80
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 81,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes, Kreuzbein-Sitzbeinhöcker-Band (Caput longum). Oberschenkelknochen - äußere Leiste der rauen Linie (mittleres 1/3 der Diaphyse - Caput breve). Ansatz: Wadenbein - Spitze des Caput (proximale Epiphyse).",
-            structure_id = 81
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 82,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes, Kreuzbein - Sitzbeinhöcker-Band. Ansatz: Schienbein - Schienbeinhöcker (medialer Teil).",
-            structure_id = 82
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 83,
-            text = "Ursprung: Becken - Sitzbeinstachel. Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse).",
-            structure_id = 83
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 84,
-            text = "Ursprung: Becken - Tuber ischiadicum des Sitzbeinastes. Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse).",
-            structure_id = 84
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 85,
-            text = "Ursprung: Becken - Ränder des Hüftbeinlochs, Membrana obturatoria (äußere Fläche). Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse).",
-            structure_id = 85
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 86,
-            text = "Ursprung: Wirbelsäule - Beckenfläche des Kreuzbeins. Ansatz: Oberschenkelknochen - großer Rollhügel (proximale Epiphyse).",
-            structure_id = 86
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 87,
-            text = "Ursprung: Becken - Gesäßfläche des Darmbeins (zwischen der anterioren und der posterioren Linea glutealis). Ansatz: Oberschenkelknochen - großer Rollhügel (proximale Epiphyse).",
-            structure_id = 87
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 88,
-            text = "Ursprung: Becken - Ränder des Hüftbeinlochs, Membrana obturatoria (Innenfläche). Ansatz: Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse).",
-            structure_id = 88
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 89,
-            text = "Ursprung: Becken- Gesäßfläche des Darmbeins (unterhalb des Darmbeinkamms zwischen der anterioren und der posterioren Linea glutealis). Ansatz: Oberschenkelknochen - großer Rollhügel (proximale Epiphyse).",
-            structure_id = 89
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 90,
-            text = "Ursprung: Becken- vorderer unterer Darmbeinstachel, Oberrand der Hüftgelenkspfanne (Acetabulum). Ansatz: Schienbein - Schienbeinhöcker (mittels Kniescheibenband).",
-            structure_id = 90
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 91,
-            text = "Ursprung: Becken ⁃ oberer vorderer Darmbeinstachel. Ansatz: Schienbein ⁃ Schienbeinhöcker (medialer Teil).",
-            structure_id = 91
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 92,
-            text = "Ursprung: Wirbelsäule - dorsale Kreuzbeinoberfläche, Fascia thoracolumbalis. Becken- Gesäßfläche des Darmbeins, Kreuzbein-Sitzbeinhöcker-Band. Ansatz: Darmbein-schienbein-Band, Oberschenkelknochen - Gesäßmuskelrauigkeit (Diaphyse).",
-            structure_id = 92
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 93,
-            text = "Ursprung: Becken - oberer vorderer Darmbeinstachel. Ansatz: Darmbein-Schienbein-Band.",
-            structure_id = 93
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 94,
-            text = "Ursprung: Becken- Tuber ischiadicum des Sitzbeinastes (laterale Kante). Ansatz: Oberschenkelknochen - quadratischer Höcker der Zwischenrollhügelleiste (proximale Epiphyse).",
-            structure_id = 94
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 95,
-            text = "Ursprung: Oberschenkelknochen - Sulcus popliteus des äußeren Gelenkknorrens (distale Epiphyse). Ansatz: Schienbein- Hinterfläche (proximaler Teil der Diaphyse).",
-            structure_id = 95
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 96,
-            text = "Ursprung: Oberschenkelknochen - Epicondylus lateralis des äußeren Geienkknorrens (distale Epiphyse). Ansatz: Fuß -Fersenbeinhöcker.",
-            structure_id = 96
-        });
-
-        _connection.Insert(new Descriptions
-        {
-            id = 97,
-            text = "Ursprung: Schienbein- Hinterfläche (proximale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels, Wadenbein - Hinterfläche (proximale 2/3 der Diaphyse). Ansatz: Fuß - Tuberositas des Kahnbeins, inneres, mittleres und äußeres Keilbein, Basen der Mittelfußknochen II-IV (Unterseiten).",
-            structure_id = 97
-        });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 98,
@@ -1767,112 +1074,426 @@ public class DataService  {
             parentId = 0
         });
 
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 113,
+            german_name = "Langer Kopf des Bizeps",
+            latin_name = "Musculus biceps brachii, Caput longum",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 114,
+            german_name = "Rabenschnabelmuskel",
+            latin_name = "Musculus coracobrachialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 115,
+            german_name = "Deltamuskel",
+            latin_name = "Musculus deltoideus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 116,
+            german_name = "Untergrätenmuskel",
+            latin_name = "Musculus infraspinatus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 117,
+            german_name = "Unterschulterblattmuskel",
+            latin_name = "Musculus subscapularis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 118,
+            german_name = "Obergrätenmuskel",
+            latin_name = "Musculus supraspinatus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 119,
+            german_name = "Großer Rundmuskel",
+            latin_name = "Musculus teres major",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 120,
+            german_name = "Kleiner Rundmuskel",
+            latin_name = "Musculus teres minor",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 121,
+            german_name = "Langer Kopf des Trizeps",
+            latin_name = "Musculus triceps brachii, Caput longum",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 122,
+            german_name = "Armbeuger",
+            latin_name = "Musculus brachialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 123,
+            german_name = "Ellenbogenmuskel",
+            latin_name = "Musculus anconeus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 124,
+            german_name = "Oberarmspeichenmuskel",
+            latin_name = "Musculus brachioradialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 125,
+            german_name = "Runder Einwärtsdreher",
+            latin_name = "Musculus pronator teres",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 126,
+            german_name = "Auswärtsdreher",
+            latin_name = "Musculus supinator",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 127,
+            german_name = "Kurzer speichenseitiger Handstrecker",
+            latin_name = "Musculus extensor carpi radialis brevis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 128,
+            german_name = "Langer speichenseitiger Handstrecker",
+            latin_name = "Musculus extensor carpi radialis longus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 129,
+            german_name = "Ellenseitiger Handstrecker",
+            latin_name = "Musculus extensor carpi ulnaris",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 130,
+            german_name = "Kleinfingerstrecker",
+            latin_name = "Musculus extensor digiti minimi",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 131,
+            german_name = "Speichenseitiger Handbeuger",
+            latin_name = "Musculus flexor carpi radialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 132,
+            german_name = "Ellenseitiger Handbeuger",
+            latin_name = "Musculus flexor carpi ulnaris",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 133,
+            german_name = "Langer Daumenbeuger",
+            latin_name = "Musculus flexor pollicis longus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 134,
+            german_name = "Schambein-Steißbein-Muskel (re.)",
+            latin_name = "Musculus pubococcygeus (dex.)",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 135,
+            german_name = "Schambein-Steißbein-Muskel (li.)",
+            latin_name = "Musculus pubococcygeus (sin.)",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 136,
+            german_name = "Sitzbein-Schwellkörper-Muskel (re.)",
+            latin_name = "Musculus ischiocavernosus (dex.)",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 137,
+            german_name = "Sitzbein-Schwellkörper-Muskel (li.)",
+            latin_name = "Musculus ischiocavernosus (sin.)",
+            category = "",
+            parentId = 0
+        });
+
+
+
         _connection.Insert(new Descriptions
         {
-            id = 98,
-            text = "Ursprung: Wadenbein mediale Fläche (distale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels. Ansatz: Dorsalaponeurose der Zehen.",
-            structure_id = 98
+            id = 113,
+            ansatz = "Tuberositas radii und über die Aponeurosis musculi bicipitis brachii an der Fascia antebrachii",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion und Supination im Ellenbogengelenk; unterstützt Flexion im Schultergelenk",
+            structure_id = 113
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 99,
-            text = "Ursprung: Wadenbein- laterale Fläche (distale 2/3 der Diaphyse), Zwischenmuskelscheidewände des Unterschenkels (Septum intermusculare cruris). Ansatz: Fuß - Tuberositas der Basis des 5. Mittelfußknochens (laterale Fläche).",
-            structure_id = 99
+            id = 114,
+            ansatz = "Mediale Fläche des Humerus in Verlängerung der Crista tuberculi minoris",
+            innervation = "N. musculocutaneus (C5–C7)",
+            funktion = "Adduktion, Flexion und Innenrotation im Schultergelenk",
+            structure_id = 114
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 100,
-            text = "Ursprung: Wadenbein - vordere Kante (distales 1/3 der Diaphyse). Ansatz: Fuß - Basis des 5. Mittelfußknochens (Rückfläche).",
-            structure_id = 100
+            id = 115,
+            ansatz = "Tuberositas deltoidea des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Abduktion, Anteversion, Retroversion, Innen- und Außenrotation im Schultergelenk, je nach Faseranteil",
+            structure_id = 115
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 101,
-            text = "Ursprung: Wadenbein- Hinterfläche (distale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels. Ansatz: Fuß - Basis des Endglieds der Großzehe (Unterseite).",
-            structure_id = 101
+            id = 116,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Außenrotation im Schultergelenk",
+            structure_id = 116
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 102,
-            text = "Ursprung: Schienbein- Hinterfläche (mittleres 1/3 der Diaphyse). Ansatz: Fuß - Basen der Endphalangen der Zehen II-V (Unterseiten).",
-            structure_id = 102
+            id = 117,
+            ansatz = "Tuberculum minus des Humerus",
+            innervation = "Nn. subscapulares (C5–C6)",
+            funktion = "Innenrotation im Schultergelenk",
+            structure_id = 117
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 103,
-            text = "Ursprung: Schienbein - laterale Flache (proximale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels. Ansatz: Fuß - inneres Keilbein, Basis des 1. Mittelfußknochens (mediale und untere Seite).",
-            structure_id = 103
+            id = 118,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Abduktion im Schultergelenk",
+            structure_id = 118
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 104,
-            text = "Ursprung: Schienbein- lateraler Kondylus (proximale Epiphyse), Wadenbein- Caput (proximale Epiphyse), mediale Fläche (Diaphyse), Zwischenknochenmembran des Unterschenkels. Ansatz: Dorsalaponeurose der Zehen.",
-            structure_id = 104
+            id = 119,
+            ansatz = "Crista tuberculi minoris des Humerus",
+            innervation = "N. thoracodorsalis (C6–C7)",
+            funktion = "Innenrotation, Adduktion und Retroversion im Schultergelenk",
+            structure_id = 119
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 105,
-            text = "Ursprung: Wadenbein - Caput (proximale Epiphyse), laterale Fläche und vordere Kante (Diaphyse), Zwischenmuskelscheidewände des Unterschenkels (Septum Intermusculare cruris). Ansatz: Fuß - mittleres Keilbein, Tuberositas der Basis des 1. Mittelfußknochens (Unterseiten).",
-            structure_id = 105
+            id = 120,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Außenrotation und schwache Adduktion im Schultergelenk",
+            structure_id = 120
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 106,
-            text = "Ursprung: Wadenbein- Caput (proximale Epiphyse), Dorsalfläche und dorsale Kante (proximales 1/4 der Diaphyse), Schienbein - Linea musculi solei auf der Dorsalseite und mediale Kante (Diaphyse). Ansatz: Fuß -Fersenbeinhöcker.",
-            structure_id = 106
+            id = 121,
+            ansatz = "Olecranon der Ulna",
+            innervation = "N. radialis (C6–C8)",
+            funktion = "Extension im Ellenbogengelenk; Retroversion und Adduktion im Schultergelenk",
+            structure_id = 121
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 107,
-            text = "Ursprung: Oberschenkelknochen Epicondylus lateralis des äußeren Gelenkknorrens, Epicondylus medialis des inneren Gelenkknorrens (distale Epiphyse). Ansatz: Fuß - Fersenbeinhöcker.",
-            structure_id = 107
+            id = 122,
+            ansatz = "Tuberositas ulnae",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk",
+            structure_id = 122
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 108,
-            text = "Ursprung: Kurzer Wadenbeinnuskel (distale Sehne) und langes Fußsohlenband. Ansatz: Fuß - Basis des 5.Mittelfußknochens (untere Fläche).",
-            structure_id = 108
+            id = 123,
+            ansatz = "Olecranon und proximales Viertel der dorsalen Fläche der Ulna",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension im Ellenbogengelenk; spannt die Gelenkkapsel",
+            structure_id = 123
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 109,
-            text = "Ursprung: Fuß - medialer und lateraler Fortsatz des Fersenbeinhöckers, Plantaraponeurose. Ansatz: Fuß - Tuberositas der Basis des 5. Mittelfußknochens und Basis des Kleinzehengrundglieds (untere Seiten).",
-            structure_id = 109
+            id = 124,
+            ansatz = "Processus styloideus radii",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk; unterstützt Pronation und Supination des Unterarms in die Mittelstellung",
+            structure_id = 124
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 110,
-            text = "Ursprung: Fuß - Basis des 5. Mittelfußknochens (untere Fläche), Langes Fußsohlenband. Ansatz: Fuß - Basis der proximalen Phalanx der Kleinzehe (Unterseite).",
-            structure_id = 110
+            id = 125,
+            ansatz = "Facies lateralis radii (Mitte der Außenseite des Radius)",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Pronation und schwache Flexion im Ellenbogengelenk",
+            structure_id = 125
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 111,
-            text = "Ursprung: Corpora von jeweils zwei benachbarten Mittelfußknochen (an den gegenüber liegenden Flächen). Ansatz: Dorsalaponeurose der Zehen.",
-            structure_id = 111
+            id = 126,
+            ansatz = "Proximales Drittel des Radius",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Supination des Unterarms",
+            structure_id = 126
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 112,
-            text = "Ursprung: Corpora von jeweils zwei benachbarten Mittelfußknochen (an den gegenüber liegenden Flächen). Ansatz: Dorsalaponeurose der Zehen.",
-            structure_id = 112
+            id = 127,
+            ansatz = "Basis des Os metacarpi III",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 127
         });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 128,
+            ansatz = "Basis des Os metacarpi II",
+            innervation = "N. radialis (C6–C7)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 128
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 129,
+            ansatz = "Basis des Os metacarpi V",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Ulnarabduktion im Handgelenk",
+            structure_id = 129
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 130,
+            ansatz = "Dorsalaponeurose des 5. Fingers",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension des 5. Fingers; unterstützt Dorsalextension im Handgelenk",
+            structure_id = 130
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 131,
+            ansatz = "Basis des Os metacarpi II und III",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Flexion und Radialabduktion im Handgelenk",
+            structure_id = 131
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 132,
+            ansatz = "Os pisiforme, Hamulus ossis hamati, Basis des Os metacarpi V",
+            innervation = "N. ulnaris (C7–Th1)",
+            funktion = "Flexion und Ulnarabduktion im Handgelenk",
+            structure_id = 132
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 133,
+            ansatz = "Basis der Endphalanx des Daumens",
+            innervation = "N. medianus (C7–C8)",
+            funktion = "Flexion im Daumengrund- und -endgelenk; unterstützt Flexion im Handgelenk",
+            structure_id = 133
+        });
+
 
     }
+
+
 
 
 
