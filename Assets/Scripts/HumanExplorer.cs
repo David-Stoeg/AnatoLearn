@@ -24,8 +24,6 @@ public class HumanExplore : MonoBehaviour
     int counter = 0;
 
     public TMP_Text centerText;
-    public TMP_Text leftText;
-    public TMP_Text rightText;
     public TMP_Text descriptionText;
 
 
@@ -33,7 +31,7 @@ public class HumanExplore : MonoBehaviour
     {
         ds = DataServiceManager.Instance.DataService;
         renderableModels = GetRenderableModels();
-        originalPosition = new Vector3(0.00f, 0.00f, 3.00f);
+        originalPosition = new Vector3(0.00f, 0.05f, 3.00f);
 
         if (!string.IsNullOrEmpty(SceneData.RendererName))
         {
@@ -179,11 +177,10 @@ public class HumanExplore : MonoBehaviour
             else
             {
                 previousButtonImage.color = Color.gray;
-                leftText.text = "";
             }
         }
 
-        nextButton.interactable = currentModelIndex < renderableModels.Count - 1;
+        nextButton.interactable = currentModelIndex < renderableModels.Count - 4;
         var nextButtonImage = nextButton.GetComponent<Image>();
         if (nextButtonImage != null)
         {
@@ -194,7 +191,6 @@ public class HumanExplore : MonoBehaviour
             else
             {
                 nextButtonImage.color = Color.gray;
-                rightText.text = "";
             }
         }
     }
@@ -229,13 +225,15 @@ public class HumanExplore : MonoBehaviour
 
         foreach (Transform child in fbxRoot.GetComponentsInChildren<Transform>(true))
         {
-
-            Renderer renderer = child.GetComponent<Renderer>();
-            if (renderer != null)
+            if (!child.gameObject.name.Contains("WGT"))
             {
-                renderableModels.Add(renderer);
-            }
 
+                Renderer renderer = child.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    renderableModels.Add(renderer);
+                }
+            }
         }
 
         return renderableModels.ToList();
@@ -247,12 +245,8 @@ public class HumanExplore : MonoBehaviour
         int rightIndex = (currentModelIndex < renderableModels.Count - 1) ? currentModelIndex + 1 : 0;
 
         string centerLatinName = GetLatinNameForModel(renderableModels[currentModelIndex].gameObject.name);
-        string leftLatinName = GetLatinNameForModel(renderableModels[leftIndex].gameObject.name);
-        string rightLatinName = GetLatinNameForModel(renderableModels[rightIndex].gameObject.name);
 
         centerText.text = centerLatinName ?? "Unbekannt";
-        leftText.text = leftLatinName ?? "Unbekannt";
-        rightText.text = rightLatinName ?? "Unbekannt";
     }
 
     string GetLatinNameForModel(string modelName)
@@ -273,15 +267,19 @@ public class HumanExplore : MonoBehaviour
         var descriptions = ds.GetDescription(id);
         foreach (var description in descriptions)
         {
-            descriptionText.text = description.ansatz + description.innervation + description.funktion;
+            descriptionText.text = "Ansatz" + "\n" + "\n" + description.ansatz + "\n" + "\n" +
+                      "Innervation" + "\n" + "\n" + description.innervation + "\n" + "\n" +
+                      "Funktion" + "\n" + "\n" + description.funktion;
         }
 
     }
 
     void ShowModelByIndex(int index)
     {
-        Debug.Log($"ShowModelByIndex aufgerufen mit index: {index}");
-
+        if (renderableModels[index].gameObject.name.Contains("Skeleton"))
+        {
+            index++;
+        }
         if (renderableModels == null)
         {
             Debug.LogError("Fehler: renderableModels ist null!");
@@ -316,18 +314,17 @@ public class HumanExplore : MonoBehaviour
 
         string modelName = renderableModels[index].gameObject.name;
 
+
         string latinName = GetLatinNameForModel(modelName);
 
         if (string.IsNullOrEmpty(latinName))
         {
             Debug.LogError("Fehler: Lateinischer Name ist null oder leer!");
-            return;
-
-        }
-        else
-        {
+            Debug.Log(modelName);
             counter++;
             Debug.Log(counter);
+            return;
+
         }
 
         Renderer targetRenderer = renderableModels[index];
@@ -338,12 +335,6 @@ public class HumanExplore : MonoBehaviour
         }
 
         Vector3 targetLocalPosition = targetRenderer.transform.localPosition;
-
-        float maxZ = 1f;
-
-        float scaleFactor = Math.Abs(maxZ / targetLocalPosition.z);
-        Debug.Log($"Berechneter Skalierungsfaktor: {scaleFactor}");
-
 
         string CleanName(string name)
         {
@@ -358,6 +349,7 @@ public class HumanExplore : MonoBehaviour
 
         if (latinName.Contains("sin"))
         {
+            float modellSize = 0f;
             foreach (var model in renderableModels)
             {
                 if (model == null || model.gameObject == null)
@@ -369,7 +361,7 @@ public class HumanExplore : MonoBehaviour
                 string name = GetLatinNameForModel(model.gameObject.name);
                 if (string.IsNullOrEmpty(name))
                 {
-                    Debug.LogWarning("Warnung: Ein Modell hat einen leeren lateinischen Namen!");
+                    Debug.LogWarning($"Warnung: Das Modell {model.gameObject.name} einen leeren lateinischen Namen!");
                     continue;
                 }
 
@@ -377,14 +369,13 @@ public class HumanExplore : MonoBehaviour
                 {
                     Vector3 localPositionModel = model.transform.localPosition;
                     averageX = Math.Abs((localPositionModel.x - targetLocalPosition.x) / 2);
+                    Bounds bounds = model.bounds;
 
-                    Debug.Log($"New Position y:{targetLocalPosition.y}");
-
-
+                    float modelSize= bounds.center.x;
                 }
             }
             newPosition = new Vector3(
-            fbxRoot.transform.position.x - ((float)averageX),
+            fbxRoot.transform.position.x - ((float)averageX + modellSize),
             fbxRoot.transform.position.y - targetLocalPosition.y,
             fbxRoot.transform.position.z - 2f);
 
@@ -393,7 +384,7 @@ public class HumanExplore : MonoBehaviour
         }
         else if (latinName.Contains("dex"))
         {
-
+            float modellSize = 0f;
             float minY = float.MaxValue;
             float maxY = float.MinValue;
             foreach (var model in renderableModels)
@@ -408,7 +399,6 @@ public class HumanExplore : MonoBehaviour
                 string name = GetLatinNameForModel(model.gameObject.name);
                 if (string.IsNullOrEmpty(name))
                 {
-                    Debug.LogWarning("Warnung: Ein Modell hat einen leeren lateinischen Namen!");
                     continue;
                 }
 
@@ -421,12 +411,13 @@ public class HumanExplore : MonoBehaviour
 
                     minY = Mathf.Min(minY, localPositionModel.y);
                     maxY = Mathf.Max(maxY, localPositionModel.y);
-                    Debug.Log($"New Position y:{targetLocalPosition.y}");
+                    Bounds bounds = model.bounds;
 
+                    float modelSize = bounds.center.x;
                 }
             }
             newPosition = new Vector3(
-            fbxRoot.transform.position.x + ((float)averageX),
+            fbxRoot.transform.position.x + ((float)averageX - modellSize),
             fbxRoot.transform.position.y - targetLocalPosition.y,
             fbxRoot.transform.position.z - 2f);
             
@@ -461,15 +452,14 @@ public class HumanExplore : MonoBehaviour
 
             }
             float middleX = (maxX + minX) / 2;
-            float rootX = targetRenderer.transform.position.x - middleX;
+            float rootX = targetRenderer.transform.localPosition.x - middleX;
             float middleY = (maxY + minY) / 2;
-            float rootY = targetRenderer.transform.position.y - middleY;
+            float rootY = targetRenderer.transform.localPosition.y + middleY;
             newPosition = new Vector3(
-            fbxRoot.transform.position.x + rootX,
-                fbxRoot.transform.position.y - 1.2f,
+            fbxRoot.transform.position.x,
+                fbxRoot.transform.position.y - targetLocalPosition.y,
                 fbxRoot.transform.position.z -2f);
 
-            newPosition.x = middleX;
 
         }
 
@@ -483,7 +473,7 @@ public class HumanExplore : MonoBehaviour
                 Debug.LogWarning($"Warnung: Modell bei Index {i} ist null!");
                 continue;
             }
-            SetMaterialTransparency(renderableModels[i], i == index ? 1.0f : 0.0f);
+            SetMaterialTransparency(renderableModels[i], i == index ? 1.0f : 0.05f);
         }
 
         int modelId = GetAnatomicalStructureIdByLatinName(latinName);
