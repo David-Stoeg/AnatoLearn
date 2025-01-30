@@ -56,7 +56,6 @@ public class DataService  {
         var dbPath = filepath;
 #endif
             _connection = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create);
-        Debug.Log("Final PATH: " + dbPath);     
 
 	}
 
@@ -72,193 +71,190 @@ public class DataService  {
         _connection.CreateTable<Models_3D>();
 
         //Beckenmuskeln
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 1,
+            id = 0,
             german_name = "Tiefer querer Dammmuskel (re.)",
             latin_name = "Musculus transversus perinei profundus (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 2,
+            id = 1,
             german_name = "Tiefer querer Dammmuskel (li.)",
             latin_name = "Musculus transversus perinei profundus (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 3,
+            id = 2,
             german_name = "Oberflächlicher querer Dammmuskel (re.)",
             latin_name = "Musculus transversus perinei superficialis (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 4,
+            id = 3,
             german_name = "Oberflächlicher querer Dammmuskel (li.)",
             latin_name = "Musculus transversus perinei superficialis (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 4,
+            german_name = "Sitzbein Schwellkörper Muskel (re.)",
+            latin_name = "Musculus ischiocavernosus (dex.)",
+            category = "Beckenmuskeln",
+            parentId = 0
+        });
         _connection.Insert(new AnatomicalStructures
         {
             id = 5,
+            german_name = "Sitzbein Schwellkörper Muskel (li.)",
+            latin_name = "Musculus ischiocavernosus (sin.)",
+            category = "Beckenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 6,
             german_name = "Schwellkörpermuskel der Harnröhre (re.)",
             latin_name = "Musculus bulbospongiosus (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 6,
+            id = 7,
             german_name = "Schwellkörpermuskel der Harnröhre (li.)",
             latin_name = "Musculus bulbospongiosus (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 7,
+            id = 8,
             german_name = "Schambein-Mastdarm-Muskel (re.)",
             latin_name = "Musculus puborectalis (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 8,
+            id = 9,
             german_name = "Schambein-Mastdarm-Muskel (li.)",
             latin_name = "Musculus puborectalis (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 9,
-            german_name = "Darmbein-Steissbein-Muskel (re.)",
+            id = 10,
+            german_name = "Darmbein-Steißbein-Muskel (re.)",
             latin_name = "Musculus iliococcygeus (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 10,
-            german_name = "Darmbein-Steissbein-Muskel (li.)",
+            id = 11,
+            german_name = "Darmbein-Steißbein-Muskel (li.)",
             latin_name = "Musculus iliococcygeus (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 11,
-            german_name = "Steissbeinmuskel (re.)",
+            id = 12,
+            german_name = "Steißbeinmuskel (re.)",
             latin_name = "Musculus ischiococcygeus (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 12,
-            german_name = "Steissbeinmuskel (li.)",
+            id = 13,
+            german_name = "Steißbeinmuskel (li.)",
             latin_name = "Musculus ischiococcygeus (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 13,
+            id = 14,
             german_name = "Viereckiger Lendenmuskel (re.)",
             latin_name = "Musculus quadratus lumborum (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 14,
+            id = 15,
             german_name = "Viereckiger Lendenmuskel (li.)",
             latin_name = "Musculus quadratus lumborum (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 16,
-            german_name = "Zwerchfell",
-            latin_name = "Diaphragma thoracicum",
-            category = "Beckenmuskeln",
-            parentId = 0
-        });
-
-        _connection.Insert(new AnatomicalStructures
-        {
-            id = 17,
             german_name = "Pyramidenmuskel (re.)",
             latin_name = "Musculus pyramidalis (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 18,
+            id = 17,
             german_name = "Pyramidenmuskel (li.)",
             latin_name = "Musculus pyramidalis (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 19,
+            id = 18,
             german_name = "Querer Bauchmuskel (re.)",
             latin_name = "Musculus transversus abdominis (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 20,
+            id = 19,
             german_name = "Querer Bauchmuskel (li.)",
             latin_name = "Musculus transversus abdominis (sin.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 21,
+            id = 20,
             german_name = "Gerader Bauchmuskel (re.)",
             latin_name = "Musculus rectus abdominis (dex.)",
             category = "Beckenmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
-            id = 22,
+            id = 21,
             german_name = "Gerader Bauchmuskel (li.)",
             latin_name = "Musculus rectus abdominis (sin.)",
             category = "Beckenmuskeln",
+            parentId = 0
+        });
+
+        //Zwerchfell
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 22,
+            german_name = "Zwerchfell",
+            latin_name = "Diaphragma thoracicum",
+            category = "Zwerchfell",
             parentId = 0
         });
 
@@ -430,7 +426,7 @@ public class DataService  {
             id = 41,
             german_name = "Äußerer Hüftlochmuskel (re.)",
             latin_name = "Musculus obturatorius externus (dex.)",
-            category = "Beckenmuskeln",
+            category = "Beinmuskeln",
             parentId = 0
         });
 
@@ -439,7 +435,7 @@ public class DataService  {
             id = 42,
             german_name = "Birnenförmiger Muskel (re.)",
             latin_name = "Musculus piriformis (dex.)",
-            category = "Beckenmuskeln",
+            category = "Beinmuskeln",
             parentId = 0
         });
 
@@ -448,7 +444,7 @@ public class DataService  {
             id = 43,
             german_name = "Kleiner Gesäßmuskel (re.)",
             latin_name = "Musculus gluteus minimus (dex.)",
-            category = "Beckenmuskeln",
+            category = "Beinmuskeln",
             parentId = 0
         });
 
@@ -457,7 +453,7 @@ public class DataService  {
             id = 44,
             german_name = "Innerer Hüftlochmuskel (re.)",
             latin_name = "Musculus obturatorius internus (dex.)",
-            category = "Beckenmuskeln",
+            category = "Beinmuskeln",
             parentId = 0
         });
 
@@ -466,7 +462,7 @@ public class DataService  {
             id = 45,
             german_name = "Mittlerer Gesäßmuskel (re.)",
             latin_name = "Musculus gluteus medius (dex.)",
-            category = "Beckenmuskeln",
+            category = "Beinmuskeln",
             parentId = 0
         });
 
@@ -493,7 +489,7 @@ public class DataService  {
             id = 48,
             german_name = "Großer Gesäßmuskel (re.)",
             latin_name = "Musculus gluteus maximus (dex.)",
-            category = "Beckenmuskeln",
+            category = "Beinmuskeln",
             parentId = 0
         });
 
@@ -502,7 +498,7 @@ public class DataService  {
             id = 49,
             german_name = "Schenkelbindenspanner (re.)",
             latin_name = "Musculus tensor fasciae latae (dex.)",
-            category = "Beckenmuskeln",
+            category = "Beinmuskeln",
             parentId = 0
         });
 
@@ -677,7 +673,6 @@ public class DataService  {
             parentId = 0
         });
 
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 69,
@@ -753,7 +748,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 77,
-            german_name = "Darmbeinmuskel (li.)",
+            german_name = "Darmbeinmuskel (sin.)",
             latin_name = "Musculus iliacus (sin.)",
             category = "Beinmuskeln",
             parentId = 0
@@ -812,7 +807,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 84,
@@ -821,7 +815,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 85,
@@ -830,7 +823,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 86,
@@ -839,7 +831,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 87,
@@ -848,7 +839,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 88,
@@ -857,7 +847,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 89,
@@ -866,7 +855,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 90,
@@ -875,7 +863,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 91,
@@ -884,7 +871,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 92,
@@ -893,7 +879,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 93,
@@ -902,7 +887,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 94,
@@ -911,7 +895,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 95,
@@ -920,7 +903,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 96,
@@ -929,7 +911,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 97,
@@ -938,7 +919,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 98,
@@ -947,7 +927,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 99,
@@ -956,7 +935,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 100,
@@ -965,7 +943,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 101,
@@ -974,7 +951,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 102,
@@ -983,7 +959,6 @@ public class DataService  {
             category = "Beinmuskeln",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 103,
@@ -1077,417 +1052,1790 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 113,
-            german_name = "Langer Kopf des Bizeps",
-            latin_name = "Musculus biceps brachii, Caput longum",
-            category = "",
+            german_name = "Langer Kopf des Bizeps (li.)",
+            latin_name = "Musculus biceps brachii (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 114,
-            german_name = "Rabenschnabelmuskel",
-            latin_name = "Musculus coracobrachialis",
-            category = "",
+            german_name = "Langer Kopf des Bizeps (re.)",
+            latin_name = "Musculus biceps brachii (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 115,
-            german_name = "Deltamuskel",
-            latin_name = "Musculus deltoideus",
-            category = "",
+            german_name = "Rabenschnabelmuskel (li.)",
+            latin_name = "Musculus coracobrachialis (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 116,
-            german_name = "Untergrätenmuskel",
-            latin_name = "Musculus infraspinatus",
-            category = "",
+            german_name = "Rabenschnabelmuskel (re.)",
+            latin_name = "Musculus coracobrachialis (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 117,
-            german_name = "Unterschulterblattmuskel",
-            latin_name = "Musculus subscapularis",
-            category = "",
+            german_name = "Deltamuskel (li.)",
+            latin_name = "Musculus deltoideus (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 118,
-            german_name = "Obergrätenmuskel",
-            latin_name = "Musculus supraspinatus",
-            category = "",
+            german_name = "Deltamuskel (re.)",
+            latin_name = "Musculus deltoideus (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 119,
-            german_name = "Großer Rundmuskel",
-            latin_name = "Musculus teres major",
-            category = "",
+            german_name = "Untergrätenmuskel (li.)",
+            latin_name = "Musculus infraspinatus (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 120,
-            german_name = "Kleiner Rundmuskel",
-            latin_name = "Musculus teres minor",
-            category = "",
+            german_name = "Untergrätenmuskel (re.)",
+            latin_name = "Musculus infraspinatus (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 121,
-            german_name = "Langer Kopf des Trizeps",
-            latin_name = "Musculus triceps brachii, Caput longum",
-            category = "",
+            german_name = "Unterschulterblattmuskel (li.)",
+            latin_name = "Musculus subscapularis (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 122,
-            german_name = "Armbeuger",
-            latin_name = "Musculus brachialis",
-            category = "",
+            german_name = "Unterschulterblattmuskel (re.)",
+            latin_name = "Musculus subscapularis (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 123,
-            german_name = "Ellenbogenmuskel",
-            latin_name = "Musculus anconeus",
-            category = "",
+            german_name = "Obergrätenmuskel (li.)",
+            latin_name = "Musculus supraspinatus (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 124,
-            german_name = "Oberarmspeichenmuskel",
-            latin_name = "Musculus brachioradialis",
-            category = "",
+            german_name = "Obergrätenmuskel (re.)",
+            latin_name = "Musculus supraspinatus (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 125,
-            german_name = "Runder Einwärtsdreher",
-            latin_name = "Musculus pronator teres",
-            category = "",
+            german_name = "Großer Rundmuskel (li.)",
+            latin_name = "Musculus teres major (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 126,
-            german_name = "Auswärtsdreher",
-            latin_name = "Musculus supinator",
-            category = "",
+            german_name = "Großer Rundmuskel (re.)",
+            latin_name = "Musculus teres major (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 127,
-            german_name = "Kurzer speichenseitiger Handstrecker",
-            latin_name = "Musculus extensor carpi radialis brevis",
-            category = "",
+            german_name = "Kleiner Rundmuskel (li.)",
+            latin_name = "Musculus teres minor (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 128,
-            german_name = "Langer speichenseitiger Handstrecker",
-            latin_name = "Musculus extensor carpi radialis longus",
-            category = "",
+            german_name = "Kleiner Rundmuskel (re.)",
+            latin_name = "Musculus teres minor (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 129,
-            german_name = "Ellenseitiger Handstrecker",
-            latin_name = "Musculus extensor carpi ulnaris",
-            category = "",
+            german_name = "Langer Kopf des Trizeps (li.)",
+            latin_name = "Musculus triceps brachii (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 130,
-            german_name = "Kleinfingerstrecker",
-            latin_name = "Musculus extensor digiti minimi",
-            category = "",
+            german_name = "Langer Kopf des Trizeps (re.)",
+            latin_name = "Musculus triceps brachii (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 131,
-            german_name = "Speichenseitiger Handbeuger",
-            latin_name = "Musculus flexor carpi radialis",
-            category = "",
+            german_name = "Armbeuger (li.)",
+            latin_name = "Musculus brachialis (sin.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 132,
-            german_name = "Ellenseitiger Handbeuger",
-            latin_name = "Musculus flexor carpi ulnaris",
-            category = "",
+            german_name = "Armbeuger (re.)",
+            latin_name = "Musculus brachialis (dex.)",
+            category = "Schulter + Oberarm",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 133,
-            german_name = "Langer Daumenbeuger",
-            latin_name = "Musculus flexor pollicis longus",
-            category = "",
+            german_name = "Ellenbogenmuskel (li.)",
+            latin_name = "Musculus anconeus (sin.)",
+            category = "Armmitte",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 134,
-            german_name = "Schambein-Steißbein-Muskel (re.)",
-            latin_name = "Musculus pubococcygeus (dex.)",
-            category = "",
+            german_name = "Ellenbogenmuskel (re.)",
+            latin_name = "Musculus anconeus (dex.)",
+            category = "Armmitte",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 135,
-            german_name = "Schambein-Steißbein-Muskel (li.)",
-            latin_name = "Musculus pubococcygeus (sin.)",
-            category = "",
+            german_name = "Oberarmspeichenmuskel (li.)",
+            latin_name = "Musculus brachioradialis (sin.)",
+            category = "Armmitte",
             parentId = 0
         });
-
         _connection.Insert(new AnatomicalStructures
         {
             id = 136,
-            german_name = "Sitzbein-Schwellkörper-Muskel (re.)",
-            latin_name = "Musculus ischiocavernosus (dex.)",
-            category = "",
+            german_name = "Oberarmspeichenmuskel (re.)",
+            latin_name = "Musculus brachioradialis (dex.)",
+            category = "Armmitte",
             parentId = 0
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 137,
-            german_name = "Sitzbein-Schwellkörper-Muskel (li.)",
-            latin_name = "Musculus ischiocavernosus (sin.)",
-            category = "",
+            german_name = "Runder Einwärtsdreher (li.)",
+            latin_name = "Musculus pronator teres (sin.)",
+            category = "Armmitte",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 138,
+            german_name = "Runder Einwärtsdreher (re.)",
+            latin_name = "Musculus pronator teres (dex.)",
+            category = "Armmitte",
             parentId = 0
         });
 
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 139,
+            german_name = "Auswärtsdreher (li.)",
+            latin_name = "Musculus supinator (sin.)",
+            category = "Armmitte",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 140,
+            german_name = "Auswärtsdreher (re.)",
+            latin_name = "Musculus supinator (dex.)",
+            category = "Armmitte",
+            parentId = 0
+        });
 
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 141,
+            german_name = "Kurzer speichenseitiger Handstrecker (sin.)",
+            latin_name = "Musculus extensor carpi radialis brevis (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 142,
+            german_name = "Kurzer speichenseitiger Handstrecker (dex.)",
+            latin_name = "Musculus extensor carpi radialis brevis (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 143,
+            german_name = "Langer speichenseitiger Handstrecker (sin.)",
+            latin_name = "Musculus extensor carpi radialis longus  (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 144,
+            german_name = "Langer speichenseitiger Handstrecker (dex.)",
+            latin_name = "Musculus extensor carpi radialis longus (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 145,
+            german_name = "Ellenseitiger Handstrecker (sin.)",
+            latin_name = "Musculus extensor carpi ulnaris (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 146,
+            german_name = "Ellenseitiger Handstrecker (dex.)",
+            latin_name = "Musculus extensor carpi ulnaris (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 147,
+            german_name = "Kleinfingerstrecker (sin.)",
+            latin_name = "Musculus extensor digiti minimi (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 148,
+            german_name = "Kleinfingerstrecker (dex.)",
+            latin_name = "Musculus extensor digiti minimi (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 149,
+            german_name = "Speichenseitiger Handbeuger (sin.)",
+            latin_name = "Musculus flexor carpi radialis (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 150,
+            german_name = "Speichenseitiger Handbeuger (dex.)",
+            latin_name = "Musculus flexor carpi radialis (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 151,
+            german_name = "Ellenseitiger Handbeuger (sin.)",
+            latin_name = "Musculus flexor carpi ulnaris (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 152,
+            german_name = "Ellenseitiger Handbeuger (dex.)",
+            latin_name = "Musculus flexor carpi ulnaris (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 153,
+            german_name = "Langer Daumenbeuger (sin.)",
+            latin_name = "Musculus flexor pollicis longus (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 154,
+            german_name = "Langer Daumenbeuger (dex.)",
+            latin_name = "Musculus flexor pollicis longus (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 155,
+            german_name = "Lenden-Rippenmuskel (sin.)",
+            latin_name = "Musculus iliocostalis lumborum (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 156,
+            german_name = "Lenden-Rippenmuskel (dex.)",
+            latin_name = "Musculus iliocostalis lumborum (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 157,
+            german_name = "Zwischenwirbelmuskeln der Lendenwirbelsäule (sin.)",
+            latin_name = "Musculi interspinales lumborum (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 158,
+            german_name = "Zwischenwirbelmuskeln der Lendenwirbelsäule (dex.)",
+            latin_name = "Musculi interspinales lumborum (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 159,
+            german_name = "Seitliche Zwischenquerfortsatzmuskeln (sin.)",
+            latin_name = "Musculi intertransversarii laterales lumborum (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 160,
+            german_name = "Seitliche Zwischenquerfortsatzmuskeln (dex.)",
+            latin_name = "Musculi intertransversarii laterales lumborum (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 161,
+            german_name = "Rippenheber (sin.)",
+            latin_name = "Musculi levatores costarum (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 162,
+            german_name = "Rippenheber (dex.)",
+            latin_name = "Musculi levatores costarum (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 163,
+            german_name = "Langer Rückenmuskel (sin.)",
+            latin_name = "Musculus longissimus thoracis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 164,
+            german_name = "Langer Rückenmuskel (dex.)",
+            latin_name = "Musculus longissimus thoracis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 165,
+            german_name = "Vielgefiederter Muskel (sin.)",
+            latin_name = "Musculus multifidus (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 166,
+            german_name = "Vielgefiederter Muskel (dex.)",
+            latin_name = "Musculus multifidus (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 167,
+            german_name = "Unterer schräger Kopfmuskel (sin.)",
+            latin_name = "Musculus obliquus inferior capitis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 168,
+            german_name = "Unterer schräger Kopfmuskel (dex.)",
+            latin_name = "Musculus obliquus inferior capitis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 169,
+            german_name = "Oberer schräger Kopfmuskel (sin.)",
+            latin_name = "Musculus obliquus superior capitis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 170,
+            german_name = "Oberer schräger Kopfmuskel (dex.)",
+            latin_name = "Musculus obliquus superior capitis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 171,
+            german_name = "Drehmuskeln (sin.)",
+            latin_name = "Musculi rotatores (thoracis breves + longi) (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 172,
+            german_name = "Drehmuskeln (dex.)",
+            latin_name = "Musculi rotatores (thoracis breves + longi) (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 173,
+            german_name = "Halbdornmuskel des Thorax (sin.)",
+            latin_name = "Musculus semispinalis thoracis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 174,
+            german_name = "Halbdornmuskel des Thorax (dex.)",
+            latin_name = "Musculus semispinalis thoracis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 175,
+            german_name = "Dornmuskel (sin.)",
+            latin_name = "Musculus spinalis thoracis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 176,
+            german_name = "Dornmuskel (dex.)",
+            latin_name = "Musculus spinalis thoracis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 177,
+            german_name = "Riemenmuskel des Halses (sin.)",
+            latin_name = "Musculus splenius cervicis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 178,
+            german_name = "Riemenmuskel des Halses (dex.)",
+            latin_name = "Musculus splenius cervicis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 179,
+            german_name = "Oberer hinterer Sägemuskel (sin.)",
+            latin_name = "Musculus serratus posterior superior (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 180,
+            german_name = "Oberer hinterer Sägemuskel (dex.)",
+            latin_name = "Musculus serratus posterior superior (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 181,
+            german_name = "Unterer hinterer Sägemuskel (sin.)",
+            latin_name = "Musculus serratus posterior inferior (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 182,
+            german_name = "Unterer hinterer Sägemuskel (dex.)",
+            latin_name = "Musculus serratus posterior inferior (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 183,
+            german_name = "Breiter Rückenmuskel (sin.)",
+            latin_name = "Musculus latissimus dorsi (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 184,
+            german_name = "Breiter Rückenmuskel (dex.)",
+            latin_name = "Musculus latissimus dorsi (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 185,
+            german_name = "Kleiner Rautenmuskel (sin.)",
+            latin_name = "Musculus rhomboideus minor (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 186,
+            german_name = "Kleiner Rautenmuskel (dex.)",
+            latin_name = "Musculus rhomboideus minor (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 187,
+            german_name = "Großer Rautenmuskel (sin.)",
+            latin_name = "Musculus rhomboideus major (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 188,
+            german_name = "Großer Rautenmuskel (dex.)",
+            latin_name = "Musculus rhomboideus major (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 189,
+            german_name = "Kapuzenmuskel (sin.)",
+            latin_name = "Musculus trapezius (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 190,
+            german_name = "Kapuzenmuskel (dex.)",
+            latin_name = "Musculus trapezius (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 191,
+            german_name = "Zwischenwirbelmuskeln der Brustwirbelsäule (sin.)",
+            latin_name = "Musculi interspinales thoracis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 192,
+            german_name = "Zwischenwirbelmuskeln der Brustwirbelsäule (dex.)",
+            latin_name = "Musculi interspinales thoracis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 193,
+            german_name = "Zwischenquerfortsatzmuskeln der Brustwirbelsäule (sin.)",
+            latin_name = "Musculi intertransversarii thoracis (sin.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 194,
+            german_name = "Zwischenquerfortsatzmuskeln der Brustwirbelsäule (dex.)",
+            latin_name = "Musculi intertransversarii thoracis (dex.)",
+            category = "Torso Rücken",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 195,
+            german_name = "Schambein-Steißbein-Muskel (re.)",
+            latin_name = "Musculus pubococcygeus (dex.)",
+            category = "Beckenboden",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 196,
+            german_name = "Schambein-Steißbein-Muskel (li.)",
+            latin_name = "Musculus pubococcygeus (sin.)",
+            category = "Beckenboden",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 197,
+            german_name = "Langer Daumenabzieher-Muskel (re.)",
+            latin_name = "Musculus abductor pollicis longus (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 198,
+            german_name = "Langer Daumenabzieher-Muskel (li.)",
+            latin_name = "Musculus abductor pollicis longus (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 199,
+            german_name = "Zeigefingerstrecker-Muskel (re.)",
+            latin_name = "Musculus extensor indicis (dex.)",
+            category = "Unterarmmuskulatur",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 200,
+            german_name = "Zeigefingerstrecker-Muskel (li.)",
+            latin_name = "Musculus extensor indicis (sin.)",
+            category = "Unterarmmuskulatur",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 201,
+            german_name = "Palmaris longus-Muskel (li.)",
+            latin_name = "Musculus palmaris longus (sin.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 202,
+            german_name = "Palmaris longus-Muskel (re.)",
+            latin_name = "Musculus palmaris longus (dex.)",
+            category = "Unterarm",
+            parentId = 0
+        });
+        //Descriptions Becken
 
         _connection.Insert(new Descriptions
         {
-            id = 113,
-            ansatz = "Tuberositas radii und über die Aponeurosis musculi bicipitis brachii an der Fascia antebrachii",
-            innervation = "N. musculocutaneus (C5–C6)",
-            funktion = "Flexion und Supination im Ellenbogengelenk; unterstützt Flexion im Schultergelenk",
-            structure_id = 113
+            id = 0,
+            ansatz = "Sitzbeinast und Unterer Ast des Schambeins (Innenflächen)",
+            innervation = "Dammnerv (re.) S1-S4",
+            funktion = "Unterstützung des Beckenbodens und der Organe; Stabilisation des Damms",
+            structure_id = 0
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 114,
-            ansatz = "Mediale Fläche des Humerus in Verlängerung der Crista tuberculi minoris",
-            innervation = "N. musculocutaneus (C5–C7)",
-            funktion = "Adduktion, Flexion und Innenrotation im Schultergelenk",
-            structure_id = 114
+            id = 1,
+            ansatz = "Sitzbeinast und Unterer Ast des Schambeins (Innenflächen)",
+            innervation = "Dammnerv (li.) S1-S4",
+            funktion = "Unterstützung des Beckenbodens und der Organe; Stabilisation des Damms",
+            structure_id = 1
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 115,
-            ansatz = "Tuberositas deltoidea des Humerus",
-            innervation = "N. axillaris (C5–C6)",
-            funktion = "Abduktion, Anteversion, Retroversion, Innen- und Außenrotation im Schultergelenk, je nach Faseranteil",
-            structure_id = 115
+            id = 2,
+            ansatz = "Becken - Tuber ischiadicum des Sitzbeinastes (Innenfläche)",
+            innervation = "Dammnerv (re.) S1-S4",
+            funktion = "Unterstützung des Damms, Stabilisation der Beckenbodenregion",
+            structure_id = 2
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 116,
-            ansatz = "Tuberculum majus des Humerus",
-            innervation = "N. suprascapularis (C4–C6)",
-            funktion = "Außenrotation im Schultergelenk",
-            structure_id = 116
+            id = 3,
+            ansatz = "Becken - Tuber ischiadicum des Sitzbeinastes (Innenfläche)",
+            innervation = "Dammnerv (li.) S1-S4",
+            funktion = "Unterstützung des Damms, Stabilisation der Beckenbodenregion",
+            structure_id = 3
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 117,
-            ansatz = "Tuberculum minus des Humerus",
-            innervation = "Nn. subscapulares (C5–C6)",
-            funktion = "Innenrotation im Schultergelenk",
-            structure_id = 117
+            id = 4,
+            ansatz = "Becken - Sitzbeinast (Innenfläche)",
+            innervation = "Schamnerv (re.) S2-S4",
+            funktion = "Stabilisation der Genitalregion, Erhöhung des Beckenbodendrucks",
+            structure_id = 4
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 118,
-            ansatz = "Tuberculum majus des Humerus",
-            innervation = "N. suprascapularis (C4–C6)",
-            funktion = "Abduktion im Schultergelenk",
-            structure_id = 118
+            id = 5,
+            ansatz = "Becken - Sitzbeinast (Innenfläche)",
+            innervation = "Schamnerv (li.) S2-S4",
+            funktion = "Stabilisation der Genitalregion, Erhöhung des Beckenbodendrucks",
+            structure_id = 5
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 119,
-            ansatz = "Crista tuberculi minoris des Humerus",
-            innervation = "N. thoracodorsalis (C6–C7)",
-            funktion = "Innenrotation, Adduktion und Retroversion im Schultergelenk",
-            structure_id = 119
+            id = 6,
+            ansatz = "Dammkörper",
+            innervation = "Schamnerv (re.) S2-S4",
+            funktion = "Unterstützung der Harnröhrenkontrolle, Stabilisierung der Genitalregion",
+            structure_id = 6
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 120,
-            ansatz = "Tuberculum majus des Humerus",
-            innervation = "N. axillaris (C5–C6)",
-            funktion = "Außenrotation und schwache Adduktion im Schultergelenk",
-            structure_id = 120
+            id = 7,
+            ansatz = "Dammkörper",
+            innervation = "Schamnerv (li.) S2-S4",
+            funktion = "Unterstützung der Harnröhrenkontrolle, Stabilisierung der Genitalregion",
+            structure_id = 7
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 121,
-            ansatz = "Olecranon der Ulna",
-            innervation = "N. radialis (C6–C8)",
-            funktion = "Extension im Ellenbogengelenk; Retroversion und Adduktion im Schultergelenk",
-            structure_id = 121
+            id = 8,
+            ansatz = "Becken - Sitzbein-Schambein-Ast (Innenfläche)",
+            innervation = "Äste des Kreuzbeinnervengeflechts (S4)",
+            funktion = "Unterstützung der Darmschließmuskulatur, Stabilisierung des Enddarms",
+            structure_id = 8
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 122,
-            ansatz = "Tuberositas ulnae",
-            innervation = "N. musculocutaneus (C5–C6)",
-            funktion = "Flexion im Ellenbogengelenk",
-            structure_id = 122
+            id = 9,
+            ansatz = "Becken - Sitzbein-Schambein-Ast (Innenfläche)",
+            innervation = "Äste des Kreuzbeinnervengeflechts (S4)",
+            funktion = "Unterstützung der Darmschließmuskulatur, Stabilisierung des Enddarms",
+            structure_id = 9
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 123,
-            ansatz = "Olecranon und proximales Viertel der dorsalen Fläche der Ulna",
-            innervation = "N. radialis (C7–C8)",
-            funktion = "Extension im Ellenbogengelenk; spannt die Gelenkkapsel",
-            structure_id = 123
+            id = 10,
+            ansatz = "Becken - Sitzbeinstachel (Innenfläche)",
+            innervation = "Äste des Kreuzbeinnervengeflechts (S4)",
+            funktion = "Stabilisierung des Beckenbodens und des Steißbeins",
+            structure_id = 10
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 124,
-            ansatz = "Processus styloideus radii",
-            innervation = "N. radialis (C5–C6)",
-            funktion = "Flexion im Ellenbogengelenk; unterstützt Pronation und Supination des Unterarms in die Mittelstellung",
-            structure_id = 124
+            id = 11,
+            ansatz = "Becken - Sitzbeinstachel (Innenfläche)",
+            innervation = "Äste des Kreuzbeinnervengeflechts (S4)",
+            funktion = "Stabilisierung des Beckenbodens und des Steißbeins",
+            structure_id = 11
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 125,
-            ansatz = "Facies lateralis radii (Mitte der Außenseite des Radius)",
-            innervation = "N. medianus (C6–C7)",
-            funktion = "Pronation und schwache Flexion im Ellenbogengelenk",
-            structure_id = 125
+            id = 12,
+            ansatz = "Wirbelsäule - Apex ossis sacri, Steißbein",
+            innervation = "Äste des Kreuzbeinnervengeflechts (S4-S5)",
+            funktion = "Stabilisierung des Steißbeins und des Beckenbodens",
+            structure_id = 12
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 126,
-            ansatz = "Proximales Drittel des Radius",
-            innervation = "N. radialis (C5–C6)",
-            funktion = "Supination des Unterarms",
-            structure_id = 126
+            id = 13,
+            ansatz = "Wirbelsäule - Apex ossis sacri, Steißbein",
+            innervation = "Äste des Kreuzbeinnervengeflechts (S4-S5)",
+            funktion = "Stabilisierung des Steißbeins und des Beckenbodens",
+            structure_id = 13
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 127,
-            ansatz = "Basis des Os metacarpi III",
-            innervation = "N. radialis (C7–C8)",
-            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
-            structure_id = 127
+            id = 14,
+            ansatz = "Becken - Innere Lippe des Darmbeinkamms",
+            innervation = "Vordere Äste der Spinalnerven (T12, L1-L4)",
+            funktion = "Stabilisierung der Lendenwirbelsäule und des Beckens",
+            structure_id = 14
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 128,
-            ansatz = "Basis des Os metacarpi II",
-            innervation = "N. radialis (C6–C7)",
-            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
-            structure_id = 128
+            id = 15,
+            ansatz = "Becken - Innere Lippe des Darmbeinkamms",
+            innervation = "Vordere Äste der Spinalnerven (T12, L1-L4)",
+            funktion = "Stabilisierung der Lendenwirbelsäule und des Beckens",
+            structure_id = 15
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 129,
-            ansatz = "Basis des Os metacarpi V",
-            innervation = "N. radialis (C7–C8)",
-            funktion = "Dorsalextension und Ulnarabduktion im Handgelenk",
-            structure_id = 129
+            id = 16,
+            ansatz = "Becken - obere Ränder des Schambeinkörpers",
+            innervation = "Unterrippennerv (T12)",
+            funktion = "Stabilisierung der unteren Bauchwand",
+            structure_id = 16
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 130,
-            ansatz = "Dorsalaponeurose des 5. Fingers",
-            innervation = "N. radialis (C7–C8)",
-            funktion = "Extension des 5. Fingers; unterstützt Dorsalextension im Handgelenk",
-            structure_id = 130
+            id = 17,
+            ansatz = "Becken - obere Ränder des Schambeinkörpers",
+            innervation = "Unterrippennerv (T12)",
+            funktion = "Stabilisierung der unteren Bauchwand",
+            structure_id = 17
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 131,
-            ansatz = "Basis des Os metacarpi II und III",
-            innervation = "N. medianus (C6–C7)",
-            funktion = "Flexion und Radialabduktion im Handgelenk",
-            structure_id = 131
+            id = 18,
+            ansatz = "Brustkorb - Rippenkörper VII-XII, Fascia thoracolumbalis",
+            innervation = "Rechte Zwischenrippennerven - T7-T12",
+            funktion = "Stabilisierung des Rumpfes, Unterstützung des Beckenbodens",
+            structure_id = 18
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 132,
-            ansatz = "Os pisiforme, Hamulus ossis hamati, Basis des Os metacarpi V",
-            innervation = "N. ulnaris (C7–Th1)",
-            funktion = "Flexion und Ulnarabduktion im Handgelenk",
-            structure_id = 132
+            id = 19,
+            ansatz = "Brustkorb - Rippenkörper VII-XII, Fascia thoracolumbalis",
+            innervation = "Linke Zwischenrippennerven - T7-T12",
+            funktion = "Stabilisierung des Rumpfes, Unterstützung des Beckenbodens",
+            structure_id = 19
         });
 
         _connection.Insert(new Descriptions
         {
-            id = 133,
-            ansatz = "Basis der Endphalanx des Daumens",
-            innervation = "N. medianus (C7–C8)",
-            funktion = "Flexion im Daumengrund- und -endgelenk; unterstützt Flexion im Handgelenk",
-            structure_id = 133
+            id = 20,
+            ansatz = "Becken - zwischen Schambeinhöcker und Symphysis pubica",
+            innervation = "Zwischenrippennerven (T5-T12)",
+            funktion = "Flexion des Rumpfes, Unterstützung der inneren Organe",
+            structure_id = 20
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 21,
+            ansatz = "Becken - zwischen Schambeinhöcker und Symphysis pubica",
+            innervation = "Zwischenrippennerven (T5-T12)",
+            funktion = "Flexion des Rumpfes, Unterstützung der inneren Organe",
+            structure_id = 21
+        });
+
+        //Descriptiions Zwerchfell
+        _connection.Insert(new Descriptions
+        {
+            id = 22,
+            ansatz = "Brustkorb - Processus xiphoideus sterni, untere Rippenbogenränder",
+            innervation = "Zwerchfellnerven (C3-C5)",
+            funktion = "Atemfunktion, Unterstützung des Beckenbodens",
+            structure_id = 22
+        });
+
+        //Descriptions Beinmuskeln
+        _connection.Insert(new Descriptions
+        {
+            id = 23,
+            ansatz = "Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse)",
+            innervation = "Hüftlochnerv - L2-L3",
+            funktion = "Adduktion des Oberschenkels",
+            structure_id = 23
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 24,
+            ansatz = "Schienbein - Schienbeinhöcker (medialer Teil)",
+            innervation = "Hüftlochnerv - L2-L3",
+            funktion = "Adduktion des Oberschenkels, Flexion und Innenrotation des Knies",
+            structure_id = 24
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 25,
+            ansatz = "Oberschenkelknochen – Kammlinie (Diaphyse)",
+            innervation = "Hüftlochnerv und Schenkelnerv - L2-L3",
+            funktion = "Adduktion, Flexion und Außenrotation des Oberschenkels",
+            structure_id = 25
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 26,
+            ansatz = "Schienbein - Schienbeinhöcker (über das innere Halteband der Kniescheibe)",
+            innervation = "Schenkelnerv - L2-L4",
+            funktion = "Streckung des Knies",
+            structure_id = 26
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 27,
+            ansatz = "Schienbein - Schienbeinhöcker (mittels Kniescheibenband)",
+            innervation = "Schenkelnerv - L2-L4",
+            funktion = "Streckung des Knies",
+            structure_id = 27
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 28,
+            ansatz = "Schienbein - Schienbeinhöcker (über das äußere Halteband der Kniescheibe)",
+            innervation = "Schenkelnerv - L2-L4",
+            funktion = "Streckung des Knies",
+            structure_id = 28
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 29,
+            ansatz = "Kapsel des Kniegelenks (Bursa suprapatellaris)",
+            innervation = "Schenkelnerv - L2-L3",
+            funktion = "Schutz des Kniegelenks bei Bewegung",
+            structure_id = 29
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 30,
+            ansatz = "Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse)",
+            innervation = "Hüftlochnerv - L2-L4",
+            funktion = "Adduktion des Oberschenkels",
+            structure_id = 30
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 31,
+            ansatz = "Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse), Tuberculum adductorium des inneren Gelenkknorrens (distale Epiphyse)",
+            innervation = "Hüftlochnerv - L2-L4, Schienbeinnerv L4",
+            funktion = "Adduktion des Oberschenkels",
+            structure_id = 31
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 32,
+            ansatz = "Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
+            innervation = "Rechte vordere Äste der Spinalnerven - L1-L3, Schenkelnerv - L2-L3",
+            funktion = "Flexion des Oberschenkels, Stabilisierung des Beckens",
+            structure_id = 32
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 33,
+            ansatz = "Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
+            innervation = "Schenkelnerv L2-L3",
+            funktion = "Flexion des Oberschenkels",
+            structure_id = 33
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 34,
+            ansatz = "Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
+            innervation = "Rami anteriores nervorum sacralium - L1-L3",
+            funktion = "Flexion des Oberschenkels",
+            structure_id = 34
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 35,
+            ansatz = "Becken - Schambeinkamm und Darmbein",
+            innervation = "Vorderer Ast des Spinalnervs - L1",
+            funktion = "Stabilisierung des Beckens",
+            structure_id = 35
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 36,
+            ansatz = "Schienbein - Condylus medialis (proximale Epiphyse)",
+            innervation = "Schienbeinnerv – L5-S2",
+            funktion = "Beugung des Knies, Stabilisierung des Knies",
+            structure_id = 36
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 37,
+            ansatz = "Wadenbein - Spitze des Caput (proximale Epiphyse)",
+            innervation = "Schienbeinnerv (Caput longum) und Wadenbeinnerv (Caput breve) - L5-S2",
+            funktion = "Beugung des Knies, Außenrotation des Oberschenkels",
+            structure_id = 37
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 38,
+            ansatz = "Schienbein - Condylus medialis",
+            innervation = "Schienbeinnerv – L5-S2",
+            funktion = "Beugung des Knies, Innenrotation des Oberschenkels",
+            structure_id = 38
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 39,
+            ansatz = "Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L5-S2",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 39
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 40,
+            ansatz = "Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L4-S1",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 40
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 41,
+            ansatz = "Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
+            innervation = "Hüftlochnerv – L3-L4",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 41
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 42,
+            ansatz = "Oberschenkelknochen = großer Rollhügel (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – S1-S2",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 42
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 43,
+            ansatz = "Oberschenkelknochen - großer Rollhügel (proximale Epiphyse)",
+            innervation = "Oberer Gesäßnerv -L4-S1",
+            funktion = "Abduktion und Innenrotation des Oberschenkels",
+            structure_id = 43
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 44,
+            ansatz = "Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L5-S1",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 44
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 45,
+            ansatz = "Oberschenkelknochen - großer Rollhügel (proximale Epiphyse)",
+            innervation = "Oberer Gesäßnerv -L4-S1",
+            funktion = "Abduktion und Stabilisierung des Beckens",
+            structure_id = 45
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 46,
+            ansatz = "Schienbein - Schienbeinhöcker (mittels Kniescheibenband)",
+            innervation = "Schenkelnerv L2-L4",
+            funktion = "Beugung des Oberschenkels, Streckung des Knies",
+            structure_id = 46
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 47,
+            ansatz = "Schienbein - Schienbeinhöcker (medialer Teil)",
+            innervation = "Schenkelnerv L2-L3",
+            funktion = "Flexion, Abduktion und Außenrotation des Oberschenkels",
+            structure_id = 47
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 48,
+            ansatz = "Oberschenkelknochen - Gesäßmuskelrauigkeit (Diaphyse)",
+            innervation = "Unterer Gesäßnerv – L5-S2",
+            funktion = "Hüftstreckung, Außenrotation des Oberschenkels",
+            structure_id = 48
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 49,
+            ansatz = "Darmbein-Schienbein-Band",
+            innervation = "Oberer Gesäßnerv - L4-S1",
+            funktion = "Spannt die Oberschenkelfaszie, unterstützt die Hüftabduktion",
+            structure_id = 49
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 50,
+            ansatz = "Oberschenkelknochen - quadratischer Höcker der Zwischenrollhügelleiste (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L5-S1",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 50
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 51,
+            ansatz = "Schienbein- Hinterfläche (proximaler Teil der Diaphyse)",
+            innervation = "Schienbeinnerv – L4-S1",
+            funktion = "Beugung und Innenrotation des Knies",
+            structure_id = 51
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 52,
+            ansatz = "Fuß - Fersenbeinhöcker",
+            innervation = "Schienbeinnerv – S1-S2",
+            funktion = "Beugung des Knies, Plantarflexion des Fußes",
+            structure_id = 52
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 53,
+            ansatz = "Fuß - Tuberositas des Kahnbeins, Keilbeine, Mittelfußknochen II-IV (Unterseiten)",
+            innervation = "Schienbeinnerv – L4-L5",
+            funktion = "Plantarflexion und Supination des Fußes",
+            structure_id = 53
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 54,
+            ansatz = "Dorsalaponeurose der Zehen",
+            innervation = "Tiefer Wadenbeinnerv – L5",
+            funktion = "Streckung der Großzehe, Dorsalflexion des Fußes",
+            structure_id = 54
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 55,
+            ansatz = "Fuß - Tuberositas der Basis des 5. Mittelfußknochens (laterale Fläche)",
+            innervation = "Oberflächlicher Wadenbeinnerv – L5-S1",
+            funktion = "Plantarflexion und Eversion des Fußes",
+            structure_id = 55
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 56,
+            ansatz = "Fuß - Basis des 5. Mittelfußknochens (Rückfläche)",
+            innervation = "Tiefer Wadenbeinnerv – L5-S1",
+            funktion = "Dorsalflexion und Eversion des Fußes",
+            structure_id = 56
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 57,
+            ansatz = "Fuß - Basis des Endglieds der Großzehe (Unterseite)",
+            innervation = "Schienbeinnerv – L5-S2",
+            funktion = "Flexion der Großzehe, Plantarflexion des Fußes",
+            structure_id = 57
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 58,
+            ansatz = "Fuß - Basen der Endphalangen der Zehen II-V (Unterseiten)",
+            innervation = "Schienbeinnerv – L5-S2",
+            funktion = "Flexion der Zehen II-V, Plantarflexion des Fußes",
+            structure_id = 58
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 59,
+            ansatz = "Fuß - inneres Keilbein, Basis des 1. Mittelfußknochens (mediale und untere Seite)",
+            innervation = "Tiefer Wadenbeinnerv – L4-L5",
+            funktion = "Dorsalflexion und Inversion des Fußes",
+            structure_id = 59
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 60,
+            ansatz = "Dorsalaponeurose der Zehen",
+            innervation = "Tiefer Wadenbeinnerv – L5-S1",
+            funktion = "Streckung der Zehen, Dorsalflexion des Fußes",
+            structure_id = 60
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 61,
+            ansatz = "Fuß - mittleres Keilbein, Tuberositas der Basis des 1. Mittelfußknochens (Unterseiten)",
+            innervation = "Oberflächlicher Wadenbeinnerv – L5-S1",
+            funktion = "Plantarflexion und Eversion des Fußes",
+            structure_id = 61
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 62,
+            ansatz = "Fuß - Fersenbeinhöcker",
+            innervation = "Schienbeinnerv – S1-S2",
+            funktion = "Plantarflexion des Fußes",
+            structure_id = 62
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 63,
+            ansatz = "Fuß - Fersenbeinhöcker",
+            innervation = "Schienbeinnerv – S1-S2",
+            funktion = "Plantarflexion des Fußes, Beugung des Knies",
+            structure_id = 63
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 64,
+            ansatz = "Fuß - Basis des 5. Mittelfußknochens (untere Fläche)",
+            innervation = "Oberflächlicher Ast des äußeren Fußsohlennervs - S2-S3",
+            funktion = "Beugt und dreht den Kleinzeh",
+            structure_id = 64
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 65,
+            ansatz = "Fuß - Tuberositas der Basis des 5. Mittelfußknochens und Basis des Kleinzehengrundglieds (untere Seiten)",
+            innervation = "Äußerer Fußsohlennerv – S1-S3",
+            funktion = "Abduktion des Kleinzehs",
+            structure_id = 65
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 66,
+            ansatz = "Fuß - Basis der proximalen Phalanx der Kleinzehe (Unterseite)",
+            innervation = "Oberflächlicher Ast des äußeren Fußsohlennervs - S2-S3",
+            funktion = "Beugung des Kleinzehs",
+            structure_id = 66
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 67,
+            ansatz = "Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse)",
+            innervation = "Hüftlochnerv - L2-L3",
+            funktion = "Adduktion und Flexion des Oberschenkels",
+            structure_id = 67
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 68,
+            ansatz = "Schienbein - Schienbeinhöcker (medialer Teil)",
+            innervation = "Hüftlochnerv - L2-L3",
+            funktion = "Adduktion des Oberschenkels, Flexion des Knies",
+            structure_id = 68
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 69,
+            ansatz = "Oberschenkelknochen – Kammlinie (Diaphyse)",
+            innervation = "Hüftlochnerv und Schenkelnerv - L2-L3",
+            funktion = "Adduktion, Flexion und Außenrotation des Oberschenkels",
+            structure_id = 69
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 70,
+            ansatz = "Schienbein- Schienbeinhöcker (über das innere Halteband der Kniescheibe)",
+            innervation = "Schenkelnerv - L2-L4",
+            funktion = "Streckung des Knies",
+            structure_id = 70
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 71,
+            ansatz = "Schienbein- Schienbeinhöcker (mittels Kniescheibenband)",
+            innervation = "Schenkelnerv - L2-L4",
+            funktion = "Streckung des Knies",
+            structure_id = 71
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 72,
+            ansatz = "Schienbein - Schienbeinhöcker (über das äußere Halteband der Kniescheibe)",
+            innervation = "Schenkelnerv - L2-L4",
+            funktion = "Streckung des Knies",
+            structure_id = 72
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 73,
+            ansatz = "Kapsel des Kniegelenks (Bursa suprapatellaris)",
+            innervation = "Schenkelnerv - L2-L3",
+            funktion = "Stabilisierung der Kniescheibe während der Bewegung",
+            structure_id = 73
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 74,
+            ansatz = "Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse)",
+            innervation = "Hüftlochnerv - L2-L4",
+            funktion = "Adduktion und Flexion des Oberschenkels",
+            structure_id = 74
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 75,
+            ansatz = "Oberschenkelknochen - innere Leiste der rauen Linie (Diaphyse), Tuberculum adductorium des inneren Gelenkknorrens",
+            innervation = "Hüftlochnerv - L2-L4, Schienbeinnerv L4",
+            funktion = "Adduktion und Flexion des Oberschenkels, Extension des Oberschenkels",
+            structure_id = 75
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 76,
+            ansatz = "Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
+            innervation = "Linke vordere Äste der Spinalnerven - L1-L3, Schenkelnerv - L2-L3",
+            funktion = "Flexion des Oberschenkels, Aufrichten des Oberkörpers",
+            structure_id = 76
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 77,
+            ansatz = "Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
+            innervation = "Schenkelnerv - L2-L3",
+            funktion = "Flexion des Oberschenkels",
+            structure_id = 77
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 78,
+            ansatz = "Oberschenkelknochen - kleiner Rollhügel (proximale Epiphyse)",
+            innervation = "Rami anteriores nervorum sacralium - L1-L3",
+            funktion = "Flexion des Oberschenkels",
+            structure_id = 78
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 79,
+            ansatz = "Becken - Schambeinkamm und Darmbein",
+            innervation = "Vorderer Ast des Spinalnervs - L1",
+            funktion = "Flexion und Außenrotation des Oberschenkels",
+            structure_id = 79
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 80,
+            ansatz = "Schienbein - Condylus medialis (proximale Epiphyse), Schräges Kniekehlenband",
+            innervation = "Schienbeinnerv – L5-S2",
+            funktion = "Beugung des Knies, Innenrotation des Oberschenkels",
+            structure_id = 80
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 81,
+            ansatz = "Wadenbein- Spitze des Caput (proximale Epiphyse)",
+            innervation = "Schienbeinnerv (Caput longum) und Wadenbeinnerv (Caput breve) – L5-S2",
+            funktion = "Beugung des Knies, Außenrotation des Oberschenkels",
+            structure_id = 81
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 82,
+            ansatz = "Schienbein – Schienbeinhöcker (medialer Teil)",
+            innervation = "Schienbeinnerv – L5-S2",
+            funktion = "Beugung des Knies, Innenrotation des Oberschenkels",
+            structure_id = 82
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 83,
+            ansatz = "Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L5-S2",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 83
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 84,
+            ansatz = "Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L4-S1",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 84
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 85,
+            ansatz = "Oberschenkelknochen - Rollhügelgrube (proximale Epiphyse)",
+            innervation = "Hüftlochnerv – L3-L4",
+            funktion = "Außenrotation des Oberschenkels, Adduktion",
+            structure_id = 85
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 86,
+            ansatz = "Oberschenkelknochen - großer Rollhügel (proximale Epiphyse)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – S1-S2",
+            funktion = "Außenrotation und Abduktion des Oberschenkels",
+            structure_id = 86
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 87,
+            ansatz = "Becken - Gesäßfläche des Darmbeins (zwischen der anterioren und der posterioren Linea glutealis)",
+            innervation = "Oberer Gesäßnerv - L4-S1",
+            funktion = "Abduktion und Innenrotation des Oberschenkels",
+            structure_id = 87
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 88,
+            ansatz = "Becken - Ränder des Hüftbeinlochs, Membrana obturatoria (Innenfläche)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L5-S1",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 88
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 89,
+            ansatz = "Becken - Gesäßfläche des Darmbeins (unterhalb des Darmbeinkamms zwischen der anterioren und der posterioren Linea glutealis)",
+            innervation = "Oberer Gesäßnerv - L4-S1",
+            funktion = "Abduktion des Oberschenkels",
+            structure_id = 89
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 90,
+            ansatz = "Becken - vorderer unterer Darmbeinstachel, Oberrand der Hüftgelenkspfanne (Acetabulum)",
+            innervation = "Schenkelnerv - L2-L4",
+            funktion = "Flexion des Oberschenkels, Streckung des Knies",
+            structure_id = 90
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 91,
+            ansatz = "Becken - oberer vorderer Darmbeinstachel",
+            innervation = "Schenkelbeinhöcker (medialer Teil)",
+            funktion = "Beugung und Außenrotation des Oberschenkels, Beugung des Knies",
+            structure_id = 91
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 92,
+            ansatz = "Wirbelsäule - dorsale Kreuzbeinoberfläche, Fascia thoracolumbalis, Becken - Gesäßfläche des Darmbeins, Kreuzbein-Sitzbeinhöcker-Band",
+            innervation = "Unterer Gesäßnerv - L5-S2",
+            funktion = "Extension, Abduktion und Außenrotation des Oberschenkels",
+            structure_id = 92
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 93,
+            ansatz = "Becken - oberer vorderer Darmbeinstachel",
+            innervation = "Darmbein-Schienbein-Band",
+            funktion = "Flexion, Abduktion und Innenrotation des Oberschenkels",
+            structure_id = 93
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 94,
+            ansatz = "Becken - Tuber ischiadicum des Sitzbeinastes (laterale Kante)",
+            innervation = "Muskelast des Kreuzbeinnervengeflechts – L5-S1",
+            funktion = "Außenrotation des Oberschenkels",
+            structure_id = 94
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 95,
+            ansatz = "Oberschenkelknochen - Sulcus popliteus des äußeren Gelenkknorrens (distale Epiphyse)",
+            innervation = "Schienbeinnerv - L4-S1",
+            funktion = "Flexion und Innenrotation des Knies",
+            structure_id = 95
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 96,
+            ansatz = "Oberschenkelknochen - Epicondylus lateralis des äußeren Gelenkknorrens (distale Epiphyse), Schräges Kniekehlenband",
+            innervation = "Schienbeinnerv - S1-S2",
+            funktion = "Flexion des Knies, Plantarflexion des Fußes",
+            structure_id = 96
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 97,
+            ansatz = "Schienbein - Hinterfläche (proximale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels, Wadenbein - Hinterfläche (proximale 2/3 der Diaphyse)",
+            innervation = "Schienbeinnerv - L4-L5",
+            funktion = "Plantarflexion und Inversion des Fußes",
+            structure_id = 97
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 98,
+            ansatz = "Wadenbein - mediale Fläche (distale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels",
+            innervation = "Tiefer Wadenbeinnerv - L5",
+            funktion = "Dorsalextension des Fußes, Streckung der Großzehe",
+            structure_id = 98
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 99,
+            ansatz = "Wadenbein - laterale Fläche (distale 2/3 der Diaphyse), Zwischenmuskelscheidewände des Unterschenkels (Septum intermusculare cruris)",
+            innervation = "Oberflächlicher Wadenbeinnerv - L5-S1",
+            funktion = "Plantarflexion und Eversion des Fußes",
+            structure_id = 99
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 100,
+            ansatz = "Wadenbein - vordere Kante (distales 1/3 der Diaphyse)",
+            innervation = "Tiefer Wadenbeinnerv - L5-S1",
+            funktion = "Dorsalextension und Eversion des Fußes",
+            structure_id = 100
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 101,
+            ansatz = "Wadenbein - Hinterfläche (distale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels",
+            innervation = "Schienbeinnerv - L5-S2",
+            funktion = "Plantarflexion und Beugung der Großzehe",
+            structure_id = 101
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 102,
+            ansatz = "Schienbein - Hinterfläche (mittleres 1/3 der Diaphyse)",
+            innervation = "Schienbeinnerv - L5-S2",
+            funktion = "Plantarflexion und Beugung der Zehen II-V",
+            structure_id = 102
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 103,
+            ansatz = "Schienbein - laterale Fläche (proximale 2/3 der Diaphyse), Zwischenknochenmembran des Unterschenkels",
+            innervation = "Tiefer Wadenbeinnerv - L4-L5",
+            funktion = "Dorsalextension des Fußes, Inversion",
+            structure_id = 103
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 104,
+            ansatz = "Schienbein - lateraler Kondylus (proximale Epiphyse), Wadenbein - Caput (proximale Epiphyse), mediale Fläche (Diaphyse), Zwischenknochenmembran des Unterschenkels",
+            innervation = "Tiefer Wadenbeinnerv - L5-S1",
+            funktion = "Dorsalextension des Fußes, Streckung der Zehen",
+            structure_id = 104
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 105,
+            ansatz = "Wadenbein - Caput (proximale Epiphyse), laterale Fläche und vordere Kante (Diaphyse), Zwischenmuskelscheidewände des Unterschenkels (Septum Intermusculare cruris)",
+            innervation = "Oberflächlicher Wadenbeinnerv - L5-S1",
+            funktion = "Plantarflexion und Eversion des Fußes",
+            structure_id = 105
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 106,
+            ansatz = "Wadenbein - Caput (proximale Epiphyse), Dorsalfläche und dorsale Kante (proximales 1/4 der Diaphyse), Schienbein - Linea musculi solei auf der Dorsalseite und mediale Kante (Diaphyse)",
+            innervation = "Schienbeinnerv - S1-S2",
+            funktion = "Plantarflexion des Fußes",
+            structure_id = 106
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 107,
+            ansatz = "Oberschenkelknochen - Epicondylus lateralis des äußeren Gelenkknorrens, Epicondylus medialis des inneren Gelenkknorrens (distale Epiphyse)",
+            innervation = "Schienbeinnerv - S1-S2",
+            funktion = "Plantarflexion des Fußes, Beugung des Knies",
+            structure_id = 107
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 108,
+            ansatz = "Kurzer Wadenbeinmuskel (distale Sehne) und langes Fußsohlenband",
+            innervation = "Oberflächlicher Ast des äußeren Fußsohlennervs - S2-S3",
+            funktion = "Opposition des Kleinzehs",
+            structure_id = 108
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 109,
+            ansatz = "Fuß - medialer und lateraler Fortsatz des Fersenbeinhöckers, Plantaraponeurose",
+            innervation = "Äußerer Fußsohlennerv - S1-S3",
+            funktion = "Abduktion des Kleinzehs",
+            structure_id = 109
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 110,
+            ansatz = "Fuß - Basis des 5. Mittelfußknochens (untere Fläche), Langes Fußsohlenband",
+            innervation = "Oberflächlicher Ast des äußeren Fußsohlennervs - S2-S3",
+            funktion = "Flexion des Kleinzehs",
+            structure_id = 110
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 111,
+            ansatz = "Corporat von jeweils zwei benachbarten Mittelfußknochen (an den gegenüberliegenden Flächen)",
+            innervation = "Äußerer Fußsohlennerv - S2-S3",
+            funktion = "Abduktion der Zehen",
+            structure_id = 111
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 112,
+            ansatz = "Corporat von jeweils zwei benachbarten Mittelfußknochen (an den gegenüberliegenden Flächen)",
+            innervation = "Äußerer Fußsohlennerv - S2-S3",
+            funktion = "Abduktion der Zehen",
+            structure_id = 112
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 195,
+            ansatz = "Becken – Schambeinkörper (Innenfläche), Wirbelsäule – Apex ossis coccygis, After-Steißbein-Band (Ligamentum anococcygeum)",
+            innervation = "Äste des Kreuzbeinnervengeflechts (Rami plexus sacralis) - S4",
+            funktion = "Stabilisierung des Rumpfes, Unterstützung der inneren Organe",
+            structure_id = 154
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 196,
+            ansatz = "Becken – Schambeinkörper (Innenfläche), Wirbelsäule – Apex ossis coccygis, After-Steißbein-Band (Ligamentum anococcygeum)",
+            innervation = "Äste des Kreuzbeinnervengeflechts (Rami plexus sacralis) - S4",
+            funktion = "Stabilisierung des Rumpfes, Unterstützung der inneren Organe",
+            structure_id = 155
         });
 
 
