@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class HumanExplore : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class HumanExplore : MonoBehaviour
     private DataService ds;
     private List<Renderer> renderableModels;
     private int currentModelIndex = 0;
+    Vector3 originalPosition;
+    int counter = 0;
 
     public TMP_Text centerText;
     public TMP_Text leftText;
@@ -30,6 +33,7 @@ public class HumanExplore : MonoBehaviour
     {
         ds = DataServiceManager.Instance.DataService;
         renderableModels = GetRenderableModels();
+        originalPosition = new Vector3(0.00f, 0.00f, 3.00f);
 
         if (!string.IsNullOrEmpty(SceneData.RendererName))
         {
@@ -65,6 +69,11 @@ public class HumanExplore : MonoBehaviour
         {
             Debug.LogError("Keine renderbaren Modelle gefunden!");
         }
+    }
+
+    void Update()
+    {
+
     }
 
 
@@ -119,7 +128,6 @@ public class HumanExplore : MonoBehaviour
 
     void OnSuggestionClicked(AnatomicalStructures result)
     {
-        Debug.Log($"Ausgew�hlt: {result.german_name} ({result.latin_name})");
 
         string displayText = result.german_name.Length > 30
         ? result.german_name.Substring(0, 27) + "..."
@@ -221,14 +229,16 @@ public class HumanExplore : MonoBehaviour
 
         foreach (Transform child in fbxRoot.GetComponentsInChildren<Transform>(true))
         {
+
             Renderer renderer = child.GetComponent<Renderer>();
             if (renderer != null)
             {
                 renderableModels.Add(renderer);
             }
+
         }
 
-        return renderableModels.OrderBy(r => r.gameObject.name).ToList();
+        return renderableModels.ToList();
     }
 
     void UpdateDisplayedText()
@@ -259,39 +269,235 @@ public class HumanExplore : MonoBehaviour
     }
     void setDescription(int id)
     {
-        
+
         var descriptions = ds.GetDescription(id);
-        foreach (var description in descriptions) 
-        { 
-            descriptionText.text = description.text;
+        foreach (var description in descriptions)
+        {
+            descriptionText.text = description.ansatz + description.innervation + description.funktion;
         }
 
     }
 
     void ShowModelByIndex(int index)
     {
-        string latinName = GetLatinNameForModel(renderableModels[index].gameObject.name);
-        int modelId = GetAnatomicalStructureIdByLatinName(latinName);
+        Debug.Log($"ShowModelByIndex aufgerufen mit index: {index}");
+
+        if (renderableModels == null)
+        {
+            Debug.LogError("Fehler: renderableModels ist null!");
+            return;
+        }
+
+        if (renderableModels.Count == 0)
+        {
+            Debug.LogError("Fehler: renderableModels enthält keine Modelle!");
+            return;
+        }
+
+        if (index < 0 || index >= renderableModels.Count)
+        {
+            Debug.LogError($"Ungültiger Modellindex! index: {index}, erlaubter Bereich: 0 - {renderableModels.Count - 1}");
+            return;
+        }
+
+        if (fbxRoot == null)
+        {
+            Debug.LogError("Fehler: fbxRoot ist null!");
+            return;
+        }
+
+        fbxRoot.transform.position = originalPosition;
+
+        if (renderableModels[index] == null)
+        {
+            Debug.LogError("Fehler: Das ausgewählte Modell ist null!");
+            return;
+        }
+
+        string modelName = renderableModels[index].gameObject.name;
+
+        string latinName = GetLatinNameForModel(modelName);
+
+        if (string.IsNullOrEmpty(latinName))
+        {
+            Debug.LogError("Fehler: Lateinischer Name ist null oder leer!");
+            return;
+
+        }
+        else
+        {
+            counter++;
+            Debug.Log(counter);
+        }
+
+        Renderer targetRenderer = renderableModels[index];
+        if (targetRenderer == null)
+        {
+            Debug.LogError("Fehler: targetRenderer ist null!");
+            return;
+        }
+
+        Vector3 targetLocalPosition = targetRenderer.transform.localPosition;
+
+        float maxZ = 1f;
+
+        float scaleFactor = Math.Abs(maxZ / targetLocalPosition.z);
+        Debug.Log($"Berechneter Skalierungsfaktor: {scaleFactor}");
+
+
+        string CleanName(string name)
+        {
+            return name.Replace("(sin.)", "").Replace("(dex.)", "").Trim();
+        }
+
+        string cleanedName1 = CleanName(latinName);
+
+        double averageX = 0;
+
+        Vector3 newPosition = Vector3.zero;
+
+        if (latinName.Contains("sin"))
+        {
+            foreach (var model in renderableModels)
+            {
+                if (model == null || model.gameObject == null)
+                {
+                    Debug.LogWarning("Warnung: Ein Modell in renderableModels ist null!");
+                    continue;
+                }
+
+                string name = GetLatinNameForModel(model.gameObject.name);
+                if (string.IsNullOrEmpty(name))
+                {
+                    Debug.LogWarning("Warnung: Ein Modell hat einen leeren lateinischen Namen!");
+                    continue;
+                }
+
+                if (name.Contains(cleanedName1) && name.Contains("dex"))
+                {
+                    Vector3 localPositionModel = model.transform.localPosition;
+                    averageX = Math.Abs((localPositionModel.x - targetLocalPosition.x) / 2);
+
+                    Debug.Log($"New Position y:{targetLocalPosition.y}");
+
+
+                }
+            }
+            newPosition = new Vector3(
+            fbxRoot.transform.position.x - ((float)averageX),
+            fbxRoot.transform.position.y - targetLocalPosition.y,
+            fbxRoot.transform.position.z - 2f);
+
+            
+
+        }
+        else if (latinName.Contains("dex"))
+        {
+
+            float minY = float.MaxValue;
+            float maxY = float.MinValue;
+            foreach (var model in renderableModels)
+            {
+
+                if (model == null || model.gameObject == null)
+                {
+                    Debug.LogWarning("Warnung: Ein Modell in renderableModels ist null!");
+                    continue;
+                }
+
+                string name = GetLatinNameForModel(model.gameObject.name);
+                if (string.IsNullOrEmpty(name))
+                {
+                    Debug.LogWarning("Warnung: Ein Modell hat einen leeren lateinischen Namen!");
+                    continue;
+                }
+
+                if (name.Contains(cleanedName1) && name.Contains("sin"))
+                {
+
+                    Vector3 localPositionModel = model.transform.localPosition;
+
+                    averageX = Math.Abs((localPositionModel.x - targetLocalPosition.x) / 2);
+
+                    minY = Mathf.Min(minY, localPositionModel.y);
+                    maxY = Mathf.Max(maxY, localPositionModel.y);
+                    Debug.Log($"New Position y:{targetLocalPosition.y}");
+
+                }
+            }
+            newPosition = new Vector3(
+            fbxRoot.transform.position.x + ((float)averageX),
+            fbxRoot.transform.position.y - targetLocalPosition.y,
+            fbxRoot.transform.position.z - 2f);
+            
+        }
+        else
+        {
+            float minX = float.MaxValue;
+            float maxX = float.MinValue;
+            float minY = float.MaxValue;
+            float maxY = float.MinValue;
+            foreach (var model in renderableModels)
+            {
+                if (model == null || model.gameObject == null)
+                {
+                    Debug.LogWarning("Warnung: Ein Modell in renderableModels ist null!");
+                    continue;
+                }
+
+                if (string.IsNullOrEmpty(name))
+                {
+                    Debug.LogWarning("Warnung: Ein Modell hat einen leeren lateinischen Namen!");
+                    continue;
+                }
+
+
+                Vector3 localPositionModel = model.transform.localPosition;
+                minX = Mathf.Min(minX, localPositionModel.x);
+                maxX = Mathf.Max(maxX, localPositionModel.x);
+                minY = Mathf.Min(minY, localPositionModel.y);
+                maxY = Mathf.Max(maxY, localPositionModel.y);
+
+
+            }
+            float middleX = (maxX + minX) / 2;
+            float rootX = targetRenderer.transform.position.x - middleX;
+            float middleY = (maxY + minY) / 2;
+            float rootY = targetRenderer.transform.position.y - middleY;
+            newPosition = new Vector3(
+            fbxRoot.transform.position.x + rootX,
+                fbxRoot.transform.position.y - 1.2f,
+                fbxRoot.transform.position.z -2f);
+
+            newPosition.x = middleX;
+
+        }
+
+
+        fbxRoot.transform.position = newPosition;
 
         for (int i = 0; i < renderableModels.Count; i++)
         {
-            if (i == index)
+            if (renderableModels[i] == null)
             {
-                SetMaterialTransparency(renderableModels[i], 1.0f);
+                Debug.LogWarning($"Warnung: Modell bei Index {i} ist null!");
+                continue;
             }
-            else
-            {
-                SetMaterialTransparency(renderableModels[i], 0.0f);
-            }
+            SetMaterialTransparency(renderableModels[i], i == index ? 1.0f : 0.0f);
         }
 
+        int modelId = GetAnatomicalStructureIdByLatinName(latinName);
+
         UpdateDisplayedText();
-        Debug.Log($"Angezeigtes Modell: {renderableModels[index].gameObject.name}");
 
         setDescription(modelId);
 
         UpdateButtonStates();
     }
+
+
+
+
 
     int GetAnatomicalStructureIdByLatinName(string latinName)
     {
@@ -309,5 +515,5 @@ public class HumanExplore : MonoBehaviour
     {
         ExploreWindow.SetActive(true);
     }
-
+    //vllt jetzt
 }
