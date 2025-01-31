@@ -2822,6 +2822,375 @@ public class DataService  {
 
         _connection.Insert(new Descriptions
         {
+            id = 113,
+            ansatz = "Tuberositas radii und über die Aponeurosis musculi bicipitis brachii an der Fascia antebrachii",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion und Supination im Ellenbogengelenk; unterstützt Flexion im Schultergelenk",
+            structure_id = 113
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 115,
+            ansatz = "Mediale Fläche des Humerus in Verlängerung der Crista tuberculi minoris",
+            innervation = "N. musculocutaneus (C5–C7)",
+            funktion = "Adduktion, Flexion und Innenrotation im Schultergelenk",
+            structure_id = 115
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 117,
+            ansatz = "Tuberositas deltoidea des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Abduktion, Anteversion, Retroversion, Innen- und Außenrotation im Schultergelenk, je nach Faseranteil",
+            structure_id = 117
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 119,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Außenrotation im Schultergelenk",
+            structure_id = 119
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 121,
+            ansatz = "Tuberculum minus des Humerus",
+            innervation = "Nn. subscapulares (C5–C6)",
+            funktion = "Innenrotation im Schultergelenk",
+            structure_id = 121
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 123,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Abduktion im Schultergelenk",
+            structure_id = 123
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 125,
+            ansatz = "Crista tuberculi minoris des Humerus",
+            innervation = "N. thoracodorsalis (C6–C7)",
+            funktion = "Innenrotation, Adduktion und Retroversion im Schultergelenk",
+            structure_id = 125
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 127,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Außenrotation und schwache Adduktion im Schultergelenk",
+            structure_id = 127
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 129,
+            ansatz = "Olecranon der Ulna",
+            innervation = "N. radialis (C6–C8)",
+            funktion = "Extension im Ellenbogengelenk; Retroversion und Adduktion im Schultergelenk",
+            structure_id = 129
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 131,
+            ansatz = "Tuberositas ulnae",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk",
+            structure_id = 131
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 133,
+            ansatz = "Olecranon und proximales Viertel der dorsalen Fläche der Ulna",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension im Ellenbogengelenk; spannt die Gelenkkapsel",
+            structure_id = 133
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 135,
+            ansatz = "Processus styloideus radii",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk; unterstützt Pronation und Supination des Unterarms in die Mittelstellung",
+            structure_id = 135
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 137,
+            ansatz = "Facies lateralis radii (Mitte der Außenseite des Radius)",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Pronation und schwache Flexion im Ellenbogengelenk",
+            structure_id = 137
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 139,
+            ansatz = "Proximales Drittel des Radius",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Supination des Unterarms",
+            structure_id = 139
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 141,
+            ansatz = "Basis des Os metacarpi III",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 141
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 143,
+            ansatz = "Basis des Os metacarpi II",
+            innervation = "N. radialis (C6–C7)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 143
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 145,
+            ansatz = "Basis des Os metacarpi V",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Ulnarabduktion im Handgelenk",
+            structure_id = 145
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 147,
+            ansatz = "Dorsalaponeurose des 5. Fingers",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension des 5. Fingers; unterstützt Dorsalextension im Handgelenk",
+            structure_id = 147
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 149,
+            ansatz = "Basis des Os metacarpi II und III",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Flexion und Radialabduktion im Handgelenk",
+            structure_id = 149
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 151,
+            ansatz = "Os pisiforme, Hamulus ossis hamati, Basis des Os metacarpi V",
+            innervation = "N. ulnaris (C7–Th1)",
+            funktion = "Flexion und Ulnarabduktion im Handgelenk",
+            structure_id = 151
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 153,
+            ansatz = "Basis der Endphalanx des Daumens",
+            innervation = "N. medianus (C7–C8)",
+            funktion = "Flexion im Daumengrund- und -endgelenk; unterstützt Flexion im Handgelenk",
+            structure_id = 153
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 155,
+            ansatz = "Untere Rippen (Anguli costarum) und Fascia thoracolumbalis",
+            innervation = "Rr. dorsales der Spinalnerven (C8–L1)",
+            funktion = "Dorsalextension der Wirbelsäule, Lateralflexion zur ipsilateralen Seite",
+            structure_id = 155
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 157,
+            ansatz = "Dornfortsätze der benachbarten Lendenwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Lendenwirbelsäule",
+            structure_id = 157
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 159,
+            ansatz = "Querfortsätze der benachbarten Lendenwirbel",
+            innervation = "Rr. ventrales und dorsales der Spinalnerven",
+            funktion = "Lateralflexion der Wirbelsäule",
+            structure_id = 159
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 161,
+            ansatz = "Anguli costarum (Rippenwinkel)",
+            innervation = "Rr. dorsales der Spinalnerven (C8–Th11)",
+            funktion = "Heben der Rippen, Unterstützung bei Inspiration und Lateralflexion der Wirbelsäule",
+            structure_id = 161
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 163,
+            ansatz = "Rippen und Querfortsätze der Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven (C4–L5)",
+            funktion = "Dorsalextension und Lateralflexion der Wirbelsäule",
+            structure_id = 163
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 165,
+            ansatz = "Dornfortsätze der Wirbel, 2–4 Segmente überspannend",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung der Wirbelsäule, Dorsalextension und Rotation zur Gegenseite",
+            structure_id = 165
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 167,
+            ansatz = "Processus transversus des Atlas (C1)",
+            innervation = "N. suboccipitalis (C1)",
+            funktion = "Rotation des Kopfes zur ipsilateralen Seite",
+            structure_id = 167
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 169,
+            ansatz = "Os occipitale zwischen Linea nuchae superior und inferior",
+            innervation = "N. suboccipitalis (C1)",
+            funktion = "Dorsalextension und Lateralflexion des Kopfes",
+            structure_id = 169
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 171,
+            ansatz = "Dornfortsätze der Wirbel, überspringen 1 (breves) oder 2 (longi) Segmente",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Rotation und Stabilisierung der Wirbelsäule",
+            structure_id = 171
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 173,
+            ansatz = "Dornfortsätze der Brust- und Halswirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension der Wirbelsäule und des Kopfes, Rotation zur Gegenseite",
+            structure_id = 173
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 175,
+            ansatz = "Dornfortsätze der oberen Brust- und unteren Halswirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension der Wirbelsäule",
+            structure_id = 175
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 177,
+            ansatz = "Querfortsätze der oberen Halswirbel (C1–C3)",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension des Halses und des Kopfes, Rotation und Lateralflexion zur ipsilateralen Seite",
+            structure_id = 177
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 179,
+            ansatz = "Rippen 2–5 (kraniale Ränder)",
+            innervation = "Nn. intercostales (Th1–Th4)",
+            funktion = "Heben der Rippen, Unterstützung bei Inspiration",
+            structure_id = 179
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 181,
+            ansatz = "Rippen 9–12 (kaudale Ränder)",
+            innervation = "Nn. intercostales (Th9–Th12)",
+            funktion = "Senken der Rippen, Unterstützung bei Exspiration",
+            structure_id = 181
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 183,
+            ansatz = "Crista tuberculi minoris des Humerus",
+            innervation = "N. thoracodorsalis (C6–C8)",
+            funktion = "Adduktion, Innenrotation und Retroversion im Schultergelenk",
+            structure_id = 183
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 185,
+            ansatz = "Margo medialis der Scapula (oberhalb der Spina scapulae)",
+            innervation = "N. dorsalis scapulae (C4–C5)",
+            funktion = "Fixierung der Scapula, Adduktion und Elevation der Scapula",
+            structure_id = 185
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 187,
+            ansatz = "Margo medialis der Scapula (unterhalb der Spina scapulae)",
+            innervation = "N. dorsalis scapulae (C4–C5)",
+            funktion = "Fixierung der Scapula, Adduktion und Elevation der Scapula",
+            structure_id = 187
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 189,
+            ansatz = "Laterales Drittel der Clavicula, Acromion, Spina scapulae",
+            innervation = "N. accessorius (XI. Hirnnerv) und Plexus cervicalis (C2–C4)",
+            funktion = "Fixierung der Scapula, Elevation, Depression, Retraktion und Rotation der Scapula",
+            structure_id = 189
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 191,
+            ansatz = "Dornfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Brustwirbelsäule",
+            structure_id = 191
+        });
+
+        _connection.Insert(new Descriptions
+        {
+            id = 193,
+            ansatz = "Querfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales und ventrales der Spinalnerven",
+            funktion = "Lateralflexion der Brustwirbelsäule",
+            structure_id = 193
+        });
+
+        _connection.Insert(new Descriptions
+        {
             id = 195,
             ansatz = "Becken – Schambeinkörper (Innenfläche), Wirbelsäule – Apex ossis coccygis, After-Steißbein-Band (Ligamentum anococcygeum)",
             innervation = "Äste des Kreuzbeinnervengeflechts (Rami plexus sacralis) - S4",
@@ -2838,6 +3207,34 @@ public class DataService  {
             structure_id = 155
         });
 
+        _connection.Insert(new Descriptions
+        {
+            id = 197,
+            ansatz = "Basis des Os metacarpi I",
+            innervation = "N. radialis (C6–C7)",
+            funktion = "Abduktion und Extension des Daumens im Sattelgelenk, Radialabduktion der Hand",
+            structure_id = 197
+        });
+
+
+        _connection.Insert(new Descriptions
+        {
+            id = 199,
+            ansatz = "Dorsalaponeurose des Zeigefingers",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension des Zeigefingers, unterstützt Dorsalextension der Hand",
+            structure_id = 199
+        });
+
+
+        _connection.Insert(new Descriptions
+        {
+            id = 201,
+            ansatz = "Aponeurosis palmaris",
+            innervation = "N. medianus (C7–C8)",
+            funktion = "Spannt die Palmaraponeurose, unterstützt Flexion im Handgelenk",
+            structure_id = 201
+        });
 
     }
 
