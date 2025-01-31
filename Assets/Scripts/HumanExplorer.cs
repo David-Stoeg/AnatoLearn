@@ -13,9 +13,15 @@ public class HumanExplore : MonoBehaviour
     public GameObject scrollView;
     public GameObject fbxRoot;
     public GameObject ExploreWindow;
+    public GameObject panel1;
+    public GameObject panel2;
+    public GameObject panel3;
+
     public Button nextButton;
     public Button previousButton;
     public Button exploreButton;
+    public Button nextDescriptionButton;
+    public Button previousDescriptionButton;
 
     private DataService ds;
     private List<Renderer> renderableModels;
@@ -24,16 +30,18 @@ public class HumanExplore : MonoBehaviour
     int counter = 0;
 
     public TMP_Text centerText;
-    public TMP_Text leftText;
-    public TMP_Text rightText;
     public TMP_Text descriptionText;
+    public TMP_Text descriptionText2;
+    public TMP_Text descriptionText3;
+
+    [SerializeField] private RectTransform bottomSheet;
 
 
     void Start()
     {
         ds = DataServiceManager.Instance.DataService;
         renderableModels = GetRenderableModels();
-        originalPosition = new Vector3(0.00f, 0.00f, 3.00f);
+        originalPosition = new Vector3(0.00f, 0.05f, 3.00f);
 
         if (!string.IsNullOrEmpty(SceneData.RendererName))
         {
@@ -59,7 +67,8 @@ public class HumanExplore : MonoBehaviour
         nextButton.onClick.AddListener(ShowNextModel);
         previousButton.onClick.AddListener(ShowPreviousModel);
         exploreButton.onClick.AddListener(showExplore);
-
+        nextDescriptionButton.onClick.AddListener(ShowNextDescription);
+        previousDescriptionButton.onClick.AddListener(ShowPreviousDescription);
 
         if (renderableModels.Count > 0)
         {
@@ -179,11 +188,10 @@ public class HumanExplore : MonoBehaviour
             else
             {
                 previousButtonImage.color = Color.gray;
-                leftText.text = "";
             }
         }
 
-        nextButton.interactable = currentModelIndex < renderableModels.Count - 1;
+        nextButton.interactable = currentModelIndex < renderableModels.Count - 4;
         var nextButtonImage = nextButton.GetComponent<Image>();
         if (nextButtonImage != null)
         {
@@ -194,7 +202,6 @@ public class HumanExplore : MonoBehaviour
             else
             {
                 nextButtonImage.color = Color.gray;
-                rightText.text = "";
             }
         }
     }
@@ -229,13 +236,15 @@ public class HumanExplore : MonoBehaviour
 
         foreach (Transform child in fbxRoot.GetComponentsInChildren<Transform>(true))
         {
-
-            Renderer renderer = child.GetComponent<Renderer>();
-            if (renderer != null)
+            if (!child.gameObject.name.Contains("WGT"))
             {
-                renderableModels.Add(renderer);
-            }
 
+                Renderer renderer = child.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    renderableModels.Add(renderer);
+                }
+            }
         }
 
         return renderableModels.ToList();
@@ -247,12 +256,8 @@ public class HumanExplore : MonoBehaviour
         int rightIndex = (currentModelIndex < renderableModels.Count - 1) ? currentModelIndex + 1 : 0;
 
         string centerLatinName = GetLatinNameForModel(renderableModels[currentModelIndex].gameObject.name);
-        string leftLatinName = GetLatinNameForModel(renderableModels[leftIndex].gameObject.name);
-        string rightLatinName = GetLatinNameForModel(renderableModels[rightIndex].gameObject.name);
 
         centerText.text = centerLatinName ?? "Unbekannt";
-        leftText.text = leftLatinName ?? "Unbekannt";
-        rightText.text = rightLatinName ?? "Unbekannt";
     }
 
     string GetLatinNameForModel(string modelName)
@@ -273,15 +278,19 @@ public class HumanExplore : MonoBehaviour
         var descriptions = ds.GetDescription(id);
         foreach (var description in descriptions)
         {
-            descriptionText.text = description.ansatz + description.innervation + description.funktion;
+            descriptionText.text = "Ansatz" + "\n" + "\n" + description.ansatz;                    
+            descriptionText2.text = "Innervation" + "\n" + "\n" + description.innervation;
+            descriptionText3.text = "Funktion" + "\n" + "\n" + description.funktion;
         }
 
     }
 
     void ShowModelByIndex(int index)
     {
-        Debug.Log($"ShowModelByIndex aufgerufen mit index: {index}");
-
+        if (renderableModels[index].gameObject.name.Contains("Skeleton"))
+        {
+            index++;
+        }
         if (renderableModels == null)
         {
             Debug.LogError("Fehler: renderableModels ist null!");
@@ -316,18 +325,17 @@ public class HumanExplore : MonoBehaviour
 
         string modelName = renderableModels[index].gameObject.name;
 
+
         string latinName = GetLatinNameForModel(modelName);
 
         if (string.IsNullOrEmpty(latinName))
         {
             Debug.LogError("Fehler: Lateinischer Name ist null oder leer!");
-            return;
-
-        }
-        else
-        {
+            Debug.Log(modelName);
             counter++;
             Debug.Log(counter);
+            return;
+
         }
 
         Renderer targetRenderer = renderableModels[index];
@@ -338,12 +346,6 @@ public class HumanExplore : MonoBehaviour
         }
 
         Vector3 targetLocalPosition = targetRenderer.transform.localPosition;
-
-        float maxZ = 1f;
-
-        float scaleFactor = Math.Abs(maxZ / targetLocalPosition.z);
-        Debug.Log($"Berechneter Skalierungsfaktor: {scaleFactor}");
-
 
         string CleanName(string name)
         {
@@ -358,6 +360,7 @@ public class HumanExplore : MonoBehaviour
 
         if (latinName.Contains("sin"))
         {
+            float modellSize = 0f;
             foreach (var model in renderableModels)
             {
                 if (model == null || model.gameObject == null)
@@ -369,7 +372,7 @@ public class HumanExplore : MonoBehaviour
                 string name = GetLatinNameForModel(model.gameObject.name);
                 if (string.IsNullOrEmpty(name))
                 {
-                    Debug.LogWarning("Warnung: Ein Modell hat einen leeren lateinischen Namen!");
+                    Debug.LogWarning($"Warnung: Das Modell {model.gameObject.name} einen leeren lateinischen Namen!");
                     continue;
                 }
 
@@ -377,14 +380,13 @@ public class HumanExplore : MonoBehaviour
                 {
                     Vector3 localPositionModel = model.transform.localPosition;
                     averageX = Math.Abs((localPositionModel.x - targetLocalPosition.x) / 2);
+                    Bounds bounds = model.bounds;
 
-                    Debug.Log($"New Position y:{targetLocalPosition.y}");
-
-
+                    float modelSize= bounds.center.x;
                 }
             }
             newPosition = new Vector3(
-            fbxRoot.transform.position.x - ((float)averageX),
+            fbxRoot.transform.position.x - ((float)averageX + modellSize),
             fbxRoot.transform.position.y - targetLocalPosition.y,
             fbxRoot.transform.position.z - 2f);
 
@@ -393,7 +395,7 @@ public class HumanExplore : MonoBehaviour
         }
         else if (latinName.Contains("dex"))
         {
-
+            float modellSize = 0f;
             float minY = float.MaxValue;
             float maxY = float.MinValue;
             foreach (var model in renderableModels)
@@ -408,7 +410,6 @@ public class HumanExplore : MonoBehaviour
                 string name = GetLatinNameForModel(model.gameObject.name);
                 if (string.IsNullOrEmpty(name))
                 {
-                    Debug.LogWarning("Warnung: Ein Modell hat einen leeren lateinischen Namen!");
                     continue;
                 }
 
@@ -421,12 +422,13 @@ public class HumanExplore : MonoBehaviour
 
                     minY = Mathf.Min(minY, localPositionModel.y);
                     maxY = Mathf.Max(maxY, localPositionModel.y);
-                    Debug.Log($"New Position y:{targetLocalPosition.y}");
+                    Bounds bounds = model.bounds;
 
+                    float modelSize = bounds.center.x;
                 }
             }
             newPosition = new Vector3(
-            fbxRoot.transform.position.x + ((float)averageX),
+            fbxRoot.transform.position.x + ((float)averageX - modellSize),
             fbxRoot.transform.position.y - targetLocalPosition.y,
             fbxRoot.transform.position.z - 2f);
             
@@ -461,15 +463,14 @@ public class HumanExplore : MonoBehaviour
 
             }
             float middleX = (maxX + minX) / 2;
-            float rootX = targetRenderer.transform.position.x - middleX;
+            float rootX = targetRenderer.transform.localPosition.x - middleX;
             float middleY = (maxY + minY) / 2;
-            float rootY = targetRenderer.transform.position.y - middleY;
+            float rootY = targetRenderer.transform.localPosition.y + middleY;
             newPosition = new Vector3(
-            fbxRoot.transform.position.x + rootX,
-                fbxRoot.transform.position.y - 1.2f,
+            fbxRoot.transform.position.x,
+                fbxRoot.transform.position.y - targetLocalPosition.y,
                 fbxRoot.transform.position.z -2f);
 
-            newPosition.x = middleX;
 
         }
 
@@ -483,7 +484,7 @@ public class HumanExplore : MonoBehaviour
                 Debug.LogWarning($"Warnung: Modell bei Index {i} ist null!");
                 continue;
             }
-            SetMaterialTransparency(renderableModels[i], i == index ? 1.0f : 0.0f);
+            SetMaterialTransparency(renderableModels[i], i == index ? 1.0f : 0.05f);
         }
 
         int modelId = GetAnatomicalStructureIdByLatinName(latinName);
@@ -491,6 +492,8 @@ public class HumanExplore : MonoBehaviour
         UpdateDisplayedText();
 
         setDescription(modelId);
+
+        ExploreWindow.SetActive(false);
 
         UpdateButtonStates();
     }
@@ -513,7 +516,56 @@ public class HumanExplore : MonoBehaviour
     }
     void showExplore()
     {
+        panel1.SetActive(true);
+        panel2.SetActive(false);
+        panel3.SetActive(false);
+        UpdateDescriptionButtonState(nextDescriptionButton, true);
+        UpdateDescriptionButtonState(previousDescriptionButton, false);
         ExploreWindow.SetActive(true);
+        bottomSheet.anchoredPosition = new Vector2(0, 350f);
     }
-    //vllt jetzt
+    void ShowNextDescription()
+    {
+        if (panel1.activeSelf)
+        {
+            panel1.SetActive(false);
+            panel2.SetActive(true);
+            UpdateDescriptionButtonState(nextDescriptionButton, true);
+        }
+        else if (panel2.activeSelf)
+        {
+            panel2.SetActive(false);
+            panel3.SetActive(true);
+            UpdateDescriptionButtonState(nextDescriptionButton, false);
+            UpdateDescriptionButtonState(previousDescriptionButton, true);
+        }
+    }
+
+    void ShowPreviousDescription()
+    {
+        if (panel3.activeSelf)
+        {
+            panel3.SetActive(false);
+            panel2.SetActive(true);
+            UpdateDescriptionButtonState(previousDescriptionButton, true);
+        }
+        else if (panel2.activeSelf)
+        {
+            panel2.SetActive(false);
+            panel1.SetActive(true);
+            UpdateDescriptionButtonState(previousDescriptionButton, false);
+            UpdateDescriptionButtonState(nextDescriptionButton, true);
+        }
+    }
+
+    void UpdateDescriptionButtonState(Button button, bool isActive)
+    {
+        var buttonImage = button.GetComponent<Image>();
+        button.interactable = isActive;
+        if (buttonImage != null)
+        {
+            buttonImage.color = isActive ? Color.white : Color.gray;
+        }
+    }
+
 }
