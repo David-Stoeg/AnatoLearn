@@ -34,6 +34,8 @@ public class HumanExplore : MonoBehaviour
     public TMP_Text descriptionText2;
     public TMP_Text descriptionText3;
 
+    [SerializeField] private RectTransform bottomSheet;
+
 
     void Start()
     {
@@ -520,6 +522,7 @@ public class HumanExplore : MonoBehaviour
         UpdateDescriptionButtonState(nextDescriptionButton, true);
         UpdateDescriptionButtonState(previousDescriptionButton, false);
         ExploreWindow.SetActive(true);
+        bottomSheet.anchoredPosition = new Vector2(0, 350f);
     }
     void ShowNextDescription()
     {

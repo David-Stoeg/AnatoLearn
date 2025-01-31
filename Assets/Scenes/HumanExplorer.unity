@@ -4892,6 +4892,7 @@ MonoBehaviour:
   descriptionText: {fileID: 1060380761}
   descriptionText2: {fileID: 1945676615}
   descriptionText3: {fileID: 213389209}
+  bottomSheet: {fileID: 3661282}
 --- !u!1 &1908259350
 GameObject:
   m_ObjectHideFlags: 0
