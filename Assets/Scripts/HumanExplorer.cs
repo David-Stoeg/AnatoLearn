@@ -13,9 +13,15 @@ public class HumanExplore : MonoBehaviour
     public GameObject scrollView;
     public GameObject fbxRoot;
     public GameObject ExploreWindow;
+    public GameObject panel1;
+    public GameObject panel2;
+    public GameObject panel3;
+
     public Button nextButton;
     public Button previousButton;
     public Button exploreButton;
+    public Button nextDescriptionButton;
+    public Button previousDescriptionButton;
 
     private DataService ds;
     private List<Renderer> renderableModels;
@@ -25,6 +31,8 @@ public class HumanExplore : MonoBehaviour
 
     public TMP_Text centerText;
     public TMP_Text descriptionText;
+    public TMP_Text descriptionText2;
+    public TMP_Text descriptionText3;
 
 
     void Start()
@@ -57,7 +65,8 @@ public class HumanExplore : MonoBehaviour
         nextButton.onClick.AddListener(ShowNextModel);
         previousButton.onClick.AddListener(ShowPreviousModel);
         exploreButton.onClick.AddListener(showExplore);
-
+        nextDescriptionButton.onClick.AddListener(ShowNextDescription);
+        previousDescriptionButton.onClick.AddListener(ShowPreviousDescription);
 
         if (renderableModels.Count > 0)
         {
@@ -267,9 +276,9 @@ public class HumanExplore : MonoBehaviour
         var descriptions = ds.GetDescription(id);
         foreach (var description in descriptions)
         {
-            descriptionText.text = "Ansatz" + "\n" + "\n" + description.ansatz + "\n" + "\n" +
-                      "Innervation" + "\n" + "\n" + description.innervation + "\n" + "\n" +
-                      "Funktion" + "\n" + "\n" + description.funktion;
+            descriptionText.text = "Ansatz" + "\n" + "\n" + description.ansatz;                    
+            descriptionText2.text = "Innervation" + "\n" + "\n" + description.innervation;
+            descriptionText3.text = "Funktion" + "\n" + "\n" + description.funktion;
         }
 
     }
@@ -482,6 +491,8 @@ public class HumanExplore : MonoBehaviour
 
         setDescription(modelId);
 
+        ExploreWindow.SetActive(false);
+
         UpdateButtonStates();
     }
 
@@ -503,7 +514,55 @@ public class HumanExplore : MonoBehaviour
     }
     void showExplore()
     {
+        panel1.SetActive(true);
+        panel2.SetActive(false);
+        panel3.SetActive(false);
+        UpdateDescriptionButtonState(nextDescriptionButton, true);
+        UpdateDescriptionButtonState(previousDescriptionButton, false);
         ExploreWindow.SetActive(true);
     }
-    //vllt jetzt
+    void ShowNextDescription()
+    {
+        if (panel1.activeSelf)
+        {
+            panel1.SetActive(false);
+            panel2.SetActive(true);
+            UpdateDescriptionButtonState(nextDescriptionButton, true);
+        }
+        else if (panel2.activeSelf)
+        {
+            panel2.SetActive(false);
+            panel3.SetActive(true);
+            UpdateDescriptionButtonState(nextDescriptionButton, false);
+            UpdateDescriptionButtonState(previousDescriptionButton, true);
+        }
+    }
+
+    void ShowPreviousDescription()
+    {
+        if (panel3.activeSelf)
+        {
+            panel3.SetActive(false);
+            panel2.SetActive(true);
+            UpdateDescriptionButtonState(previousDescriptionButton, true);
+        }
+        else if (panel2.activeSelf)
+        {
+            panel2.SetActive(false);
+            panel1.SetActive(true);
+            UpdateDescriptionButtonState(previousDescriptionButton, false);
+            UpdateDescriptionButtonState(nextDescriptionButton, true);
+        }
+    }
+
+    void UpdateDescriptionButtonState(Button button, bool isActive)
+    {
+        var buttonImage = button.GetComponent<Image>();
+        button.interactable = isActive;
+        if (buttonImage != null)
+        {
+            buttonImage.color = isActive ? Color.white : Color.gray;
+        }
+    }
+
 }
