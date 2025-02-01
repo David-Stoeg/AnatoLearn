@@ -533,6 +533,7 @@ public class HumanExplore : MonoBehaviour
             panel1.SetActive(false);
             panel2.SetActive(true);
             UpdateDescriptionButtonState(nextDescriptionButton, true);
+            UpdateDescriptionButtonState(previousDescriptionButton, true);
         }
         else if (panel2.activeSelf)
         {
@@ -549,7 +550,9 @@ public class HumanExplore : MonoBehaviour
         {
             panel3.SetActive(false);
             panel2.SetActive(true);
+            UpdateDescriptionButtonState(nextDescriptionButton, true);
             UpdateDescriptionButtonState(previousDescriptionButton, true);
+
         }
         else if (panel2.activeSelf)
         {
