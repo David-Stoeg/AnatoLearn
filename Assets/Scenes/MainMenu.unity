@@ -1231,6 +1231,7 @@ GameObject:
   - component: {fileID: 1412139150}
   - component: {fileID: 1412139153}
   - component: {fileID: 1412139154}
+  - component: {fileID: 1412139155}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -1273,6 +1274,7 @@ MonoBehaviour:
   viewerButtonScene: 3D-View_update
   humanExplorerScene: HumanExplorer
   animationsScene: Animations
+  quizScene: Quiz
 --- !u!4 &1412139152
 Transform:
   m_ObjectHideFlags: 0
@@ -1310,6 +1312,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31bdf906fc52247ae9dd77fe6170facc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1412139155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412139149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee13e3347ae94c9eacef61e4f6f6eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1463771155
