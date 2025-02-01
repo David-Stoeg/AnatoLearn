@@ -39,6 +39,7 @@ public class HumanExplore : MonoBehaviour
 
     void Start()
     {
+        
         ds = DataServiceManager.Instance.DataService;
         renderableModels = GetRenderableModels();
         originalPosition = new Vector3(0.00f, 0.05f, 3.00f);
@@ -496,6 +497,7 @@ public class HumanExplore : MonoBehaviour
         ExploreWindow.SetActive(false);
 
         UpdateButtonStates();
+        Debug.Log(currentModelIndex);
     }
 
 

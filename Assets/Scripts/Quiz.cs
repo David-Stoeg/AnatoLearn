@@ -394,7 +394,7 @@ public class Quiz : MonoBehaviour
                 Debug.LogWarning($"Warnung: Modell bei Index {i} ist null!");
                 continue;
             }
-            SetMaterialTransparency(renderableModels[i], 1f);
+            SetMaterialTransparency(renderableModels[i], 0.2f);
         }
         fbxRoot.transform.position = new Vector3(originalPosition.x, originalPosition.y -1f, originalPosition.z-1f);
         scrollView.SetActive(true);
