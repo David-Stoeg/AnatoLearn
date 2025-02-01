@@ -13,6 +13,9 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private string humanExplorerScene = ""; // Scene to load with the Human Explorer button
 
+    [SerializeField]
+    private string animationsScene = ""; // Scene to load with the Animations button
+
     private void OnEnable()
     {
         // Get the root visual element
@@ -23,6 +26,7 @@ public class MenuController : MonoBehaviour
         Button switchSceneButton = root.Q<Button>("3DViewer"); // Button for switching to viewer scene
         Button backButton = root.Q<Button>("Back"); // Button for loading back scene
         Button humanExplorerButton = root.Q<Button>("HumanExplore"); // Button for Human Explorer scene
+        Button animationsButton = root.Q<Button>("Animations"); // Button for Animations scene (without hashtag)
 
         // Assign the click events to the buttons
         if (exitButton != null)
@@ -43,6 +47,11 @@ public class MenuController : MonoBehaviour
         if (humanExplorerButton != null)
         {
             humanExplorerButton.clicked += LoadHumanExplorerScene;
+        }
+
+        if (animationsButton != null)
+        {
+            animationsButton.clicked += LoadAnimationsScene; // Add the event for the Animations button
         }
     }
 
@@ -82,6 +91,19 @@ public class MenuController : MonoBehaviour
         else
         {
             Debug.LogWarning("Human Explorer scene name is empty! Please assign a scene in the Inspector.");
+        }
+    }
+
+    // Function to load the scene for the Animations button
+    private void LoadAnimationsScene()
+    {
+        if (!string.IsNullOrEmpty(animationsScene)) // Ensure scene name is set
+        {
+            SceneManager.LoadScene(animationsScene);
+        }
+        else
+        {
+            Debug.LogWarning("Animations scene name is empty! Please assign a scene in the Inspector.");
         }
     }
 

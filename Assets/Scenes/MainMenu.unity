@@ -1272,6 +1272,7 @@ MonoBehaviour:
   backButtonScene: MainMenu
   viewerButtonScene: 3D-View_update
   humanExplorerScene: HumanExplorer
+  animationsScene: Animations
 --- !u!4 &1412139152
 Transform:
   m_ObjectHideFlags: 0
