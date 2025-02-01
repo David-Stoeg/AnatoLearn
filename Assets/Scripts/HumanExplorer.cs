@@ -275,12 +275,12 @@ public class HumanExplore : MonoBehaviour
     void setDescription(int id)
     {
 
-        var descriptions = ds.GetDescription(id);
+        var descriptions = ds.GetDescription(id - 1);
         foreach (var description in descriptions)
         {
-            descriptionText.text = "Ansatz" + "\n" + "\n" + description.ansatz;                    
-            descriptionText2.text = "Innervation" + "\n" + "\n" + description.innervation;
-            descriptionText3.text = "Funktion" + "\n" + "\n" + description.funktion;
+            descriptionText.text = description.ansatz;                    
+            descriptionText2.text = description.innervation;
+            descriptionText3.text = description.funktion;
         }
 
     }
