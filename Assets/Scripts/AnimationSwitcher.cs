@@ -9,30 +9,35 @@ public class AnimationSwitcher : MonoBehaviour
     public Button nextButton;
     public Button previousButton;
 
-    [SerializeField] private Animator animator; // Exposed in Inspector
-    [SerializeField] private AnimationState[] animationStates; // Custom class to hold display and state info
+    [SerializeField] private Animator animator;
+    [SerializeField] private AnimationState[] animationStates;
 
     private int currentIndex = 0;
-    private RuntimeAnimatorController runtimeAnimatorController; // Reference to the Animator's runtime controller
-    private AnimationClip[] animationClips; // Array to hold animation clips
+    private RuntimeAnimatorController runtimeAnimatorController;
+    private AnimationClip[] animationClips;
 
-    // Custom class to hold animation state information
+    public Button buttonAnimationsliste;
+    public GameObject scrollView;
+    public GameObject suggestionPrefab;
+    public Transform suggestionsParent;
+
     [System.Serializable]
     public class AnimationState
     {
-        public string displayName; // Friendly name to be displayed in the text box
-        public string stateName; // The actual name of the Animator state (used internally)
+        public string displayName;
+        public string stateName;
     }
 
     void Start()
     {
+        scrollView.SetActive(false);
+        buttonAnimationsliste.onClick.AddListener(ShowAnimationList);
         if (animator == null)
         {
             Debug.LogError("Animator component is not assigned in the Inspector.");
             return;
         }
 
-        // Get the Animator's runtime controller and all animation clips
         runtimeAnimatorController = animator.runtimeAnimatorController;
         animationClips = runtimeAnimatorController.animationClips;
 
@@ -44,7 +49,7 @@ public class AnimationSwitcher : MonoBehaviour
 
         if (animationStates.Length > 0)
         {
-            currentIndex = 0; // Ensure the first animation is selected
+            currentIndex = 0;
             UpdateAnimation();
         }
 
@@ -76,15 +81,11 @@ public class AnimationSwitcher : MonoBehaviour
 
         AnimationState currentState = animationStates[currentIndex];
 
-        // Find the corresponding animation clip based on the Animator state name
-        AnimationClip currentClip = GetAnimationClipByStateName(currentState.stateName);
-
-        if (currentClip != null && pingPongScript != null)
+        if (pingPongScript != null)
         {
-            pingPongScript.SetAnimationName(currentClip.name);
+            pingPongScript.SetAnimationName(currentState.stateName);
         }
 
-        // Display the friendly name in the text box
         if (centerText != null)
         {
             centerText.text = $"Selected Animation: <b>{currentState.displayName}</b>";
@@ -93,23 +94,68 @@ public class AnimationSwitcher : MonoBehaviour
         UpdateButtonStates();
     }
 
-    // Utility function to get the animation clip by Animator state name
-    AnimationClip GetAnimationClipByStateName(string stateName)
-    {
-        foreach (var clip in animationClips)
-        {
-            if (clip.name.Equals(stateName, System.StringComparison.OrdinalIgnoreCase))
-            {
-                return clip;
-            }
-        }
-        Debug.LogWarning($"Animation clip for state '{stateName}' not found.");
-        return null;
-    }
-
     void UpdateButtonStates()
     {
         if (previousButton != null) previousButton.interactable = currentIndex > 0;
         if (nextButton != null) nextButton.interactable = currentIndex < animationStates.Length - 1;
+    }
+
+    void ShowAnimationList()
+    {
+        bool newActive = !scrollView.activeSelf;
+        scrollView.SetActive(newActive);
+
+        if (newActive)
+        {
+            FillAnimationList();
+        }
+    }
+
+    void FillAnimationList()
+    {
+        foreach (Transform child in suggestionsParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < animationStates.Length; i++)
+        {
+            AnimationState state = animationStates[i];
+            GameObject suggestion = Instantiate(suggestionPrefab, suggestionsParent);
+
+            TMP_Text suggestionText = suggestion.GetComponentInChildren<TMP_Text>();
+            if (suggestionText != null)
+            {
+                suggestionText.text = state.displayName;
+            }
+
+            Button suggestionButton = suggestion.GetComponent<Button>();
+            if (suggestionButton != null)
+            {
+                int index = i;
+                suggestionButton.onClick.AddListener(() => OnAnimationSuggestionClicked(index));
+            }
+        }
+    }
+
+    void OnAnimationSuggestionClicked(int index)
+    {
+        if (index < 0 || index >= animationStates.Length)
+            return;
+
+        AnimationState selectedState = animationStates[index];
+
+        if (pingPongScript != null)
+        {
+            pingPongScript.SetAnimationName(selectedState.stateName);
+        }
+
+        if (centerText != null)
+        {
+            centerText.text = $"Selected Animation: <b>{selectedState.displayName}</b>";
+        }
+
+        currentIndex = index;
+        scrollView.SetActive(false);
     }
 }
