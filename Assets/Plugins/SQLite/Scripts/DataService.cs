@@ -404,7 +404,7 @@ public class DataService  {
         _connection.Insert(new Descriptions
         {
             id = 14,
-            ansatz = "Darmbein-Lenden-Band (Lgamentum iliolumbale) Becken - Innere Gruppe des Darmbeinkamms, Brustkorb-Rippenkörper XII (anteroinferiorer Tell)",
+            ansatz = "Darmbein-Lenden-Band (Ligamentum iliolumbale) Becken - Innere Gruppe des Darmbeinkamms, Brustkorb-Rippenkörper XII (anteroinferiorer Tell)",
             innervation = "Vordere Äste der Spinalnerven (T12, L1-L4)",
             funktion = "Stabilisierung der Lendenwirbelsäule und des Beckens",
             structure_id = 14
@@ -412,7 +412,7 @@ public class DataService  {
         _connection.Insert(new Descriptions
         {
             id = 15,
-            ansatz = "Darmbein-Lenden-Band (Lgamentum iliolumbale) Becken - Innere Gruppe des Darmbeinkamms, Brustkorb-Rippenkörper XII (anteroinferiorer Tell)",
+            ansatz = "Darmbein-Lenden-Band (Ligamentum iliolumbale) Becken - Innere Gruppe des Darmbeinkamms, Brustkorb-Rippenkörper XII (anteroinferiorer Tell)",
             innervation = "Vordere Äste der Spinalnerven (T12, L1-L4)",
             funktion = "Stabilisierung der Lendenwirbelsäule und des Beckens",
             structure_id = 15
@@ -436,7 +436,7 @@ public class DataService  {
         _connection.Insert(new Descriptions
         {
             id = 18,
-            ansatz = "Brustkorb- Rlppenkörper VIl-XIl (lnnenfläche),  Fascia thoracolumbalis und Fascia iliolumbalis, Becken - Innere Lippe des Darmbeinkamms und oberer vorderer Darmbeinstachel, Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln), Becken - Schambeinleiste (Crista pubica)",
+            ansatz = "Brustkorb- Rippenkörper VIl-XIl (lnnenfläche),  Fascia thoracolumbalis und Fascia iliolumbalis, Becken - Innere Lippe des Darmbeinkamms und oberer vorderer Darmbeinstachel, Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln), Becken - Schambeinleiste (Crista pubica)",
             innervation = "Rechte Zwischenrippennerven - 17-T12, Hüft-Becken-Nerv (Nervus llohypogastricus) - T12-L1, Hüft-Leisten-Nerv (Nervus ilioinguinalis) - L1-L4",
             funktion = "Stabilisierung des Rumpfes, Unterstützung des Beckenbodens",
             structure_id = 18
@@ -444,7 +444,7 @@ public class DataService  {
         _connection.Insert(new Descriptions
         {
             id = 19,
-            ansatz = "Brustkorb- Rlppenkörper VIl-XIl (lnnenfläche),  Fascia thoracolumbalis und Fascia iliolumbalis, Becken - Innere Lippe des Darmbeinkamms und oberer vorderer Darmbeinstachel, Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln), Becken - Schambeinleiste (Crista pubica)",
+            ansatz = "Brustkorb- Rippenkörper VIl-XIl (lnnenfläche),  Fascia thoracolumbalis und Fascia iliolumbalis, Becken - Innere Lippe des Darmbeinkamms und oberer vorderer Darmbeinstachel, Linea alba (aponeurotische Sehnenfaserverflechtung der vorderen lateralen breiten Bauchmuskeln), Becken - Schambeinleiste (Crista pubica)",
             innervation = "Rechte Zwischenrippennerven - 17-T12, Hüft-Becken-Nerv (Nervus llohypogastricus) - T12-L1, Hüft-Leisten-Nerv (Nervus ilioinguinalis) - L1-L4",
             funktion = "Stabilisierung des Rumpfes, Unterstützung des Beckenbodens",
             structure_id = 19
@@ -2018,192 +2018,1532 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 115,
-            german_name = "Langer Kopf des Bizeps",
-            latin_name = "Musculus biceps brachii, Caput longum",
-            category = "",
+            latin_name = "Musculus biceps brachii (sin.)",
+            german_name = "Langer Kopf des Bizeps (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 115,
+            ansatz = "Tuberositas radii und über die Aponeurosis musculi bicipitis brachii an der Fascia antebrachii",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion und Supination im Ellenbogengelenk; unterstützt Flexion im Schultergelenk",
+            structure_id = 115
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 116,
-            german_name = "Rabenschnabelmuskel",
-            latin_name = "Musculus coracobrachialis",
-            category = "",
+            latin_name = "Musculus biceps brachii (dex.)",
+            german_name = "Langer Kopf des Bizeps (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 116,
+            ansatz = "Tuberositas radii und über die Aponeurosis musculi bicipitis brachii an der Fascia antebrachii",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion und Supination im Ellenbogengelenk; unterstützt Flexion im Schultergelenk",
+            structure_id = 116
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 117,
-            german_name = "Deltamuskel",
-            latin_name = "Musculus deltoideus",
-            category = "",
+            latin_name = "Musculus coracobrachialis (sin.)",
+            german_name = "Rabenschnabelmuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 117,
+            ansatz = "Mediale Fläche des Humerus in Verlängerung der Crista tuberculi minoris",
+            innervation = "N. musculocutaneus (C5–C7)",
+            funktion = "Adduktion, Flexion und Innenrotation im Schultergelenk",
+            structure_id = 117
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 118,
-            german_name = "Untergrätenmuskel",
-            latin_name = "Musculus infraspinatus",
-            category = "",
+            latin_name = "Musculus coracobrachialis (dex.)",
+            german_name = "Rabenschnabelmuskel (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 118,
+            ansatz = "Mediale Fläche des Humerus in Verlängerung der Crista tuberculi minoris",
+            innervation = "N. musculocutaneus (C5–C7)",
+            funktion = "Adduktion, Flexion und Innenrotation im Schultergelenk",
+            structure_id = 118
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 119,
-            german_name = "Unterschulterblattmuskel",
-            latin_name = "Musculus subscapularis",
-            category = "",
+            latin_name = "Musculus deltoideus (sin.)",
+            german_name = "Deltamuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 119,
+            ansatz = "Tuberositas deltoidea des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Abduktion, Anteversion, Retroversion, Innen- und Außenrotation im Schultergelenk (je nach Faseranteil)",
+            structure_id = 119
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 120,
-            german_name = "Obergrätenmuskel",
-            latin_name = "Musculus supraspinatus",
-            category = "",
+            latin_name = "Musculus deltoideus (dex.)",
+            german_name = "Deltamuskel (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 120,
+            ansatz = "Tuberositas deltoidea des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Abduktion, Anteversion, Retroversion, Innen- und Außenrotation im Schultergelenk (je nach Faseranteil)",
+            structure_id = 120
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 121,
-            german_name = "Großer Rundmuskel",
-            latin_name = "Musculus teres major",
-            category = "",
+            latin_name = "Musculus infraspinatus (sin.)",
+            german_name = "Untergrätenmuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 121,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Außenrotation im Schultergelenk",
+            structure_id = 121
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 122,
-            german_name = "Kleiner Rundmuskel",
-            latin_name = "Musculus teres minor",
-            category = "",
+            latin_name = "Musculus infraspinatus (dex.)",
+            german_name = "Untergrätenmuskel (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 122,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Außenrotation im Schultergelenk",
+            structure_id = 122
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 123,
-            german_name = "Langer Kopf des Trizeps",
-            latin_name = "Musculus triceps brachii, Caput longum",
-            category = "",
+            latin_name = "Musculus subscapularis (sin.)",
+            german_name = "Unterschulterblattmuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 123,
+            ansatz = "Tuberculum minus des Humerus",
+            innervation = "Nn. subscapulares (C5–C6)",
+            funktion = "Innenrotation im Schultergelenk",
+            structure_id = 123
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 124,
-            german_name = "Armbeuger",
-            latin_name = "Musculus brachialis",
-            category = "",
+            latin_name = "Musculus subscapularis (dex.)",
+            german_name = "Unterschulterblattmuskel (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 124,
+            ansatz = "Tuberculum minus des Humerus",
+            innervation = "Nn. subscapulares (C5–C6)",
+            funktion = "Innenrotation im Schultergelenk",
+            structure_id = 124
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 125,
-            german_name = "Ellenbogenmuskel",
-            latin_name = "Musculus anconeus",
-            category = "",
+            latin_name = "Musculus supraspinatus (sin.)",
+            german_name = "Obergrätenmuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 125,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Abduktion im Schultergelenk",
+            structure_id = 125
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 126,
-            german_name = "Oberarmspeichenmuskel",
-            latin_name = "Musculus brachioradialis",
-            category = "",
+            latin_name = "Musculus supraspinatus (dex.)",
+            german_name = "Obergrätenmuskel (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 126,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. suprascapularis (C4–C6)",
+            funktion = "Abduktion im Schultergelenk",
+            structure_id = 126
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 127,
-            german_name = "Runder Einwärtsdreher",
-            latin_name = "Musculus pronator teres",
-            category = "",
+            latin_name = "Musculus teres major (sin.)",
+            german_name = "Großer Rundmuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 127,
+            ansatz = "Crista tuberculi minoris des Humerus",
+            innervation = "N. thoracodorsalis (C6–C7)",
+            funktion = "Innenrotation, Adduktion und Retroversion im Schultergelenk",
+            structure_id = 127
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 128,
-            german_name = "Auswärtsdreher",
-            latin_name = "Musculus supinator",
-            category = "",
+            latin_name = "Musculus teres major (dex.)",
+            german_name = "Großer Rundmuskel (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 128,
+            ansatz = "Crista tuberculi minoris des Humerus",
+            innervation = "N. thoracodorsalis (C6–C7)",
+            funktion = "Innenrotation, Adduktion und Retroversion im Schultergelenk",
+            structure_id = 128
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 129,
-            german_name = "Kurzer speichenseitiger Handstrecker",
-            latin_name = "Musculus extensor carpi radialis brevis",
-            category = "",
+            latin_name = "Musculus teres minor (sin.)",
+            german_name = "Kleiner Rundmuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 129,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Außenrotation und schwache Adduktion im Schultergelenk",
+            structure_id = 129
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 130,
-            german_name = "Langer speichenseitiger Handstrecker",
-            latin_name = "Musculus extensor carpi radialis longus",
-            category = "",
+            latin_name = "Musculus teres minor (dex.)",
+            german_name = "Kleiner Rundmuskel (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 130,
+            ansatz = "Tuberculum majus des Humerus",
+            innervation = "N. axillaris (C5–C6)",
+            funktion = "Außenrotation und schwache Adduktion im Schultergelenk",
+            structure_id = 130
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 131,
-            german_name = "Ellenseitiger Handstrecker",
-            latin_name = "Musculus extensor carpi ulnaris",
-            category = "",
+            latin_name = "Musculus triceps brachii (sin.)",
+            german_name = "Langer Kopf des Trizeps (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 131,
+            ansatz = "Olecranon der Ulna",
+            innervation = "N. radialis (C6–C8)",
+            funktion = "Extension im Ellenbogengelenk; Retroversion und Adduktion im Schultergelenk",
+            structure_id = 131
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 132,
-            german_name = "Kleinfingerstrecker",
-            latin_name = "Musculus extensor digiti minimi",
-            category = "",
+            latin_name = "Musculus triceps brachii (dex.)",
+            german_name = "Langer Kopf des Trizeps (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 132,
+            ansatz = "Olecranon der Ulna",
+            innervation = "N. radialis (C6–C8)",
+            funktion = "Extension im Ellenbogengelenk; Retroversion und Adduktion im Schultergelenk",
+            structure_id = 132
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 133,
-            german_name = "Speichenseitiger Handbeuger",
-            latin_name = "Musculus flexor carpi radialis",
-            category = "",
+            latin_name = "Musculus brachialis (sin.)",
+            german_name = "Armbeuger (li.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 133,
+            ansatz = "Tuberositas ulnae",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk",
+            structure_id = 133
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 134,
-            german_name = "Ellenseitiger Handbeuger",
-            latin_name = "Musculus flexor carpi ulnaris",
-            category = "",
+            latin_name = "Musculus brachialis (dex.)",
+            german_name = "Armbeuger (re.)",
+            category = "Armmuskeln",
             parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 134,
+            ansatz = "Tuberositas ulnae",
+            innervation = "N. musculocutaneus (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk",
+            structure_id = 134
         });
 
         _connection.Insert(new AnatomicalStructures
         {
             id = 135,
-            german_name = "Langer Daumenbeuger",
-            latin_name = "Musculus flexor pollicis longus",
-            category = "",
+            latin_name = "Musculus anconeus (sin.)",
+            german_name = "Ellenbogenmuskel (li.)",
+            category = "Armmuskeln",
             parentId = 0
         });
+        _connection.Insert(new Descriptions
+        {
+            id = 135,
+            ansatz = "Olecranon und proximales Viertel der dorsalen Fläche der Ulna",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension im Ellenbogengelenk; spannt die Gelenkkapsel",
+            structure_id = 135
+        });
 
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 136,
+            latin_name = "Musculus anconeus (dex.)",
+            german_name = "Ellenbogenmuskel (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 136,
+            ansatz = "Olecranon und proximales Viertel der dorsalen Fläche der Ulna",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension im Ellenbogengelenk; spannt die Gelenkkapsel",
+            structure_id = 136
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 137,
+            latin_name = "Musculus brachioradialis (sin.)",
+            german_name = "Oberarmspeichenmuskel (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 137,
+            ansatz = "Processus styloideus radii",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk; unterstützt Pronation und Supination des Unterarms in die Mittelstellung",
+            structure_id = 137
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 138,
+            latin_name = "Musculus brachioradialis (dex.)",
+            german_name = "Oberarmspeichenmuskel (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 138,
+            ansatz = "Processus styloideus radii",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Flexion im Ellenbogengelenk; unterstützt Pronation und Supination des Unterarms in die Mittelstellung",
+            structure_id = 138
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 139,
+            latin_name = "Musculus pronator teres (sin.)",
+            german_name = "Runder Einwärtsdreher (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 139,
+            ansatz = "Facies lateralis radii (Mitte der Außenseite des Radius)",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Pronation und schwache Flexion im Ellenbogengelenk",
+            structure_id = 139
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 140,
+            latin_name = "Musculus pronator teres (dex.)",
+            german_name = "Runder Einwärtsdreher (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 140,
+            ansatz = "Facies lateralis radii (Mitte der Außenseite des Radius)",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Pronation und schwache Flexion im Ellenbogengelenk",
+            structure_id = 140
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 141,
+            latin_name = "Musculus supinator (sin.)",
+            german_name = "Auswärtsdreher (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 141,
+            ansatz = "Proximales Drittel des Radius",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Supination des Unterarms",
+            structure_id = 141
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 142,
+            latin_name = "Musculus supinator (dex.)",
+            german_name = "Auswärtsdreher (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 142,
+            ansatz = "Proximales Drittel des Radius",
+            innervation = "N. radialis (C5–C6)",
+            funktion = "Supination des Unterarms",
+            structure_id = 142
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 143,
+            latin_name = "Musculus extensor carpi radialis brevis (sin.)",
+            german_name = "Kurzer speichenseitiger Handstrecker (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 143,
+            ansatz = "Basis des Os metacarpi III",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 143
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 144,
+            latin_name = "Musculus extensor carpi radialis brevis (dex.)",
+            german_name = "Kurzer speichenseitiger Handstrecker (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 144,
+            ansatz = "Basis des Os metacarpi III",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 144
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 145,
+            latin_name = "Musculus extensor carpi radialis longus  (sin.)",
+            german_name = "Langer speichenseitiger Handstrecker (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 145,
+            ansatz = "Basis des Os metacarpi II",
+            innervation = "N. radialis (C6–C7)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 145
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 146,
+            latin_name = "Musculus extensor carpi radialis longus (dex.)",
+            german_name = "Langer speichenseitiger Handstrecker (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 146,
+            ansatz = "Basis des Os metacarpi II",
+            innervation = "N. radialis (C6–C7)",
+            funktion = "Dorsalextension und Radialabduktion im Handgelenk",
+            structure_id = 146
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 147,
+            latin_name = "Musculus extensor carpi ulnaris (sin.)",
+            german_name = "Ellenseitiger Handstrecker (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 147,
+            ansatz = "Basis des Os metacarpi V",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Ulnarabduktion im Handgelenk",
+            structure_id = 147
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 148,
+            latin_name = "Musculus extensor carpi ulnaris (dex.)",
+            german_name = "Ellenseitiger Handstrecker (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 148,
+            ansatz = "Basis des Os metacarpi V",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Dorsalextension und Ulnarabduktion im Handgelenk",
+            structure_id = 148
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 149,
+            latin_name = "Musculus extensor digiti minimi (sin.)",
+            german_name = "Kleinfingerstrecker (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 149,
+            ansatz = "Dorsalaponeurose des 5. Fingers",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension des 5. Fingers; unterstützt Dorsalextension im Handgelenk",
+            structure_id = 149
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 150,
+            latin_name = "Musculus extensor digiti minimi (dex.)",
+            german_name = "Kleinfingerstrecker (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 150,
+            ansatz = "Dorsalaponeurose des 5. Fingers",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension des 5. Fingers; unterstützt Dorsalextension im Handgelenk",
+            structure_id = 150
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 151,
+            latin_name = "Musculus flexor carpi radialis (sin.)",
+            german_name = "Speichenseitiger Handbeuger (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 151,
+            ansatz = "Basis des Os metacarpi II und III",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Flexion und Radialabduktion im Handgelenk",
+            structure_id = 151
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 152,
+            latin_name = "Musculus flexor carpi radialis (dex.)",
+            german_name = "Speichenseitiger Handbeuger (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 152,
+            ansatz = "Basis des Os metacarpi II und III",
+            innervation = "N. medianus (C6–C7)",
+            funktion = "Flexion und Radialabduktion im Handgelenk",
+            structure_id = 152
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 153,
+            latin_name = "Musculus flexor carpi ulnaris (sin.)",
+            german_name = "Ellenseitiger Handbeuger (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 153,
+            ansatz = "Os pisiforme, Hamulus ossis hamati, Basis des Os metacarpi V",
+            innervation = "N. ulnaris (C7–Th1)",
+            funktion = "Flexion und Ulnarabduktion im Handgelenk",
+            structure_id = 153
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 154,
+            latin_name = "Musculus flexor carpi ulnaris (dex.)",
+            german_name = "Ellenseitiger Handbeuger (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 154,
+            ansatz = "Os pisiforme, Hamulus ossis hamati, Basis des Os metacarpi V",
+            innervation = "N. ulnaris (C7–Th1)",
+            funktion = "Flexion und Ulnarabduktion im Handgelenk",
+            structure_id = 154
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 155,
+            latin_name = "Musculus flexor pollicis longus (sin.)",
+            german_name = "Langer Daumenbeuger (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 155,
+            ansatz = "Basis der Endphalanx des Daumens",
+            innervation = "N. medianus (C7–C8)",
+            funktion = "Flexion im Daumengrund- und -endgelenk; unterstützt Flexion im Handgelenk",
+            structure_id = 155
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 156,
+            latin_name = "Musculus flexor pollicis longus (dex.)",
+            german_name = "Langer Daumenbeuger (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 156,
+            ansatz = "Basis der Endphalanx des Daumens",
+            innervation = "N. medianus (C7–C8)",
+            funktion = "Flexion im Daumengrund- und -endgelenk; unterstützt Flexion im Handgelenk",
+            structure_id = 156
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 157,
+            latin_name = "Musculus iliocostalis lumborum (sin.)",
+            german_name = "Lenden-Rippenmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 157,
+            ansatz = "Untere Rippen (Anguli costarum) und Fascia thoracolumbalis",
+            innervation = "Rr. dorsales der Spinalnerven (C8–L1)",
+            funktion = "Dorsalextension der Wirbelsäule, Lateralflexion zur ipsilateralen Seite",
+            structure_id = 157
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 158,
+            latin_name = "Musculus iliocostalis lumborum (dex.)",
+            german_name = "Lenden-Rippenmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 158,
+            ansatz = "Untere Rippen (Anguli costarum) und Fascia thoracolumbalis",
+            innervation = "Rr. dorsales der Spinalnerven (C8–L1)",
+            funktion = "Dorsalextension der Wirbelsäule, Lateralflexion zur ipsilateralen Seite",
+            structure_id = 158
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 159,
+            latin_name = "Musculi interspinales lumborum (sin.)",
+            german_name = "Zwischenwirbelmuskeln der Lendenwirbelsäule (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 159,
+            ansatz = "Dornfortsätze der benachbarten Lendenwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Lendenwirbelsäule",
+            structure_id = 159
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 160,
+            latin_name = "Musculi interspinales lumborum (dex.)",
+            german_name = "Zwischenwirbelmuskeln der Lendenwirbelsäule (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 160,
+            ansatz = "Dornfortsätze der benachbarten Lendenwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Lendenwirbelsäule",
+            structure_id = 160
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 161,
+            latin_name = "Musculi intertransversarii laterales lumborum (sin.)",
+            german_name = "Seitliche Zwischenquerfortsatzmuskeln (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 161,
+            ansatz = "Querfortsätze der benachbarten Lendenwirbel",
+            innervation = "Rr. ventrales und dorsales der Spinalnerven",
+            funktion = "Lateralflexion der Wirbelsäule",
+            structure_id = 161
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 162,
+            latin_name = "Musculi intertransversarii laterales lumborum (dex.)",
+            german_name = "Seitliche Zwischenquerfortsatzmuskeln (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 162,
+            ansatz = "Querfortsätze der benachbarten Lendenwirbel",
+            innervation = "Rr. ventrales und dorsales der Spinalnerven",
+            funktion = "Lateralflexion der Wirbelsäule",
+            structure_id = 162
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 163,
+            latin_name = "Musculi levatores costarum (sin.)",
+            german_name = "Rippenheber (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 163,
+            ansatz = "Anguli costarum (Rippenwinkel)",
+            innervation = "Rr. dorsales der Spinalnerven (C8–Th11)",
+            funktion = "Heben der Rippen, Unterstützung bei Inspiration und Lateralflexion der Wirbelsäule",
+            structure_id = 163
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 164,
+            latin_name = "Musculi levatores costarum (dex.)",
+            german_name = "Rippenheber (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 164,
+            ansatz = "Anguli costarum (Rippenwinkel)",
+            innervation = "Rr. dorsales der Spinalnerven (C8–Th11)",
+            funktion = "Heben der Rippen, Unterstützung bei Inspiration und Lateralflexion der Wirbelsäule",
+            structure_id = 164
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 165,
+            latin_name = "Musculus longissimus thoracis (sin.)",
+            german_name = "Langer Rückenmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 165,
+            ansatz = "Rippen und Querfortsätze der Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven (C4–L5)",
+            funktion = "Dorsalextension und Lateralflexion der Wirbelsäule",
+            structure_id = 165
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 166,
+            latin_name = "Musculus longissimus thoracis (dex.)",
+            german_name = "Langer Rückenmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 166,
+            ansatz = "Rippen und Querfortsätze der Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven (C4–L5)",
+            funktion = "Dorsalextension und Lateralflexion der Wirbelsäule",
+            structure_id = 166
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 167,
+            latin_name = "Musculus multifidus (sin.)",
+            german_name = "Vielgefiederter Muskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 167,
+            ansatz = "Dornfortsätze der Wirbel, 2–4 Segmente überspannend",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung der Wirbelsäule, Dorsalextension und Rotation zur Gegenseite",
+            structure_id = 167
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 168,
+            latin_name = "Musculus multifidus (dex.)",
+            german_name = "Vielgefiederter Muskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 168,
+            ansatz = "Dornfortsätze der Wirbel, 2–4 Segmente überspannend",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung der Wirbelsäule, Dorsalextension und Rotation zur Gegenseite",
+            structure_id = 168
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 169,
+            latin_name = "Musculus obliquus inferior capitis (sin.)",
+            german_name = "Unterer schräger Kopfmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 169,
+            ansatz = "Processus transversus des Atlas (C1)",
+            innervation = "N. suboccipitalis (C1)",
+            funktion = "Rotation des Kopfes zur ipsilateralen Seite",
+            structure_id = 169
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 170,
+            latin_name = "Musculus obliquus inferior capitis (dex.)",
+            german_name = "Unterer schräger Kopfmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 170,
+            ansatz = "Processus transversus des Atlas (C1)",
+            innervation = "N. suboccipitalis (C1)",
+            funktion = "Rotation des Kopfes zur ipsilateralen Seite",
+            structure_id = 170
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 171,
+            latin_name = "Musculus obliquus superior capitis (sin.)",
+            german_name = "Oberer schräger Kopfmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 171,
+            ansatz = "Os occipitale zwischen Linea nuchae superior und inferior",
+            innervation = "N. suboccipitalis (C1)",
+            funktion = "Dorsalextension und Lateralflexion des Kopfes",
+            structure_id = 171
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 172,
+            latin_name = "Musculus obliquus superior capitis (dex.)",
+            german_name = "Oberer schräger Kopfmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 172,
+            ansatz = "Os occipitale zwischen Linea nuchae superior und inferior",
+            innervation = "N. suboccipitalis (C1)",
+            funktion = "Dorsalextension und Lateralflexion des Kopfes",
+            structure_id = 172
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 173,
+            latin_name = "Musculi rotatores (thoracis breves + longi) (sin.)",
+            german_name = "Drehmuskeln (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 173,
+            ansatz = "Dornfortsätze der Wirbel, überspringen 1 (breves) oder 2 (longi) Segmente",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Rotation und Stabilisierung der Wirbelsäule",
+            structure_id = 173
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 174,
+            latin_name = "Musculi rotatores (thoracis breves + longi) (dex.)",
+            german_name = "Drehmuskeln (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 174,
+            ansatz = "Dornfortsätze der Wirbel, überspringen 1 (breves) oder 2 (longi) Segmente",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Rotation und Stabilisierung der Wirbelsäule",
+            structure_id = 174
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 175,
+            latin_name = "Musculus semispinalis thoracis (sin.)",
+            german_name = "Halbdornmuskel des Thorax (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 175,
+            ansatz = "Dornfortsätze der Brust- und Halswirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension der Wirbelsäule und des Kopfes, Rotation zur Gegenseite",
+            structure_id = 175
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 176,
+            latin_name = "Musculus semispinalis thoracis (dex.)",
+            german_name = "Halbdornmuskel des Thorax (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 176,
+            ansatz = "Dornfortsätze der Brust- und Halswirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension der Wirbelsäule und des Kopfes, Rotation zur Gegenseite",
+            structure_id = 176
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 177,
+            latin_name = "Musculus spinalis thoracis (sin.)",
+            german_name = "Dornmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 177,
+            ansatz = "Dornfortsätze der oberen Brust- und unteren Halswirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension der Wirbelsäule",
+            structure_id = 177
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 178,
+            latin_name = "Musculus spinalis thoracis (dex.)",
+            german_name = "Dornmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 178,
+            ansatz = "Dornfortsätze der oberen Brust- und unteren Halswirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension der Wirbelsäule",
+            structure_id = 178
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 179,
+            latin_name = "Musculus splenius cervicis (sin.)",
+            german_name = "Riemenmuskel des Halses (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 179,
+            ansatz = "Querfortsätze der oberen Halswirbel (C1–C3)",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension des Halses und des Kopfes, Rotation und Lateralflexion zur ipsilateralen Seite",
+            structure_id = 179
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 180,
+            latin_name = "Musculus splenius cervicis (dex.)",
+            german_name = "Riemenmuskel des Halses (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 180,
+            ansatz = "Querfortsätze der oberen Halswirbel (C1–C3)",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Dorsalextension des Halses und des Kopfes, Rotation und Lateralflexion zur ipsilateralen Seite",
+            structure_id = 180
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 181,
+            latin_name = "Musculus serratus posterior superior (sin.)",
+            german_name = "Oberer hinterer Sägemuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 181,
+            ansatz = "Rippen 2–5 (kraniale Ränder)",
+            innervation = "Nn. intercostales (Th1–Th4)",
+            funktion = "Heben der Rippen, Unterstützung bei Inspiration",
+            structure_id = 181
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 182,
+            latin_name = "Musculus serratus posterior superior (dex.)",
+            german_name = "Oberer hinterer Sägemuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 182,
+            ansatz = "Rippen 2–5 (kraniale Ränder)",
+            innervation = "Nn. intercostales (Th1–Th4)",
+            funktion = "Heben der Rippen, Unterstützung bei Inspiration",
+            structure_id = 182
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 183,
+            latin_name = "Musculus serratus posterior inferior (sin.)",
+            german_name = "Unterer hinterer Sägemuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 183,
+            ansatz = "Rippen 9–12 (kaudale Ränder)",
+            innervation = "Nn. intercostales (Th9–Th12)",
+            funktion = "Senken der Rippen, Unterstützung bei Exspiration",
+            structure_id = 183
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 184,
+            latin_name = "Musculus serratus posterior inferior (dex.)",
+            german_name = "Unterer hinterer Sägemuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 184,
+            ansatz = "Rippen 9–12 (kaudale Ränder)",
+            innervation = "Nn. intercostales (Th9–Th12)",
+            funktion = "Senken der Rippen, Unterstützung bei Exspiration",
+            structure_id = 184
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 185,
+            latin_name = "Musculus latissimus dorsi (sin.)",
+            german_name = "Breiter Rückenmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 185,
+            ansatz = "Crista tuberculi minoris des Humerus",
+            innervation = "N. thoracodorsalis (C6–C8)",
+            funktion = "Adduktion, Innenrotation und Retroversion im Schultergelenk",
+            structure_id = 185
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 186,
+            latin_name = "Musculus latissimus dorsi (dex.)",
+            german_name = "Breiter Rückenmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 186,
+            ansatz = "Crista tuberculi minoris des Humerus",
+            innervation = "N. thoracodorsalis (C6–C8)",
+            funktion = "Adduktion, Innenrotation und Retroversion im Schultergelenk",
+            structure_id = 186
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 187,
+            latin_name = "Musculus rhomboideus minor (sin.)",
+            german_name = "Kleiner Rautenmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 187,
+            ansatz = "Margo medialis der Scapula (oberhalb der Spina scapulae)",
+            innervation = "N. dorsalis scapulae (C4–C5)",
+            funktion = "Fixierung der Scapula, Adduktion und Elevation der Scapula",
+            structure_id = 187
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 188,
+            latin_name = "Musculus rhomboideus minor (dex.)",
+            german_name = "Kleiner Rautenmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 188,
+            ansatz = "Margo medialis der Scapula (oberhalb der Spina scapulae)",
+            innervation = "N. dorsalis scapulae (C4–C5)",
+            funktion = "Fixierung der Scapula, Adduktion und Elevation der Scapula",
+            structure_id = 188
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 189,
+            latin_name = "Musculus rhomboideus major (sin.)",
+            german_name = "Großer Rautenmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 189,
+            ansatz = "Margo medialis der Scapula (unterhalb der Spina scapulae)",
+            innervation = "N. dorsalis scapulae (C4–C5)",
+            funktion = "Fixierung der Scapula, Adduktion und Elevation der Scapula",
+            structure_id = 189
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 190,
+            latin_name = "Musculus rhomboideus major (dex.)",
+            german_name = "Großer Rautenmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 190,
+            ansatz = "Margo medialis der Scapula (unterhalb der Spina scapulae)",
+            innervation = "N. dorsalis scapulae (C4–C5)",
+            funktion = "Fixierung der Scapula, Adduktion und Elevation der Scapula",
+            structure_id = 190
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 191,
+            latin_name = "Musculus trapezius (sin.)",
+            german_name = "Kapuzenmuskel (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 191,
+            ansatz = "Laterales Drittel der Clavicula, Acromion, Spina scapulae",
+            innervation = "N. accessorius (XI. Hirnnerv) und Plexus cervicalis (C2–C4)",
+            funktion = "Fixierung der Scapula, Elevation, Depression, Retraktion und Rotation der Scapula",
+            structure_id = 191
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 192,
+            latin_name = "Musculus trapezius (dex.)",
+            german_name = "Kapuzenmuskel (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 192,
+            ansatz = "Laterales Drittel der Clavicula, Acromion, Spina scapulae",
+            innervation = "N. accessorius (XI. Hirnnerv) und Plexus cervicalis (C2–C4)",
+            funktion = "Fixierung der Scapula, Elevation, Depression, Retraktion und Rotation der Scapula",
+            structure_id = 192
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 193,
+            latin_name = "Musculi interspinales thoracis (sin.)",
+            german_name = "Zwischenwirbelmuskeln der Brustwirbelsäule (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 193,
+            ansatz = "Dornfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Brustwirbelsäule",
+            structure_id = 193
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 194,
+            latin_name = "Musculi interspinales thoracis (dex.)",
+            german_name = "Zwischenwirbelmuskeln der Brustwirbelsäule (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 194,
+            ansatz = "Dornfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Brustwirbelsäule",
+            structure_id = 194
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 195,
+            latin_name = "Musculi intertransversarii thoracis (sin.)",
+            german_name = "Zwischenquerfortsatzmuskeln der Brustwirbelsäule (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 195,
+            ansatz = "Querfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales und ventrales der Spinalnerven",
+            funktion = "Lateralflexion der Brustwirbelsäule",
+            structure_id = 195
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 196,
+            latin_name = "Musculi intertransversarii thoracis (dex.)",
+            german_name = "Zwischenquerfortsatzmuskeln der Brustwirbelsäule (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 196,
+            ansatz = "Querfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales und ventrales der Spinalnerven",
+            funktion = "Lateralflexion der Brustwirbelsäule",
+            structure_id = 196
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 197,
+            latin_name = "Musculus abductor pollicis longus (sin.)",
+            german_name = "Daumenabduktor (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 197,
+            ansatz = "Insertion an der Basis des Os metacarpale I",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Abduktion und Extension des Daumens",
+            structure_id = 197
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 198,
+            latin_name = "Musculus abductor pollicis longus (dex.)",
+            german_name = "Daumenabduktor (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 198,
+            ansatz = "Insertion an der Basis des Os metacarpale I",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Abduktion und Extension des Daumens",
+            structure_id = 198
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 199,
+            latin_name = "Musculus extensor indicis (sin.)",
+            german_name = "Zeigefingerstrecker (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 199,
+            ansatz = "Ansatz über die dorsale Aponeurose des 2. Fingers",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension des Zeigefingers; unterstützt die Dorsalextension im Handgelenk",
+            structure_id = 199
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 200,
+            latin_name = "Musculus extensor indicis (dex.)",
+            german_name = "Zeigefingerstrecker (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 200,
+            ansatz = "Ansatz über die dorsale Aponeurose des 2. Fingers",
+            innervation = "N. radialis (C7–C8)",
+            funktion = "Extension des Zeigefingers; unterstützt die Dorsalextension im Handgelenk",
+            structure_id = 200
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 201,
+            latin_name = "Musculus palmaris longus (sin.)",
+            german_name = "Langer Palmaris (li.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 201,
+            ansatz = "Ansatz über die Palmaraponeurose der Handfläche",
+            innervation = "N. medianus (C7–C8)",
+            funktion = "Flexion im Handgelenk und Spannung der Handfläche",
+            structure_id = 201
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 202,
+            latin_name = "Musculus palmaris longus (dex.)",
+            german_name = "Langer Palmaris (re.)",
+            category = "Armmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 202,
+            ansatz = "Ansatz über die Palmaraponeurose der Handfläche",
+            innervation = "N. medianus (C7–C8)",
+            funktion = "Flexion im Handgelenk und Spannung der Handfläche",
+            structure_id = 202
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 203,
+            latin_name = "Musculi interspinales thoracis_2 (sin.)",
+            german_name = "Zwischenwirbelmuskeln der Brustwirbelsäule (li.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 203,
+            ansatz = "Dornfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Brustwirbelsäule",
+            structure_id = 193
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 204,
+            latin_name = "Musculi interspinales thoracis_2 (dex.)",
+            german_name = "Zwischenwirbelmuskeln der Brustwirbelsäule (re.)",
+            category = "Rückenmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 204,
+            ansatz = "Dornfortsätze der benachbarten Brustwirbel",
+            innervation = "Rr. dorsales der Spinalnerven",
+            funktion = "Stabilisierung und Dorsalextension der Brustwirbelsäule",
+            structure_id = 194
+        });
 
     }
 
