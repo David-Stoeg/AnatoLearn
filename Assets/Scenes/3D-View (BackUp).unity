@@ -596,8 +596,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1829141241}
   playPauseButton: {fileID: 1917020167}
+  playPauseImage: {fileID: 0}
+  playSprite: {fileID: 0}
+  pauseSprite: {fileID: 0}
   animator: {fileID: 566441360}
-  animationName: TestAni
+  animationName: Squad
 --- !u!1 &518270476
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +902,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d3034630b1ec4479a01721d546924d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: MainMenu
+  backButtonScene: 
+  viewerButtonScene: 
+  humanExplorerScene: 
 --- !u!4 &1011661012
 Transform:
   m_ObjectHideFlags: 0
@@ -1469,10 +1474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dfaf1115b17884dbcc5aceadedc0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 5
-  zoomSpeed: 5
-  minZoomDistance: 1
-  maxZoomDistance: 10
 --- !u!1 &1180937004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,14 +2252,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad63494bb1001634295587e556b4207d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraUserBaseLoc: {fileID: 557338636}
-  cameraAutoBaseLoc: {fileID: 1991421651}
-  camera: {fileID: 1977097059}
-  speed: 150
-  maxClamp: 2.5
-  climbSpeed: 4
-  scrollSpeed: 2.5
-  autoRotateFractionAmount: 5
+  rotationSpeedPC: 2
+  rotationSpeedMobile: 4
+  movementSpeedPC: 4
+  movementSpeedMobile: 4
+  zoomSpeedPC: 0.5
+  zoomSpeedMobile: 0.075
+  camera: {fileID: 1977097061}
+  children: {fileID: 69751273}
 --- !u!4 &1820213052
 Transform:
   m_ObjectHideFlags: 0

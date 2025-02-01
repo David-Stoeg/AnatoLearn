@@ -1226,8 +1226,8 @@ MonoBehaviour:
   playPauseImage: {fileID: 1917020168}
   playSprite: {fileID: 21300000, guid: e5072484561f34b7091b2b8829324090, type: 3}
   pauseSprite: {fileID: 21300000, guid: 0ef38a666b30e437fa01d94ce21cdea8, type: 3}
-  animator: {fileID: 0}
-  animationName: TestAni
+  animator: {fileID: 2144449276}
+  animationName: DoNothing
 --- !u!1 &557338635
 GameObject:
   m_ObjectHideFlags: 0
@@ -6106,7 +6106,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2144449276}
   m_SourcePrefab: {fileID: 100100000, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
 --- !u!4 &2144449274 stripped
 Transform:
@@ -6118,6 +6121,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ca8d078c186c7b846895f01ca86373a8, type: 3}
   m_PrefabInstance: {fileID: 2144449273}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2144449276
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144449275}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 428637b2e39661b45aca4b8d99e5eda9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
