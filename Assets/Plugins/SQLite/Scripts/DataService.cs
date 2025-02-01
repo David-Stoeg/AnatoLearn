@@ -2015,6 +2015,196 @@ public class DataService  {
             structure_id = 114
         });
 
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 115,
+            german_name = "Langer Kopf des Bizeps",
+            latin_name = "Musculus biceps brachii, Caput longum",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 116,
+            german_name = "Rabenschnabelmuskel",
+            latin_name = "Musculus coracobrachialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 117,
+            german_name = "Deltamuskel",
+            latin_name = "Musculus deltoideus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 118,
+            german_name = "Untergrätenmuskel",
+            latin_name = "Musculus infraspinatus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 119,
+            german_name = "Unterschulterblattmuskel",
+            latin_name = "Musculus subscapularis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 120,
+            german_name = "Obergrätenmuskel",
+            latin_name = "Musculus supraspinatus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 121,
+            german_name = "Großer Rundmuskel",
+            latin_name = "Musculus teres major",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 122,
+            german_name = "Kleiner Rundmuskel",
+            latin_name = "Musculus teres minor",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 123,
+            german_name = "Langer Kopf des Trizeps",
+            latin_name = "Musculus triceps brachii, Caput longum",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 124,
+            german_name = "Armbeuger",
+            latin_name = "Musculus brachialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 125,
+            german_name = "Ellenbogenmuskel",
+            latin_name = "Musculus anconeus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 126,
+            german_name = "Oberarmspeichenmuskel",
+            latin_name = "Musculus brachioradialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 127,
+            german_name = "Runder Einwärtsdreher",
+            latin_name = "Musculus pronator teres",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 128,
+            german_name = "Auswärtsdreher",
+            latin_name = "Musculus supinator",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 129,
+            german_name = "Kurzer speichenseitiger Handstrecker",
+            latin_name = "Musculus extensor carpi radialis brevis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 130,
+            german_name = "Langer speichenseitiger Handstrecker",
+            latin_name = "Musculus extensor carpi radialis longus",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 131,
+            german_name = "Ellenseitiger Handstrecker",
+            latin_name = "Musculus extensor carpi ulnaris",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 132,
+            german_name = "Kleinfingerstrecker",
+            latin_name = "Musculus extensor digiti minimi",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 133,
+            german_name = "Speichenseitiger Handbeuger",
+            latin_name = "Musculus flexor carpi radialis",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 134,
+            german_name = "Ellenseitiger Handbeuger",
+            latin_name = "Musculus flexor carpi ulnaris",
+            category = "",
+            parentId = 0
+        });
+
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 135,
+            german_name = "Langer Daumenbeuger",
+            latin_name = "Musculus flexor pollicis longus",
+            category = "",
+            parentId = 0
+        });
+
+
     }
 
 
