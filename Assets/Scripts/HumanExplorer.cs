@@ -211,19 +211,16 @@ public class HumanExplore : MonoBehaviour
     {
         foreach (Material mat in renderer.materials)
         {
+            // Ändere zuerst den Render Mode (zum Beispiel auf "Fade" für transparente Darstellung)
+            ChangeRenderMode(mat, BlendMode.Fade);
+
+            // Setze die Farbe mit dem gewünschten Alpha-Wert
             Color color = mat.color;
             color.a = alpha;
             mat.color = color;
-            mat.SetFloat("_Mode", 2);
-            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            mat.SetInt("_ZWrite", 0);
-            mat.DisableKeyword("_ALPHATEST_ON");
-            mat.EnableKeyword("_ALPHABLEND_ON");
-            mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            mat.renderQueue = 3000;
         }
     }
+
 
     List<Renderer> GetRenderableModels()
     {
@@ -570,6 +567,52 @@ public class HumanExplore : MonoBehaviour
         if (buttonImage != null)
         {
             buttonImage.color = isActive ? Color.white : Color.gray;
+        }
+    }
+
+    public enum BlendMode
+    {
+        Opaque,
+        Cutout,
+        Fade,
+        Transparent
+    }
+
+    public static void ChangeRenderMode(Material material, BlendMode blendMode)
+    {
+        switch (blendMode)
+        {
+            case BlendMode.Opaque:
+                material.SetFloat("_Mode", 0);
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                material.SetInt("_ZWrite", 1);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.DisableKeyword("_ALPHABLEND_ON");
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = -1;
+                break;
+            case BlendMode.Fade: // Auch als "Faded" bekannt
+                material.SetFloat("_Mode", 2);
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                material.SetInt("_ZWrite", 0);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.EnableKeyword("_ALPHABLEND_ON");
+                material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = 3000;
+                break;
+            case BlendMode.Transparent:
+                material.SetFloat("_Mode", 2);
+                material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                material.SetInt("_ZWrite", 0);
+                material.DisableKeyword("_ALPHATEST_ON");
+                material.DisableKeyword("_ALPHABLEND_ON");
+                material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.renderQueue = 3000;
+                break;
+                // Falls du Cutout oder andere Modi benötigst, erweitere die Methode entsprechend.
         }
     }
 
