@@ -88,7 +88,7 @@ public class AnimationSwitcher : MonoBehaviour
 
         if (centerText != null)
         {
-            centerText.text = $"Selected Animation: <b>{currentState.displayName}</b>";
+            centerText.text = $"Ausgewählte Animation: <b>{currentState.displayName}</b>";
         }
 
         UpdateButtonStates();
