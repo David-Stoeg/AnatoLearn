@@ -279,9 +279,17 @@ public class HumanExplore : MonoBehaviour
         var descriptions = ds.GetDescription(id - 1);
         foreach (var description in descriptions)
         {
+            Debug.Log($"Description: {description}");
+            Debug.Log($"DescriptionID: {description.id}");
             descriptionText.text = description.ansatz;                    
             descriptionText2.text = description.innervation;
             descriptionText3.text = description.funktion;
+            Debug.Log($"Ansatz: {description.ansatz}");
+            Debug.Log($"Innervation: {description.innervation}");
+            Debug.Log($"Funktion: {description.funktion}");
+            Debug.Log($"DescriptionText1: {descriptionText.text}");
+            Debug.Log($"DescriptionText2: {descriptionText2.text}");
+            Debug.Log($"DescriptionText3: {descriptionText3.text}");
         }
 
     }
@@ -487,11 +495,13 @@ public class HumanExplore : MonoBehaviour
             }
             SetMaterialTransparency(renderableModels[i], i == index ? 1.0f : 0.05f);
         }
-
+        
         int modelId = GetAnatomicalStructureIdByLatinName(latinName);
 
         UpdateDisplayedText();
 
+        Debug.Log($"latinName: {latinName} ");
+        Debug.Log($"modelId: {modelId}");
         setDescription(modelId);
 
         ExploreWindow.SetActive(false);
@@ -506,14 +516,18 @@ public class HumanExplore : MonoBehaviour
 
     int GetAnatomicalStructureIdByLatinName(string latinName)
     {
+        Debug.Log($"ÜbergebenerLatinName: {latinName}");
         var anatomicalStructures = ds.GetAnatomicalStructures();
         foreach (var structure in anatomicalStructures)
         {
+            Debug.Log($"structure.id = {structure.id -1}, structure.latin_name = {structure.latin_name}");
             if (structure.latin_name.Equals(latinName, System.StringComparison.OrdinalIgnoreCase))
             {
-                return structure.id;
+                Debug.Log($"structure.id ={structure.id - 1}");
+                return structure.id - 1;
             }
         }
+
         return -1;
     }
     void showExplore()
@@ -552,7 +566,7 @@ public class HumanExplore : MonoBehaviour
             panel2.SetActive(true);
             UpdateDescriptionButtonState(nextDescriptionButton, true);
             UpdateDescriptionButtonState(previousDescriptionButton, true);
-
+            UpdateDescriptionButtonState(nextDescriptionButton, true);
         }
         else if (panel2.activeSelf)
         {
