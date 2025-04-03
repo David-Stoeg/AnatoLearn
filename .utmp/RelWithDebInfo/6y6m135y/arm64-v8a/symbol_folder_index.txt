@@ -1,1 +1,0 @@
-C:\Users\hamed\Documents\AnatoLearn\AnatoLearn\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\6y6m135y\obj\arm64-v8a
