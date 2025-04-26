@@ -42,7 +42,7 @@ public class QuizManager : MonoBehaviour
     public GameObject fillBlankPanel;              // assign your new panel
     public TMP_Text fillBlankQuestionText;         // the text object inside it
     public TMP_InputField fillBlankInput;          // the input field
-
+    
     private void Start()
     {
         LoadSampleQuestions();
@@ -205,20 +205,29 @@ public class QuizManager : MonoBehaviour
     void DisplayReviewQuestion(int index)
     {
         var q = questions[index];
-        reviewQuestionText.text = $"Q{index + 1}: {q.questionText}";
-        reviewProgressText.text = $"Question {index + 1} of {questions.Count}";
+        reviewQuestionText.text    = $"Q{index+1}: {q.questionText}";
+        reviewProgressText.text    = $"Question {index+1} of {questions.Count}";
 
-        // Clear previous review content
-        reviewUserAnswerText.text = "";
+        // reset
+        reviewUserAnswerText.text  = "";
         reviewCorrectAnswerText.text = "";
 
-        if (q.type == QuestionType.MultipleChoice)
+        if (q.type == QuestionType.FillInTheBlank)
         {
-            string correct = q.options[q.correctOptionIndex];
-            string selected = selectedAnswers[index] != -1 ? q.options[selectedAnswers[index]] : "No answer";
-
-            reviewUserAnswerText.text = $"Your Answer: {selected}";
-            reviewCorrectAnswerText.text = $"Correct Answer: {correct}";
+            string user = fillBlankInput.text.Trim();
+            if (string.IsNullOrEmpty(user))
+                user = "<i>No answer</i>";
+            reviewUserAnswerText.text   = $"Your Answer: {user}";
+            reviewCorrectAnswerText.text = $"Correct Answer: {q.correctAnswer}";
+        }
+        else if (q.type == QuestionType.MultipleChoice)
+        {
+            int sel = selectedAnswers[index];
+            string user = (sel >= 0 && sel < q.options.Count)
+                ? q.options[sel]
+                : "<i>No answer</i>";
+            reviewUserAnswerText.text   = $"Your Answer: {user}";
+            reviewCorrectAnswerText.text = $"Correct Answer: {q.options[q.correctOptionIndex]}";
         }
         else if (q.type == QuestionType.Matching)
         {
@@ -228,23 +237,15 @@ public class QuizManager : MonoBehaviour
             {
                 string left = q.leftItems[j];
                 string correct = q.rightItems[q.correctMatchIndices[j]];
-                matchReview += $"{left} ➜ {correct}\n";
+                matchReview += $"{left} → {correct}\n";
             }
             reviewCorrectAnswerText.text = matchReview;
-        }
-        else if (q.type == QuestionType.FillInTheBlank)
-        {
-            string correctAnswer = q.correctAnswer;
-            string userAnswer = selectedAnswers[index] != -1 ? selectedAnswers[index].ToString() : "No answer";
-
-            reviewUserAnswerText.text = $"Your Answer: {userAnswer}";
-            reviewCorrectAnswerText.text = $"Correct Answer: {correctAnswer}";
         }
 
         reviewPrevButton.interactable = index > 0;
         reviewNextButton.interactable = index < questions.Count - 1;
     }
-
+    
     public void OnNextReview()
     {
         if (currentReviewIndex < questions.Count - 1)
@@ -268,21 +269,28 @@ public class QuizManager : MonoBehaviour
         currentMatchingDropdowns.Clear();
         ClearMatchingUI();
 
+        // Build a list where index 0 is “<choose>”
+        var placeholder = new List<string> { "" };  
+        placeholder.AddRange(q.rightItems);
+
         for (int i = 0; i < q.leftItems.Count; i++)
         {
-            GameObject left = Instantiate(leftMatchPrefab, leftColumn);
-            left.GetComponentInChildren<TMP_Text>().text = q.leftItems[i];
+            // Left label
+            var leftGO = Instantiate(leftMatchPrefab, leftColumn);
+            leftGO.GetComponentInChildren<TMP_Text>().text = q.leftItems[i];
 
-            GameObject right = Instantiate(rightMatchPrefab, rightColumn);
-            TMP_Dropdown dropdown = right.GetComponentInChildren<TMP_Dropdown>();
-            dropdown.ClearOptions();
-            dropdown.AddOptions(q.rightItems);
-            dropdown.value = -1; // no default selection
+            // Right dropdown
+            var rightGO = Instantiate(rightMatchPrefab, rightColumn);
+            var dd = rightGO.GetComponentInChildren<TMP_Dropdown>();
+            dd.ClearOptions();
+            dd.AddOptions(placeholder);
+            dd.value = 0;           // 0 = the blank placeholder
+            dd.RefreshShownValue();
 
-            currentMatchingDropdowns.Add(dropdown);
+            currentMatchingDropdowns.Add(dd);
         }
 
-        nextButton.interactable = true; // allow skipping
+        nextButton.interactable = true; // they can skip if they want
     }
 
     void ClearMatchingUI()
