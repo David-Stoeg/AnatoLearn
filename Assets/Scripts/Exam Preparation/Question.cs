@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEngine;
 
 [System.Serializable]
 public class MatchingPair
@@ -19,13 +19,23 @@ public enum QuestionType
 [System.Serializable]
 public class Question
 {
+    public QuestionType type;
     public string questionText;
+
+    // Multiple choice
     public List<string> options;
     public int correctOptionIndex;
 
-    // Matching type
-    public bool isMatchingQuestion = false;
+    // Matching
     public List<string> leftItems;
     public List<string> rightItems; // shuffled
     public List<int> correctMatchIndices; // left[i] matches right[correctMatchIndices[i]]
+
+    // Fill in the blank (if you plan to use it)
+    public string correctAnswer;
+
+    // Helper properties
+    public bool IsMultipleChoice => type == QuestionType.MultipleChoice;
+    public bool IsMatching => type == QuestionType.Matching;
+    public bool IsFillInTheBlank => type == QuestionType.FillInTheBlank;
 }
