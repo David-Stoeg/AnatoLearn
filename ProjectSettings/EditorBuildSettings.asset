@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Quiz.unity
     guid: 094142062fdb0ff4189a8863ad658536
+  - enabled: 1
+    path: Assets/Scenes/ExamPreparation.unity
+    guid: 9f7feda52be3ae144b5975b8ae54ad94
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

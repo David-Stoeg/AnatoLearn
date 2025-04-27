@@ -9,6 +9,25 @@ public class MatchingPair
     public string right;
 }
 
+[Serializable]
+public class QuestionData
+{
+    public string type;
+    public string questionText;
+    public List<string> options;
+    public int correctOptionIndex;
+    public List<string> leftItems;
+    public List<string> rightItems;
+    public List<int> correctMatchIndices;
+    public string correctAnswer;
+}
+
+[Serializable]
+public class QuestionDatabase
+{
+    public List<QuestionData> questions;
+}
+
 public enum QuestionType
 {
     MultipleChoice,
@@ -38,4 +57,19 @@ public class Question
     public bool IsMultipleChoice => type == QuestionType.MultipleChoice;
     public bool IsMatching => type == QuestionType.Matching;
     public bool IsFillInTheBlank => type == QuestionType.FillInTheBlank;
+    
+    public static Question FromData(QuestionData d)
+    {
+        var q = new Question {
+            questionText = d.questionText,
+            type = Enum.Parse<QuestionType>(d.type),
+            options = d.options,
+            correctOptionIndex = d.correctOptionIndex,
+            leftItems = d.leftItems,
+            rightItems = d.rightItems,
+            correctMatchIndices = d.correctMatchIndices,
+            correctAnswer = d.correctAnswer
+        };
+        return q;
+    }
 }

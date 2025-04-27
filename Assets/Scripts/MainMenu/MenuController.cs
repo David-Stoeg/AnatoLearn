@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private string viewerButtonScene = ""; // Scene to load with the 3DViewer button
     [SerializeField] private string humanExplorerScene = ""; // Scene to load with the Human Explorer button
     [SerializeField] private string animationsScene = ""; // Scene to load with the Animations button
-    [SerializeField] private string quizScene = ""; // Scene to load with the Quiz button ✅
+    [SerializeField] private GameObject challengePanel; // ✅ Reference to the Quiz Start Panel
 
     private void OnEnable()
     {
@@ -29,7 +29,7 @@ public class MenuController : MonoBehaviour
         if (backButton != null) backButton.clicked += LoadBackScene;
         if (humanExplorerButton != null) humanExplorerButton.clicked += LoadHumanExplorerScene;
         if (animationsButton != null) animationsButton.clicked += LoadAnimationsScene;
-        if (quizButton != null) quizButton.clicked += LoadQuizScene; 
+        if (quizButton != null) quizButton.clicked += ShowQuizPanel; 
     }
 
     // Function to load the scene for the 3DViewer button
@@ -56,10 +56,17 @@ public class MenuController : MonoBehaviour
         LoadScene(animationsScene, "Animations");
     }
 
-    // ✅ Function to load the scene for the Quiz button
-    private void LoadQuizScene()
+    // ✅ Function to show the quiz panel
+    private void ShowQuizPanel()
     {
-        LoadScene(quizScene, "Quiz");
+        if (challengePanel != null)
+        {
+            challengePanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Quiz Panel is not assigned!");
+        }
     }
 
     // Helper function to load scenes safely
