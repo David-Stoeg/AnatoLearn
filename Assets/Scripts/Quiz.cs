@@ -32,8 +32,11 @@ public class Quiz : MonoBehaviour
     {
         ds = DataServiceManager.Instance.DataService;
         renderableModels = GetRenderableModels();
-        originalPosition = new Vector3(0.00f, 0.05f, 3.00f);
+    
+        // Shuffle the renderableModels list
+        renderableModels = renderableModels.OrderBy(a => Guid.NewGuid()).ToList();
 
+        originalPosition = new Vector3(0.00f, 0.05f, 3.00f);
 
         SubmitButton.onClick.AddListener(ShowNextModel);
 

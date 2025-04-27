@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
@@ -79,6 +80,15 @@ public class QuizManager : MonoBehaviour
     
     // Stores the raw string the user entered or selected for each question
     private List<string> userAnswers = new List<string>();
+    
+    [Header("Result Feedback")]
+    public Image resultImage;            // the UI Image where medal/sad icon will appear
+    public TMP_Text resultMessageText;   // the text object for the German message
+
+    public Sprite goldMedalSprite;       // ≥ 90%
+    public Sprite silverMedalSprite;     // ≥ 75%
+    public Sprite bronzeMedalSprite;     // ≥ 50%
+    public Sprite sadSprite;             // < 50%
     
     private void Start()
     {
@@ -229,44 +239,54 @@ public class QuizManager : MonoBehaviour
 
     void ShowResults()
     {
-        // hide quiz panels
+        // 1) hide all question UIs
         questionPanel.SetActive(false);
         matchingQuestionPanel.SetActive(false);
         fillBlankPanel.SetActive(false);
-
-        // hide timer
         timer.gameObject.SetActive(false);
-
-        // show results + finish button
-        resultPanel.SetActive(true);
         nextButton.gameObject.SetActive(false);
+
+        // 2) show result panel and finish button
+        resultPanel.SetActive(true);
         finishQuizButton.gameObject.SetActive(true);
 
-        // score text
-        scoreText.text = $"You scored {score} of {questions.Count}";
+        // 3) calculate percentage
+        int total = questions.Count;
+        float pct = total > 0 ? (100f * score / total) : 0f;
 
-        // show time used:
+        // 4) pick message + sprite
+        string message;
+        Sprite icon;
+        if (pct >= 90f)
+        {
+            message = $"Herzlichen Glückwunsch! Du hast {score} von {total} richtig – eine ausgezeichnete Leistung!";
+            icon    = goldMedalSprite;
+        }
+        else if (pct >= 75f)
+        {
+            message = $"Sehr gut! Du hast {score} von {total} richtig – weiter so!";
+            icon    = silverMedalSprite;
+        }
+        else if (pct >= 50f)
+        {
+            message = $"Gut gemacht! Du hast {score} von {total} richtig – da geht noch mehr!";
+            icon    = bronzeMedalSprite;
+        }
+        else
+        {
+            message = $"Kopf hoch! Du hast {score} von {total} richtig – übe weiter, du schaffst das!";
+            icon    = sadSprite;
+        }
+
+        // 5) display message + icon
+        resultMessageText.text = message;
+        resultImage.sprite     = icon;
+
+        // 6) (optional) still show time used below or elsewhere
         float timeUsed = Time.time - quizStartTime;
         int m = Mathf.FloorToInt(timeUsed / 60f);
         int s = Mathf.FloorToInt(timeUsed % 60f);
-        // you can reuse scoreText or add a new TMP_Text called timeUsedText
-        scoreText.text += $"\nTime: {m:00}:{s:00}";
-
-        if (timerCoroutine != null)
-            StopCoroutine(timerCoroutine);
-        
-        // Hide the Time Up panel if it's showing
-        timeUpPanel.SetActive(false);
-    
-        // Hide any question UI panels
-        questionPanel.SetActive(false);
-        matchingQuestionPanel.SetActive(false);
-        fillBlankPanel.SetActive(false);    // ← hide the fill-in-the-blank panel
-        // Show results
-        resultPanel.SetActive(true);
-        scoreText.text = $"You scored {score} out of {questions.Count}";
-    
-        if (timerCoroutine != null) StopCoroutine(timerCoroutine);
+        scoreText.text = $"Zeit benötigt: {m:00}:{s:00}";
     }
 
     public void ShowReview()
@@ -446,10 +466,11 @@ public class QuizManager : MonoBehaviour
     
     public void OnFinishQuizClicked()
     {
-        // Here you can decide what happens, for example:
-        // - reload the main menu
-        // - quit the app
-        // - reset the quiz
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); // example
+    }
+    
+    public void ExitToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
