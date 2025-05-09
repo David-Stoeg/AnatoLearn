@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class QuizManager : MonoBehaviour
 {
@@ -208,20 +209,30 @@ public class QuizManager : MonoBehaviour
             default: // MultipleChoice
             {
                 var selectedOptions = new List<string>();
+                var correctOptions = new List<string>();
+                // Loop through all the options and check for correct ones
                 for (int i = 0; i < optionToggles.Length; i++)
+                {
                     if (optionToggles[i].isOn)
+                    {
                         selectedOptions.Add(q.options[i]);
+                    }
+
+                    // Collect all the correct answers
+                    if (q.correctOptionIndices.Contains(i))
+                    {
+                        correctOptions.Add(q.options[i]);
+                    }
+                }
 
                 rawAnswer = selectedOptions.Count > 0
                     ? string.Join(", ", selectedOptions)
                     : "";
 
-                int firstSelected = -1;
-                for (int i = 0; i < optionToggles.Length; i++)
-                    if (optionToggles[i].isOn) { firstSelected = i; break; }
+                // For multiple correct answers, compare with all correct options
+                isCorrect = correctOptions.Count == selectedOptions.Count && !correctOptions.Except(selectedOptions).Any();
 
-                isCorrect   = (firstSelected == q.correctOptionIndex);
-                recordIndex = firstSelected;
+                recordIndex = selectedOptions.Count > 0 ? 0 : -1; // Don't store anything if no answer is selected
                 break;
             }
         }
@@ -325,11 +336,20 @@ public class QuizManager : MonoBehaviour
         if (string.IsNullOrEmpty(userAnswer))
             userAnswer = "<i>keine Antwort</i>";
 
-        // build the correct-answer display
+        // build the correct-answer display for multiple correct answers
         string correctAnswer = "";
         if (q.type == QuestionType.MultipleChoice)
         {
-            correctAnswer = q.options[q.correctOptionIndex];
+            var correctOptions = new List<string>();
+            // Collect all correct answers from the list of correct indices
+            foreach (var correctIndex in q.correctOptionIndices)
+            {
+                if (correctIndex >= 0 && correctIndex < q.options.Count)
+                {
+                    correctOptions.Add(q.options[correctIndex]);
+                }
+            }
+            correctAnswer = string.Join(", ", correctOptions);
         }
         else if (q.type == QuestionType.Matching)
         {
@@ -343,13 +363,13 @@ public class QuizManager : MonoBehaviour
             correctAnswer = q.correctAnswer;
         }
 
-        reviewUserAnswerText.text    = $"Your Answer:\n{userAnswer}";
+        reviewUserAnswerText.text = $"Your Answer:\n{userAnswer}";
         reviewCorrectAnswerText.text = $"Correct Answer:\n{correctAnswer}";
 
         reviewPrevButton.interactable = (index > 0);
         reviewNextButton.interactable = (index < questions.Count - 1);
     }
-    
+
     public void OnNextReview()
     {
         if (currentReviewIndex < questions.Count - 1)
@@ -358,6 +378,7 @@ public class QuizManager : MonoBehaviour
             DisplayReviewQuestion(currentReviewIndex);
         }
     }
+
 
     public void OnPrevReview()
     {

@@ -378,8 +378,13 @@ public class Quiz : MonoBehaviour
     {
         for (int i = 0; i < korrekt_inkorrekt.Count; i++)
         {
-            results.Add($"Lateinischer Begriff: {latinNamesHistory[i]}, Deine Eingabe: '{eingabeTextsHistory[i]}' ist {korrekt_inkorrekt[i]}");
+            string colorTag = korrekt_inkorrekt[i] == "korrekt" 
+                ? "<b><color=#228B22>korrekt</color></b>"
+                : "<b><color=#FF0000>inkorrekt</color></b>";
+
+            results.Add($"Lateinischer Begriff: {latinNamesHistory[i]}, Deine Eingabe: '{eingabeTextsHistory[i]}' ist {colorTag}.");
         }
+
         foreach (var result in results)
         {
             GameObject suggestion = Instantiate(suggestionPrefab, suggestionsParent);
@@ -390,6 +395,7 @@ public class Quiz : MonoBehaviour
                 suggestionText.text = result;
             }
         }
+
         for (int i = 0; i < renderableModels.Count; i++)
         {
             if (renderableModels[i] == null)
@@ -399,13 +405,15 @@ public class Quiz : MonoBehaviour
             }
             SetMaterialTransparency(renderableModels[i], 0.2f);
         }
-        fbxRoot.transform.position = new Vector3(originalPosition.x, originalPosition.y -1f, originalPosition.z-1f);
+
+        fbxRoot.transform.position = new Vector3(originalPosition.x, originalPosition.y - 1f, originalPosition.z - 1f);
         scrollView.SetActive(true);
         EndeButton.gameObject.SetActive(false);
         SubmitButton.gameObject.SetActive(false);
         EingabeInputField.gameObject.SetActive(false);
         zurückButton.gameObject.SetActive(true);
     }
+    
     void SwitchToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");

@@ -15,7 +15,7 @@ public class QuestionData
     public string type;
     public string questionText;
     public List<string> options;
-    public int correctOptionIndex;
+    public List<int> correctOptionIndices;  // Change this from int to List<int>
     public List<string> leftItems;
     public List<string> rightItems;
     public List<int> correctMatchIndices;
@@ -43,7 +43,7 @@ public class Question
 
     // Multiple choice
     public List<string> options;
-    public int correctOptionIndex;
+    public List<int> correctOptionIndices;  // Change this from int to List<int>
 
     // Matching
     public List<string> leftItems;
@@ -64,7 +64,7 @@ public class Question
             questionText = d.questionText,
             type = Enum.Parse<QuestionType>(d.type),
             options = d.options,
-            correctOptionIndex = d.correctOptionIndex,
+            correctOptionIndices = d.correctOptionIndices,  // Use List<int> for multiple correct answers
             leftItems = d.leftItems,
             rightItems = d.rightItems,
             correctMatchIndices = d.correctMatchIndices,
