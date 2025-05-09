@@ -2,810 +2,312 @@
   "questions": [
     {
       "type": "MultipleChoice",
-      "questionText": "Which bone is also known as the collarbone?",
-      "options": ["Scapula", "Clavicle", "Sternum", "Humerus"],
-      "correctOptionIndex": 1
+      "questionText": "Welches Organ produziert Insulin?",
+      "options": ["Leber", "Bauchspeicheldrüse", "Niere", "Lunge"],
+      "correctOptionIndices": [1]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "What is the name of the muscle primarily responsible for breathing?",
-      "options": ["Pectoralis major", "Diaphragm", "Latissimus dorsi", "Rectus abdominis"],
-      "correctOptionIndex": 1
+      "questionText": "Welche der folgenden Muskeln ist für das Strecken des Arms verantwortlich?",
+      "options": ["Trizeps", "Bizeps", "Deltoid", "Sternocleidomastoideus"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche der folgenden Knochen befinden sich im Unterarm?",
+      "options": ["Radius", "Ulna", "Femur", "Fibula"],
+      "correctOptionIndices": [0, 1]
     },
     {
       "type": "Matching",
-      "questionText": "Match the bones to their location.",
-      "leftItems": ["Femur", "Humerus", "Tibia"],
-      "rightItems": ["Upper arm", "Thigh", "Lower leg"],
-      "correctMatchIndices": [1, 0, 2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "The _______ is the largest organ in the human body.",
-      "correctAnswer": "skin"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Ordne die Organe ihren Funktionen zu.",
+      "leftItems": ["Leber", "Nieren", "Magen"],
+      "rightItems": ["Entgiftung", "Filtration von Abfallstoffen", "Verdauung von Nahrung"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die Hormone ihren Funktionen zu.",
+      "leftItems": ["Adrenalin", "Insulin", "Serotonin"],
+      "rightItems": ["Stressreaktion", "Blutgerinnung", "Stimmung"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welche dieser Zellen sind für die Sauerstoffversorgung verantwortlich?",
+      "options": ["Erythrozyten", "Leukozyten", "Thrombozyten", "Neurozyten"],
+      "correctOptionIndices": [0]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Welche dieser Organe gehören zum Kreislaufsystem?",
+      "options": ["Herz", "Lunge", "Leber", "Blutgefäße"],
+      "correctOptionIndices": [0, 3]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche der folgenden Zellen sind Teil des Immunsystems?",
+      "options": ["T-Zellen", "B-Zellen", "Erythrozyten", "Leukozyten"],
+      "correctOptionIndices": [0, 1, 3]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ ist das größte Organ im menschlichen Körper.",
+      "correctAnswer": "Haut"
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die Knochen den Körperteilen zu.",
+      "leftItems": ["Femur", "Scapula", "Sternum"],
+      "rightItems": ["Bein", "Schultergürtel", "Brustkorb"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welcher Teil des Nervensystems ist für die unwillkürliche Steuerung verantwortlich?",
+      "options": ["Somatisches Nervensystem", "Zentrales Nervensystem", "Autonomes Nervensystem", "Peripheres Nervensystem"],
+      "correctOptionIndices": [2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Welcher Muskel befindet sich im Oberschenkel und ist für die Streckung des Knies verantwortlich?",
+      "options": ["Bizeps femoris", "Quadrizeps", "Gluteus maximus", "Sartorius"],
+      "correctOptionIndices": [1]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Organe sind am Atmungssystem beteiligt?",
+      "options": ["Lunge", "Zwerchfell", "Magen", "Herz"],
+      "correctOptionIndices": [0, 1]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ ist die Verbindung zwischen dem Oberschenkel und dem Hüftgelenk.",
+      "correctAnswer": "Hüftpfanne"
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welches der folgenden Organe ist für die Bildung von Blutzellen verantwortlich?",
+      "options": ["Knochenmark", "Leber", "Nieren", "Milz"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Knochen bilden das Fußgelenk?",
+      "options": ["Tibia", "Fibula", "Talus", "Karpalia"],
+      "correctOptionIndices": [0, 1, 2]
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die Zellen ihren Funktionen zu.",
+      "leftItems": ["Erythrozyt", "Leukozyt", "Thrombozyt"],
+      "rightItems": ["Sauerstofftransport", "Immunabwehr", "Blutgerinnung"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welcher Knochen befindet sich im Oberschenkel?",
+      "options": ["Femur", "Tibia", "Fibula", "Patella"],
+      "correctOptionIndices": [0]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Welche Organe sind für die Ausscheidung von Abfallstoffen verantwortlich?",
+      "options": ["Nieren", "Lunge", "Magen", "Haut"],
+      "correctOptionIndices": [0, 1]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Muskeln sind Teil des Unterarms?",
+      "options": ["Flexor", "Extensor", "Bizeps", "Trapezius"],
+      "correctOptionIndices": [0, 1]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Der _______ ist für die Übertragung von Nervenimpulsen verantwortlich.",
+      "correctAnswer": "Neurotransmitter"
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die Teile des Verdauungssystems ihren Funktionen zu.",
+      "leftItems": ["Magen", "Dünndarm", "Dickdarm"],
+      "rightItems": ["Zersetzung von Nahrung", "Absorption von Nährstoffen", "Wasserentzug"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welcher Knochen bildet das Schultergelenk?",
+      "options": ["Clavicula", "Scapula", "Humerus", "Radius"],
+      "correctOptionIndices": [0, 1]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Welche Zellen sind in der Knochenbildung aktiv?",
+      "options": ["Osteoblasten", "Osteozyten", "Erythrozyten", "Osteoklasten"],
+      "correctOptionIndices": [0, 1]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Der _______ ist der größte Nerv im menschlichen Körper.",
+      "correctAnswer": "Ischiasnerv"
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche der folgenden Zellen sind für die Blutgerinnung verantwortlich?",
+      "options": ["Thrombozyten", "Leukozyten", "Erythrozyten", "Plasmazellen"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welches Organ ist für die Produktion von Galle verantwortlich?",
+      "options": ["Leber", "Magen", "Bauchspeicheldrüse", "Nieren"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welcher Muskel ist verantwortlich für die Beugung des Oberschenkels?",
+      "options": ["Quadrizeps", "Psoas", "Sartorius", "Gluteus maximus"],
+      "correctOptionIndices": [1, 2]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche der folgenden Knochen bilden das Handgelenk?",
+      "options": ["Radius", "Ulna", "Karpalia", "Femur"],
+      "correctOptionIndices": [0, 1, 2]
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Ordne die Muskeln ihren Funktionen zu.",
+      "leftItems": ["Bizeps", "Trapezius", "Gastrocnemius"],
+      "rightItems": ["Armbeugung", "Schulterbewegung", "Beinbeugung"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die Teile des Nervensystems ihren Funktionen zu.",
+      "leftItems": ["Zentrales Nervensystem", "Peripheres Nervensystem", "Autonomes Nervensystem"],
+      "rightItems": ["Koordination der Körperfunktionen", "Verbindung von Gehirn und Rückenmark zu den Gliedmaßen", "Steuert unwillkürliche Funktionen"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welche Organe gehören zum Verdauungssystem?",
+      "options": ["Magen", "Leber", "Blase", "Dünndarm"],
+      "correctOptionIndices": [0, 1, 3]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Welches dieser Organe ist für die Filtration von Blut verantwortlich?",
+      "options": ["Leber", "Lunge", "Nieren", "Milz"],
+      "correctOptionIndices": [2]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welcher Teil des Körpers enthält das größte Knochenmark?",
+      "options": ["Femur", "Sternum", "Schädel", "Ulna"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Das _______ transportiert Nährstoffe und Sauerstoff zu den Zellen.",
+      "correctAnswer": "Blut"
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die Nerven ihren Funktionen zu.",
+      "leftItems": ["Nervus vagus", "Nervus medianus", "Nervus ischiadicus"],
+      "rightItems": ["Reguliert den Herzschlag", "Steuert die Handbewegungen", "Steuert das Bein"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welches dieser Organe ist am meisten am Stoffwechsel beteiligt?",
+      "options": ["Leber", "Lunge", "Nieren", "Blutgefäße"],
+      "correctOptionIndices": [0]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Welcher Knochen schützt das Gehirn?",
+      "options": ["Schädel", "Wirbelsäule", "Rippen", "Becken"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche der folgenden Strukturen sind Teil des Verdauungstraktes?",
+      "options": ["Magen", "Harnblase", "Dickdarm", "Lunge"],
+      "correctOptionIndices": [0, 2]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ transportiert die elektrischen Impulse im Nervensystem.",
+      "correctAnswer": "Nervenfasern"
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welcher Teil des menschlichen Körpers ist für die Beweglichkeit des Arms verantwortlich?",
+      "options": ["Schultergelenk", "Ellbogengelenk", "Kniegelenk", "Handgelenk"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche Zellen sind für die Immunabwehr verantwortlich?",
+      "options": ["Leukozyten", "Erythrozyten", "Thrombozyten", "Neurozyten"],
+      "correctOptionIndices": [0]
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die Teile des Herzens ihren Funktionen zu.",
+      "leftItems": ["Rechter Vorhof", "Linker Ventrikel", "Aorta"],
+      "rightItems": ["Empfängt Blut aus dem Körper", "Pumpt Blut in den Körper", "Transportiert Blut vom Herzen weg"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welche der folgenden Organe gehören zum Kreislaufsystem?",
+      "options": ["Herz", "Lunge", "Nieren", "Blutgefäße"],
+      "correctOptionIndices": [0, 3]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
+      "questionText": "Welcher Muskel hilft beim Heben des Arms?",
+      "options": ["Deltoid", "Bizeps", "Trizeps", "Sternocleidomastoideus"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche Zellen sind für den Sauerstofftransport verantwortlich?",
+      "options": ["Erythrozyten", "Leukozyten", "Thrombozyten", "Neurozyten"],
+      "correctOptionIndices": [0]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ speichert überschüssige Energie in Form von Fett.",
+      "correctAnswer": "Adipozyten"
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welcher Knochen befindet sich im Oberschenkel?",
+      "options": ["Femur", "Tibia", "Fibula", "Patella"],
+      "correctOptionIndices": [0]
     },
     {
       "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Ordne die verschiedenen Teile des Auges ihren Funktionen zu.",
+      "leftItems": ["Hornhaut", "Netzhaut", "Linse"],
+      "rightItems": ["Bringt Licht ins Auge", "Empfängt Licht", "Fokussiert Licht"],
+      "correctMatchIndices": [0, 1, 2]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
+      "questionText": "Welche der folgenden Knochen gehören zur Wirbelsäule?",
+      "options": ["Lendenwirbel", "Schambein", "Brustwirbel", "Kreuzbein"],
+      "correctOptionIndices": [0, 2, 3]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 1?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 0
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Placeholder MCQ 2?",
-      "options": ["A","B","C","D"],
-      "correctOptionIndex": 1
-    },
-    {
-      "type": "Matching",
-      "questionText": "Placeholder Match 3",
-      "leftItems": ["L1","L2","L3"],
-      "rightItems": ["R1","R2","R3"],
-      "correctMatchIndices": [0,1,2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 4 ___",
-      "correctAnswer": "Answer"
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Placeholder Fill 5 ___",
-      "correctAnswer": "Answer"
+      "questionText": "Welches Organ produziert Insulin?",
+      "options": ["Bauchspeicheldrüse", "Leber", "Nieren", "Milz"],
+      "correctOptionIndices": [0]
     }
   ]
 }

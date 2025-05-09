@@ -24,6 +24,12 @@ public class Suche : MonoBehaviour
     {
         ds = DataServiceManager.Instance.DataService;
 
+        // Perform the initial search and highlight the selected body part
+        if (!string.IsNullOrEmpty(SceneData.SelectedBodyPartName))
+        {
+            ApplyTransparencyToFBX(SceneData.SelectedBodyPartName);
+        }
+
         searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
         skeletonButton.onClick.AddListener(OnButtonSkeletonClick);
         muscleButton.onClick.AddListener(OnButtonMuscleClick);
@@ -87,7 +93,7 @@ public class Suche : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Klick-Event ausgelöst für: {renderer.gameObject.name}");
+            Debug.Log($"Klick-Event ausgelï¿½st fï¿½r: {renderer.gameObject.name}");
 
             string targetSceneName = "HumanExplorer";
             if (!string.IsNullOrEmpty(targetSceneName))
@@ -98,7 +104,7 @@ public class Suche : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Szenenname für den Wechsel ist leer. Bitte Szene zuweisen!");
+                Debug.LogWarning("Szenenname fï¿½r den Wechsel ist leer. Bitte Szene zuweisen!");
             }
         }
     }
@@ -166,7 +172,7 @@ public class Suche : MonoBehaviour
 
     void OnSuggestionClicked(AnatomicalStructures result)
     {
-        Debug.Log($"Ausgewählt: {result.german_name} ({result.latin_name})");
+        Debug.Log($"Ausgewï¿½hlt: {result.german_name} ({result.latin_name})");
         string displayText = result.german_name.Length > 30
             ? result.german_name.Substring(0, 27) + "..."
             : result.german_name;
