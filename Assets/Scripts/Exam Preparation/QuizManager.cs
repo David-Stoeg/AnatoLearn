@@ -21,6 +21,7 @@ public class QuizManager : MonoBehaviour
 
     public GameObject questionPanel;
     public GameObject resultPanel;
+    public Button reviewButton;
     public Text scoreText;
 
     public GameObject matchingQuestionPanel;
@@ -91,6 +92,13 @@ public class QuizManager : MonoBehaviour
     public Sprite bronzeMedalSprite;     // ≥ 50%
     public Sprite sadSprite;             // < 50%
     
+    private List<int> incorrectQuestionIndices = new List<int>();
+    
+    [Header("Review Exit Confirmation")]
+    public GameObject confirmExitReviewPanel;
+    public Button confirmExitButton;
+    public Button cancelExitButton;
+    
     private void Start()
     {
         // Hide all panels and buttons initially
@@ -104,6 +112,14 @@ public class QuizManager : MonoBehaviour
 
         nextButton.gameObject.SetActive(false);
         finishQuizButton.gameObject.SetActive(false);
+        
+        confirmExitReviewPanel.SetActive(false);  // sicherstellen, dass es aus ist
+        confirmExitButton.onClick.AddListener(ExitToMainMenu);
+        cancelExitButton.onClick.AddListener(() => confirmExitReviewPanel.SetActive(false));
+        
+        finishQuizButton.onClick.AddListener(OnFinishQuizClicked);
+        confirmExitButton.onClick.AddListener(ExitToMainMenu); // Confirm exit
+        cancelExitButton.onClick.AddListener(CloseConfirmPanel); // Cancel exit
     }
     
     // right now only for debugging to stop the timer early
@@ -162,6 +178,16 @@ public class QuizManager : MonoBehaviour
                 optionLabels[i].text = q.options[i];
             }
         }
+        
+        TMP_Text nextButtonText = nextButton.GetComponentInChildren<TMP_Text>();
+        if (currentQuestionIndex == questions.Count - 1)
+        {
+            nextButtonText.text = "Abschließen"; // or "Finish"
+        }
+        else
+        {
+            nextButtonText.text = "Weiter"; // or "Next"
+        }
     }
 
     public void OnNextClicked()
@@ -202,7 +228,15 @@ public class QuizManager : MonoBehaviour
             case QuestionType.FillInTheBlank:
             {
                 rawAnswer = fillBlankInput.text.Trim();
-                isCorrect = rawAnswer.Equals(q.correctAnswer, System.StringComparison.OrdinalIgnoreCase);
+                string correct = q.correctAnswer.Trim();  // ensure the correct answer is also trimmed
+
+                isCorrect = string.Equals(rawAnswer, correct, System.StringComparison.OrdinalIgnoreCase);
+
+                // DEBUG LOGGING
+                if (!isCorrect)
+                {
+                    Debug.LogWarning($"Fill-in-the-Blank mismatch: User input = \"{rawAnswer}\", Correct = \"{correct}\"");
+                }
                 break;
             }
 
@@ -241,6 +275,23 @@ public class QuizManager : MonoBehaviour
         selectedAnswers.Add(recordIndex);
         questionResults.Add(isCorrect);
 
+        if (isCorrect)
+        {
+            score++;
+        }
+        else if (!incorrectQuestionIndices.Contains(currentQuestionIndex))
+        {
+            incorrectQuestionIndices = new List<int>();
+
+            for (int i = 0; i < questionResults.Count; i++)
+            {
+                if (!questionResults[i])
+                {
+                    incorrectQuestionIndices.Add(i);
+                }
+            }
+        }
+
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.Count)
             DisplayQuestion();
@@ -260,6 +311,16 @@ public class QuizManager : MonoBehaviour
         // 2) show result panel and finish button
         resultPanel.SetActive(true);
         finishQuizButton.gameObject.SetActive(true);
+
+        // Check if there are any incorrect answers
+        if (incorrectQuestionIndices.Count == 0)
+        {
+            reviewButton.gameObject.SetActive(false);  // Hide the review button if all answers are correct
+        }
+        else
+        {
+            reviewButton.gameObject.SetActive(true);   // Show the review button if there are incorrect answers
+        }
 
         // 3) calculate percentage
         int total = questions.Count;
@@ -302,53 +363,44 @@ public class QuizManager : MonoBehaviour
 
     public void ShowReview()
     {
-        // hide everything else
         resultPanel.SetActive(false);
         questionPanel.SetActive(false);
         matchingQuestionPanel.SetActive(false);
         fillBlankPanel.SetActive(false);
-
-        // hide timer
         timer.gameObject.SetActive(false);
 
-        // show review + finish button
         reviewPanel.SetActive(true);
         finishQuizButton.gameObject.SetActive(true);
 
+        if (incorrectQuestionIndices.Count == 0)
+        {
+            reviewQuestionText.text = "Alles richtig beantwortet! Keine Fragen zur Überprüfung.";
+            reviewUserAnswerText.text = "";
+            reviewCorrectAnswerText.text = "";
+            reviewProgressText.text = "";
+            reviewPrevButton.interactable = false;
+            reviewNextButton.interactable = false;
+            return;
+        }
+
         currentReviewIndex = 0;
-        DisplayReviewQuestion(currentReviewIndex);
-        
-        reviewNextButton.interactable = currentReviewIndex < questions.Count - 1;
+        DisplayReviewQuestion(incorrectQuestionIndices[currentReviewIndex]);
     }
 
-    void DisplayReviewQuestion(int index)
+    void DisplayReviewQuestion(int questionIndex)
     {
-        var q = questions[index];
-        reviewQuestionText.text = $"Q{index + 1}: {q.questionText}";
-        reviewProgressText.text = $"Question {index + 1} of {questions.Count}";
+        var q = questions[questionIndex];
+        reviewQuestionText.text = $"Q{questionIndex + 1}: {q.questionText}";
+        reviewProgressText.text = $"Frage {currentReviewIndex + 1} von {incorrectQuestionIndices.Count}";
 
-        // grab what was stored (could be multiline for matching)
-        string userAnswer = userAnswers.Count > index
-            ? userAnswers[index]
-            : "";
-
-        // if truly empty, show italic "keine Antwort"
+        string userAnswer = userAnswers.Count > questionIndex ? userAnswers[questionIndex] : "";
         if (string.IsNullOrEmpty(userAnswer))
             userAnswer = "<i>keine Antwort</i>";
 
-        // build the correct-answer display for multiple correct answers
         string correctAnswer = "";
         if (q.type == QuestionType.MultipleChoice)
         {
-            var correctOptions = new List<string>();
-            // Collect all correct answers from the list of correct indices
-            foreach (var correctIndex in q.correctOptionIndices)
-            {
-                if (correctIndex >= 0 && correctIndex < q.options.Count)
-                {
-                    correctOptions.Add(q.options[correctIndex]);
-                }
-            }
+            var correctOptions = q.correctOptionIndices.Select(i => q.options[i]).ToList();
             correctAnswer = string.Join(", ", correctOptions);
         }
         else if (q.type == QuestionType.Matching)
@@ -363,32 +415,36 @@ public class QuizManager : MonoBehaviour
             correctAnswer = q.correctAnswer;
         }
 
-        reviewUserAnswerText.text = $"Your Answer:\n{userAnswer}";
-        reviewCorrectAnswerText.text = $"Correct Answer:\n{correctAnswer}";
+        reviewUserAnswerText.text = $"Deine Antwort:\n{userAnswer}";
+        reviewCorrectAnswerText.text = $"Richtige Antwort:\n{correctAnswer}";
 
-        reviewPrevButton.interactable = (index > 0);
-        reviewNextButton.interactable = (index < questions.Count - 1);
+        reviewPrevButton.interactable = (currentReviewIndex > 0);
+        reviewNextButton.interactable = (currentReviewIndex < incorrectQuestionIndices.Count - 1);
     }
 
     public void OnNextReview()
     {
-        if (currentReviewIndex < questions.Count - 1)
+        if (currentReviewIndex < incorrectQuestionIndices.Count - 1)
         {
             currentReviewIndex++;
-            DisplayReviewQuestion(currentReviewIndex);
+            DisplayReviewQuestion(incorrectQuestionIndices[currentReviewIndex]);
+        }
+        else
+        {
+            // Letzte Frage erreicht – statt deaktivieren, zeige Bestätigungsdialog
+            confirmExitReviewPanel.SetActive(true);
         }
     }
-
 
     public void OnPrevReview()
     {
         if (currentReviewIndex > 0)
         {
             currentReviewIndex--;
-            DisplayReviewQuestion(currentReviewIndex);
+            DisplayReviewQuestion(incorrectQuestionIndices[currentReviewIndex]);
         }
     }
-    
+
     void DisplayMatchingQuestion(Question q)
     {
         currentMatchingDropdowns.Clear();
@@ -487,11 +543,25 @@ public class QuizManager : MonoBehaviour
     
     public void OnFinishQuizClicked()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); // example
+        if (incorrectQuestionIndices.Count == 0)
+        {
+            // All correct — go straight to main menu
+            ExitToMainMenu();
+        }
+        else
+        {
+            // Some incorrect — show confirmation panel
+            confirmExitReviewPanel.SetActive(true);
+        }
     }
     
     public void ExitToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    
+    public void CloseConfirmPanel()
+    {
+        confirmExitReviewPanel.SetActive(false);  // Close the confirmation panel without doing anything
     }
 }

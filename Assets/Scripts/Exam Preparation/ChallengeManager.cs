@@ -73,7 +73,7 @@ public class ChallengeManager : MonoBehaviour
 
         // show info
         infoTitleText.text = "Los geht’s!";
-        infoTimeText.text = $"Du musst {sessionQuestions.Count} Fragen in {sessionTimeMinutes} Minuten beantworten.\nViel Glück!";
+        infoTimeText.text = $"Beantworte {sessionQuestions.Count} Fragen in {sessionTimeMinutes} Minuten.";
         infoPanel.SetActive(true);
     }
 

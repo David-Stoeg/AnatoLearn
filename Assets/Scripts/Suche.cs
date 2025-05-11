@@ -359,6 +359,4 @@ public class Suche : MonoBehaviour
         }
         return true;
     }
-
-
 }

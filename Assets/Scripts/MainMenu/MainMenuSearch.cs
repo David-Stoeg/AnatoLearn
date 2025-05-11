@@ -18,9 +18,9 @@ public class MainMenuSearch : MonoBehaviour
     {
         ds = DataServiceManager.Instance.DataService;
 
-        searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
+        // searchInputField.onValueChanged.AddListener(OnSearchFieldChanged);
 
-        scrollView.SetActive(false);
+        // scrollView.SetActive(false);
     }
 
     void OnSearchFieldChanged(string searchText)
