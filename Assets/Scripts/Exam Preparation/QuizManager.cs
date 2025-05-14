@@ -8,7 +8,7 @@ using System.Linq;
 
 public class QuizManager : MonoBehaviour
 {
-    public Text questionText;
+    public TMP_Text questionText;
     public Toggle[] optionToggles;
     public Text[] optionLabels;
     public Button nextButton;
@@ -98,6 +98,8 @@ public class QuizManager : MonoBehaviour
     public GameObject confirmExitReviewPanel;
     public Button confirmExitButton;
     public Button cancelExitButton;
+    
+    [SerializeField] private GameObject mainMenuConfirmPanel;
     
     private void Start()
     {
@@ -326,6 +328,7 @@ public class QuizManager : MonoBehaviour
         int total = questions.Count;
         float pct = total > 0 ? (100f * score / total) : 0f;
 
+        /*
         // 4) pick message + sprite
         string message;
         Sprite icon;
@@ -349,10 +352,14 @@ public class QuizManager : MonoBehaviour
             message = $"Kopf hoch! Du hast {score} von {total} richtig – übe weiter, du schaffst das!";
             icon    = sadSprite;
         }
+        */
+        
+        string message;
+        message = $"{score}/{total}";
 
         // 5) display message + icon
         resultMessageText.text = message;
-        resultImage.sprite     = icon;
+        //resultImage.sprite     = icon;
 
         // 6) (optional) still show time used below or elsewhere
         float timeUsed = Time.time - quizStartTime;
@@ -368,6 +375,7 @@ public class QuizManager : MonoBehaviour
         matchingQuestionPanel.SetActive(false);
         fillBlankPanel.SetActive(false);
         timer.gameObject.SetActive(false);
+        timeUpPanel.SetActive(false);
 
         reviewPanel.SetActive(true);
         finishQuizButton.gameObject.SetActive(true);
@@ -509,7 +517,7 @@ public class QuizManager : MonoBehaviour
         {
             int minutes = Mathf.FloorToInt(timeRemaining / 60f);
             int seconds = Mathf.FloorToInt(timeRemaining % 60f);
-            timer.text = $"Verbleibende Zeit: {minutes:00}:{seconds:00}";  // Updated format
+            timer.text = $"Timer: {minutes:00}:{seconds:00}";  // Updated format
             yield return new WaitForSeconds(1f);
             timeRemaining -= 1f;
         }
@@ -526,19 +534,18 @@ public class QuizManager : MonoBehaviour
         fillBlankPanel.SetActive(false);
         reviewPanel.SetActive(false);
         resultPanel.SetActive(false);
-    
-        // Also hide timer text and next button
+
+        // Hide timer text and next button
         timer.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
 
-        // Setup time-up panel
-        infoTitleText.text = "Deine Zeit ist abgelaufen!";
-        infoTimeText.text = "";
-    
-        startButton.onClick.RemoveAllListeners();
-        startButton.onClick.AddListener(ShowResults);
-    
-        infoPanel.SetActive(true);
+        // Set up the time up panel
+        timeUpMessageText.text = "Deine Zeit ist abgelaufen!";
+        timeUpResultButton.onClick.RemoveAllListeners();
+        timeUpResultButton.onClick.AddListener(ShowResults);
+
+        // Show the correct time up panel
+        timeUpPanel.SetActive(true);
     }
     
     public void OnFinishQuizClicked()
@@ -563,5 +570,17 @@ public class QuizManager : MonoBehaviour
     public void CloseConfirmPanel()
     {
         confirmExitReviewPanel.SetActive(false);  // Close the confirmation panel without doing anything
+    }
+    
+    // Call this when the player clicks "Back to Main Menu" (to show the confirmation)
+    public void ShowMainMenuConfirmPanel()
+    {
+        mainMenuConfirmPanel.SetActive(true);
+    }
+
+    // Call this when the player cancels (just hide the panel again)
+    public void CancelBackToMainMenu()
+    {
+        mainMenuConfirmPanel.SetActive(false);
     }
 }
