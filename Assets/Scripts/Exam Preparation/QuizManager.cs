@@ -101,6 +101,10 @@ public class QuizManager : MonoBehaviour
     
     [SerializeField] private GameObject mainMenuConfirmPanel;
     
+    public TMP_Text title;
+    
+    [SerializeField] private TMP_Text resultText;
+    
     private void Start()
     {
         // Hide all panels and buttons initially
@@ -111,6 +115,7 @@ public class QuizManager : MonoBehaviour
         reviewPanel.SetActive(false);
         infoPanel.SetActive(false);
         timeUpPanel.SetActive(false);
+        title.gameObject.SetActive(false);
 
         nextButton.gameObject.SetActive(false);
         finishQuizButton.gameObject.SetActive(false);
@@ -124,6 +129,7 @@ public class QuizManager : MonoBehaviour
         cancelExitButton.onClick.AddListener(CloseConfirmPanel); // Cancel exit
     }
     
+    /*
     // right now only for debugging to stop the timer early
     private void Update()
     {
@@ -137,9 +143,12 @@ public class QuizManager : MonoBehaviour
             }
         }
     }
+    */
 
     void DisplayQuestion()
     {
+        title.gameObject.SetActive(true);
+        
         // always show the timer while in quiz
         timer.gameObject.SetActive(true);
         
@@ -309,10 +318,12 @@ public class QuizManager : MonoBehaviour
         fillBlankPanel.SetActive(false);
         timer.gameObject.SetActive(false);
         nextButton.gameObject.SetActive(false);
+        title.gameObject.SetActive(false);
 
         // 2) show result panel and finish button
         resultPanel.SetActive(true);
-        finishQuizButton.gameObject.SetActive(true);
+        finishQuizButton.gameObject.SetActive(false);
+        difficultyText.gameObject.SetActive(false);
 
         // Check if there are any incorrect answers
         if (incorrectQuestionIndices.Count == 0)
@@ -354,6 +365,28 @@ public class QuizManager : MonoBehaviour
         }
         */
         
+        // 4) short message depending on percentage
+        string resultMessage;
+        if (pct >= 90f)
+        {
+            resultMessage = "Ausgezeichnet!";
+        }
+        else if (pct >= 75f)
+        {
+            resultMessage = "Sehr gut!";
+        }
+        else if (pct >= 50f)
+        {
+            resultMessage = "Gut gemacht!";
+        }
+        else
+        {
+            resultMessage = "Schade!";
+        }
+
+        // Set short message to text field
+        resultText.text = resultMessage;
+        
         string message;
         message = $"{score}/{total}";
 
@@ -376,9 +409,10 @@ public class QuizManager : MonoBehaviour
         fillBlankPanel.SetActive(false);
         timer.gameObject.SetActive(false);
         timeUpPanel.SetActive(false);
+        title.gameObject.SetActive(true);
 
         reviewPanel.SetActive(true);
-        finishQuizButton.gameObject.SetActive(true);
+        finishQuizButton.gameObject.SetActive(false);
 
         if (incorrectQuestionIndices.Count == 0)
         {
@@ -540,7 +574,7 @@ public class QuizManager : MonoBehaviour
         nextButton.gameObject.SetActive(false);
 
         // Set up the time up panel
-        timeUpMessageText.text = "Deine Zeit ist abgelaufen!";
+        timeUpMessageText.text = "Die Zeit ist um!";
         timeUpResultButton.onClick.RemoveAllListeners();
         timeUpResultButton.onClick.AddListener(ShowResults);
 
