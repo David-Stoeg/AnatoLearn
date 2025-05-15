@@ -2,312 +2,516 @@
   "questions": [
     {
       "type": "MultipleChoice",
-      "questionText": "Welches Organ produziert Insulin?",
-      "options": ["Leber", "Bauchspeicheldrüse", "Niere", "Lunge"],
-      "correctOptionIndices": [1]
+      "questionText": "Welches Organ ist hauptsächlich für die Entgiftung des Körpers verantwortlich?",
+      "options": [
+        "Leber",
+        "Herz",
+        "Lunge",
+        "Milz"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Muskeln ist für das Strecken des Arms verantwortlich?",
-      "options": ["Trizeps", "Bizeps", "Deltoid", "Sternocleidomastoideus"],
-      "correctOptionIndices": [0]
+      "questionText": "Welche der folgenden Knochen gehören zum Schädel?",
+      "options": [
+        "Femur",
+        "Mandibula",
+        "Clavicula",
+        "Os frontale"
+      ],
+      "correctOptionIndices": [
+        1,
+        3
+      ]
     },
     {
       "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Knochen befinden sich im Unterarm?",
-      "options": ["Radius", "Ulna", "Femur", "Fibula"],
-      "correctOptionIndices": [0, 1]
+      "questionText": "Was ist die Hauptfunktion der roten Blutkörperchen?",
+      "options": [
+        "Sauerstofftransport",
+        "Infektionsabwehr",
+        "Hormonproduktion",
+        "Blutgerinnung"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Strukturen gehört zum zentralen Nervensystem?",
+      "options": [
+        "Gehirn",
+        "Rückenmark",
+        "Nerven",
+        "Herz"
+      ],
+      "correctOptionIndices": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche der folgenden Muskeln befindet sich im Oberschenkel?",
+      "options": [
+        "Bizeps femoris",
+        "Deltoideus",
+        "Gastrocnemius",
+        "Pectoralis major"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Was ist die Funktion der Plazenta während der Schwangerschaft?",
+      "options": [
+        "Sauerstoffversorgung des Embryos",
+        "Produktion von Muttermilch",
+        "Muskelwachstum",
+        "Verdauung"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche Knochen bilden den Unterarm?",
+      "options": [
+        "Radius",
+        "Ulna",
+        "Humerus",
+        "Femur"
+      ],
+      "correctOptionIndices": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Wo befindet sich das Zwerchfell?",
+      "options": [
+        "Zwischen Brust- und Bauchraum",
+        "Im Schädel",
+        "Im Unterschenkel",
+        "In der Hand"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welches Hormon reguliert den Blutzuckerspiegel?",
+      "options": [
+        "Insulin",
+        "Adrenalin",
+        "Testosteron",
+        "Östrogen"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Strukturen gehört zum lymphatischen System?",
+      "options": [
+        "Milz",
+        "Niere",
+        "Leber",
+        "Pankreas"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Zellen sind an der Immunabwehr beteiligt?",
+      "options": [
+        "T-Zellen",
+        "Erythrozyten",
+        "Makrophagen",
+        "Thrombozyten"
+      ],
+      "correctOptionIndices": [
+        0,
+        2
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welches dieser Organe produziert Insulin?",
+      "options": [
+        "Pankreas",
+        "Leber",
+        "Milz",
+        "Dünndarm"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche Funktion hat der Dünndarm?",
+      "options": [
+        "Nährstoffaufnahme",
+        "Blutbildung",
+        "Atmung",
+        "Reizweiterleitung"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Strukturen ist ein Teil des Herzens?",
+      "options": [
+        "Atrium",
+        "Ventrikel",
+        "Alveole",
+        "Aorta"
+      ],
+      "correctOptionIndices": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche Knochen befinden sich im Fuß?",
+      "options": [
+        "Talus",
+        "Calcaneus",
+        "Tibia",
+        "Fibula"
+      ],
+      "correctOptionIndices": [
+        0,
+        1
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche Funktion hat das Rückenmark?",
+      "options": [
+        "Reizweiterleitung",
+        "Verdauung",
+        "Blutbildung",
+        "Muskelaufbau"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Strukturen schützt das Gehirn?",
+      "options": [
+        "Schädel",
+        "Wirbelsäule",
+        "Rippen",
+        "Becken"
+      ],
+      "correctOptionIndices": [
+        0
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Drüsen produziert Hormone?",
+      "options": [
+        "Schilddrüse",
+        "Nebenniere",
+        "Leber",
+        "Hypophyse"
+      ],
+      "correctOptionIndices": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Strukturen ist ein Teil des Auges?",
+      "options": [
+        "Netzhaut",
+        "Pupille",
+        "Trommelfell",
+        "Linse"
+      ],
+      "correctOptionIndices": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "type": "MultipleChoice",
+      "questionText": "Welche dieser Muskeln gehören zur Rotatorenmanschette?",
+      "options": [
+        "Supraspinatus",
+        "Infraspinatus",
+        "Deltoideus",
+        "Subscapularis"
+      ],
+      "correctOptionIndices": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Das _______ ist das zentrale Steuerorgan des Nervensystems.",
+      "correctAnswer": "Gehirn"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ verbinden Knochen mit Knochen.",
+      "correctAnswer": "Bänder"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ ist das wichtigste Atemorgan.",
+      "correctAnswer": "Lunge"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ sind die kleinsten Blutgefäße im Körper.",
+      "correctAnswer": "Kapillaren"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ ist die Verbindung zwischen Rachen und Magen.",
+      "correctAnswer": "Speiseröhre"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Der _______ schützt die Luftröhre beim Schlucken.",
+      "correctAnswer": "Kehldeckel"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Das _______ pumpt Blut durch den Körper.",
+      "correctAnswer": "Herz"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ filtern das Blut und produzieren Urin.",
+      "correctAnswer": "Nieren"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ produziert T-Zellen für das Immunsystem.",
+      "correctAnswer": "Thymusdrüse"
+    },
+    {
+      "type": "FillInTheBlank",
+      "questionText": "Die _______ schützt das Gehirn vor Erschütterungen.",
+      "correctAnswer": "Schädeldecke"
     },
     {
       "type": "Matching",
       "questionText": "Ordne die Organe ihren Funktionen zu.",
-      "leftItems": ["Leber", "Nieren", "Magen"],
-      "rightItems": ["Entgiftung", "Filtration von Abfallstoffen", "Verdauung von Nahrung"],
-      "correctMatchIndices": [0, 1, 2]
+      "leftItems": [
+        "Herz",
+        "Lunge",
+        "Niere"
+      ],
+      "rightItems": [
+        "Pumpt Blut",
+        "Atmet Sauerstoff ein",
+        "Filtert Blut"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Hormone ihren Funktionen zu.",
-      "leftItems": ["Adrenalin", "Insulin", "Serotonin"],
-      "rightItems": ["Stressreaktion", "Blutgerinnung", "Stimmung"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche dieser Zellen sind für die Sauerstoffversorgung verantwortlich?",
-      "options": ["Erythrozyten", "Leukozyten", "Thrombozyten", "Neurozyten"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche dieser Organe gehören zum Kreislaufsystem?",
-      "options": ["Herz", "Lunge", "Leber", "Blutgefäße"],
-      "correctOptionIndices": [0, 3]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Zellen sind Teil des Immunsystems?",
-      "options": ["T-Zellen", "B-Zellen", "Erythrozyten", "Leukozyten"],
-      "correctOptionIndices": [0, 1, 3]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Die _______ ist das größte Organ im menschlichen Körper.",
-      "correctAnswer": "Haut"
+      "questionText": "Ordne die Knochen den Körperregionen zu.",
+      "leftItems": [
+        "Humerus",
+        "Femur",
+        "Tibia"
+      ],
+      "rightItems": [
+        "Oberarm",
+        "Oberschenkel",
+        "Unterschenkel"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Knochen den Körperteilen zu.",
-      "leftItems": ["Femur", "Scapula", "Sternum"],
-      "rightItems": ["Bein", "Schultergürtel", "Brustkorb"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Teil des Nervensystems ist für die unwillkürliche Steuerung verantwortlich?",
-      "options": ["Somatisches Nervensystem", "Zentrales Nervensystem", "Autonomes Nervensystem", "Peripheres Nervensystem"],
-      "correctOptionIndices": [2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Muskel befindet sich im Oberschenkel und ist für die Streckung des Knies verantwortlich?",
-      "options": ["Bizeps femoris", "Quadrizeps", "Gluteus maximus", "Sartorius"],
-      "correctOptionIndices": [1]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche dieser Organe sind am Atmungssystem beteiligt?",
-      "options": ["Lunge", "Zwerchfell", "Magen", "Herz"],
-      "correctOptionIndices": [0, 1]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Die _______ ist die Verbindung zwischen dem Oberschenkel und dem Hüftgelenk.",
-      "correctAnswer": "Hüftpfanne"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welches der folgenden Organe ist für die Bildung von Blutzellen verantwortlich?",
-      "options": ["Knochenmark", "Leber", "Nieren", "Milz"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche dieser Knochen bilden das Fußgelenk?",
-      "options": ["Tibia", "Fibula", "Talus", "Karpalia"],
-      "correctOptionIndices": [0, 1, 2]
+      "questionText": "Ordne die Sinnesorgane den Sinneswahrnehmungen zu.",
+      "leftItems": [
+        "Auge",
+        "Nase",
+        "Zunge"
+      ],
+      "rightItems": [
+        "Sehen",
+        "Riechen",
+        "Schmecken"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Zellen ihren Funktionen zu.",
-      "leftItems": ["Erythrozyt", "Leukozyt", "Thrombozyt"],
-      "rightItems": ["Sauerstofftransport", "Immunabwehr", "Blutgerinnung"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Knochen befindet sich im Oberschenkel?",
-      "options": ["Femur", "Tibia", "Fibula", "Patella"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche Organe sind für die Ausscheidung von Abfallstoffen verantwortlich?",
-      "options": ["Nieren", "Lunge", "Magen", "Haut"],
-      "correctOptionIndices": [0, 1]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche dieser Muskeln sind Teil des Unterarms?",
-      "options": ["Flexor", "Extensor", "Bizeps", "Trapezius"],
-      "correctOptionIndices": [0, 1]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Der _______ ist für die Übertragung von Nervenimpulsen verantwortlich.",
-      "correctAnswer": "Neurotransmitter"
+      "questionText": "Ordne die Gelenkarten den Bewegungsmöglichkeiten zu.",
+      "leftItems": [
+        "Kugelgelenk",
+        "Scharniergelenk",
+        "Drehgelenk"
+      ],
+      "rightItems": [
+        "Rotation",
+        "Beugung und Streckung",
+        "Seitliche Bewegung"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Teile des Verdauungssystems ihren Funktionen zu.",
-      "leftItems": ["Magen", "Dünndarm", "Dickdarm"],
-      "rightItems": ["Zersetzung von Nahrung", "Absorption von Nährstoffen", "Wasserentzug"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Knochen bildet das Schultergelenk?",
-      "options": ["Clavicula", "Scapula", "Humerus", "Radius"],
-      "correctOptionIndices": [0, 1]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche Zellen sind in der Knochenbildung aktiv?",
-      "options": ["Osteoblasten", "Osteozyten", "Erythrozyten", "Osteoklasten"],
-      "correctOptionIndices": [0, 1]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Der _______ ist der größte Nerv im menschlichen Körper.",
-      "correctAnswer": "Ischiasnerv"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Zellen sind für die Blutgerinnung verantwortlich?",
-      "options": ["Thrombozyten", "Leukozyten", "Erythrozyten", "Plasmazellen"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welches Organ ist für die Produktion von Galle verantwortlich?",
-      "options": ["Leber", "Magen", "Bauchspeicheldrüse", "Nieren"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Muskel ist verantwortlich für die Beugung des Oberschenkels?",
-      "options": ["Quadrizeps", "Psoas", "Sartorius", "Gluteus maximus"],
-      "correctOptionIndices": [1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Knochen bilden das Handgelenk?",
-      "options": ["Radius", "Ulna", "Karpalia", "Femur"],
-      "correctOptionIndices": [0, 1, 2]
+      "questionText": "Ordne die Zellen ihren Aufgaben zu.",
+      "leftItems": [
+        "Erythrozyt",
+        "Leukozyt",
+        "Thrombozyt"
+      ],
+      "rightItems": [
+        "Sauerstofftransport",
+        "Immunabwehr",
+        "Blutgerinnung"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Muskeln ihren Funktionen zu.",
-      "leftItems": ["Bizeps", "Trapezius", "Gastrocnemius"],
-      "rightItems": ["Armbeugung", "Schulterbewegung", "Beinbeugung"],
-      "correctMatchIndices": [0, 1, 2]
+      "questionText": "Ordne die Drüsen ihren Hormonfunktionen zu.",
+      "leftItems": [
+        "Schilddrüse",
+        "Nebennieren",
+        "Bauchspeicheldrüse"
+      ],
+      "rightItems": [
+        "Stoffwechselregulation",
+        "Stresshormone",
+        "Blutzuckerregulation"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Teile des Nervensystems ihren Funktionen zu.",
-      "leftItems": ["Zentrales Nervensystem", "Peripheres Nervensystem", "Autonomes Nervensystem"],
-      "rightItems": ["Koordination der Körperfunktionen", "Verbindung von Gehirn und Rückenmark zu den Gliedmaßen", "Steuert unwillkürliche Funktionen"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche Organe gehören zum Verdauungssystem?",
-      "options": ["Magen", "Leber", "Blase", "Dünndarm"],
-      "correctOptionIndices": [0, 1, 3]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welches dieser Organe ist für die Filtration von Blut verantwortlich?",
-      "options": ["Leber", "Lunge", "Nieren", "Milz"],
-      "correctOptionIndices": [2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Teil des Körpers enthält das größte Knochenmark?",
-      "options": ["Femur", "Sternum", "Schädel", "Ulna"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Das _______ transportiert Nährstoffe und Sauerstoff zu den Zellen.",
-      "correctAnswer": "Blut"
+      "questionText": "Ordne die Hautschichten von außen nach innen.",
+      "leftItems": [
+        "Epidermis",
+        "Dermis",
+        "Subkutis"
+      ],
+      "rightItems": [
+        "Oberhaut",
+        "Lederhaut",
+        "Unterhaut"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Nerven ihren Funktionen zu.",
-      "leftItems": ["Nervus vagus", "Nervus medianus", "Nervus ischiadicus"],
-      "rightItems": ["Reguliert den Herzschlag", "Steuert die Handbewegungen", "Steuert das Bein"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welches dieser Organe ist am meisten am Stoffwechsel beteiligt?",
-      "options": ["Leber", "Lunge", "Nieren", "Blutgefäße"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Knochen schützt das Gehirn?",
-      "options": ["Schädel", "Wirbelsäule", "Rippen", "Becken"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Strukturen sind Teil des Verdauungstraktes?",
-      "options": ["Magen", "Harnblase", "Dickdarm", "Lunge"],
-      "correctOptionIndices": [0, 2]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Die _______ transportiert die elektrischen Impulse im Nervensystem.",
-      "correctAnswer": "Nervenfasern"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Teil des menschlichen Körpers ist für die Beweglichkeit des Arms verantwortlich?",
-      "options": ["Schultergelenk", "Ellbogengelenk", "Kniegelenk", "Handgelenk"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche Zellen sind für die Immunabwehr verantwortlich?",
-      "options": ["Leukozyten", "Erythrozyten", "Thrombozyten", "Neurozyten"],
-      "correctOptionIndices": [0]
+      "questionText": "Ordne die Hirnteile ihren Funktionen zu.",
+      "leftItems": [
+        "Kleinhirn",
+        "Großhirn",
+        "Hirnstamm"
+      ],
+      "rightItems": [
+        "Koordination",
+        "Denken",
+        "Lebensfunktionen"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die Teile des Herzens ihren Funktionen zu.",
-      "leftItems": ["Rechter Vorhof", "Linker Ventrikel", "Aorta"],
-      "rightItems": ["Empfängt Blut aus dem Körper", "Pumpt Blut in den Körper", "Transportiert Blut vom Herzen weg"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Organe gehören zum Kreislaufsystem?",
-      "options": ["Herz", "Lunge", "Nieren", "Blutgefäße"],
-      "correctOptionIndices": [0, 3]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Muskel hilft beim Heben des Arms?",
-      "options": ["Deltoid", "Bizeps", "Trizeps", "Sternocleidomastoideus"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche Zellen sind für den Sauerstofftransport verantwortlich?",
-      "options": ["Erythrozyten", "Leukozyten", "Thrombozyten", "Neurozyten"],
-      "correctOptionIndices": [0]
-    },
-    {
-      "type": "FillInTheBlank",
-      "questionText": "Die _______ speichert überschüssige Energie in Form von Fett.",
-      "correctAnswer": "Adipozyten"
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welcher Knochen befindet sich im Oberschenkel?",
-      "options": ["Femur", "Tibia", "Fibula", "Patella"],
-      "correctOptionIndices": [0]
+      "questionText": "Ordne die Verdauungsorgane der Reihenfolge der Verdauung zu.",
+      "leftItems": [
+        "Magen",
+        "Dünndarm",
+        "Dickdarm"
+      ],
+      "rightItems": [
+        "1. Speicherung",
+        "2. Nährstoffaufnahme",
+        "3. Wasseraufnahme"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "type": "Matching",
-      "questionText": "Ordne die verschiedenen Teile des Auges ihren Funktionen zu.",
-      "leftItems": ["Hornhaut", "Netzhaut", "Linse"],
-      "rightItems": ["Bringt Licht ins Auge", "Empfängt Licht", "Fokussiert Licht"],
-      "correctMatchIndices": [0, 1, 2]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welche der folgenden Knochen gehören zur Wirbelsäule?",
-      "options": ["Lendenwirbel", "Schambein", "Brustwirbel", "Kreuzbein"],
-      "correctOptionIndices": [0, 2, 3]
-    },
-    {
-      "type": "MultipleChoice",
-      "questionText": "Welches Organ produziert Insulin?",
-      "options": ["Bauchspeicheldrüse", "Leber", "Nieren", "Milz"],
-      "correctOptionIndices": [0]
+      "questionText": "Ordne die Blutbestandteile ihren Funktionen zu.",
+      "leftItems": [
+        "Plasma",
+        "Erythrozyten",
+        "Thrombozyten"
+      ],
+      "rightItems": [
+        "Transportmedium",
+        "Sauerstofftransport",
+        "Blutgerinnung"
+      ],
+      "correctMatchIndices": [
+        0,
+        1,
+        2
+      ]
     }
   ]
 }
