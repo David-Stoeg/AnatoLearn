@@ -158,7 +158,7 @@ public class QuizManager : MonoBehaviour
         nextButton.gameObject.SetActive(true);
         finishQuizButton.gameObject.SetActive(false);
 
-        questionText.text = $"Q{currentQuestionIndex + 1}: {q.questionText}";
+        questionText.text = $"<b>Q{currentQuestionIndex + 1}:</b> {q.questionText}";
 
         if (q.type == QuestionType.Matching)
         {
@@ -173,7 +173,7 @@ public class QuizManager : MonoBehaviour
             questionPanel.SetActive(false);
             fillBlankPanel.SetActive(true);
 
-            fillBlankQuestionText.text = $"Q{currentQuestionIndex + 1}: {q.questionText}";
+            fillBlankQuestionText.text = $"<b>Q{currentQuestionIndex + 1}:</b> {q.questionText}";
             fillBlankInput.text = "";
             nextButton.interactable = true;
         }
@@ -369,19 +369,23 @@ public class QuizManager : MonoBehaviour
         string resultMessage;
         if (pct >= 90f)
         {
-            resultMessage = "Ausgezeichnet!";
+            resultMessage = "Super!";
         }
-        else if (pct >= 75f)
+        else if (pct >= 77f)
         {
-            resultMessage = "Sehr gut!";
+            resultMessage = "Gut!";
+        }
+        else if (pct >= 64f)
+        {
+            resultMessage = "Nicht schlecht!";
         }
         else if (pct >= 50f)
         {
-            resultMessage = "Gut gemacht!";
+            resultMessage = "Geschafft!";
         }
         else
         {
-            resultMessage = "Schade!";
+            resultMessage = "Upps... Versuch´s nochmal!";
         }
 
         // Set short message to text field
@@ -493,7 +497,7 @@ public class QuizManager : MonoBehaviour
         ClearMatchingUI();
 
         // SET THE MATCHING QUESTION TEXT
-        matchingQuestionText.text = $"Q{currentQuestionIndex + 1}: {q.questionText}";
+        matchingQuestionText.text = $"<b>Q{currentQuestionIndex + 1}:</b> {q.questionText}";
 
         var placeholder = new List<string> { "" };  
         placeholder.AddRange(q.rightItems);
@@ -536,7 +540,7 @@ public class QuizManager : MonoBehaviour
         // Show the timer and difficulty text
         timer.gameObject.SetActive(true);
         difficultyText.gameObject.SetActive(true);
-        difficultyText.text = $"Schwierigkeit: {difficultyName}";
+        difficultyText.text = $"Level: {difficultyName}";
 
         if (timerCoroutine != null) StopCoroutine(timerCoroutine);
         if (timeSeconds > 0)
@@ -551,7 +555,7 @@ public class QuizManager : MonoBehaviour
         {
             int minutes = Mathf.FloorToInt(timeRemaining / 60f);
             int seconds = Mathf.FloorToInt(timeRemaining % 60f);
-            timer.text = $"Timer: {minutes:00}:{seconds:00}";  // Updated format
+            timer.text = $"Zeit: {minutes:00}:{seconds:00}";  // Updated format
             yield return new WaitForSeconds(1f);
             timeRemaining -= 1f;
         }
