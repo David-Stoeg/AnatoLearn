@@ -425,8 +425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.3, y: 19.1}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -2.3, y: 7.4}
+  m_SizeDelta: {x: 300, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &32643588
 MonoBehaviour:
@@ -2645,12 +2645,12 @@ GameObject:
   - component: {fileID: 273013409}
   - component: {fileID: 273013408}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: Right/Left Match Entry (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &273013408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2902,7 +2902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &280976570
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7187,7 +7187,7 @@ MonoBehaviour:
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Option 1
@@ -14630,8 +14630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.5500197, y: 0}
-  m_SizeDelta: {x: 11.099961, y: 0}
+  m_AnchoredPosition: {x: -24.824991, y: 0}
+  m_SizeDelta: {x: -151.15, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120744391
 MonoBehaviour:
@@ -14681,11 +14681,11 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 22
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -15183,37 +15183,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 267661218908469684, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 267661218908469684, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 267661218908469684, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700327619779226395, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700327619779226395, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2884414959600791093, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
       propertyPath: m_Name
       value: Right Match Entry
-      objectReference: {fileID: 0}
-    - target: {fileID: 4131337496420044173, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000015258789
-      objectReference: {fileID: 0}
-    - target: {fileID: 8016018884684829683, guid: 4a9a36a4f4367c64d9f35c7d6c3b836b, type: 3}
-      propertyPath: m_Size
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
