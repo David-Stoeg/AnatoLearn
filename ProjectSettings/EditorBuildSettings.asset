@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Settings.unity
     guid: dc24e153a430b4ca2999791358982f02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HumanExplorerExperimental.unity
     guid: b0d60e331651c487599704cd0da17003
   - enabled: 1
