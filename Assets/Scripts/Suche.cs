@@ -19,6 +19,9 @@ public class Suche : MonoBehaviour
 
     private DataService ds;
     private string previousSearchText = "";
+    
+    private string currentHighlightedLatinName = null;
+    private bool userHasSearched = false;
 
     void Start()
     {
@@ -89,7 +92,7 @@ public class Suche : MonoBehaviour
     {
         if (renderer.gameObject.name == "Plane")
         {
-            Debug.Log("dreck");
+            Debug.Log("Debug");
         }
         else
         {
@@ -126,6 +129,10 @@ public class Suche : MonoBehaviour
                 {
                     SetMaterialTransparency(renderer, 1.0f);
                 }
+
+                // Reset search state
+                currentHighlightedLatinName = null;
+                userHasSearched = false;
             }
             else
             {
@@ -185,6 +192,10 @@ public class Suche : MonoBehaviour
 
     void ApplyTransparencyToFBX(string targetModelName)
     {
+        currentHighlightedLatinName = targetModelName;
+        userHasSearched = true;
+
+        
         if (fbxRoot == null)
         {
             Debug.LogError("FBX Root Object ist nicht zugewiesen!");
@@ -225,14 +236,31 @@ public class Suche : MonoBehaviour
             Color color = mat.color;
             color.a = alpha;
             mat.color = color;
-            mat.SetFloat("_Mode", 2);
-            mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            mat.SetInt("_ZWrite", 0);
-            mat.DisableKeyword("_ALPHATEST_ON");
-            mat.EnableKeyword("_ALPHABLEND_ON");
-            mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            mat.renderQueue = 3000;
+
+            if (alpha < 1.0f)
+            {
+                // Transparent mode
+                mat.SetFloat("_Mode", 2);
+                mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                mat.SetInt("_ZWrite", 0);
+                mat.DisableKeyword("_ALPHATEST_ON");
+                mat.EnableKeyword("_ALPHABLEND_ON");
+                mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                mat.renderQueue = 3000;
+            }
+            else
+            {
+                // Opaque mode
+                mat.SetFloat("_Mode", 0);
+                mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+                mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+                mat.SetInt("_ZWrite", 1);
+                mat.DisableKeyword("_ALPHATEST_ON");
+                mat.DisableKeyword("_ALPHABLEND_ON");
+                mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                mat.renderQueue = -1;
+            }
         }
     }
 
@@ -260,30 +288,37 @@ public class Suche : MonoBehaviour
     void OnButtonSkeletonClick()
     {
         List<Renderer> renderableModels = GetRenderableModels();
+
         foreach (var renderer in renderableModels)
         {
             if (renderer.gameObject.name.Contains("Skeleton_m_V7", System.StringComparison.OrdinalIgnoreCase))
             {
-                Debug.Log($"Modell gefunden: {renderer.gameObject.name}");
-
-                if (skeletonOn == true)
+                if (skeletonOn)
                 {
                     SetMaterialTransparency(renderer, 0.0f);
-                    skeletonOn = false;
                 }
                 else
                 {
-                    SetMaterialTransparency(renderer, 1.0f);
-                    skeletonOn = true;
+                    if (userHasSearched &&
+                        !string.IsNullOrEmpty(currentHighlightedLatinName))
+                    {
+                        SetMaterialTransparency(renderer, 0.1f); // bones stay transparent
+                    }
+                    else
+                    {
+                        SetMaterialTransparency(renderer, 1.0f);
+                    }
                 }
-                Debug.Log(skeletonOn);
             }
         }
+
+        skeletonOn = !skeletonOn;
+        Debug.Log($"Skeleton sichtbar: {skeletonOn}");
     }
+
     void OnButtonMuscleClick()
     {
         List<Renderer> renderableModels = GetRenderableModels();
-
         bool anyMuscleModelFound = false;
 
         string[] muscleKeywords = new string[] { "muscul", "extensor", "flexor", "abductor", "diaphragma" };
@@ -307,11 +342,27 @@ public class Suche : MonoBehaviour
 
                 if (muscleOn)
                 {
+                    // Hide all muscle models
                     SetMaterialTransparency(renderer, 0.0f);
                 }
                 else
                 {
-                    SetMaterialTransparency(renderer, 1.0f);
+                    // Determine transparency level based on search state
+                    if (userHasSearched && !string.IsNullOrEmpty(currentHighlightedLatinName))
+                    {
+                        if (renderer.gameObject.name.Contains(currentHighlightedLatinName, System.StringComparison.OrdinalIgnoreCase))
+                        {
+                            SetMaterialTransparency(renderer, 1.0f); // highlighted muscle
+                        }
+                        else
+                        {
+                            SetMaterialTransparency(renderer, 0.1f); // dim others
+                        }
+                    }
+                    else
+                    {
+                        SetMaterialTransparency(renderer, 1.0f); // no search = fully visible
+                    }
                 }
             }
         }
@@ -319,10 +370,6 @@ public class Suche : MonoBehaviour
         if (anyMuscleModelFound)
         {
             muscleOn = !muscleOn;
-        }
-        else
-        {
-            Debug.LogWarning("Keine passenden Muskelmodelle gefunden.");
         }
 
         Debug.Log($"Muskel-Transparenzmodus: {muscleOn}");

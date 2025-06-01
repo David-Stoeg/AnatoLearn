@@ -4060,7 +4060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButtonScene: MainMenu
-  viewerButtonScene: 3D-View_update
+  viewerButtonScene: 3DViewer
   humanExplorerScene: HumanExplorer
   animationsScene: Animations
   challengePanel: {fileID: 582494343}
