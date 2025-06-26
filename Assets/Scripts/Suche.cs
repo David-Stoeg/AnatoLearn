@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-
+using System.Linq;
 
 public class Suche : MonoBehaviour
 {
@@ -27,7 +27,6 @@ public class Suche : MonoBehaviour
     {
         ds = DataServiceManager.Instance.DataService;
 
-        // Perform the initial search and highlight the selected body part
         if (!string.IsNullOrEmpty(SceneData.SelectedBodyPartName))
         {
             ApplyTransparencyToFBX(SceneData.SelectedBodyPartName);
@@ -44,17 +43,24 @@ public class Suche : MonoBehaviour
 
         foreach (var render in renderableModels)
         {
-            Debug.Log(render);
+            //Deactivated because of annoying debug spam
+            //Debug.Log($"Renderer Found: {render.gameObject.name} → Normalized: {NormalizeName(render.gameObject.name)}");
+
+            bool needsNormalsFix = ValidateMesh(render);
+            if (needsNormalsFix)
+            {
+                RecalculateNormals(render);
+            }
         }
 
         foreach (var result in anatomicalStructures)
         {
             bool modelFound = false;
-            string targetName = result.latin_name.ToLower();
+            string targetName = NormalizeName(result.latin_name);
 
             foreach (var renderer in renderableModels)
             {
-                string rendererName = renderer.gameObject.name.ToLower();
+                string rendererName = NormalizeName(renderer.gameObject.name);
 
                 if (rendererName.Contains(targetName))
                 {
@@ -65,9 +71,66 @@ public class Suche : MonoBehaviour
 
             if (!modelFound)
             {
-                Debug.LogWarning($"Modell nicht gefunden: {result.latin_name}");
+                Debug.LogWarning($"❌ Modell nicht gefunden: {result.latin_name} → Normalized: {targetName}");
             }
         }
+    }
+
+    void RecalculateNormals(Renderer renderer)
+    {
+        var meshFilter = renderer.GetComponent<MeshFilter>();
+        if (meshFilter == null || meshFilter.sharedMesh == null)
+            return;
+
+        Mesh mesh = meshFilter.sharedMesh;
+        mesh.RecalculateNormals();
+
+        Debug.Log($"✅ Recalculated normals for: {renderer.gameObject.name}");
+    }
+
+    string NormalizeName(string name)
+    {
+        return new string(name
+            .ToLower()
+            .Where(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c))
+            .ToArray())
+            .Replace(" ", "");
+    }
+
+    bool ValidateMesh(Renderer renderer)
+    {
+        var meshFilter = renderer.GetComponent<MeshFilter>();
+        if (meshFilter == null)
+        {
+            Debug.LogWarning($"⚠️ No MeshFilter found on: {renderer.gameObject.name}");
+            return false;
+        }
+
+        var mesh = meshFilter.sharedMesh;
+        if (mesh == null)
+        {
+            Debug.LogWarning($"⚠️ No Mesh assigned on: {renderer.gameObject.name}");
+            return false;
+        }
+
+        if (mesh.vertexCount == 0)
+        {
+            Debug.LogWarning($"❗ Mesh has no vertices: {renderer.gameObject.name}");
+        }
+
+        var normals = mesh.normals;
+        if (normals == null || normals.Length == 0)
+        {
+            Debug.LogWarning($"❗ Mesh has no normals: {renderer.gameObject.name}");
+            return true;
+        }
+        else if (normals.All(n => n == Vector3.zero))
+        {
+            Debug.LogWarning($"❗ All normals are zero vectors in mesh: {renderer.gameObject.name}");
+            return true;
+        }
+
+        return false;
     }
 
     void Update()
@@ -285,6 +348,7 @@ public class Suche : MonoBehaviour
 
         return renderableModels;
     }
+    
     void OnButtonSkeletonClick()
     {
         List<Renderer> renderableModels = GetRenderableModels();
@@ -321,7 +385,7 @@ public class Suche : MonoBehaviour
         List<Renderer> renderableModels = GetRenderableModels();
         bool anyMuscleModelFound = false;
 
-        string[] muscleKeywords = new string[] { "muscul", "extensor", "flexor", "abductor", "diaphragma" };
+        string[] muscleKeywords = new string[] { "muscul", "extensor", "flexor", "abductor", "diaphragma", "platysma", "linea alba", "levator labii superioris" };
 
         foreach (var renderer in renderableModels)
         {
@@ -364,6 +428,10 @@ public class Suche : MonoBehaviour
                         SetMaterialTransparency(renderer, 1.0f); // no search = fully visible
                     }
                 }
+            }
+            else
+            {
+                Debug.LogWarning($"❗ Not identified as muscle: {renderer.gameObject.name}");
             }
         }
 
