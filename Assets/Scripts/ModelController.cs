@@ -15,7 +15,7 @@ public class ModelController : MonoBehaviour
     [SerializeField] private float zoomSpeedPC = 0.5f; // Adjusted zoom speed for PC
     [SerializeField] private float zoomSpeedMobile = 0.075f; // Zoom speed for mobile
 
-    public Camera camera;
+    public Camera myCamera;
     public Transform children;
 
     private Vector3 touchStartPos;
@@ -29,12 +29,12 @@ public class ModelController : MonoBehaviour
 
     private void Start()
     {
-        if (camera == null)
+        if (myCamera == null)
         {
-            camera = Camera.main;
+            myCamera = Camera.main;
         }
 
-        defaultPosition = camera.transform.position;
+        defaultPosition = myCamera.transform.position;
         defaultRotation = children.rotation;
     }
 
@@ -102,10 +102,10 @@ public class ModelController : MonoBehaviour
 
             // Using mobile zoom speed
             zoomAmount += deltaMagnitudeDiff * zoomSpeedMobile;
-            camera.transform.Translate(0, 0, -deltaMagnitudeDiff * zoomSpeedMobile * 0.1f, Space.Self);
+            myCamera.transform.Translate(0, 0, -deltaMagnitudeDiff * zoomSpeedMobile * 0.1f, Space.Self);
 
             Vector2 averageDelta = (touch0.deltaPosition + touch1.deltaPosition) * 0.5f;
-            camera.transform.Translate(-averageDelta.x * 0.01f, -averageDelta.y * 0.01f, 0, Space.Self);
+            myCamera.transform.Translate(-averageDelta.x * 0.01f, -averageDelta.y * 0.01f, 0, Space.Self);
         }
 
         // Double tap to reset zoom
@@ -126,7 +126,7 @@ public class ModelController : MonoBehaviour
                 Vector3 touchDelta = touchPosition - touchPrevPos;
 
                 // Apply movement speed scaling on mobile
-                camera.transform.Translate(-touchDelta.x * movementSpeedMobile * Time.deltaTime, 
+                myCamera.transform.Translate(-touchDelta.x * movementSpeedMobile * Time.deltaTime, 
                                            -touchDelta.y * movementSpeedMobile * Time.deltaTime, 0, Space.Self);
             }
         }
@@ -155,7 +155,7 @@ public class ModelController : MonoBehaviour
             float moveX = Input.GetAxis("Mouse X") * Time.deltaTime * movementSpeedPC;
             float moveY = Input.GetAxis("Mouse Y") * Time.deltaTime * movementSpeedPC;
 
-            camera.transform.Translate(-moveX, -moveY, 0, Space.Self);
+            myCamera.transform.Translate(-moveX, -moveY, 0, Space.Self);
         }
 
         // Inverted zoom with Mouse Scroll Wheel (using PC zoom speed)
@@ -163,13 +163,13 @@ public class ModelController : MonoBehaviour
         if (scroll != 0)
         {
             zoomAmount -= scroll * zoomSpeedPC; // Inverted zoom direction
-            camera.transform.Translate(0, 0, scroll * zoomSpeedPC * 5f, Space.Self); // Inverted zoom direction
+            myCamera.transform.Translate(0, 0, scroll * zoomSpeedPC * 5f, Space.Self); // Inverted zoom direction
         }
     }
 
     private void ResetToDefault()
     {
-        camera.transform.position = defaultPosition;
+        myCamera.transform.position = defaultPosition;
         children.rotation = defaultRotation;
         zoomAmount = 0f;
     }

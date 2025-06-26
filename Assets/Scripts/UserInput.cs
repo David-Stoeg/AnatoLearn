@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class ModelInspector : MonoBehaviour
 {
     public Transform children; // The object to rotate
-    public Camera camera; // The main camera
+    public Camera myCamera; // The main camera
     public float speed = 10f; // Rotation and movement speed
     public float scrollSpeed = 2f; // Zoom speed
     public float climbSpeed = 5f; // Speed for vertical movement
@@ -19,7 +19,7 @@ public class ModelInspector : MonoBehaviour
     private void Start()
     {
         // Store the default values when the scene starts
-        defaultPosition = camera.transform.position;
+        defaultPosition = myCamera.transform.position;
         defaultRotation = children.rotation;
         defaultZoomAmount = zoomAmount;
     }
@@ -69,19 +69,19 @@ public class ModelInspector : MonoBehaviour
             float moveY = Input.GetAxis("Mouse Y") * Time.deltaTime * speed * 0.1f * zoomFactor;
 
             // Apply the movement with the zoom factor
-            camera.transform.Translate(-moveX, -moveY, 0, Space.Self);
+            myCamera.transform.Translate(-moveX, -moveY, 0, Space.Self);
         }
 
         // Zoom (Mouse Scroll Wheel)
         zoomAmount += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
-        camera.transform.Translate(0, 0, Input.GetAxis("Mouse ScrollWheel") * scrollSpeed, Space.Self);
+        myCamera.transform.Translate(0, 0, Input.GetAxis("Mouse ScrollWheel") * scrollSpeed, Space.Self);
 
         // Movement keys
         if (Input.GetKeyDown(KeyCode.W)) ResetZoom();
         if (Input.GetKeyDown(KeyCode.S)) children.rotation = Quaternion.identity;
 
-        if (Input.GetKey(KeyCode.Q)) camera.transform.position += camera.transform.up * climbSpeed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.E)) camera.transform.position -= camera.transform.up * climbSpeed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.Q)) myCamera.transform.position += myCamera.transform.up * climbSpeed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.E)) myCamera.transform.position -= myCamera.transform.up * climbSpeed * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
@@ -128,11 +128,11 @@ public class ModelInspector : MonoBehaviour
             zoomAmount = Mathf.Clamp(zoomAmount, -10f, 1f); // Adjust zoom limits
 
             // Apply zoom to camera
-            camera.transform.Translate(0, 0, -deltaMagnitudeDiff * scrollSpeed * 0.1f, Space.Self);
+            myCamera.transform.Translate(0, 0, -deltaMagnitudeDiff * scrollSpeed * 0.1f, Space.Self);
 
             // Detect Two-Finger Drag for camera movement
             Vector2 averageDelta = (touch0.deltaPosition + touch1.deltaPosition) * 0.5f;
-            camera.transform.Translate(-averageDelta.x * 0.01f, -averageDelta.y * 0.01f, 0, Space.Self);
+            myCamera.transform.Translate(-averageDelta.x * 0.01f, -averageDelta.y * 0.01f, 0, Space.Self);
 
             // Debugging pinch zoom
             Debug.Log("Pinch Zoom: " + deltaMagnitudeDiff);
@@ -145,15 +145,15 @@ public class ModelInspector : MonoBehaviour
     private void ResetZoom()
     {
         zoomAmount = 0f;
-        camera.transform.localPosition = Vector3.zero;
+        myCamera.transform.localPosition = Vector3.zero;
     }
 
     private void ResetToDefault()
     {
         // Reset position, rotation, and zoom to their default values
-        camera.transform.position = defaultPosition;
+        myCamera.transform.position = defaultPosition;
         children.rotation = defaultRotation;
         zoomAmount = defaultZoomAmount;
-        camera.transform.localPosition = Vector3.zero; // Ensure camera position is reset if needed
+        myCamera.transform.localPosition = Vector3.zero; // Ensure camera position is reset if needed
     }
 }
