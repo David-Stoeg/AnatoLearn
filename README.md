@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets/UI/Assets/AnatoLearn_Logo.png" alt="AnatoLearn Logo" width="200"/>
+  <img src="Assets/Logo/AnatoLearn_Logo.png" alt="AnatoLearn Logo" width="200"/>
 </p>
 
 # AnatoLearn
