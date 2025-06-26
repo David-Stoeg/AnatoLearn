@@ -27,7 +27,7 @@ public class ModelOrganizer : MonoBehaviour
         listPtr = 0;
 
         // Get reference to ButtonScripts component
-        buttonScripts = FindObjectOfType<ButtonScripts>();
+        buttonScripts = FindFirstObjectByType<ButtonScripts>();
         if (buttonScripts != null && models.Count > 0)
         {
             buttonScripts.SetCurrentModel(models[listPtr]);

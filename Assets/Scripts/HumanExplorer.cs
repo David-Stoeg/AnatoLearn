@@ -43,8 +43,11 @@ public class HumanExplore : MonoBehaviour
         ds = DataServiceManager.Instance.DataService;
         renderableModels = GetRenderableModels();
         originalPosition = new Vector3(0.00f, 0.05f, 3.00f);
+        
+        SceneData.RendererName = "SceneRenderer";
+        //Debug.Log($"SceneData.RendererName ist: '{SceneData.RendererName}'");
 
-        if (!string.IsNullOrEmpty(SceneData.RendererName))
+        if (!string.IsNullOrWhiteSpace(SceneData.RendererName))
         {
             Debug.Log($"Empfangener Renderer-Name: {SceneData.RendererName}");
 

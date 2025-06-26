@@ -2809,58 +2809,7 @@ public class DataService  {
             funktion = "Lateralflexion der Wirbelsäule",
             structure_id = 161
         });
-
-        _connection.Insert(new AnatomicalStructures
-        {
-            id = 162,
-            latin_name = "Musculi intertransversarii laterales lumborum (dex.)",
-            german_name = "Seitliche Zwischenquerfortsatzmuskeln (re.)",
-            category = "Rückenmuskeln",
-            parentId = 0
-        });
-        _connection.Insert(new Descriptions
-        {
-            id = 162,
-            ansatz = "Querfortsätze der benachbarten Lendenwirbel",
-            innervation = "Rr. ventrales und dorsales der Spinalnerven",
-            funktion = "Lateralflexion der Wirbelsäule",
-            structure_id = 162
-        });
-
-        _connection.Insert(new AnatomicalStructures
-        {
-            id = 163,
-            latin_name = "Musculi levatores costarum (sin.)",
-            german_name = "Rippenheber (li.)",
-            category = "Rückenmuskeln",
-            parentId = 0
-        });
-        _connection.Insert(new Descriptions
-        {
-            id = 163,
-            ansatz = "Anguli costarum (Rippenwinkel)",
-            innervation = "Rr. dorsales der Spinalnerven (C8–Th11)",
-            funktion = "Heben der Rippen, Unterstützung bei Inspiration und Lateralflexion der Wirbelsäule",
-            structure_id = 163
-        });
-
-        _connection.Insert(new AnatomicalStructures
-        {
-            id = 164,
-            latin_name = "Musculi levatores costarum (dex.)",
-            german_name = "Rippenheber (re.)",
-            category = "Rückenmuskeln",
-            parentId = 0
-        });
-        _connection.Insert(new Descriptions
-        {
-            id = 164,
-            ansatz = "Anguli costarum (Rippenwinkel)",
-            innervation = "Rr. dorsales der Spinalnerven (C8–Th11)",
-            funktion = "Heben der Rippen, Unterstützung bei Inspiration und Lateralflexion der Wirbelsäule",
-            structure_id = 164
-        });
-
+        
         _connection.Insert(new AnatomicalStructures
         {
             id = 165,
@@ -3097,40 +3046,6 @@ public class DataService  {
             innervation = "Rr. dorsales der Spinalnerven",
             funktion = "Dorsalextension der Wirbelsäule",
             structure_id = 178
-        });
-
-        _connection.Insert(new AnatomicalStructures
-        {
-            id = 179,
-            latin_name = "Musculus splenius cervicis (sin.)",
-            german_name = "Riemenmuskel des Halses (li.)",
-            category = "Rückenmuskeln",
-            parentId = 0
-        });
-        _connection.Insert(new Descriptions
-        {
-            id = 179,
-            ansatz = "Querfortsätze der oberen Halswirbel (C1–C3)",
-            innervation = "Rr. dorsales der Spinalnerven",
-            funktion = "Dorsalextension des Halses und des Kopfes, Rotation und Lateralflexion zur ipsilateralen Seite",
-            structure_id = 179
-        });
-
-        _connection.Insert(new AnatomicalStructures
-        {
-            id = 180,
-            latin_name = "Musculus splenius cervicis (dex.)",
-            german_name = "Riemenmuskel des Halses (re.)",
-            category = "Rückenmuskeln",
-            parentId = 0
-        });
-        _connection.Insert(new Descriptions
-        {
-            id = 180,
-            ansatz = "Querfortsätze der oberen Halswirbel (C1–C3)",
-            innervation = "Rr. dorsales der Spinalnerven",
-            funktion = "Dorsalextension des Halses und des Kopfes, Rotation und Lateralflexion zur ipsilateralen Seite",
-            structure_id = 180
         });
 
         _connection.Insert(new AnatomicalStructures
@@ -3540,9 +3455,2296 @@ public class DataService  {
             funktion = "Stabilisierung und Dorsalextension der Brustwirbelsäule",
             structure_id = 194
         });
+        
+        //NEW
+        // Bauchmuskulatur – Linea alba (links)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 205,
+            latin_name = "Bauch_Linea alba.L",
+            german_name = "Linea alba (li.)",
+            category = "Bauchmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 205,
+            ansatz = "Zwischen Processus xiphoideus und Symphyse",
+            innervation = "Keine direkte Innervation – Bindegewebsstruktur",
+            funktion = "Verbindung der Bauchmuskeln beider Seiten; Unterstützung der Bauchpresse",
+            structure_id = 205
+        });
+        
+        // Musculus pectoralis major (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 206,
+            latin_name = "Brust_Musculus pectoralis major (dex.).R",
+            german_name = "Großer Brustmuskel (re.)",
+            category = "Brustmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 206,
+            ansatz = "Crista tuberculi majoris des Humerus",
+            innervation = "Nn. pectorales medialis und lateralis (Th5–Th7)",
+            funktion = "Adduktion, Innenrotation und Anteversion des Arms",
+            structure_id = 206
+        });
 
+        // Musculus pectoralis major (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 207,
+            latin_name = "Brust_Musculus pectoralis major (sin.).L",
+            german_name = "Großer Brustmuskel (li.)",
+            category = "Brustmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 207,
+            ansatz = "Crista tuberculi majoris des Humerus",
+            innervation = "Nn. pectorales medialis und lateralis (Th5–Th7)",
+            funktion = "Adduktion, Innenrotation und Anteversion des Arms",
+            structure_id = 207
+        });
+
+        // Levator labii superioris alaeque nasi (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 208,
+            latin_name = "HEAD_M levator labii superioris alaeque nasi (dex.).R",
+            german_name = "Muskelheber der Oberlippe und Nasenflügel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 208,
+            ansatz = "Haut der Oberlippe und Nasenflügel",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt Oberlippe und erweitert Nasenloch",
+            structure_id = 208
+        });
+
+        // Levator labii superioris alaeque nasi (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 209,
+            latin_name = "HEAD_M levator labii superioris alaeque nasi (sin.).L",
+            german_name = "Muskelheber der Oberlippe und Nasenflügel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 209,
+            ansatz = "Haut der Oberlippe und Nasenflügel",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt Oberlippe und erweitert Nasenloch",
+            structure_id = 209
+        });
+
+        // Musculus auricularis anterior (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 210,
+            latin_name = "HEAD_Musculus auricularis anterior (dex.).R",
+            german_name = "Vorderer Ohrmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 210,
+            ansatz = "Haut vor der Ohrmuschel",
+            innervation = "N. facialis (VII)",
+            funktion = "Bewegt Ohrmuschel nach vorn",
+            structure_id = 210
+        });
+
+        // Musculus auricularis anterior (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 211,
+            latin_name = "HEAD_Musculus auricularis anterior (sin.).L",
+            german_name = "Vorderer Ohrmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 211,
+            ansatz = "Haut vor der Ohrmuschel",
+            innervation = "N. facialis (VII)",
+            funktion = "Bewegt Ohrmuschel nach vorn",
+            structure_id = 211
+        });
+
+        // Musculus auricularis posterior (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 212,
+            latin_name = "HEAD_Musculus auricularis posterior (dex.).R",
+            german_name = "Hinterer Ohrmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 212,
+            ansatz = "Haut der Ohrmuschel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Ohrmuschel nach hinten",
+            structure_id = 212
+        });
+
+        // Musculus auricularis posterior (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 213,
+            latin_name = "HEAD_Musculus auricularis posterior (sin.).L",
+            german_name = "Hinterer Ohrmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 213,
+            ansatz = "Haut der Ohrmuschel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Ohrmuschel nach hinten",
+            structure_id = 213
+        });
+
+        // Musculus auricularis superior (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 214,
+            latin_name = "HEAD_Musculus auricularis superior (dex.).R",
+            german_name = "Oberer Ohrmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 214,
+            ansatz = "Galea aponeurotica zur Ohrmuschel",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Ohrmuschel leicht an",
+            structure_id = 214
+        });
+
+        // Musculus auricularis superior (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 215,
+            latin_name = "HEAD_Musculus auricularis superior (sin.).L",
+            german_name = "Oberer Ohrmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 215,
+            ansatz = "Galea aponeurotica zur Ohrmuschel",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Ohrmuschel leicht an",
+            structure_id = 215
+        });
+
+        // Musculus corrugator supercilii (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 216,
+            latin_name = "HEAD_Musculus corrugator supercilii (dex.).R",
+            german_name = "Augenbrauenrunzler (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 216,
+            ansatz = "Haut der Augenbraue medial",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Augenbraue nach medial und unten (zorniger Gesichtsausdruck)",
+            structure_id = 216
+        });
+
+        // Musculus corrugator supercilii (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 217,
+            latin_name = "HEAD_Musculus corrugator supercilii (sin.).L",
+            german_name = "Augenbrauenrunzler (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 217,
+            ansatz = "Haut der Augenbraue medial",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Augenbraue nach medial und unten (zorniger Gesichtsausdruck)",
+            structure_id = 217
+        });
+
+        // Musculus depressor labii inferioris (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 218,
+            latin_name = "HEAD_Musculus depressor labii inferioris (dex.).R",
+            german_name = "Unterlippenherabzieher (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 218,
+            ansatz = "Haut der Unterlippe",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Unterlippe nach unten und lateral",
+            structure_id = 218
+        });
+
+        // Musculus depressor labii inferioris (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 219,
+            latin_name = "HEAD_Musculus depressor labii inferioris (sin.).L",
+            german_name = "Unterlippenherabzieher (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 219,
+            ansatz = "Haut der Unterlippe",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Unterlippe nach unten und lateral",
+            structure_id = 219
+        });
+
+        // Musculus depressor septi nasi (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 220,
+            latin_name = "HEAD_Musculus depressor septi nasi (dex.).R",
+            german_name = "Nasenscheidewand-Senker (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 220,
+            ansatz = "Nasenseptum und unterer Nasenflügel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Nasenscheidewand nach unten, erweitert die Nasenlöcher",
+            structure_id = 220
+        });
+
+        // Musculus depressor septi nasi (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 221,
+            latin_name = "HEAD_Musculus depressor septi nasi (sin.).L",
+            german_name = "Nasenscheidewand-Senker (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 221,
+            ansatz = "Nasenseptum und unterer Nasenflügel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Nasenscheidewand nach unten, erweitert die Nasenlöcher",
+            structure_id = 221
+        });
+
+        // Musculus depressor supercilii (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 222,
+            latin_name = "HEAD_Musculus depressor supercilii (dex.).R",
+            german_name = "Augenbrauensenker (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 222,
+            ansatz = "Haut der medialen Augenbraue",
+            innervation = "N. facialis (VII)",
+            funktion = "Senkt die mediale Augenbraue, beteiligt an Stirnrunzeln",
+            structure_id = 222
+        });
+
+        // Musculus depressor supercilii (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 223,
+            latin_name = "HEAD_Musculus depressor supercilii (sin.).L",
+            german_name = "Augenbrauensenker (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 223,
+            ansatz = "Haut der medialen Augenbraue",
+            innervation = "N. facialis (VII)",
+            funktion = "Senkt die mediale Augenbraue, beteiligt an Stirnrunzeln",
+            structure_id = 223
+        });
+
+        // Musculus frontalis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 224,
+            latin_name = "HEAD_Musculus frontalis (dex.).R",
+            german_name = "Stirnmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 224,
+            ansatz = "Haut der Stirn und Augenbraue",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Augenbrauen und runzelt die Stirn",
+            structure_id = 224
+        });
+
+        // Musculus frontalis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 225,
+            latin_name = "HEAD_Musculus frontalis (sin.).L",
+            german_name = "Stirnmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 225,
+            ansatz = "Haut der Stirn und Augenbraue",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Augenbrauen und runzelt die Stirn",
+            structure_id = 225
+        });
+
+        // Musculus levator anguli oris (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 226,
+            latin_name = "HEAD_Musculus levator anguli oris (dex.).R",
+            german_name = "Mundwinkelheber (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 226,
+            ansatz = "Haut des Mundwinkels",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt den Mundwinkel (z. B. beim Lächeln)",
+            structure_id = 226
+        });
+
+        // Musculus levator anguli oris (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 227,
+            latin_name = "HEAD_Musculus levator anguli oris (sin.).L",
+            german_name = "Mundwinkelheber (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 227,
+            ansatz = "Haut des Mundwinkels",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt den Mundwinkel (z. B. beim Lächeln)",
+            structure_id = 227
+        });
+
+        // Musculus levator labii superioris (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 228,
+            latin_name = "HEAD_Musculus levator labii superioris (dex.).R",
+            german_name = "Oberlippenheber (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 228,
+            ansatz = "Haut der Oberlippe",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Oberlippe (z. B. beim Ekel- oder Schmollausdruck)",
+            structure_id = 228
+        });
+
+        // Musculus levator labii superioris (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 229,
+            latin_name = "HEAD_Musculus levator labii superioris (sin.).L",
+            german_name = "Oberlippenheber (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 229,
+            ansatz = "Haut der Oberlippe",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Oberlippe (z. B. beim Ekel- oder Schmollausdruck)",
+            structure_id = 229
+        });
+
+        // Musculus masseter (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 230,
+            latin_name = "HEAD_Musculus masseter (dex.).R",
+            german_name = "Kaumuskel (re.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 230,
+            ansatz = "Ramus mandibulae und Angulus mandibulae",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Hebt den Unterkiefer (Kieferschluss)",
+            structure_id = 230
+        });
+        
+        // Musculus masseter (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 231,
+            latin_name = "HEAD_Musculus masseter (sin.).L",
+            german_name = "Kaumuskel (li.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 231,
+            ansatz = "Ramus mandibulae und Angulus mandibulae",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Hebt den Unterkiefer (Kieferschluss)",
+            structure_id = 231
+        });
+
+        // Musculus mentalis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 232,
+            latin_name = "HEAD_Musculus mentalis (dex.).R",
+            german_name = "Kinnmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 232,
+            ansatz = "Haut des Kinns",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Haut des Kinns und wölbt die Unterlippe vor",
+            structure_id = 232
+        });
+
+        // Musculus mentalis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 233,
+            latin_name = "HEAD_Musculus mentalis (sin.).L",
+            german_name = "Kinnmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 233,
+            ansatz = "Haut des Kinns",
+            innervation = "N. facialis (VII)",
+            funktion = "Hebt die Haut des Kinns und wölbt die Unterlippe vor",
+            structure_id = 233
+        });
+
+        // Musculus nasalis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 234,
+            latin_name = "HEAD_Musculus nasalis (dex.).R",
+            german_name = "Nasemuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 234,
+            ansatz = "Nasenseptum und Nasenflügel",
+            innervation = "N. facialis (VII)",
+            funktion = "Verengt oder erweitert die Nasenlöcher (je nach Teil)",
+            structure_id = 234
+        });
+
+        // Musculus nasalis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 235,
+            latin_name = "HEAD_Musculus nasalis (sin.).L",
+            german_name = "Nasemuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 235,
+            ansatz = "Nasenseptum und Nasenflügel",
+            innervation = "N. facialis (VII)",
+            funktion = "Verengt oder erweitert die Nasenlöcher (je nach Teil)",
+            structure_id = 235
+        });
+
+        // Musculus occipitalis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 236,
+            latin_name = "HEAD_Musculus occipitalis (dex.).R",
+            german_name = "Hinterhauptmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 236,
+            ansatz = "Galea aponeurotica",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Kopfhaut nach hinten",
+            structure_id = 236
+        });
+        
+        // Musculus occipitalis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 237,
+            latin_name = "HEAD_Musculus occipitalis (sin.).L",
+            german_name = "Hinterhauptmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 237,
+            ansatz = "Galea aponeurotica",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Kopfhaut nach hinten",
+            structure_id = 237
+        });
+
+        // Musculus orbicularis oculi (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 238,
+            latin_name = "HEAD_Musculus orbicularis oculi (dex.).R",
+            german_name = "Augenschließmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 238,
+            ansatz = "Haut um die Augenlider",
+            innervation = "N. facialis (VII)",
+            funktion = "Schließt die Augenlider (willkürlich und reflektorisch)",
+            structure_id = 238
+        });
+
+        // Musculus orbicularis oculi (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 239,
+            latin_name = "HEAD_Musculus orbicularis oculi (sin.).L",
+            german_name = "Augenschließmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 239,
+            ansatz = "Haut um die Augenlider",
+            innervation = "N. facialis (VII)",
+            funktion = "Schließt die Augenlider (willkürlich und reflektorisch)",
+            structure_id = 239
+        });
+
+        // Musculus orbicularis oris
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 240,
+            latin_name = "HEAD_Musculus orbicularis oris",
+            german_name = "Mundringmuskel",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 240,
+            ansatz = "Haut und Schleimhaut der Lippen",
+            innervation = "N. facialis (VII)",
+            funktion = "Schließt und spitzt die Lippen (z. B. beim Pfeifen, Kussmund)",
+            structure_id = 240
+        });
+
+        // Musculus procerus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 241,
+            latin_name = "HEAD_Musculus procerus (dex.).R",
+            german_name = "Stirnrunzler (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 241,
+            ansatz = "Haut zwischen den Augenbrauen",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Haut der Stirn nach unten; bildet Querfalten über der Nasenwurzel",
+            structure_id = 241
+        });
+
+        // Musculus procerus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 242,
+            latin_name = "HEAD_Musculus procerus (sin.).L",
+            german_name = "Stirnrunzler (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 242,
+            ansatz = "Haut zwischen den Augenbrauen",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Haut der Stirn nach unten; bildet Querfalten über der Nasenwurzel",
+            structure_id = 242
+        });
+
+        // Musculus pterygoideus lateralis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 243,
+            latin_name = "HEAD_Musculus pterygoideus lateralis  (dex.).R",
+            german_name = "Äußerer Flügelmuskel (re.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 243,
+            ansatz = "Kiefergelenkkapsel, Discus articularis, Processus condylaris mandibulae",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Kiefervorschub und Kieferöffnung, Mahlbewegung mit einseitiger Aktivität",
+            structure_id = 243
+        });
+
+        // Musculus pterygoideus lateralis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 244,
+            latin_name = "HEAD_Musculus pterygoideus lateralis  (sin.).L",
+            german_name = "Äußerer Flügelmuskel (li.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 244,
+            ansatz = "Kiefergelenkkapsel, Discus articularis, Processus condylaris mandibulae",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Kiefervorschub und Kieferöffnung, Mahlbewegung mit einseitiger Aktivität",
+            structure_id = 244
+        });
+
+        // Musculus pterygoideus medialis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 245,
+            latin_name = "HEAD_Musculus pterygoideus medialis (dex.).R",
+            german_name = "Innerer Flügelmuskel (re.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 245,
+            ansatz = "Tuberositas pterygoidea an der Mandibula",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Hebt den Unterkiefer, Mahlbewegung bei einseitiger Kontraktion",
+            structure_id = 245
+        });
+
+        // Musculus pterygoideus medialis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 246,
+            latin_name = "HEAD_Musculus pterygoideus medialis (sin.).L",
+            german_name = "Innerer Flügelmuskel (li.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 246,
+            ansatz = "Tuberositas pterygoidea an der Mandibula",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Hebt den Unterkiefer, Mahlbewegung bei einseitiger Kontraktion",
+            structure_id = 246
+        });
+
+        // Musculus risorius (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 247,
+            latin_name = "HEAD_Musculus risorius (dex.).R",
+            german_name = "Lachmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 247,
+            ansatz = "Haut am Mundwinkel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht den Mundwinkel nach lateral (Lächeln)",
+            structure_id = 247
+        });
+
+        // Musculus risorius (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 248,
+            latin_name = "HEAD_Musculus risorius (sin.).L",
+            german_name = "Lachmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 248,
+            ansatz = "Haut am Mundwinkel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht den Mundwinkel nach lateral (Lächeln)",
+            structure_id = 248
+        });
+
+        // Musculus temporalis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 249,
+            latin_name = "HEAD_Musculus temporalis (dex.).R",
+            german_name = "Schläfenmuskel (re.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 249,
+            ansatz = "Processus coronoideus der Mandibula",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Hebt und retrahiert den Unterkiefer",
+            structure_id = 249
+        });
+
+        // Musculus temporalis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 250,
+            latin_name = "HEAD_Musculus temporalis (sin.).L",
+            german_name = "Schläfenmuskel (li.)",
+            category = "Kaumuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 250,
+            ansatz = "Processus coronoideus der Mandibula",
+            innervation = "N. mandibularis (V3)",
+            funktion = "Hebt und retrahiert den Unterkiefer",
+            structure_id = 250
+        });
+
+        // Musculus temporoparietalis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 251,
+            latin_name = "HEAD_Musculus temporoparietalis (dex.).R",
+            german_name = "Schläfen-Scheitelmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 251,
+            ansatz = "Galea aponeurotica",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Kopfhaut nach oben und seitlich",
+            structure_id = 251
+        });
+
+        // Musculus temporoparietalis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 252,
+            latin_name = "HEAD_Musculus temporoparietalis (sin.).L",
+            german_name = "Schläfen-Scheitelmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 252,
+            ansatz = "Galea aponeurotica",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht die Kopfhaut nach oben und seitlich",
+            structure_id = 252
+        });
+
+        // Musculus zygomaticus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 253,
+            latin_name = "HEAD_Musculus zygomaticus  (dex.).R",
+            german_name = "Jochbeinmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 253,
+            ansatz = "Mundwinkel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht den Mundwinkel nach oben und lateral (Lächeln)",
+            structure_id = 253
+        });
+
+        // Musculus zygomaticus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 254,
+            latin_name = "HEAD_Musculus zygomaticus  (sin.).L",
+            german_name = "Jochbeinmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 254,
+            ansatz = "Mundwinkel",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht den Mundwinkel nach oben und lateral (Lächeln)",
+            structure_id = 254
+        });
+
+        // Musculus buccinator (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 255,
+            latin_name = "HEAD_•_Musculus buccinator (dex.).R",
+            german_name = "Wangenmuskel (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 255,
+            ansatz = "Raphe pterygomandibularis und Alveolarknochen der Mandibula",
+            innervation = "N. facialis (VII)",
+            funktion = "Komprimiert die Wange, hält Nahrung zwischen den Zähnen beim Kauen",
+            structure_id = 255
+        });
+
+        // Musculus buccinator (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 256,
+            latin_name = "HEAD_•_Musculus buccinator (sin.).L",
+            german_name = "Wangenmuskel (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 256,
+            ansatz = "Raphe pterygomandibularis und Alveolarknochen der Mandibula",
+            innervation = "N. facialis (VII)",
+            funktion = "Komprimiert die Wange, hält Nahrung zwischen den Zähnen beim Kauen",
+            structure_id = 256
+        });
+
+        // Musculus depressor anguli oris (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 257,
+            latin_name = "HEAD_•_Musculus depressor anguli oris (dex.).R",
+            german_name = "Mundwinkelzieher (re.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 257,
+            ansatz = "Mandibula",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht den Mundwinkel nach unten (Trauriger Gesichtsausdruck)",
+            structure_id = 257
+        });
+
+        // Musculus depressor anguli oris (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 258,
+            latin_name = "HEAD_•_Musculus depressor anguli oris (sin.).L",
+            german_name = "Mundwinkelzieher (li.)",
+            category = "Mimische Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 258,
+            ansatz = "Mandibula",
+            innervation = "N. facialis (VII)",
+            funktion = "Zieht den Mundwinkel nach unten (Trauriger Gesichtsausdruck)",
+            structure_id = 258
+        });
+
+        // Musculus obliquus internus abdominis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 259,
+            latin_name = "Musculus obliquus internus abdominis(sin.).L",
+            german_name = "Innerer schräger Bauchmuskel (li.)",
+            category = "Bauchmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 259,
+            ansatz = "Crista iliaca, Fascia thoracolumbalis",
+            innervation = "Nn. intercostales (T7–T12), N. iliohypogastricus, N. ilioinguinalis",
+            funktion = "Rumpfbeugung und Rotation, Bauchpresse",
+            structure_id = 259
+        });
+
+        // Musculus obliquus internus abdominis (li.) Variante
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 260,
+            latin_name = "Musculus obliquus internus abdominis(sin.).L.002",
+            german_name = "Innerer schräger Bauchmuskel (li.) Variante",
+            category = "Bauchmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 260,
+            ansatz = "Crista iliaca, Fascia thoracolumbalis",
+            innervation = "Nn. intercostales (T7–T12), N. iliohypogastricus, N. ilioinguinalis",
+            funktion = "Rumpfbeugung und Rotation, Bauchpresse",
+            structure_id = 260
+        });
+
+        // Musculi digastrici (re.) Variante 002
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 261,
+            latin_name = "NECK_musculi digastrici (dex.).002.L.003",
+            german_name = "Zweibauchmuskel (re.) Variante 002",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 261,
+            ansatz = "Margo inferior mandibulae (Venter anterior), Os occipitale (Venter posterior)",
+            innervation = "N. mylohyoideus (V3) und N. facialis (VII)",
+            funktion = "Öffnet den Mund, zieht das Zungenbein nach oben",
+            structure_id = 261
+        });
+
+        // Musculi digastrici (re.) Variante L.004
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 262,
+            latin_name = "NECK_musculi digastrici (dex.).L.004",
+            german_name = "Zweibauchmuskel (re.) Variante L.004",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 262,
+            ansatz = "Margo inferior mandibulae (Venter anterior), Os occipitale (Venter posterior)",
+            innervation = "N. mylohyoideus (V3) und N. facialis (VII)",
+            funktion = "Öffnet den Mund, zieht das Zungenbein nach oben",
+            structure_id = 262
+        });
+
+        // Musculi digastrici (re.) Variante L.005
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 263,
+            latin_name = "NECK_musculi digastrici (dex.).L.005",
+            german_name = "Zweibauchmuskel (re.) Variante L.005",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 263,
+            ansatz = "Margo inferior mandibulae (Venter anterior), Os occipitale (Venter posterior)",
+            innervation = "N. mylohyoideus (V3) und N. facialis (VII)",
+            funktion = "Öffnet den Mund, zieht das Zungenbein nach oben",
+            structure_id = 263
+        });
+
+        // Musculi digastrici (li.) Variante 002
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 264,
+            latin_name = "NECK_musculi digastrici (sin.).002.L.001",
+            german_name = "Zweibauchmuskel (li.) Variante 002",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 264,
+            ansatz = "Margo inferior mandibulae (Venter anterior), Os occipitale (Venter posterior)",
+            innervation = "N. mylohyoideus (V3) und N. facialis (VII)",
+            funktion = "Öffnet den Mund, zieht das Zungenbein nach oben",
+            structure_id = 264
+        });
+
+        // Musculi digastrici (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 265,
+            latin_name = "NECK_musculi digastrici (sin.).L.001",
+            german_name = "Zweibauchmuskel (li.) Variante L.001",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 265,
+            ansatz = "Margo inferior mandibulae (Venter anterior), Os occipitale (Venter posterior)",
+            innervation = "N. mylohyoideus (V3) und N. facialis (VII)",
+            funktion = "Öffnet den Mund, hebt das Zungenbein",
+            structure_id = 265
+        });
+
+        // Musculi digastrici (li.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 266,
+            latin_name = "NECK_musculi digastrici (sin.).L.003",
+            german_name = "Zweibauchmuskel (li.) Variante L.003",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 266,
+            ansatz = "Margo inferior mandibulae (Venter anterior), Os occipitale (Venter posterior)",
+            innervation = "N. mylohyoideus (V3) und N. facialis (VII)",
+            funktion = "Öffnet den Mund, hebt das Zungenbein",
+            structure_id = 266
+        });
+
+        // Musculus geniohyoideus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 267,
+            latin_name = "NECK_Musculus geniohyoideus (dex.).R",
+            german_name = "Kinn-Zungenbeinmuskel (re.)",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 267,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ramus anterior aus C1 via N. hypoglossus (XII)",
+            funktion = "Zieht das Zungenbein nach vorne-oben, unterstützt das Schlucken",
+            structure_id = 267
+        });
+
+        // Musculus geniohyoideus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 268,
+            latin_name = "NECK_Musculus geniohyoideus (sin.).L",
+            german_name = "Kinn-Zungenbeinmuskel (li.)",
+            category = "Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 268,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ramus anterior aus C1 via N. hypoglossus (XII)",
+            funktion = "Zieht das Zungenbein nach vorne-oben, unterstützt das Schlucken",
+            structure_id = 268
+        });
+
+        // Musculus longus capitis (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 269,
+            latin_name = "NECK_Musculus longus capitis (dex.).L.003",
+            german_name = "Langer Kopfmuskel (re.) Variante L.003",
+            category = "Prävertebrale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 269,
+            ansatz = "Pars basilaris ossis occipitalis",
+            innervation = "Plexus cervicalis (C1–C3)",
+            funktion = "Beugung des Kopfes nach vorne",
+            structure_id = 269
+        });
+
+        // Musculus longus capitis (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 270,
+            latin_name = "NECK_Musculus longus capitis (sin.).L.001",
+            german_name = "Langer Kopfmuskel (li.) Variante L.001",
+            category = "Prävertebrale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 270,
+            ansatz = "Pars basilaris ossis occipitalis",
+            innervation = "Plexus cervicalis (C1–C3)",
+            funktion = "Beugung des Kopfes nach vorne",
+            structure_id = 270
+        });
+
+        // Musculus longus colli (re.) Variante 002.L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 271,
+            latin_name = "NECK_Musculus longus colli (dex.).002.L.003",
+            german_name = "Langer Halsmuskel (re.) Variante 002.L.003",
+            category = "Prävertebrale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 271,
+            ansatz = "Ventrale Flächen der Hals- und oberen Brustwirbelkörper",
+            innervation = "Plexus cervicalis (C2–C6)",
+            funktion = "Beugung und Rotation der Halswirbelsäule",
+            structure_id = 271
+        });
+
+        // Musculus longus colli (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 272,
+            latin_name = "NECK_Musculus longus colli (dex.).L.003",
+            german_name = "Langer Halsmuskel (re.) Variante L.003",
+            category = "Prävertebrale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 272,
+            ansatz = "Ventrale Flächen der Hals- und oberen Brustwirbelkörper",
+            innervation = "Plexus cervicalis (C2–C6)",
+            funktion = "Beugung und Rotation der Halswirbelsäule",
+            structure_id = 272
+        });
+
+        // Musculus longus colli (li.) Variante 002.L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 273,
+            latin_name = "NECK_Musculus longus colli (sin.).002.L.001",
+            german_name = "Langer Halsmuskel (li.) Variante 002.L.001",
+            category = "Prävertebrale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 273,
+            ansatz = "Ventrale Flächen der Hals- und oberen Brustwirbelkörper",
+            innervation = "Plexus cervicalis (C2–C6)",
+            funktion = "Beugung und Rotation der Halswirbelsäule",
+            structure_id = 273
+        });
+
+        // Musculus longus colli (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 274,
+            latin_name = "NECK_Musculus longus colli (sin.).L.001",
+            german_name = "Langer Halsmuskel (li.) Variante L.001",
+            category = "Prävertebrale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 274,
+            ansatz = "Ventrale Flächen der Hals- und oberen Brustwirbelkörper",
+            innervation = "Plexus cervicalis (C2–C6)",
+            funktion = "Beugung und Rotation der Halswirbelsäule",
+            structure_id = 274
+        });
+
+        // Musculus mylohyoideus (re.) Variante R2
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 275,
+            latin_name = "NECK_Musculus mylohyoideus (dex.).R2",
+            german_name = "Kiefer-Zungenbeinmuskel (re.) Variante R2",
+            category = "Mundbodenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 275,
+            ansatz = "Raphe mylohyoidea und Corpus ossis hyoidei",
+            innervation = "N. mylohyoideus (aus V3)",
+            funktion = "Spannt den Mundboden und hebt das Zungenbein",
+            structure_id = 275
+        });
+
+        // Musculus mylohyoideus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 276,
+            latin_name = "NECK_Musculus mylohyoideus (sin.).L",
+            german_name = "Kiefer-Zungenbeinmuskel (li.)",
+            category = "Mundbodenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 276,
+            ansatz = "Raphe mylohyoidea und Corpus ossis hyoidei",
+            innervation = "N. mylohyoideus (aus V3)",
+            funktion = "Spannt den Mundboden und hebt das Zungenbein",
+            structure_id = 276
+        });
+
+        // Musculus rectus anterior capitis (re.) Variante L.011
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 277,
+            latin_name = "NECK_Musculus rectus anterior capitis (dex.).L.011",
+            german_name = "Vorderer gerader Kopfmuskel (re.) Variante L.011",
+            category = "Tiefer Nackenmuskel",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 277,
+            ansatz = "Pars basilaris ossis occipitalis",
+            innervation = "Plexus cervicalis (C1–C2)",
+            funktion = "Beugung des Kopfes nach vorne",
+            structure_id = 277
+        });
+
+        // Musculus rectus anterior capitis (li.) Variante L.005
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 278,
+            latin_name = "NECK_Musculus rectus anterior capitis (sin.).L.005",
+            german_name = "Vorderer gerader Kopfmuskel (li.) Variante L.005",
+            category = "Tiefer Nackenmuskel",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 278,
+            ansatz = "Pars basilaris ossis occipitalis",
+            innervation = "Plexus cervicalis (C1–C2)",
+            funktion = "Beugung des Kopfes nach vorne",
+            structure_id = 278
+        });
+
+        // Musculus scalenus anterior (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 279,
+            latin_name = "NECK_Musculus scalenus anterior (dex.).L.003",
+            german_name = "Vorderer Treppenmuskel (re.) Variante L.003",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 279,
+            ansatz = "Tuberculum musculi scaleni anterioris der 1. Rippe",
+            innervation = "Plexus brachialis und Plexus cervicalis (C5–C7)",
+            funktion = "Hebung der 1. Rippe, Lateralflexion der Halswirbelsäule",
+            structure_id = 279
+        });
+
+        // Musculus scalenus anterior (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 280,
+            latin_name = "NECK_Musculus scalenus anterior (sin.).L.001",
+            german_name = "Vorderer Treppenmuskel (li.) Variante L.001",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 280,
+            ansatz = "Tuberculum musculi scaleni anterioris der 1. Rippe",
+            innervation = "Plexus brachialis und Plexus cervicalis (C5–C7)",
+            funktion = "Hebung der 1. Rippe, Lateralflexion der Halswirbelsäule",
+            structure_id = 280
+        });
+
+        // Musculus scalenus medius (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 281,
+            latin_name = "NECK_Musculus scalenus medius (dex.).L.003",
+            german_name = "Mittlerer Treppenmuskel (re.) Variante L.003",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 281,
+            ansatz = "1. Rippe (dorsal des Sulcus arteriae subclaviae)",
+            innervation = "Plexus brachialis und Plexus cervicalis (C3–C8)",
+            funktion = "Hebung der 1. Rippe, Lateralflexion der Halswirbelsäule",
+            structure_id = 281
+        });
+
+        // Musculus scalenus medius (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 282,
+            latin_name = "NECK_Musculus scalenus medius (sin.).L.001",
+            german_name = "Mittlerer Treppenmuskel (li.) Variante L.001",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 282,
+            ansatz = "1. Rippe (dorsal des Sulcus arteriae subclaviae)",
+            innervation = "Plexus brachialis und Plexus cervicalis (C3–C8)",
+            funktion = "Hebung der 1. Rippe, Lateralflexion der Halswirbelsäule",
+            structure_id = 282
+        });
+
+        // Musculus scalenus minimus (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 283,
+            latin_name = "NECK_Musculus scalenus minimus (dex.).L.003",
+            german_name = "Kleinster Treppenmuskel (re.) Variante L.003",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 283,
+            ansatz = "Innenfläche der 1. Rippe und Pleura cupula",
+            innervation = "Plexus brachialis",
+            funktion = "Hebung der 1. Rippe, Unterstützung der Atmung",
+            structure_id = 283
+        });
+
+        // Musculus scalenus minimus (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 284,
+            latin_name = "NECK_Musculus scalenus minimus (sin.).L.001",
+            german_name = "Kleinster Treppenmuskel (li.) Variante L.001",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 284,
+            ansatz = "Innenfläche der 1. Rippe und Pleura cupula",
+            innervation = "Plexus brachialis",
+            funktion = "Hebung der 1. Rippe, Unterstützung der Atmung",
+            structure_id = 284
+        });
+
+        // Musculus scalenus posterior (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 285,
+            latin_name = "NECK_Musculus scalenus posterior (dex.).L.003",
+            german_name = "Hinterer Treppenmuskel (re.) Variante L.003",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 285,
+            ansatz = "Außenfläche der 2. Rippe",
+            innervation = "Plexus brachialis (C6–C8)",
+            funktion = "Hebung der 2. Rippe, Lateralflexion der Halswirbelsäule",
+            structure_id = 285
+        });
+
+        // Musculus scalenus posterior (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 286,
+            latin_name = "NECK_Musculus scalenus posterior (sin.).L.001",
+            german_name = "Hinterer Treppenmuskel (li.) Variante L.001",
+            category = "Skalenusgruppe",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 286,
+            ansatz = "Außenfläche der 2. Rippe",
+            innervation = "Plexus brachialis (C6–C8)",
+            funktion = "Hebung der 2. Rippe, Lateralflexion der Halswirbelsäule",
+            structure_id = 286
+        });
+
+        // Musculus sternocleidomastoideus (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 287,
+            latin_name = "NECK_Musculus sternocleidomastoideus (dex.).L.003",
+            german_name = "Kopfwender (re.) Variante L.003",
+            category = "Halsmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 287,
+            ansatz = "Processus mastoideus und Linea nuchae superior",
+            innervation = "Nervus accessorius (XI) und Plexus cervicalis",
+            funktion = "Rotation des Kopfes zur Gegenseite, Lateralflexion zur gleichen Seite, Hebung des Sternums",
+            structure_id = 287
+        });
+
+        // Musculus sternocleidomastoideus (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 288,
+            latin_name = "NECK_Musculus sternocleidomastoideus (sin.).L.001",
+            german_name = "Kopfwender (li.) Variante L.001",
+            category = "Halsmuskeln",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 288,
+            ansatz = "Processus mastoideus und Linea nuchae superior",
+            innervation = "Nervus accessorius (XI) und Plexus cervicalis",
+            funktion = "Rotation des Kopfes zur Gegenseite, Lateralflexion zur gleichen Seite, Hebung des Sternums",
+            structure_id = 288
+        });
+
+        // Musculus sternohyoideus (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 289,
+            latin_name = "NECK_Musculus sternohyoideus (dex.).L.003",
+            german_name = "Brustbein-Zungenbein-Muskel (re.) Variante L.003",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 289,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Zungenbeins nach dem Schluckakt",
+            structure_id = 289
+        });
+
+        // Musculus sternohyoideus (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 290,
+            latin_name = "NECK_Musculus sternohyoideus (sin.).L.001",
+            german_name = "Brustbein-Zungenbein-Muskel (li.) Variante L.001",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 290,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Zungenbeins nach dem Schluckakt",
+            structure_id = 290
+        });
+
+        // Musculus sternothyreoideus (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 291,
+            latin_name = "NECK_Musculus sternothyreoideus (dex.).L.003",
+            german_name = "Brustbein-Schildknorpel-Muskel (re.) Variante L.003",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 291,
+            ansatz = "Linea obliqua des Schildknorpels",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Kehlkopfs nach dem Schlucken",
+            structure_id = 291
+        });
+
+        // Musculus sternothyreoideus (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 292,
+            latin_name = "NECK_Musculus sternothyreoideus (sin.).L.001",
+            german_name = "Brustbein-Schildknorpel-Muskel (li.) Variante L.001",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 292,
+            ansatz = "Linea obliqua des Schildknorpels",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Kehlkopfs nach dem Schlucken",
+            structure_id = 292
+        });
+
+        // Musculus stylohyoideus (re.) Variante R2
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 293,
+            latin_name = "NECK_Musculus stylohyoideus (dex.).R2",
+            german_name = "Griffel-Zungenbein-Muskel (re.) Variante R2",
+            category = "Suprahyoidale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 293,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Nervus facialis (VII)",
+            funktion = "Hebung des Zungenbeins nach hinten beim Schlucken",
+            structure_id = 293
+        });
+
+        // Musculus stylohyoideus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 294,
+            latin_name = "NECK_Musculus stylohyoideus (sin.).L",
+            german_name = "Griffel-Zungenbein-Muskel (li.)",
+            category = "Suprahyoidale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 294,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Nervus facialis (VII)",
+            funktion = "Hebung des Zungenbeins nach hinten beim Schlucken",
+            structure_id = 294
+        });
+
+        // Musculus thyreohyoideus (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 295,
+            latin_name = "NECK_Musculus thyreohyoideus (dex.).L.003",
+            german_name = "Schildknorpel-Zungenbein-Muskel (re.) Variante L.003",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 295,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Radix descendens nervi hypoglossi (C1 über N. hypoglossus)",
+            funktion = "Senkung des Zungenbeins oder Hebung des Kehlkopfs",
+            structure_id = 295
+        });
+
+        // Musculus thyreohyoideus (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 296,
+            latin_name = "NECK_Musculus thyreohyoideus (sin.).L.001",
+            german_name = "Schildknorpel-Zungenbein-Muskel (li.) Variante L.001",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 296,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Radix descendens nervi hypoglossi (C1 über N. hypoglossus)",
+            funktion = "Senkung des Zungenbeins oder Hebung des Kehlkopfs",
+            structure_id = 296
+        });
+
+        // Platysma (re.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 297,
+            latin_name = "NECK_Platysma (dex.).L.003",
+            german_name = "Halshautmuskel (re.) Variante L.003",
+            category = "Oberflächliche Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 297,
+            ansatz = "Mandibula, Haut der unteren Gesichtshälfte",
+            innervation = "Ramus colli des Nervus facialis (VII)",
+            funktion = "Spannt die Haut des Halses, mimischer Ausdruck (Zorn, Furcht)",
+            structure_id = 297
+        });
+
+        // Platysma (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 298,
+            latin_name = "NECK_Platysma (sin.).L.001",
+            german_name = "Halshautmuskel (li.) Variante L.001",
+            category = "Oberflächliche Halsmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 298,
+            ansatz = "Mandibula, Haut der unteren Gesichtshälfte",
+            innervation = "Ramus colli des Nervus facialis (VII)",
+            funktion = "Spannt die Haut des Halses, mimischer Ausdruck (Zorn, Furcht)",
+            structure_id = 298
+        });
+
+        // Venter inferior musculi omohyoidei (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 299,
+            latin_name = "NECK_venter inferior musculi omohyoidei.L.001",
+            german_name = "Unterer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.001",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 299,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Zungenbeins, Spannung der Halsfaszie",
+            structure_id = 299
+        });
+
+        // Venter inferior musculi omohyoidei (li.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 300,
+            latin_name = "NECK_venter inferior musculi omohyoidei.L.003",
+            german_name = "Unterer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.003",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 300,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Zungenbeins, Spannung der Halsfaszie",
+            structure_id = 300
+        });
+
+        // Venter superior musculi omohyoidei (li.) Variante L.001
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 301,
+            latin_name = "NECK_venter superior musculi omohyoidei.L.001",
+            german_name = "Oberer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.001",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 301,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Zungenbeins, Spannung der Halsfaszie",
+            structure_id = 301
+        });
+
+        // Venter superior musculi omohyoidei (li.) Variante L.003
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 302,
+            latin_name = "NECK_venter superior musculi omohyoidei.L.003",
+            german_name = "Oberer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.003",
+            category = "Infrahyale Muskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 302,
+            ansatz = "Corpus ossis hyoidei",
+            innervation = "Ansa cervicalis aus Plexus cervicalis (C1–C3)",
+            funktion = "Senkung des Zungenbeins, Spannung der Halsfaszie",
+            structure_id = 302
+        });
+
+        // Musculus hyoglossus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 303,
+            latin_name = "PHARYNX_Musculus hyoglossus (dex.).R",
+            german_name = "Zungenbein-Zungenmuskel (re.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 303,
+            ansatz = "Zungenkörper (Seitenrand)",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Zieht die Zunge nach unten und hinten",
+            structure_id = 303
+        });
+
+        // Musculus hyoglossus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 304,
+            latin_name = "PHARYNX_Musculus hyoglossus (sin.).L",
+            german_name = "Zungenbein-Zungenmuskel (li.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 304,
+            ansatz = "Zungenkörper (Seitenrand)",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Zieht die Zunge nach unten und hinten",
+            structure_id = 304
+        });
+
+        // Musculi intercostales interni (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 305,
+            latin_name = "Torax_Musculi intercostales interni (dex.).R",
+            german_name = "Innere Zwischenrippenmuskeln (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 305,
+            ansatz = "Oberrand der jeweils unteren Rippe",
+            innervation = "Nervi intercostales I–XI",
+            funktion = "Rippenverengung, beteiligt an der Exspiration",
+            structure_id = 305
+        });
+
+        // Musculi intercostales interni (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 306,
+            latin_name = "Torax_Musculi intercostales interni (sin.).L",
+            german_name = "Innere Zwischenrippenmuskeln (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 306,
+            ansatz = "Oberrand der jeweils unteren Rippe",
+            innervation = "Nervi intercostales I–XI",
+            funktion = "Rippenverengung, beteiligt an der Exspiration",
+            structure_id = 306
+        });
+
+        // Musculus pectoralis minor (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 307,
+            latin_name = "Torax_Musculus pectoralis minor (dex.).R",
+            german_name = "Kleiner Brustmuskel (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 307,
+            ansatz = "Processus coracoideus der Scapula",
+            innervation = "Nervus pectoralis medialis und lateralis (C6–Th1)",
+            funktion = "Zieht die Scapula nach vorne und unten, hebt die Rippen bei fixierter Scapula",
+            structure_id = 307
+        });
+
+        // Musculus pectoralis minor (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 308,
+            latin_name = "Torax_Musculus pectoralis minor (sin.).L",
+            german_name = "Kleiner Brustmuskel (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 308,
+            ansatz = "Processus coracoideus der Scapula",
+            innervation = "Nervus pectoralis medialis und lateralis (C6–Th1)",
+            funktion = "Zieht die Scapula nach vorne und unten, hebt die Rippen bei fixierter Scapula",
+            structure_id = 308
+        });
+
+        // Musculus serratus anterior (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 309,
+            latin_name = "Torax_Musculus serratus anterior (dex.).R",
+            german_name = "Vorderer Sägemuskel (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 309,
+            ansatz = "Angulus superior, Margo medialis und Angulus inferior der Scapula",
+            innervation = "Nervus thoracicus longus (C5–C7)",
+            funktion = "Zieht die Scapula nach lateral und rotiert sie nach außen; wichtig für Elevation des Arms",
+            structure_id = 309
+        });
+
+        // Musculus serratus anterior (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 310,
+            latin_name = "Torax_Musculus serratus anterior (sin.).L",
+            german_name = "Vorderer Sägemuskel (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 310,
+            ansatz = "Angulus superior, Margo medialis und Angulus inferior der Scapula",
+            innervation = "Nervus thoracicus longus (C5–C7)",
+            funktion = "Zieht die Scapula nach lateral und rotiert sie nach außen; wichtig für Elevation des Arms",
+            structure_id = 310
+        });
+
+        // Musculus subclavius (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 311,
+            latin_name = "Torax_Musculus subclavius (sin.).L",
+            german_name = "Unterschlüsselbeinmuskel (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 311,
+            ansatz = "Unterfläche der Clavicula",
+            innervation = "Nervus subclavius (C5–C6)",
+            funktion = "Fixiert und senkt die Clavicula, schützt Gefäße unterhalb",
+            structure_id = 311
+        });
+
+        // Musculus subcostalis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 312,
+            latin_name = "Torax_Musculus subcostalis (dex.R).R",
+            german_name = "Unterrippenmuskel (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 312,
+            ansatz = "Innenfläche der übernächsten bis drittnächsten Rippe",
+            innervation = "Nervi intercostales",
+            funktion = "Unterstützt die Exspiration durch Senkung der Rippen",
+            structure_id = 312
+        });
+
+        // Musculus subcostalis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 313,
+            latin_name = "Torax_Musculus subcostalis (sin.l).L",
+            german_name = "Unterrippenmuskel (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 313,
+            ansatz = "Innenfläche der übernächsten bis drittnächsten Rippe",
+            innervation = "Nervi intercostales",
+            funktion = "Unterstützt die Exspiration durch Senkung der Rippen",
+            structure_id = 313
+        });
+
+        // Musculus transversus thoracis (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 314,
+            latin_name = "Torax_Musculus transversus thoracis(dex.).R",
+            german_name = "Querbrustmuskel (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 314,
+            ansatz = "Knorpel der Rippen 2–6",
+            innervation = "Nervi intercostales (Th1–Th6)",
+            funktion = "Unterstützt die Exspiration durch Senkung der Rippen",
+            structure_id = 314
+        });
+
+        // Musculus transversus thoracis (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 315,
+            latin_name = "Torax_Musculus transversus thoracis(sin.).L",
+            german_name = "Querbrustmuskel (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 315,
+            ansatz = "Knorpel der Rippen 2–6",
+            innervation = "Nervi intercostales (Th1–Th6)",
+            funktion = "Unterstützt die Exspiration durch Senkung der Rippen",
+            structure_id = 315
+        });
+
+        // Musculi longitudinales (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 316,
+            latin_name = "TOUNGE_Musculi longitudinales (dex.).R",
+            german_name = "Längsmuskeln der Zunge (re.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 316,
+            ansatz = "Verläuft längs durch die Zunge",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Verkürzt die Zunge und hebt/spitzt die Zungenspitze",
+            structure_id = 316
+        });
+
+        // Musculi longitudinales (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 317,
+            latin_name = "TOUNGE_Musculi longitudinales (sin.) .L",
+            german_name = "Längsmuskeln der Zunge (li.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 317,
+            ansatz = "Verläuft längs durch die Zunge",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Verkürzt die Zunge und hebt/spitzt die Zungenspitze",
+            structure_id = 317
+        });
+
+        // Musculus chondroglossus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 318,
+            latin_name = "TOUNGE_Musculus chondroglossus (dex.).R",
+            german_name = "Knorpel-Zungen-Muskel (re.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 318,
+            ansatz = "Seitlich am Zungenkörper",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Unterstützt die Bewegung der Zunge nach unten und hinten",
+            structure_id = 318
+        });
+
+        // Musculus chondroglossus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 319,
+            latin_name = "TOUNGE_Musculus chondroglossus (sin.).L",
+            german_name = "Knorpel-Zungen-Muskel (li.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 319,
+            ansatz = "Seitlich am Zungenkörper",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Unterstützt die Bewegung der Zunge nach unten und hinten",
+            structure_id = 319
+        });
+
+        // Musculus genioglossus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 320,
+            latin_name = "TOUNGE_Musculus genioglossus (dex.).R",
+            german_name = "Kinn-Zungen-Muskel (re.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 320,
+            ansatz = "Zungenkörper und Zungenbasis",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Zieht die Zunge nach vorne und unten",
+            structure_id = 320
+        });
+
+        // Musculus pectoralis minor (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 321,
+            latin_name = "Torax_Musculus pectoralis minor  (dex.).R",
+            german_name = "Kleiner Brustmuskel (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 321,
+            ansatz = "Proc. coracoideus der Scapula",
+            innervation = "Nervus pectoralis medialis",
+            funktion = "Zieht die Scapula nach kaudal und ventral",
+            structure_id = 321
+        });
+
+        // Musculus pectoralis minor (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 322,
+            latin_name = "Torax_Musculus pectoralis minor  (sin.).L",
+            german_name = "Kleiner Brustmuskel (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 322,
+            ansatz = "Proc. coracoideus der Scapula",
+            innervation = "Nervus pectoralis medialis",
+            funktion = "Zieht die Scapula nach kaudal und ventral",
+            structure_id = 322
+        });
+
+        // Musculus subclavius (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 323,
+            latin_name = "Torax_Musculus subclavius (dex.).R",
+            german_name = "Unterschlüsselbeinmuskel (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 323,
+            ansatz = "Unterfläche der Clavicula",
+            innervation = "Nervus subclavius",
+            funktion = "Fixiert die Clavicula am Sternum, senkt die Schulter",
+            structure_id = 323
+        });
+
+        // Musculus genioglossus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 324,
+            latin_name = "TOUNGE_Musculus genioglossus (sin.).L",
+            german_name = "Kinn-Zungen-Muskel (li.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 324,
+            ansatz = "Zungenkörper und Zungenbasis",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Zieht die Zunge nach vorne und unten",
+            structure_id = 324
+        });
+
+        // Musculus palatoglossus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 325,
+            latin_name = "TOUNGE_Musculus palatoglossus (dex.).R",
+            german_name = "Gaumenzungenmuskel (re.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 325,
+            ansatz = "Zungenrücken",
+            innervation = "Plexus pharyngeus (N. vagus und N. glossopharyngeus)",
+            funktion = "Hebt den Zungengrund, senkt den weichen Gaumen",
+            structure_id = 325
+        });
+
+        // Musculus palatoglossus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 326,
+            latin_name = "TOUNGE_Musculus palatoglossus (sin.).L",
+            german_name = "Gaumenzungenmuskel (li.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 326,
+            ansatz = "Zungenrücken",
+            innervation = "Plexus pharyngeus (N. vagus und N. glossopharyngeus)",
+            funktion = "Hebt den Zungengrund, senkt den weichen Gaumen",
+            structure_id = 326
+        });
+
+        // Musculus styloglossus (re.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 327,
+            latin_name = "TOUNGE_Musculus styloglossus (dex.).R",
+            german_name = "Griffelzungenmuskel (re.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 327,
+            ansatz = "Seitenrand der Zunge",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Zieht die Zunge nach hinten und oben",
+            structure_id = 327
+        });
+
+        // Musculus styloglossus (li.)
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 328,
+            latin_name = "TOUNGE_Musculus styloglossus (sin.).L",
+            german_name = "Griffelzungenmuskel (li.)",
+            category = "Zungenmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 328,
+            ansatz = "Seitenrand der Zunge",
+            innervation = "Nervus hypoglossus (XII)",
+            funktion = "Zieht die Zunge nach hinten und oben",
+            structure_id = 328
+        });
+        
+        // Torax_Musculus pectoralis minor (dex.).R
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 334,
+            latin_name = "Torax_Musculus pectoralis minor (dex.).R",
+            german_name = "Kleiner Brustmuskel (re.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 334,
+            ansatz = "Proc. coracoideus der Scapula",
+            innervation = "Nervus pectoralis medialis",
+            funktion = "Zieht die Scapula nach kaudal und ventral",
+            structure_id = 334
+        });
+
+        // Torax_Musculus pectoralis minor (sin.).L
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 335,
+            latin_name = "Torax_Musculus pectoralis minor (sin.).L",
+            german_name = "Kleiner Brustmuskel (li.)",
+            category = "Thoraxmuskulatur",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 335,
+            ansatz = "Proc. coracoideus der Scapula",
+            innervation = "Nervus pectoralis medialis",
+            funktion = "Zieht die Scapula nach kaudal und ventral",
+            structure_id = 335
+        });
+        
+        
+        
+        //Skeleton entry to avoid error
+        _connection.Insert(new AnatomicalStructures
+        {
+            id = 9999,
+            latin_name = "Skeleton_m_V7",
+            german_name = "Skeleton_m_V7",
+            category = "Platzhalter",
+            parentId = 0
+        });
+        _connection.Insert(new Descriptions
+        {
+            id = 9999,
+            ansatz = "",
+            innervation = "",
+            funktion = "",
+            structure_id = 9999
+        });
     }
-
 
     public IEnumerable<AnatomicalStructures> GetAnatomicalStructures(){
 		return _connection.Table<AnatomicalStructures>();
