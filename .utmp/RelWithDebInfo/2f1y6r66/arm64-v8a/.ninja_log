@@ -1,12 +1,12 @@
 # ninja log v5
-61	457	7653958467878340	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	caa7067eba0beaa8
-460	714	7653958470259923	C:/Users/stoeg/GitKraken/AnatoLearn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2f1y6r66/obj/arm64-v8a/libswappywrapper.so	c49383b4a14a74bc
-29	1564	7653958478947566	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f5c56e691c0451a6
-22	1584	7653958479110864	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	24541f8c781fa857
-14	1593	7653958479206822	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c8fe09c3cbcbfd6d
-43	1630	7653958479544388	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f3f3e3d3634c7f26
-51	1722	7653958480499662	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b17fc9d52ae79e7f
-1	1771	7653958480992077	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	cd3e10a008ff25f8
-36	1962	7653958482911407	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f0348531f800b3ee
-8	2113	7653958484347258	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c99a5a93a80f6527
-2114	2252	7653958485746151	C:/Users/stoeg/GitKraken/AnatoLearn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2f1y6r66/obj/arm64-v8a/libgame.so	2f41095d81cabd5a
+74	493	7729233398017828	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	caa7067eba0beaa8
+496	791	7729233400773720	C:/Users/stoeg/GitKraken/AnatoLearn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2f1y6r66/obj/arm64-v8a/libswappywrapper.so	c49383b4a14a74bc
+23	1404	7729233407033675	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	f5c56e691c0451a6
+1	1424	7729233407252463	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c8fe09c3cbcbfd6d
+30	1440	7729233407440127	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	24541f8c781fa857
+62	1481	7729233407829596	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f3f3e3d3634c7f26
+50	1558	7729233408626721	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b17fc9d52ae79e7f
+10	1614	7729233409195484	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	cd3e10a008ff25f8
+39	1830	7729233411359257	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f0348531f800b3ee
+16	1976	7729233412809361	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c99a5a93a80f6527
+1976	2121	7729233414214607	C:/Users/stoeg/GitKraken/AnatoLearn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2f1y6r66/obj/arm64-v8a/libgame.so	2f41095d81cabd5a
