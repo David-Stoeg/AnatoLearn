@@ -337,9 +337,9 @@
         "Filtert Blut"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -356,9 +356,9 @@
         "Unterschenkel"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -375,9 +375,9 @@
         "Schmecken"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -394,9 +394,9 @@
         "Seitliche Bewegung"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -413,9 +413,9 @@
         "Blutgerinnung"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -432,9 +432,9 @@
         "Blutzuckerregulation"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -451,9 +451,9 @@
         "Unterhaut"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -470,9 +470,9 @@
         "Lebensfunktionen"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -489,9 +489,9 @@
         "Wasseraufnahme"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     },
     {
@@ -508,9 +508,9 @@
         "Blutgerinnung"
       ],
       "correctMatchIndices": [
+        0,
         1,
-        2,
-        3
+        2
       ]
     }
   ]

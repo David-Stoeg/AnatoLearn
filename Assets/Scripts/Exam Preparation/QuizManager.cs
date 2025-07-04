@@ -227,7 +227,8 @@ public class QuizManager : MonoBehaviour
 
                     matchResults.Add($"{leftItem} \u2192 {rightItem}");
 
-                    if (selectedIndex != q.correctMatchIndices[i])
+                    // Hier +1 bei correctMatchIndices, weil Dropdown 0 = keine Antwort
+                    if (selectedIndex != q.correctMatchIndices[i] + 1)
                         allCorrect = false;
                 }
 
@@ -292,15 +293,7 @@ public class QuizManager : MonoBehaviour
         }
         else if (!incorrectQuestionIndices.Contains(currentQuestionIndex))
         {
-            incorrectQuestionIndices = new List<int>();
-
-            for (int i = 0; i < questionResults.Count; i++)
-            {
-                if (!questionResults[i])
-                {
-                    incorrectQuestionIndices.Add(i);
-                }
-            }
+            incorrectQuestionIndices.Add(currentQuestionIndex);
         }
 
         currentQuestionIndex++;
@@ -435,11 +428,21 @@ public class QuizManager : MonoBehaviour
 
     void DisplayReviewQuestion(int questionIndex)
     {
+        if (questionIndex < 0 || questionIndex >= questions.Count)
+        {
+            Debug.LogError($"Invalid question index: {questionIndex}. Total questions: {questions.Count}");
+            return;
+        }
+
         var q = questions[questionIndex];
         reviewQuestionText.text = $"Q{questionIndex + 1}: {q.questionText}";
         reviewProgressText.text = $"Frage {currentReviewIndex + 1} von {incorrectQuestionIndices.Count}";
 
-        string userAnswer = userAnswers.Count > questionIndex ? userAnswers[questionIndex] : "";
+        string userAnswer = "";
+
+        // Lookup based on global question index
+        if (userAnswers.Count > questionIndex)
+            userAnswer = userAnswers[questionIndex];
         if (string.IsNullOrEmpty(userAnswer))
             userAnswer = "<i>keine Antwort</i>";
 
@@ -453,7 +456,11 @@ public class QuizManager : MonoBehaviour
         {
             for (int i = 0; i < q.leftItems.Count; i++)
             {
-                correctAnswer += $"{q.leftItems[i]} \u2192 {q.rightItems[q.correctMatchIndices[i]]}\n";
+                int matchIndex = q.correctMatchIndices[i];
+                if (matchIndex >= 0 && matchIndex < q.rightItems.Count)
+                    correctAnswer += $"{q.leftItems[i]} \u2192 {q.rightItems[matchIndex]}\n";
+                else
+                    correctAnswer += $"{q.leftItems[i]} \u2192 ? (invalid index)\n";
             }
         }
         else if (q.type == QuestionType.FillInTheBlank)
@@ -473,11 +480,15 @@ public class QuizManager : MonoBehaviour
         if (currentReviewIndex < incorrectQuestionIndices.Count - 1)
         {
             currentReviewIndex++;
-            DisplayReviewQuestion(incorrectQuestionIndices[currentReviewIndex]);
+            int questionIndex = incorrectQuestionIndices[currentReviewIndex];
+
+            if (questionIndex >= 0 && questionIndex < questions.Count)
+                DisplayReviewQuestion(questionIndex);
+            else
+                Debug.LogError($"Invalid question index in incorrectQuestionIndices: {questionIndex}");
         }
         else
         {
-            // Letzte Frage erreicht – statt deaktivieren, zeige Bestätigungsdialog
             confirmExitReviewPanel.SetActive(true);
         }
     }
@@ -487,7 +498,12 @@ public class QuizManager : MonoBehaviour
         if (currentReviewIndex > 0)
         {
             currentReviewIndex--;
-            DisplayReviewQuestion(incorrectQuestionIndices[currentReviewIndex]);
+            int questionIndex = incorrectQuestionIndices[currentReviewIndex];
+
+            if (questionIndex >= 0 && questionIndex < questions.Count)
+                DisplayReviewQuestion(questionIndex);
+            else
+                Debug.LogError($"Invalid question index in incorrectQuestionIndices: {questionIndex}");
         }
     }
 
@@ -499,7 +515,8 @@ public class QuizManager : MonoBehaviour
         // SET THE MATCHING QUESTION TEXT
         matchingQuestionText.text = $"<b>Q{currentQuestionIndex + 1}:</b> {q.questionText}";
 
-        var placeholder = new List<string> { "" };  
+        // Placeholder als leere Option + richtige Antworten
+        var placeholder = new List<string> { "<i>Antwort auswählen...</i>" };
         placeholder.AddRange(q.rightItems);
 
         for (int i = 0; i < q.leftItems.Count; i++)

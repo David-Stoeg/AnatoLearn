@@ -3461,7 +3461,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 205,
-            latin_name = "Bauch_Linea alba.L",
+            latin_name = "Linea alba",
             german_name = "Linea alba (li.)",
             category = "Bauchmuskeln",
             parentId = 0
@@ -3479,7 +3479,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 206,
-            latin_name = "Brust_Musculus pectoralis major (dex.).R",
+            latin_name = "Musculus pectoralis major (dex.)",
             german_name = "Großer Brustmuskel (re.)",
             category = "Brustmuskeln",
             parentId = 0
@@ -3497,7 +3497,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 207,
-            latin_name = "Brust_Musculus pectoralis major (sin.).L",
+            latin_name = "Musculus pectoralis major (sin.)",
             german_name = "Großer Brustmuskel (li.)",
             category = "Brustmuskeln",
             parentId = 0
@@ -3515,7 +3515,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 208,
-            latin_name = "HEAD_M levator labii superioris alaeque nasi (dex.).R",
+            latin_name = "M levator labii superioris alaeque nasi (dex.)",
             german_name = "Muskelheber der Oberlippe und Nasenflügel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3533,7 +3533,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 209,
-            latin_name = "HEAD_M levator labii superioris alaeque nasi (sin.).L",
+            latin_name = "M levator labii superioris alaeque nasi (sin.)",
             german_name = "Muskelheber der Oberlippe und Nasenflügel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3551,7 +3551,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 210,
-            latin_name = "HEAD_Musculus auricularis anterior (dex.).R",
+            latin_name = "Musculus auricularis anterior (dex.)",
             german_name = "Vorderer Ohrmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3569,7 +3569,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 211,
-            latin_name = "HEAD_Musculus auricularis anterior (sin.).L",
+            latin_name = "Musculus auricularis anterior (sin.)",
             german_name = "Vorderer Ohrmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3587,7 +3587,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 212,
-            latin_name = "HEAD_Musculus auricularis posterior (dex.).R",
+            latin_name = "Musculus auricularis posterior (dex.)",
             german_name = "Hinterer Ohrmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3605,7 +3605,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 213,
-            latin_name = "HEAD_Musculus auricularis posterior (sin.).L",
+            latin_name = "Musculus auricularis posterior (sin.)",
             german_name = "Hinterer Ohrmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3623,7 +3623,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 214,
-            latin_name = "HEAD_Musculus auricularis superior (dex.).R",
+            latin_name = "Musculus auricularis superior (dex.)",
             german_name = "Oberer Ohrmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3641,7 +3641,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 215,
-            latin_name = "HEAD_Musculus auricularis superior (sin.).L",
+            latin_name = "Musculus auricularis superior (sin.)",
             german_name = "Oberer Ohrmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3659,7 +3659,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 216,
-            latin_name = "HEAD_Musculus corrugator supercilii (dex.).R",
+            latin_name = "Musculus corrugator supercilii (dex.)",
             german_name = "Augenbrauenrunzler (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3677,7 +3677,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 217,
-            latin_name = "HEAD_Musculus corrugator supercilii (sin.).L",
+            latin_name = "Musculus corrugator supercilii (sin.)",
             german_name = "Augenbrauenrunzler (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3695,7 +3695,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 218,
-            latin_name = "HEAD_Musculus depressor labii inferioris (dex.).R",
+            latin_name = "Musculus depressor labii inferioris (dex.)",
             german_name = "Unterlippenherabzieher (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3713,7 +3713,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 219,
-            latin_name = "HEAD_Musculus depressor labii inferioris (sin.).L",
+            latin_name = "Musculus depressor labii inferioris (sin.)",
             german_name = "Unterlippenherabzieher (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3731,7 +3731,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 220,
-            latin_name = "HEAD_Musculus depressor septi nasi (dex.).R",
+            latin_name = "Musculus depressor septi nasi (dex.)",
             german_name = "Nasenscheidewand-Senker (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3749,7 +3749,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 221,
-            latin_name = "HEAD_Musculus depressor septi nasi (sin.).L",
+            latin_name = "Musculus depressor septi nasi (sin.)",
             german_name = "Nasenscheidewand-Senker (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3767,7 +3767,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 222,
-            latin_name = "HEAD_Musculus depressor supercilii (dex.).R",
+            latin_name = "Musculus depressor supercilii (dex.)",
             german_name = "Augenbrauensenker (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3785,7 +3785,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 223,
-            latin_name = "HEAD_Musculus depressor supercilii (sin.).L",
+            latin_name = "Musculus depressor supercilii (sin.)",
             german_name = "Augenbrauensenker (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3803,7 +3803,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 224,
-            latin_name = "HEAD_Musculus frontalis (dex.).R",
+            latin_name = "Musculus frontalis (dex.)",
             german_name = "Stirnmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3821,7 +3821,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 225,
-            latin_name = "HEAD_Musculus frontalis (sin.).L",
+            latin_name = "Musculus frontalis (sin.)",
             german_name = "Stirnmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3839,7 +3839,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 226,
-            latin_name = "HEAD_Musculus levator anguli oris (dex.).R",
+            latin_name = "Musculus levator anguli oris (dex.)",
             german_name = "Mundwinkelheber (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3857,7 +3857,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 227,
-            latin_name = "HEAD_Musculus levator anguli oris (sin.).L",
+            latin_name = "Musculus levator anguli oris (sin.)",
             german_name = "Mundwinkelheber (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3875,7 +3875,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 228,
-            latin_name = "HEAD_Musculus levator labii superioris (dex.).R",
+            latin_name = "Musculus levator labii superioris (dex.)",
             german_name = "Oberlippenheber (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3893,7 +3893,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 229,
-            latin_name = "HEAD_Musculus levator labii superioris (sin.).L",
+            latin_name = "Musculus levator labii superioris (sin.)",
             german_name = "Oberlippenheber (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3911,7 +3911,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 230,
-            latin_name = "HEAD_Musculus masseter (dex.).R",
+            latin_name = "Musculus masseter (dex.)",
             german_name = "Kaumuskel (re.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -3929,7 +3929,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 231,
-            latin_name = "HEAD_Musculus masseter (sin.).L",
+            latin_name = "Musculus masseter (sin.)",
             german_name = "Kaumuskel (li.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -3947,7 +3947,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 232,
-            latin_name = "HEAD_Musculus mentalis (dex.).R",
+            latin_name = "Musculus mentalis (dex.)",
             german_name = "Kinnmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3965,7 +3965,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 233,
-            latin_name = "HEAD_Musculus mentalis (sin.).L",
+            latin_name = "Musculus mentalis (sin.)",
             german_name = "Kinnmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -3983,7 +3983,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 234,
-            latin_name = "HEAD_Musculus nasalis (dex.).R",
+            latin_name = "Musculus nasalis (dex.)",
             german_name = "Nasemuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4001,7 +4001,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 235,
-            latin_name = "HEAD_Musculus nasalis (sin.).L",
+            latin_name = "Musculus nasalis (sin.)",
             german_name = "Nasemuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4019,7 +4019,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 236,
-            latin_name = "HEAD_Musculus occipitalis (dex.).R",
+            latin_name = "Musculus occipitalis (dex.)",
             german_name = "Hinterhauptmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4037,7 +4037,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 237,
-            latin_name = "HEAD_Musculus occipitalis (sin.).L",
+            latin_name = "Musculus occipitalis (sin.)",
             german_name = "Hinterhauptmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4055,7 +4055,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 238,
-            latin_name = "HEAD_Musculus orbicularis oculi (dex.).R",
+            latin_name = "Musculus orbicularis oculi (dex.)",
             german_name = "Augenschließmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4073,7 +4073,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 239,
-            latin_name = "HEAD_Musculus orbicularis oculi (sin.).L",
+            latin_name = "Musculus orbicularis oculi (sin.)",
             german_name = "Augenschließmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4091,7 +4091,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 240,
-            latin_name = "HEAD_Musculus orbicularis oris",
+            latin_name = "Musculus orbicularis oris",
             german_name = "Mundringmuskel",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4109,7 +4109,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 241,
-            latin_name = "HEAD_Musculus procerus (dex.).R",
+            latin_name = "Musculus procerus (dex.)",
             german_name = "Stirnrunzler (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4127,7 +4127,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 242,
-            latin_name = "HEAD_Musculus procerus (sin.).L",
+            latin_name = "Musculus procerus (sin.)",
             german_name = "Stirnrunzler (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4145,7 +4145,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 243,
-            latin_name = "HEAD_Musculus pterygoideus lateralis  (dex.).R",
+            latin_name = "Musculus pterygoideus lateralis  (dex.)",
             german_name = "Äußerer Flügelmuskel (re.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -4163,7 +4163,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 244,
-            latin_name = "HEAD_Musculus pterygoideus lateralis  (sin.).L",
+            latin_name = "Musculus pterygoideus lateralis  (sin.)",
             german_name = "Äußerer Flügelmuskel (li.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -4181,7 +4181,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 245,
-            latin_name = "HEAD_Musculus pterygoideus medialis (dex.).R",
+            latin_name = "Musculus pterygoideus medialis (dex.)",
             german_name = "Innerer Flügelmuskel (re.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -4199,7 +4199,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 246,
-            latin_name = "HEAD_Musculus pterygoideus medialis (sin.).L",
+            latin_name = "Musculus pterygoideus medialis (sin.)",
             german_name = "Innerer Flügelmuskel (li.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -4217,7 +4217,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 247,
-            latin_name = "HEAD_Musculus risorius (dex.).R",
+            latin_name = "Musculus risorius (dex.)",
             german_name = "Lachmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4235,7 +4235,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 248,
-            latin_name = "HEAD_Musculus risorius (sin.).L",
+            latin_name = "Musculus risorius (sin.)",
             german_name = "Lachmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4253,7 +4253,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 249,
-            latin_name = "HEAD_Musculus temporalis (dex.).R",
+            latin_name = "Musculus temporalis (dex.)",
             german_name = "Schläfenmuskel (re.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -4271,7 +4271,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 250,
-            latin_name = "HEAD_Musculus temporalis (sin.).L",
+            latin_name = "Musculus temporalis (sin.)",
             german_name = "Schläfenmuskel (li.)",
             category = "Kaumuskulatur",
             parentId = 0
@@ -4289,7 +4289,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 251,
-            latin_name = "HEAD_Musculus temporoparietalis (dex.).R",
+            latin_name = "Musculus temporoparietalis (dex.)",
             german_name = "Schläfen-Scheitelmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4307,7 +4307,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 252,
-            latin_name = "HEAD_Musculus temporoparietalis (sin.).L",
+            latin_name = "Musculus temporoparietalis (sin.)",
             german_name = "Schläfen-Scheitelmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4325,7 +4325,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 253,
-            latin_name = "HEAD_Musculus zygomaticus  (dex.).R",
+            latin_name = "Musculus zygomaticus  (dex.)",
             german_name = "Jochbeinmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4343,7 +4343,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 254,
-            latin_name = "HEAD_Musculus zygomaticus  (sin.).L",
+            latin_name = "Musculus zygomaticus  (sin.)",
             german_name = "Jochbeinmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4361,7 +4361,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 255,
-            latin_name = "HEAD_•_Musculus buccinator (dex.).R",
+            latin_name = "Musculus buccinator (dex.)",
             german_name = "Wangenmuskel (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4379,7 +4379,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 256,
-            latin_name = "HEAD_•_Musculus buccinator (sin.).L",
+            latin_name = "Musculus buccinator (sin.)",
             german_name = "Wangenmuskel (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4397,7 +4397,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 257,
-            latin_name = "HEAD_•_Musculus depressor anguli oris (dex.).R",
+            latin_name = "Musculus depressor anguli oris (dex.)",
             german_name = "Mundwinkelzieher (re.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4415,7 +4415,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 258,
-            latin_name = "HEAD_•_Musculus depressor anguli oris (sin.).L",
+            latin_name = "Musculus depressor anguli oris (sin.)",
             german_name = "Mundwinkelzieher (li.)",
             category = "Mimische Muskulatur",
             parentId = 0
@@ -4433,7 +4433,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 259,
-            latin_name = "Musculus obliquus internus abdominis(sin.).L",
+            latin_name = "Musculus obliquus internus abdominis(sin.)",
             german_name = "Innerer schräger Bauchmuskel (li.)",
             category = "Bauchmuskeln",
             parentId = 0
@@ -4451,7 +4451,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 260,
-            latin_name = "Musculus obliquus internus abdominis(sin.).L.002",
+            latin_name = "Musculus obliquus internus abdominis(sin.)",
             german_name = "Innerer schräger Bauchmuskel (li.) Variante",
             category = "Bauchmuskeln",
             parentId = 0
@@ -4469,7 +4469,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 261,
-            latin_name = "NECK_musculi digastrici (dex.).002.L.003",
+            latin_name = "musculi digastrici (dex.)",
             german_name = "Zweibauchmuskel (re.) Variante 002",
             category = "Halsmuskulatur",
             parentId = 0
@@ -4483,12 +4483,12 @@ public class DataService  {
             structure_id = 261
         });
 
-        // Musculi digastrici (re.) Variante L.004
+        // Musculi digastrici (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 262,
-            latin_name = "NECK_musculi digastrici (dex.).L.004",
-            german_name = "Zweibauchmuskel (re.) Variante L.004",
+            latin_name = "musculi digastrici (dex.)",
+            german_name = "Zweibauchmuskel (re.) Variante L",
             category = "Halsmuskulatur",
             parentId = 0
         });
@@ -4501,12 +4501,12 @@ public class DataService  {
             structure_id = 262
         });
 
-        // Musculi digastrici (re.) Variante L.005
+        // Musculi digastrici (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 263,
-            latin_name = "NECK_musculi digastrici (dex.).L.005",
-            german_name = "Zweibauchmuskel (re.) Variante L.005",
+            latin_name = "musculi digastrici (dex.)",
+            german_name = "Zweibauchmuskel (re.) Variante L",
             category = "Halsmuskulatur",
             parentId = 0
         });
@@ -4523,7 +4523,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 264,
-            latin_name = "NECK_musculi digastrici (sin.).002.L.001",
+            latin_name = "musculi digastrici (sin.)",
             german_name = "Zweibauchmuskel (li.) Variante 002",
             category = "Halsmuskulatur",
             parentId = 0
@@ -4537,12 +4537,12 @@ public class DataService  {
             structure_id = 264
         });
 
-        // Musculi digastrici (li.) Variante L.001
+        // Musculi digastrici (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 265,
-            latin_name = "NECK_musculi digastrici (sin.).L.001",
-            german_name = "Zweibauchmuskel (li.) Variante L.001",
+            latin_name = "musculi digastrici (sin.)",
+            german_name = "Zweibauchmuskel (li.) Variante L",
             category = "Halsmuskulatur",
             parentId = 0
         });
@@ -4555,12 +4555,12 @@ public class DataService  {
             structure_id = 265
         });
 
-        // Musculi digastrici (li.) Variante L.003
+        // Musculi digastrici (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 266,
-            latin_name = "NECK_musculi digastrici (sin.).L.003",
-            german_name = "Zweibauchmuskel (li.) Variante L.003",
+            latin_name = "musculi digastrici (sin.)",
+            german_name = "Zweibauchmuskel (li.) Variante L",
             category = "Halsmuskulatur",
             parentId = 0
         });
@@ -4577,7 +4577,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 267,
-            latin_name = "NECK_Musculus geniohyoideus (dex.).R",
+            latin_name = "Musculus geniohyoideus (dex.)",
             german_name = "Kinn-Zungenbeinmuskel (re.)",
             category = "Halsmuskulatur",
             parentId = 0
@@ -4595,7 +4595,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 268,
-            latin_name = "NECK_Musculus geniohyoideus (sin.).L",
+            latin_name = "Musculus geniohyoideus (sin.)",
             german_name = "Kinn-Zungenbeinmuskel (li.)",
             category = "Halsmuskulatur",
             parentId = 0
@@ -4609,12 +4609,12 @@ public class DataService  {
             structure_id = 268
         });
 
-        // Musculus longus capitis (re.) Variante L.003
+        // Musculus longus capitis (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 269,
-            latin_name = "NECK_Musculus longus capitis (dex.).L.003",
-            german_name = "Langer Kopfmuskel (re.) Variante L.003",
+            latin_name = "Musculus longus capitis (dex.)",
+            german_name = "Langer Kopfmuskel (re.) Variante L",
             category = "Prävertebrale Muskulatur",
             parentId = 0
         });
@@ -4627,12 +4627,12 @@ public class DataService  {
             structure_id = 269
         });
 
-        // Musculus longus capitis (li.) Variante L.001
+        // Musculus longus capitis (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 270,
-            latin_name = "NECK_Musculus longus capitis (sin.).L.001",
-            german_name = "Langer Kopfmuskel (li.) Variante L.001",
+            latin_name = "Musculus longus capitis (sin.)",
+            german_name = "Langer Kopfmuskel (li.) Variante L",
             category = "Prävertebrale Muskulatur",
             parentId = 0
         });
@@ -4645,12 +4645,12 @@ public class DataService  {
             structure_id = 270
         });
 
-        // Musculus longus colli (re.) Variante 002.L.003
+        // Musculus longus colli (re.) Variante 002
         _connection.Insert(new AnatomicalStructures
         {
             id = 271,
-            latin_name = "NECK_Musculus longus colli (dex.).002.L.003",
-            german_name = "Langer Halsmuskel (re.) Variante 002.L.003",
+            latin_name = "Musculus longus colli (dex.)",
+            german_name = "Langer Halsmuskel (re.) Variante 002",
             category = "Prävertebrale Muskulatur",
             parentId = 0
         });
@@ -4663,12 +4663,12 @@ public class DataService  {
             structure_id = 271
         });
 
-        // Musculus longus colli (re.) Variante L.003
+        // Musculus longus colli (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 272,
-            latin_name = "NECK_Musculus longus colli (dex.).L.003",
-            german_name = "Langer Halsmuskel (re.) Variante L.003",
+            latin_name = "Musculus longus colli (dex.)",
+            german_name = "Langer Halsmuskel (re.) Variante L",
             category = "Prävertebrale Muskulatur",
             parentId = 0
         });
@@ -4681,12 +4681,12 @@ public class DataService  {
             structure_id = 272
         });
 
-        // Musculus longus colli (li.) Variante 002.L.001
+        // Musculus longus colli (li.) Variante 002
         _connection.Insert(new AnatomicalStructures
         {
             id = 273,
-            latin_name = "NECK_Musculus longus colli (sin.).002.L.001",
-            german_name = "Langer Halsmuskel (li.) Variante 002.L.001",
+            latin_name = "Musculus longus colli (sin.)",
+            german_name = "Langer Halsmuskel (li.) Variante 002",
             category = "Prävertebrale Muskulatur",
             parentId = 0
         });
@@ -4699,12 +4699,12 @@ public class DataService  {
             structure_id = 273
         });
 
-        // Musculus longus colli (li.) Variante L.001
+        // Musculus longus colli (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 274,
-            latin_name = "NECK_Musculus longus colli (sin.).L.001",
-            german_name = "Langer Halsmuskel (li.) Variante L.001",
+            latin_name = "Musculus longus colli (sin.)",
+            german_name = "Langer Halsmuskel (li.) Variante L",
             category = "Prävertebrale Muskulatur",
             parentId = 0
         });
@@ -4721,7 +4721,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 275,
-            latin_name = "NECK_Musculus mylohyoideus (dex.).R2",
+            latin_name = "Musculus mylohyoideus (dex.)2",
             german_name = "Kiefer-Zungenbeinmuskel (re.) Variante R2",
             category = "Mundbodenmuskulatur",
             parentId = 0
@@ -4739,7 +4739,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 276,
-            latin_name = "NECK_Musculus mylohyoideus (sin.).L",
+            latin_name = "Musculus mylohyoideus (sin.)",
             german_name = "Kiefer-Zungenbeinmuskel (li.)",
             category = "Mundbodenmuskulatur",
             parentId = 0
@@ -4757,7 +4757,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 277,
-            latin_name = "NECK_Musculus rectus anterior capitis (dex.).L.011",
+            latin_name = "Musculus rectus anterior capitis (dex.).011",
             german_name = "Vorderer gerader Kopfmuskel (re.) Variante L.011",
             category = "Tiefer Nackenmuskel",
             parentId = 0
@@ -4771,12 +4771,12 @@ public class DataService  {
             structure_id = 277
         });
 
-        // Musculus rectus anterior capitis (li.) Variante L.005
+        // Musculus rectus anterior capitis (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 278,
-            latin_name = "NECK_Musculus rectus anterior capitis (sin.).L.005",
-            german_name = "Vorderer gerader Kopfmuskel (li.) Variante L.005",
+            latin_name = "Musculus rectus anterior capitis (sin.)",
+            german_name = "Vorderer gerader Kopfmuskel (li.) Variante L",
             category = "Tiefer Nackenmuskel",
             parentId = 0
         });
@@ -4789,12 +4789,12 @@ public class DataService  {
             structure_id = 278
         });
 
-        // Musculus scalenus anterior (re.) Variante L.003
+        // Musculus scalenus anterior (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 279,
-            latin_name = "NECK_Musculus scalenus anterior (dex.).L.003",
-            german_name = "Vorderer Treppenmuskel (re.) Variante L.003",
+            latin_name = "Musculus scalenus anterior (dex.)",
+            german_name = "Vorderer Treppenmuskel (re.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4807,12 +4807,12 @@ public class DataService  {
             structure_id = 279
         });
 
-        // Musculus scalenus anterior (li.) Variante L.001
+        // Musculus scalenus anterior (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 280,
-            latin_name = "NECK_Musculus scalenus anterior (sin.).L.001",
-            german_name = "Vorderer Treppenmuskel (li.) Variante L.001",
+            latin_name = "Musculus scalenus anterior (sin.)",
+            german_name = "Vorderer Treppenmuskel (li.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4825,12 +4825,12 @@ public class DataService  {
             structure_id = 280
         });
 
-        // Musculus scalenus medius (re.) Variante L.003
+        // Musculus scalenus medius (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 281,
-            latin_name = "NECK_Musculus scalenus medius (dex.).L.003",
-            german_name = "Mittlerer Treppenmuskel (re.) Variante L.003",
+            latin_name = "Musculus scalenus medius (dex.)",
+            german_name = "Mittlerer Treppenmuskel (re.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4843,12 +4843,12 @@ public class DataService  {
             structure_id = 281
         });
 
-        // Musculus scalenus medius (li.) Variante L.001
+        // Musculus scalenus medius (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 282,
-            latin_name = "NECK_Musculus scalenus medius (sin.).L.001",
-            german_name = "Mittlerer Treppenmuskel (li.) Variante L.001",
+            latin_name = "Musculus scalenus medius (sin.)",
+            german_name = "Mittlerer Treppenmuskel (li.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4861,12 +4861,12 @@ public class DataService  {
             structure_id = 282
         });
 
-        // Musculus scalenus minimus (re.) Variante L.003
+        // Musculus scalenus minimus (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 283,
-            latin_name = "NECK_Musculus scalenus minimus (dex.).L.003",
-            german_name = "Kleinster Treppenmuskel (re.) Variante L.003",
+            latin_name = "Musculus scalenus minimus (dex.)",
+            german_name = "Kleinster Treppenmuskel (re.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4879,12 +4879,12 @@ public class DataService  {
             structure_id = 283
         });
 
-        // Musculus scalenus minimus (li.) Variante L.001
+        // Musculus scalenus minimus (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 284,
-            latin_name = "NECK_Musculus scalenus minimus (sin.).L.001",
-            german_name = "Kleinster Treppenmuskel (li.) Variante L.001",
+            latin_name = "Musculus scalenus minimus (sin.)",
+            german_name = "Kleinster Treppenmuskel (li.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4897,12 +4897,12 @@ public class DataService  {
             structure_id = 284
         });
 
-        // Musculus scalenus posterior (re.) Variante L.003
+        // Musculus scalenus posterior (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 285,
-            latin_name = "NECK_Musculus scalenus posterior (dex.).L.003",
-            german_name = "Hinterer Treppenmuskel (re.) Variante L.003",
+            latin_name = "Musculus scalenus posterior (dex.)",
+            german_name = "Hinterer Treppenmuskel (re.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4915,12 +4915,12 @@ public class DataService  {
             structure_id = 285
         });
 
-        // Musculus scalenus posterior (li.) Variante L.001
+        // Musculus scalenus posterior (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 286,
-            latin_name = "NECK_Musculus scalenus posterior (sin.).L.001",
-            german_name = "Hinterer Treppenmuskel (li.) Variante L.001",
+            latin_name = "Musculus scalenus posterior (sin.)",
+            german_name = "Hinterer Treppenmuskel (li.) Variante L",
             category = "Skalenusgruppe",
             parentId = 0
         });
@@ -4933,12 +4933,12 @@ public class DataService  {
             structure_id = 286
         });
 
-        // Musculus sternocleidomastoideus (re.) Variante L.003
+        // Musculus sternocleidomastoideus (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 287,
-            latin_name = "NECK_Musculus sternocleidomastoideus (dex.).L.003",
-            german_name = "Kopfwender (re.) Variante L.003",
+            latin_name = "Musculus sternocleidomastoideus (dex.)",
+            german_name = "Kopfwender (re.) Variante L",
             category = "Halsmuskeln",
             parentId = 0
         });
@@ -4951,12 +4951,12 @@ public class DataService  {
             structure_id = 287
         });
 
-        // Musculus sternocleidomastoideus (li.) Variante L.001
+        // Musculus sternocleidomastoideus (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 288,
-            latin_name = "NECK_Musculus sternocleidomastoideus (sin.).L.001",
-            german_name = "Kopfwender (li.) Variante L.001",
+            latin_name = "Musculus sternocleidomastoideus (sin.)",
+            german_name = "Kopfwender (li.) Variante L",
             category = "Halsmuskeln",
             parentId = 0
         });
@@ -4969,12 +4969,12 @@ public class DataService  {
             structure_id = 288
         });
 
-        // Musculus sternohyoideus (re.) Variante L.003
+        // Musculus sternohyoideus (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 289,
-            latin_name = "NECK_Musculus sternohyoideus (dex.).L.003",
-            german_name = "Brustbein-Zungenbein-Muskel (re.) Variante L.003",
+            latin_name = "Musculus sternohyoideus (dex.)",
+            german_name = "Brustbein-Zungenbein-Muskel (re.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -4987,12 +4987,12 @@ public class DataService  {
             structure_id = 289
         });
 
-        // Musculus sternohyoideus (li.) Variante L.001
+        // Musculus sternohyoideus (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 290,
-            latin_name = "NECK_Musculus sternohyoideus (sin.).L.001",
-            german_name = "Brustbein-Zungenbein-Muskel (li.) Variante L.001",
+            latin_name = "Musculus sternohyoideus (sin.)",
+            german_name = "Brustbein-Zungenbein-Muskel (li.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5005,12 +5005,12 @@ public class DataService  {
             structure_id = 290
         });
 
-        // Musculus sternothyreoideus (re.) Variante L.003
+        // Musculus sternothyreoideus (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 291,
-            latin_name = "NECK_Musculus sternothyreoideus (dex.).L.003",
-            german_name = "Brustbein-Schildknorpel-Muskel (re.) Variante L.003",
+            latin_name = "Musculus sternothyreoideus (dex.)",
+            german_name = "Brustbein-Schildknorpel-Muskel (re.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5023,12 +5023,12 @@ public class DataService  {
             structure_id = 291
         });
 
-        // Musculus sternothyreoideus (li.) Variante L.001
+        // Musculus sternothyreoideus (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 292,
-            latin_name = "NECK_Musculus sternothyreoideus (sin.).L.001",
-            german_name = "Brustbein-Schildknorpel-Muskel (li.) Variante L.001",
+            latin_name = "Musculus sternothyreoideus (sin.)",
+            german_name = "Brustbein-Schildknorpel-Muskel (li.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5045,7 +5045,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 293,
-            latin_name = "NECK_Musculus stylohyoideus (dex.).R2",
+            latin_name = "Musculus stylohyoideus (dex.)2",
             german_name = "Griffel-Zungenbein-Muskel (re.) Variante R2",
             category = "Suprahyoidale Muskulatur",
             parentId = 0
@@ -5063,7 +5063,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 294,
-            latin_name = "NECK_Musculus stylohyoideus (sin.).L",
+            latin_name = "Musculus stylohyoideus (sin.)",
             german_name = "Griffel-Zungenbein-Muskel (li.)",
             category = "Suprahyoidale Muskulatur",
             parentId = 0
@@ -5077,12 +5077,12 @@ public class DataService  {
             structure_id = 294
         });
 
-        // Musculus thyreohyoideus (re.) Variante L.003
+        // Musculus thyreohyoideus (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 295,
-            latin_name = "NECK_Musculus thyreohyoideus (dex.).L.003",
-            german_name = "Schildknorpel-Zungenbein-Muskel (re.) Variante L.003",
+            latin_name = "Musculus thyreohyoideus (dex.)",
+            german_name = "Schildknorpel-Zungenbein-Muskel (re.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5095,12 +5095,12 @@ public class DataService  {
             structure_id = 295
         });
 
-        // Musculus thyreohyoideus (li.) Variante L.001
+        // Musculus thyreohyoideus (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 296,
-            latin_name = "NECK_Musculus thyreohyoideus (sin.).L.001",
-            german_name = "Schildknorpel-Zungenbein-Muskel (li.) Variante L.001",
+            latin_name = "Musculus thyreohyoideus (sin.)",
+            german_name = "Schildknorpel-Zungenbein-Muskel (li.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5113,12 +5113,12 @@ public class DataService  {
             structure_id = 296
         });
 
-        // Platysma (re.) Variante L.003
+        // Platysma (re.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 297,
-            latin_name = "NECK_Platysma (dex.).L.003",
-            german_name = "Halshautmuskel (re.) Variante L.003",
+            latin_name = "Platysma (dex.)",
+            german_name = "Halshautmuskel (re.) Variante L",
             category = "Oberflächliche Halsmuskulatur",
             parentId = 0
         });
@@ -5131,12 +5131,12 @@ public class DataService  {
             structure_id = 297
         });
 
-        // Platysma (li.) Variante L.001
+        // Platysma (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 298,
-            latin_name = "NECK_Platysma (sin.).L.001",
-            german_name = "Halshautmuskel (li.) Variante L.001",
+            latin_name = "Platysma (sin.)",
+            german_name = "Halshautmuskel (li.) Variante L",
             category = "Oberflächliche Halsmuskulatur",
             parentId = 0
         });
@@ -5149,12 +5149,12 @@ public class DataService  {
             structure_id = 298
         });
 
-        // Venter inferior musculi omohyoidei (li.) Variante L.001
+        // Venter inferior musculi omohyoidei (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 299,
-            latin_name = "NECK_venter inferior musculi omohyoidei.L.001",
-            german_name = "Unterer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.001",
+            latin_name = "venter inferior musculi omohyoidei",
+            german_name = "Unterer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5167,12 +5167,12 @@ public class DataService  {
             structure_id = 299
         });
 
-        // Venter inferior musculi omohyoidei (li.) Variante L.003
+        // Venter inferior musculi omohyoidei (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 300,
-            latin_name = "NECK_venter inferior musculi omohyoidei.L.003",
-            german_name = "Unterer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.003",
+            latin_name = "venter inferior musculi omohyoidei",
+            german_name = "Unterer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5185,12 +5185,12 @@ public class DataService  {
             structure_id = 300
         });
 
-        // Venter superior musculi omohyoidei (li.) Variante L.001
+        // Venter superior musculi omohyoidei (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 301,
-            latin_name = "NECK_venter superior musculi omohyoidei.L.001",
-            german_name = "Oberer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.001",
+            latin_name = "venter superior musculi omohyoidei",
+            german_name = "Oberer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5203,12 +5203,12 @@ public class DataService  {
             structure_id = 301
         });
 
-        // Venter superior musculi omohyoidei (li.) Variante L.003
+        // Venter superior musculi omohyoidei (li.) Variante L
         _connection.Insert(new AnatomicalStructures
         {
             id = 302,
-            latin_name = "NECK_venter superior musculi omohyoidei.L.003",
-            german_name = "Oberer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L.003",
+            latin_name = "venter superior musculi omohyoidei",
+            german_name = "Oberer Bauch des Schulter-Zungenbein-Muskels (li.) Variante L",
             category = "Infrahyale Muskulatur",
             parentId = 0
         });
@@ -5225,7 +5225,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 303,
-            latin_name = "PHARYNX_Musculus hyoglossus (dex.).R",
+            latin_name = "Musculus hyoglossus (dex.)",
             german_name = "Zungenbein-Zungenmuskel (re.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5243,7 +5243,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 304,
-            latin_name = "PHARYNX_Musculus hyoglossus (sin.).L",
+            latin_name = "Musculus hyoglossus (sin.)",
             german_name = "Zungenbein-Zungenmuskel (li.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5261,7 +5261,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 305,
-            latin_name = "Torax_Musculi intercostales interni (dex.).R",
+            latin_name = "Musculi intercostales interni (dex.)",
             german_name = "Innere Zwischenrippenmuskeln (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5279,7 +5279,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 306,
-            latin_name = "Torax_Musculi intercostales interni (sin.).L",
+            latin_name = "Musculi intercostales interni (sin.)",
             german_name = "Innere Zwischenrippenmuskeln (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5297,7 +5297,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 307,
-            latin_name = "Torax_Musculus pectoralis minor (dex.).R",
+            latin_name = "Musculus pectoralis minor (dex.)",
             german_name = "Kleiner Brustmuskel (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5315,7 +5315,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 308,
-            latin_name = "Torax_Musculus pectoralis minor (sin.).L",
+            latin_name = "Musculus pectoralis minor (sin.)",
             german_name = "Kleiner Brustmuskel (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5333,7 +5333,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 309,
-            latin_name = "Torax_Musculus serratus anterior (dex.).R",
+            latin_name = "Musculus serratus anterior (dex.)",
             german_name = "Vorderer Sägemuskel (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5351,7 +5351,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 310,
-            latin_name = "Torax_Musculus serratus anterior (sin.).L",
+            latin_name = "Musculus serratus anterior (sin.)",
             german_name = "Vorderer Sägemuskel (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5369,7 +5369,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 311,
-            latin_name = "Torax_Musculus subclavius (sin.).L",
+            latin_name = "Musculus subclavius (sin.)",
             german_name = "Unterschlüsselbeinmuskel (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5387,7 +5387,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 312,
-            latin_name = "Torax_Musculus subcostalis (dex.R).R",
+            latin_name = "Musculus subcostalis (dex)",
             german_name = "Unterrippenmuskel (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5405,7 +5405,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 313,
-            latin_name = "Torax_Musculus subcostalis (sin.l).L",
+            latin_name = "Musculus subcostalis (sin)",
             german_name = "Unterrippenmuskel (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5423,7 +5423,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 314,
-            latin_name = "Torax_Musculus transversus thoracis(dex.).R",
+            latin_name = "Musculus transversus thoracis(dex.)",
             german_name = "Querbrustmuskel (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5441,7 +5441,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 315,
-            latin_name = "Torax_Musculus transversus thoracis(sin.).L",
+            latin_name = "Musculus transversus thoracis(sin.)",
             german_name = "Querbrustmuskel (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5459,7 +5459,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 316,
-            latin_name = "TOUNGE_Musculi longitudinales (dex.).R",
+            latin_name = "Musculi longitudinales (dex.)",
             german_name = "Längsmuskeln der Zunge (re.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5477,7 +5477,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 317,
-            latin_name = "TOUNGE_Musculi longitudinales (sin.) .L",
+            latin_name = "Musculi longitudinales (sin.) ",
             german_name = "Längsmuskeln der Zunge (li.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5495,7 +5495,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 318,
-            latin_name = "TOUNGE_Musculus chondroglossus (dex.).R",
+            latin_name = "Musculus chondroglossus (dex.)",
             german_name = "Knorpel-Zungen-Muskel (re.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5513,7 +5513,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 319,
-            latin_name = "TOUNGE_Musculus chondroglossus (sin.).L",
+            latin_name = "Musculus chondroglossus (sin.)",
             german_name = "Knorpel-Zungen-Muskel (li.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5531,7 +5531,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 320,
-            latin_name = "TOUNGE_Musculus genioglossus (dex.).R",
+            latin_name = "Musculus genioglossus (dex.)",
             german_name = "Kinn-Zungen-Muskel (re.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5549,7 +5549,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 321,
-            latin_name = "Torax_Musculus pectoralis minor  (dex.).R",
+            latin_name = "Musculus pectoralis minor  (dex.)",
             german_name = "Kleiner Brustmuskel (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5567,7 +5567,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 322,
-            latin_name = "Torax_Musculus pectoralis minor  (sin.).L",
+            latin_name = "Musculus pectoralis minor  (sin.)",
             german_name = "Kleiner Brustmuskel (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5585,7 +5585,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 323,
-            latin_name = "Torax_Musculus subclavius (dex.).R",
+            latin_name = "Musculus subclavius (dex.)",
             german_name = "Unterschlüsselbeinmuskel (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5603,7 +5603,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 324,
-            latin_name = "TOUNGE_Musculus genioglossus (sin.).L",
+            latin_name = "Musculus genioglossus (sin.)",
             german_name = "Kinn-Zungen-Muskel (li.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5621,7 +5621,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 325,
-            latin_name = "TOUNGE_Musculus palatoglossus (dex.).R",
+            latin_name = "Musculus palatoglossus (dex.)",
             german_name = "Gaumenzungenmuskel (re.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5639,7 +5639,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 326,
-            latin_name = "TOUNGE_Musculus palatoglossus (sin.).L",
+            latin_name = "Musculus palatoglossus (sin.)",
             german_name = "Gaumenzungenmuskel (li.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5657,7 +5657,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 327,
-            latin_name = "TOUNGE_Musculus styloglossus (dex.).R",
+            latin_name = "Musculus styloglossus (dex.)",
             german_name = "Griffelzungenmuskel (re.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5675,7 +5675,7 @@ public class DataService  {
         _connection.Insert(new AnatomicalStructures
         {
             id = 328,
-            latin_name = "TOUNGE_Musculus styloglossus (sin.).L",
+            latin_name = "Musculus styloglossus (sin.)",
             german_name = "Griffelzungenmuskel (li.)",
             category = "Zungenmuskulatur",
             parentId = 0
@@ -5689,11 +5689,11 @@ public class DataService  {
             structure_id = 328
         });
         
-        // Torax_Musculus pectoralis minor (dex.).R
+        // Torax_Musculus pectoralis minor (dex.)
         _connection.Insert(new AnatomicalStructures
         {
             id = 334,
-            latin_name = "Torax_Musculus pectoralis minor (dex.).R",
+            latin_name = "Musculus pectoralis minor (dex.)",
             german_name = "Kleiner Brustmuskel (re.)",
             category = "Thoraxmuskulatur",
             parentId = 0
@@ -5707,11 +5707,11 @@ public class DataService  {
             structure_id = 334
         });
 
-        // Torax_Musculus pectoralis minor (sin.).L
+        // Torax_Musculus pectoralis minor (sin.)
         _connection.Insert(new AnatomicalStructures
         {
             id = 335,
-            latin_name = "Torax_Musculus pectoralis minor (sin.).L",
+            latin_name = "Musculus pectoralis minor (sin.)",
             german_name = "Kleiner Brustmuskel (li.)",
             category = "Thoraxmuskulatur",
             parentId = 0
